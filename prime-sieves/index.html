@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/kaiserwilheim.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/kaiserwilheim.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/kaiserwilheim.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/kaiserwilheim.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/kaiserwilheim.github.io/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"https","root":"//kaiserwilheim.github.io/","images":"/kaiserwilheim.github.io/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/kaiserwilheim.github.io/js/config.js"></script>
+<meta name="description" content="质数 。 一类很奇异的数字。 质数的定义是：  “在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”   于是我们就可以想到一个简单的算法来求n是不是质数： 简单的算法 12345678for(int i&#x3D;2;i&lt;&#x3D;sqrt(n);i++)&amp;#123;if(n%i&#x3D;&#x3D;0)&amp;#123;	cout&lt;&lt;&quot;いいえ&quot;&lt;&lt;endl;	break">
+<meta property="og:type" content="article">
+<meta property="og:title" content="质数筛法学习笔记">
+<meta property="og:url" content="https://https//kaiserwilheim.github.io/prime-sieves/index.html">
+<meta property="og:site_name" content="南陽劉子驥的博客">
+<meta property="og:description" content="质数 。 一类很奇异的数字。 质数的定义是：  “在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”   于是我们就可以想到一个简单的算法来求n是不是质数： 简单的算法 12345678for(int i&#x3D;2;i&lt;&#x3D;sqrt(n);i++)&amp;#123;if(n%i&#x3D;&#x3D;0)&amp;#123;	cout&lt;&lt;&quot;いいえ&quot;&lt;&lt;endl;	break">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/09/16/9FUrb7uVhWJ3da2.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/16/ZrR3XAqTa46xGHI.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/16/8R3H9v1YntmDB6N.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/16/hDGu9gJq4dcfPsw.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/16/p8vdWwcxgi32ZuV.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/16/nHqIJQ2uEKRs9if.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/16/XGn68kx5Cp9iVoe.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/16/cJADHQ4t73sPj61.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/16/Vw8liybKC4zX6NO.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/16/fiZtvQesKYVyunW.png">
+<meta property="article:published_time" content="2021-09-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-19T12:31:59.864Z">
+<meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="质数">
+<meta property="article:tag" content="筛法">
+<meta property="article:tag" content="学习笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/16/9FUrb7uVhWJ3da2.png">
+
+
+<link rel="canonical" href="https://https//kaiserwilheim.github.io/prime-sieves/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://https//kaiserwilheim.github.io/prime-sieves/","path":"prime-sieves/","title":"质数筛法学习笔记"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>质数筛法学习笔记 | 南陽劉子驥的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/kaiserwilheim.github.io/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a target="_blank" href="//kaiserwilheim.github.io/" class="brand" rel="start noopener">
+      <i class="logo-line"></i>
+      <h1 class="site-title">南陽劉子驥的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">15 yrs old,OIer,集训中</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">简单的算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%83%E6%B0%8F%E7%AD%9B"><span class="nav-number">2.</span> <span class="nav-text">埃氏筛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E7%AD%9B"><span class="nav-number">3.</span> <span class="nav-text">欧拉筛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Miller-Rabin-%E5%AE%9A%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">$Miller-Rabin$ 定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%B9%E9%A9%AC%E5%B0%8F%E5%AE%9A%E7%90%86"><span class="nav-number">4.1.</span> <span class="nav-text">费马小定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%AC%A1%E6%8E%A2%E6%B5%8B%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.</span> <span class="nav-text">二次探测定理</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="南陽劉子驥 aka KaiserWilheim"
+      src="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+  <p class="site-author-name" itemprop="name">南陽劉子驥 aka KaiserWilheim</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/kaiserwilheim.github.io/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://https//kaiserwilheim.github.io/prime-sieves/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南陽劉子驥的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          质数筛法学习笔记
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-09-16 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-16T00:00:00+08:00">2021-09-16</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-09-19 20:31:59" itemprop="dateModified" datetime="2021-09-19T20:31:59+08:00">2021-09-19</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p> <strong>质数</strong> 。<br> 一类很奇异的数字。<br> 质数的定义是：<br>  <strong><strong>“在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”</strong></strong> </p>
+<p> 于是我们就可以想到一个简单的算法来求n是不是质数：</p>
+<h2 id="简单的算法"><a href="#简单的算法" class="headerlink" title="简单的算法"></a>简单的算法</h2> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="built_in">sqrt</span>(n);i++)&#123;</span><br><span class="line"><span class="keyword">if</span>(n%i==<span class="number">0</span>)&#123;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;いいえ&quot;</span>&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;<span class="string">&quot;はい&quot;</span>&lt;&lt;endl;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<p> 这个算法的时间复杂度是 $O(\sqrt[]{n})$ 。</p>
+<p> 代码好写归好写，但是时间复杂度真的是太高了，有时候并不能满足我们的需要；更何况我们经常需要的操作是找出n以内的所有质数，而不是简单地判断一个数是否是质数。<br> 从$[1,n]$ 范围内的所有整数里挑质数其实很简单。<br> 很多人大概接触过这样一种方法：</p>
+<ul>
+<li>首先列出所有数字并按照从大到小的顺序排好：</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/09/16/9FUrb7uVhWJ3da2.png"></p>
+<ul>
+<li>然后拿出五颜六色的彩笔，开始对数据进行处理</li>
+<li>$1$ 既不是质数也不是合数，提前把它剔除</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/09/16/ZrR3XAqTa46xGHI.png"></p>
+<ul>
+<li>然后看数列的第一个数： $2$ 。拿笔圈出2，并且划掉2的所有倍数（也就是所有剩下的偶数）。</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/09/16/8R3H9v1YntmDB6N.png"></p>
+<ul>
+<li>数列的下一个数是 $3$ 。换个颜色的笔圈出3，并划掉所有剩下的3的倍数。</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/09/16/hDGu9gJq4dcfPsw.png"></p>
+<ul>
+<li>越过被划掉的4，下一个数是 $5$ 。操作我就不用说了吧。</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/09/16/p8vdWwcxgi32ZuV.png"></p>
+<ul>
+<li>下一个是 $7$ 。</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/09/16/nHqIJQ2uEKRs9if.png"></p>
+<ul>
+<li>越过8,9和10，我们来到了 $11$ 。由于11大于 $\sqrt[]{100}$ ，也就是10，我们就停止操作，换一个颜色的笔，圈出剩下的所有数。</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/09/16/XGn68kx5Cp9iVoe.png"></p>
+<ul>
+<li>擦掉所有划去的数，我们得到了100以内的所有质数。</li>
+</ul>
+<p> <img src="https://i.loli.net/2021/09/16/cJADHQ4t73sPj61.png"></p>
+<p> 如果我们将这个操作用代码来实现，那就是：</p>
+<h2 id="埃氏筛"><a href="#埃氏筛" class="headerlink" title="埃氏筛"></a>埃氏筛</h2><p> <strong>埃氏筛</strong> ，或者叫做 <strong>埃拉托斯特尼筛法</strong> ，利用的就是这种思想。<br> 代码如下：</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">cin&gt;&gt;n;</span><br><span class="line"><span class="keyword">bool</span> visit[n];</span><br><span class="line"><span class="built_in">memset</span>(visit,<span class="literal">false</span>,n);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">if</span>(!visit[i])&#123;</span><br><span class="line">		<span class="keyword">if</span>(n&lt;i*i)<span class="keyword">break</span>;<span class="comment">//埃氏筛只需要剔除根号n以内的素数的倍数 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i*i;j&lt;=n;j+=i)visit[j]=<span class="literal">true</span>;<span class="comment">//标记质数</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">if</span>(!visit[i])cout&lt;&lt;i&lt;&lt;endl;<span class="comment">//输出 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 埃氏筛法的时间复杂度只有 $O(n \log \log n)$ 。<br> 时间比简单方法的 $O(\sqrt[]{n})$，埃氏筛法明显快了很多。</p>
+<p> 但是，埃氏筛法还可以进一步优化。<br> <strong>举个栗子：</strong><br> 数字 $223092870$ 可以被分解成 $2\times 3\times 5\times 7\times 11\times 13\times 17\times 19\times 23$ ，在埃氏筛法中会被搜索9次。<br> 如果我们可以在这个数被搜索到的第一次就标记好，并且使得这个数在之后的过程中不会被再次搜索到，我们算法的速度就会快很多。<br> 那么如何实现这一想法呢？<br> 我们继续拿 $223092870$ 来举例。如果我们在开始判断之前就用 <strong>&amp;1</strong> 的方法来去掉所有偶数呢？<br> 显然会快很多。但是，类似 $4849845$  ( $3\times5\times7\times11\times13\times17\times19$ )这样的数仍然会被不可避免地搜索到多次。<br> 但是，如果我们保证 $4849845$ 这个数只在被分解成 $3\times1616615$ 的时候被搜索到并标记为合数，就可以实现这个想法。</p>
+<p> 于是，我们就得到了一种算法：</p>
+<h2 id="欧拉筛"><a href="#欧拉筛" class="headerlink" title="欧拉筛"></a>欧拉筛</h2><p> <strong>欧拉筛</strong> ，又叫 <strong>线性筛</strong> ，在埃氏筛的基础上进行了优化，使得每个数被且只被搜索到一次。<br> 欧拉筛利用合数的 <strong>最小质因子</strong> 进行筛选。<br> <strong>再举一个例子：</strong><br> 数字 $4849845$ 被搜索到的路线是这样的：<br> $19\to 19\times 17=323\to 19\times 17\times 13=4199\to 19\times 17\times 13\times 11=46189\to 19\times 17\times 13\times 11\times 7=323323$<br> $\to 19\times 17\times 13\times 11\times 7\times 5=1616615\to 19\times 17\times 13\times 11\times 7\times 5\times 3=4849845$</p>
+<p> 如果这还不够直观，我们可以打表看一下100以内的合数是怎么被推出来的。</p>
+<p> <img src="https://i.loli.net/2021/09/16/Vw8liybKC4zX6NO.png" alt="2~22"></p>
+<p> <img src="https://i.loli.net/2021/09/16/fiZtvQesKYVyunW.png" alt="23~50">、</p>
+<p> 当 $i&gt;50$ 之后，因为 $i\times 2$ 已经超出100这个范围，无法推出任何更多的范围内的合数。</p>
+<p> 附上代码：</p>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n;</span><br><span class="line">cin&gt;&gt;n;</span><br><span class="line"><span class="keyword">int</span> prime[n];</span><br><span class="line"><span class="keyword">bool</span> visit[n];</span><br><span class="line"><span class="built_in">memset</span>(prime,<span class="number">0</span>,n);</span><br><span class="line"><span class="built_in">memset</span>(visit,<span class="literal">false</span>,n);</span><br><span class="line">prime[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">if</span>(!visit[i])&#123;</span><br><span class="line">		prime[prime[<span class="number">0</span>]+<span class="number">1</span>]=i;</span><br><span class="line">		prime[<span class="number">0</span>]++;<span class="comment">//记录质数 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> j=<span class="number">1</span>;j&lt;=prime[<span class="number">0</span>]&amp;&amp;i*prime[j]&lt;=n;j++)&#123;</span><br><span class="line">		visit[i*prime[j]]=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)&#123;</span><br><span class="line">			<span class="keyword">break</span>;<span class="comment">//判断是否是最小质因子 </span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">1</span>;i&lt;=prime[<span class="number">0</span>];i++)&#123;</span><br><span class="line">	<span class="keyword">if</span>(n%prime[i]==<span class="number">0</span>)&#123;</span><br><span class="line">		visit[n]=<span class="literal">true</span>;</span><br><span class="line">	&#125;<span class="comment">//最后一个一般筛不出来，特判一下 </span></span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">if</span>(!visit[i])&#123;</span><br><span class="line">		cout&lt;&lt;i&lt;&lt;endl;<span class="comment">//输出 </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> <strong>欧拉筛</strong> 的时间复杂度是 $O(n)$ （所以这就是为什么它也叫 <strong>线性筛</strong> ），在数据量很大的时候，速度会比埃氏筛快很多。</p>
+<p> 当 $n$ 很大的时候，找出n以内的所有质数已经不太现实了。但是，判断n是否为质数仍然是一种 <del>（看起来）</del> 可行的操作。<br> 这就用到了：</p>
+<h2 id="Miller-Rabin-定理"><a href="#Miller-Rabin-定理" class="headerlink" title="$Miller-Rabin$ 定理"></a>$Miller-Rabin$ 定理</h2><p> $Miller-Rabin$ 定理涉及了两个定理：</p>
+<h3 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h3><p> 费马小定理是这样的：</p>
+<blockquote>
+<p>对于质数 $p$ 和任意整数 $a$ ，有 $a^p\equiv a\pmod{p}$。</p>
+</blockquote>
+<p> 这里我们需要用的是它的逆定理，即</p>
+<blockquote>
+<p>若满足 $a^p\equiv a\pmod{p}$ ， $p$ 为质数。<br> 此时我们两边同时约去一个 $a$ ，得 $a^{p-1} \equiv 1\pmod{p}$。</p>
+</blockquote>
+<p> 很遗憾，费马小定理的逆定理不是个真命题，但满足条件的 $p$ 还是有很大概率是质数的。<br> 但是如果我们选取不同的 $a$ 进行多次测试，那么我们几乎就可以断定这个数是一个质数了。</p>
+<h3 id="二次探测定理"><a href="#二次探测定理" class="headerlink" title="二次探测定理"></a>二次探测定理</h3><blockquote>
+<p>如果 $p$ 是奇素数，则 $x^2\equiv 1\pmod{p}$ 的解为 $x\equiv 1$ 或 $x\equiv p-1\pmod{p}$ 。<br> 这是很容易证明的：</p>
+</blockquote>
+<blockquote>
+<p>\begin{align}<br> x^2\equiv 1\pmod{p} \<br> x^2-1\equiv 0\pmod{p} \<br> (x-1)(x+1)\equiv 0\pmod{p} \<br> \end{align}</p>
+</blockquote>
+<blockquote>
+<p>又∵ $p$ 为奇素数，其因子只有 $1$ 与 $p$ 两个。<br> ∴只有两解 $x\equiv 1$ 与 $x\equiv p-1 \pmod{p}$ 。</p>
+</blockquote>
+<p> 如果 $a^{n−1}\equiv 1\pmod{n}$ 成立，$Miller−Rabin$ 算法不是立即找另一个 $a$ 进行测试，而是看 $n−1$ 是不是偶数。如果 $n−1$ 是偶数，另 $u=\frac{n-1}{2}$ ，并检查是否满足二次探测定理即 $a^u\equiv 1$ 或 $a^u\equiv n−1 \pmod{n}$ 。<br> 将这两条定理合起来，也就是最常见的 Miller−Rabin 测试 。<br> 单次时间复杂度是 $O(\log n)$ ，总复杂度就是 $O(times\times \log n)$ 了。
+ </p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/kaiserwilheim.github.io/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/kaiserwilheim.github.io/tags/%E8%B4%A8%E6%95%B0/" rel="tag"># 质数</a>
+              <a href="/kaiserwilheim.github.io/tags/%E7%AD%9B%E6%B3%95/" rel="tag"># 筛法</a>
+              <a href="/kaiserwilheim.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/kaiserwilheim.github.io/thanks/" rel="prev" title="感谢">
+                  <i class="fa fa-chevron-left"></i> 感谢
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/kaiserwilheim.github.io/encoding-decoding/" rel="next" title="加密与解密-$Base64$">
+                  加密与解密-$Base64$ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">南陽劉子驥 aka KaiserWilheim</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/kaiserwilheim.github.io/js/comments.js"></script><script src="/kaiserwilheim.github.io/js/utils.js"></script><script src="/kaiserwilheim.github.io/js/motion.js"></script><script src="/kaiserwilheim.github.io/js/schemes/muse.js"></script><script src="/kaiserwilheim.github.io/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/kaiserwilheim.github.io/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
