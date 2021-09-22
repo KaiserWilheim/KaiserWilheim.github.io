@@ -20,28 +20,32 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="关于我自己一个淹没于众多大佬们中间的普通人。经常会有些过于深邃的思考。15 岁，在上学，是一名学生。喜欢化学、编程（特指C++），玩一些音游（指 Phigros、arcaea、MuseDash），玩一些p社（指Paradox Interactive）的游戏（Crusader Kings 3、Europa Universalis 4、Victoria 2 （怎么还不更新3）、Heart of Iro">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="https://kaiserwilheim.github.io/about/index.html">
+<meta name="description" content="导入 我们先举一个栗子： 加入你和李zen一起玩一个游戏； 你们面前都有一个开关，你们都可以选择让这个开关处于断开或闭合两种状态的其中任意一种。 而我会根据开关的状态给你们评级： 当两个开关都闭合时，你们都得 $C$ ； 当两个开关都断开时，你们都得 $B$ ； 当两个开关一开一断时，断开的得 $D$ ，闭合的得 $A$ 。 十分简单。  你会怎么选呢？  首先我们列一个表格，表示出所有结果：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博弈论学习笔记">
+<meta property="og:url" content="https://kaiserwilheim.github.io/game_strategy/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="关于我自己一个淹没于众多大佬们中间的普通人。经常会有些过于深邃的思考。15 岁，在上学，是一名学生。喜欢化学、编程（特指C++），玩一些音游（指 Phigros、arcaea、MuseDash），玩一些p社（指Paradox Interactive）的游戏（Crusader Kings 3、Europa Universalis 4、Victoria 2 （怎么还不更新3）、Heart of Iro">
+<meta property="og:description" content="导入 我们先举一个栗子： 加入你和李zen一起玩一个游戏； 你们面前都有一个开关，你们都可以选择让这个开关处于断开或闭合两种状态的其中任意一种。 而我会根据开关的状态给你们评级： 当两个开关都闭合时，你们都得 $C$ ； 当两个开关都断开时，你们都得 $B$ ； 当两个开关一开一断时，断开的得 $D$ ，闭合的得 $A$ 。 十分简单。  你会怎么选呢？  首先我们列一个表格，表示出所有结果：">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="1996-12-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-21T13:41:08.565Z">
+<meta property="og:image" content="https://i.loli.net/2021/09/22/PugFZ2BDdAqo5zw.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/22/OSmtUF89Hs5covl.png">
+<meta property="article:published_time" content="2021-09-21T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-22T10:39:32.409Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="博弈论">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/22/PugFZ2BDdAqo5zw.png">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/about/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/game_strategy/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/about/index.html","path":"about/index.html","title":"关于我"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/game_strategy/","path":"game_strategy/","title":"博弈论学习笔记"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>关于我 | 南陽劉子驥的博客
-</title>
+<title>博弈论学习笔记 | 南陽劉子驥的博客</title>
   
 
 
@@ -121,7 +125,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%88%91%E8%87%AA%E5%B7%B1"><span class="nav-number">1.</span> <span class="nav-text">关于我自己</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%9A%E8%AF%B4%E7%9A%84%E8%AF%AD%E8%A8%80"><span class="nav-number">2.</span> <span class="nav-text">会说的语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%81%9A%E7%9A%84%E4%BA%8B%E6%83%85"><span class="nav-number">3.</span> <span class="nav-text">在做的事情</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">导入</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -186,53 +190,121 @@
 </noscript>
 
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
   
   
 
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/game_strategy/">
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
+      <meta itemprop="description" content="">
+    </span>
 
-<h1 class="post-title" itemprop="name headline">关于我
-</h1>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南陽劉子驥的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          博弈论学习笔记
+        </h1>
 
-<div class="post-meta-container">
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-09-22 00:00:00 / 修改时间：18:39:32" itemprop="dateCreated datePublished" datetime="2021-09-22T00:00:00+08:00">2021-09-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+        </span>
+    </span>
+
+  
 </div>
 
-</header>
+        </div>
+      </header>
 
-      
-      
-      <div class="post-body">
-          <h2 id="关于我自己"><a href="#关于我自己" class="headerlink" title="关于我自己"></a>关于我自己</h2><p>一个淹没于众多大佬们中间的普通人。<br>经常会有些过于深邃的思考。<br><strong>15</strong> 岁，在上学，是一名学生。<br>喜欢化学、编程（特指C++），玩一些音游（指 Phigros、arcaea、MuseDash），玩一些p社（指Paradox Interactive）的游戏（Crusader Kings 3、Europa Universalis 4、Victoria 2 <del>（怎么还不更新3）</del>、Heart of Iron 4、Stellaris），玩Minecraft。<br>喜欢EBIMAYO、USAO和姜米條的曲子，尤其喜欢GOOD系列。<br>有同好可以一起快乐地交流。</p>
-<h2 id="会说的语言"><a href="#会说的语言" class="headerlink" title="会说的语言"></a>会说的语言</h2><ul>
-<li>中文(zh-CN) ★★★★★ （母语）</li>
-<li>英语(en-GB) ★★★★☆ （正在学）</li>
-<li>日语(ja-JP) ★☆☆☆☆ （刚起步）</li>
-</ul>
-<p><del>（如有异议请私信我）</del></p>
-<h2 id="在做的事情"><a href="#在做的事情" class="headerlink" title="在做的事情"></a>在做的事情</h2><ul>
-<li>OI集训。</li>
-<li>学习文化课。</li>
-<li>勉強日本語。 <del>（私の日本語は本当に下手です）</del></li>
-<li>学习 <a target="_blank" rel="noopener" href="https://www.noi.cn/">信息学奥林匹克竞赛</a> 相关知识。</li>
-<li>学习 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9F%BA%E7%A1%80%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6/22231083?fr=aladdin">有机化学</a> 相关知识。</li>
-<li>尝试使用FL Studio创作一些奇怪的东西。</li>
-<li>尝试使用Flash与PR创作一些奇怪的东西。</li>
-</ul>
-<p>在爱发电上支持我一下吧：<a target="_blank" rel="noopener" href="https://afdian.net/@KaiserWilheim">https://afdian.net/@KaiserWilheim</a></p>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><p> 我们先举一个栗子：<br> 加入你和李zen一起玩一个游戏；<br> 你们面前都有一个开关，你们都可以选择让这个开关处于断开或闭合两种状态的其中任意一种。<br> 而我会根据开关的状态给你们评级：<br> 当两个开关都闭合时，你们都得 $C$ ；<br> 当两个开关都断开时，你们都得 $B$ ；<br> 当两个开关一开一断时，断开的得 $D$ ，闭合的得 $A$ 。<br> 十分简单。</p>
+<p> 你会怎么选呢？</p>
+<p> 首先我们列一个表格，表示出所有结果：</p>
+<p> <img src="https://i.loli.net/2021/09/22/PugFZ2BDdAqo5zw.png" alt="博弈1.png"></p>
+<p> 现在你会做出什么选择呢？</p>
+<p> 你犹豫了一下，然后闭合了开关。<br> 毕竟这样你可以<del>迫害李zen</del>得到更高的评级。<br> 但是你的内心深处还是有一个声音：<br> “断开开关吧，毕竟李zen之前被迫害太多次了，他会<del>开始反围剿</del>伤心的”<br> 驱使着你断开开关。<br> 是不是？</p>
+<p> 你仍然在犹豫。</p>
+<p> 那么，如果现在我们规定，C级才能在之后的考试中及格，而你不想挂科，怎么样？</p>
+<p> 为了更直观一点，我们用 $[-1,2]$ 范围内的整数来代替评级，是不是会好一些？</p>
+<p> <img src="https://i.loli.net/2021/09/22/OSmtUF89Hs5covl.png" alt="博弈2.png"></p>
+<p> 这时候，你就可以进行一下比较：<br> 如果你闭合开关，那么无论李zen干什么，你都可以拿到更高的分数<del>（除非他直接来找你）</del> ：<br> $0&gt;-1,2&gt;1$<br> 此时，如果有两个策略α与β，无论他人选择什么，我们选α得到的结果严格优于选β，那我们就称α相对于β是一个严格优势策略。<br> 比如这道题里的“闭合开关”就是个相对于“断开开关”的严格优势策略。
+ </p>
 
-      </div>
-      
-      
-      
     </div>
 
     
     
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>在爱发电上支持我一下吧</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/aifadian.jpg" alt="南陽劉子驥 aka KaiserWilheim 爱发电">
+        <span>爱发电</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 学习笔记</a>
+              <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/" rel="tag"><i class="fa fa-tag"></i> 博弈论</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/mathematics/" rel="prev" title="数学学习笔记">
+                  <i class="fa fa-chevron-left"></i> 数学学习笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 
 </div>
