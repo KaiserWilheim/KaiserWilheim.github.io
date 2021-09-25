@@ -20,20 +20,24 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="导入 我们先举一个栗子： 假如你和李zen一起玩一个游戏； 你们面前都有一个开关，你们都可以选择让这个开关处于断开或闭合两种状态的其中任意一种。 而我会根据开关的状态给你们评级： 当两个开关都闭合时，你们都得 $C$ ； 当两个开关都断开时，你们都得 $B$ ； 当两个开关一开一断时，断开的得 $D$ ，闭合的得 $A$ 。 十分简单。  你会怎么选呢？  首先我们列一个表格，表示出所有结果：">
+<meta name="description" content="导入 我们先举一个栗子： 假如你和李zen一起玩一个游戏； 你们面前都有一个开关，你们都可以选择让这个开关处于断开或闭合两种状态的其中任意一种。 而我会根据开关的状态给你们评级： 当两个开关都闭合时，你们都得 $\mathfrak C$ ； 当两个开关都断开时，你们都得 $\mathfrak B$ ； 当两个开关一开一断时，断开的得 $\mathfrak D$ ，闭合的得 $\mathfrak">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博弈论学习笔记">
 <meta property="og:url" content="https://kaiserwilheim.github.io/game_strategy/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="导入 我们先举一个栗子： 假如你和李zen一起玩一个游戏； 你们面前都有一个开关，你们都可以选择让这个开关处于断开或闭合两种状态的其中任意一种。 而我会根据开关的状态给你们评级： 当两个开关都闭合时，你们都得 $C$ ； 当两个开关都断开时，你们都得 $B$ ； 当两个开关一开一断时，断开的得 $D$ ，闭合的得 $A$ 。 十分简单。  你会怎么选呢？  首先我们列一个表格，表示出所有结果：">
+<meta property="og:description" content="导入 我们先举一个栗子： 假如你和李zen一起玩一个游戏； 你们面前都有一个开关，你们都可以选择让这个开关处于断开或闭合两种状态的其中任意一种。 而我会根据开关的状态给你们评级： 当两个开关都闭合时，你们都得 $\mathfrak C$ ； 当两个开关都断开时，你们都得 $\mathfrak B$ ； 当两个开关一开一断时，断开的得 $\mathfrak D$ ，闭合的得 $\mathfrak">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/09/22/PugFZ2BDdAqo5zw.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/22/OSmtUF89Hs5covl.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/22/16dpGnyJa9uB3vM.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/22/ElJjYIQzXW8mtdO.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/22/OSmtUF89Hs5covl.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/7rGpuJPQ4eTLN6n.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/ftmEhcYzuSdZkyI.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/24/mroUEi69tjgV1Cu.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/25/mwYX56SC4WaQtcT.png">
 <meta property="article:published_time" content="2021-09-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-24T11:12:48.672Z">
+<meta property="article:modified_time" content="2021-09-25T13:25:11.821Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="博弈论">
@@ -80,11 +84,12 @@
       <h1 class="site-title">南陽劉子驥的博客</h1>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">15 yrs old,OIer,集训中</p>
+      <p class="site-subtitle" itemprop="description">XCT 来了，大佬给点装备吧</p>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -98,11 +103,37 @@
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>friends</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
         
@@ -128,7 +159,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">导入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA-1"><span class="nav-number">1.1.</span> <span class="nav-text">结论 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA-2"><span class="nav-number">1.2.</span> <span class="nav-text">结论 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA-3"><span class="nav-number">1.3.</span> <span class="nav-text">结论 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA-4"><span class="nav-number">1.4.</span> <span class="nav-text">结论 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA-5"><span class="nav-number">1.5.</span> <span class="nav-text">结论 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98%E5%8D%9A%E5%BC%88%E7%BB%93%E6%9E%9C"><span class="nav-number">1.6.</span> <span class="nav-text">如何改变博弈结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%B7%B1%E7%9A%84%E5%B1%82%E6%AC%A1"><span class="nav-number">2.</span> <span class="nav-text">更深的层次</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%BC%88%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">2.1.</span> <span class="nav-text">博弈的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%8F%82%E4%B8%8E%E4%BA%BA-Players"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 参与人(Players)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%AD%96%E7%95%A5-Strategy"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 策略(Strategy)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%94%B6%E7%9B%8A-Payoff"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 收益(Payoff)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E4%BC%98%E4%B8%8E%E5%BC%B1%E5%8A%A3"><span class="nav-number">2.2.</span> <span class="nav-text">弱优与弱劣</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%89%94%E9%99%A4%E5%8A%A3%E5%8A%BF%E7%AD%96%E7%95%A5"><span class="nav-number">2.3.</span> <span class="nav-text">迭代剔除劣势策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%85%B1%E7%9F%A5%E8%AF%86%E4%B8%8E%E7%9B%B8%E4%BA%92%E7%9F%A5%E8%AF%86"><span class="nav-number">2.4.</span> <span class="nav-text">公共知识与相互知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E4%BD%8D%E9%80%89%E6%B0%91%E5%AE%9A%E7%90%86"><span class="nav-number">2.5.</span> <span class="nav-text">中位选民定理</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">导入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA-1"><span class="nav-number">1.1.</span> <span class="nav-text">结论 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA-2"><span class="nav-number">1.2.</span> <span class="nav-text">结论 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA-3"><span class="nav-number">1.3.</span> <span class="nav-text">结论 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA-4"><span class="nav-number">1.4.</span> <span class="nav-text">结论 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA-5"><span class="nav-number">1.5.</span> <span class="nav-text">结论 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%94%B9%E5%8F%98%E5%8D%9A%E5%BC%88%E7%BB%93%E6%9E%9C"><span class="nav-number">1.6.</span> <span class="nav-text">如何改变博弈结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%B7%B1%E7%9A%84%E5%B1%82%E6%AC%A1"><span class="nav-number">2.</span> <span class="nav-text">更深的层次</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%BC%88%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">2.1.</span> <span class="nav-text">博弈的组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%8F%82%E4%B8%8E%E4%BA%BA-Players"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 参与人(Players)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%AD%96%E7%95%A5-Strategy"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 策略(Strategy)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%94%B6%E7%9B%8A-Payoff"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 收益(Payoff)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E4%BC%98%E4%B8%8E%E5%BC%B1%E5%8A%A3"><span class="nav-number">2.2.</span> <span class="nav-text">弱优与弱劣</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%89%94%E9%99%A4%E5%8A%A3%E5%8A%BF%E7%AD%96%E7%95%A5"><span class="nav-number">2.3.</span> <span class="nav-text">迭代剔除劣势策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%85%B1%E7%9F%A5%E8%AF%86%E4%B8%8E%E7%9B%B8%E4%BA%92%E7%9F%A5%E8%AF%86"><span class="nav-number">2.4.</span> <span class="nav-text">公共知识与相互知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E4%BD%8D%E9%80%89%E6%B0%91%E5%AE%9A%E7%90%86"><span class="nav-number">2.5.</span> <span class="nav-text">中位选民定理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%AF%B9%E7%AD%96%E4%B8%8E%E6%9C%9F%E6%9C%9B%E6%94%B6%E7%9B%8A"><span class="nav-number">2.6.</span> <span class="nav-text">最佳对策与期望收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%B3%E4%BB%80%E5%9D%87%E8%A1%A1"><span class="nav-number">2.7.</span> <span class="nav-text">纳什均衡</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%9C%BA-1"><span class="nav-number">2.7.1.</span> <span class="nav-text">动机 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%9C%BA-2"><span class="nav-number">2.7.2.</span> <span class="nav-text">动机 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%9C%BA-3"><span class="nav-number">2.7.3.</span> <span class="nav-text">动机 3</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -164,7 +195,7 @@
         <a href="https://github.com/KaiserWilheim" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KaiserWilheim" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/346304235" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;346304235" rel="noopener" target="_blank"><i class="fa fa-television fa-fw"></i>Bilibili</a>
+        <a href="https://space.bilibili.com/346304235" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;346304235" rel="noopener" target="_blank"><i class="fab fa-television fa-fw"></i>Bilibili</a>
       </span>
   </div>
 
@@ -249,7 +280,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-09-24 19:12:48" itemprop="dateModified" datetime="2021-09-24T19:12:48+08:00">2021-09-24</time>
+        <time title="修改时间：2021-09-25 21:25:11" itemprop="dateModified" datetime="2021-09-25T21:25:11+08:00">2021-09-25</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -271,19 +302,21 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><p> 我们先举一个栗子：<br> 假如你和李zen一起玩一个游戏；<br> 你们面前都有一个开关，你们都可以选择让这个开关处于断开或闭合两种状态的其中任意一种。<br> 而我会根据开关的状态给你们评级：<br> 当两个开关都闭合时，你们都得 $C$ ；<br> 当两个开关都断开时，你们都得 $B$ ；<br> 当两个开关一开一断时，断开的得 $D$ ，闭合的得 $A$ 。<br> 十分简单。</p>
+        <span id="more"></span>
+
+<h2 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h2><p> 我们先举一个栗子：<br> 假如你和李zen一起玩一个游戏；<br> 你们面前都有一个开关，你们都可以选择让这个开关处于断开或闭合两种状态的其中任意一种。<br> 而我会根据开关的状态给你们评级：<br> 当两个开关都闭合时，你们都得 $\mathfrak C$ ；<br> 当两个开关都断开时，你们都得 $\mathfrak B$ ；<br> 当两个开关一开一断时，断开的得 $\mathfrak D$ ，闭合的得 $\mathfrak A$ 。<br> 十分简单。</p>
 <p> 你会怎么选呢？</p>
 <p> 首先我们列一个表格，表示出所有结果：</p>
 <p> <img src="https://i.loli.net/2021/09/22/PugFZ2BDdAqo5zw.png" alt="博弈1.png"></p>
 <p> 现在你会做出什么选择呢？</p>
 <p> 你犹豫了一下，然后闭合了开关。<br> 毕竟这样你可以<del>迫害李zen</del>得到更高的评级。<br> 但是你的内心深处还是有一个声音：<br> “断开开关吧，毕竟李zen之前被迫害太多次了，他会<del>开始反围剿</del>伤心的”<br> 驱使着你断开开关。<br> 是不是？</p>
 <p> 你仍然在犹豫。</p>
-<p> 那么，如果现在我们规定，本次游戏结果计入今年的期末考试，只有拿到C级才能及格，而你又不想挂科，怎么样？</p>
+<p> 那么，如果现在我们规定，本次游戏结果计入今年的期末考试，只有拿到 $\mathfrak C$ 级才能及格，而你又不想挂科，怎么样？</p>
 <p> 为了更直观一点，我们用 $[-1,2]$ 范围内的整数来代替评级，是不是会更好一些？</p>
 <p> <img src="https://i.loli.net/2021/09/22/OSmtUF89Hs5covl.png" alt="博弈2.png"></p>
-<p> 这时候，你就可以进行一下比较：<br> 如果你闭合开关，那么无论李zen干什么，你都可以拿到更高的分数<del>（除非他直接来找你）</del> ：<br> $0&gt;-1,2&gt;1$<br> 此时，如果有两个策略α与β，无论他人选择什么，我们选α得到的结果都严格优于选β，那我们就称α相对于β是一个严格优势策略(Strictly dominant strategy)。<br> 比如这道题里的“闭合开关”就是个相对于“断开开关”的严格优势策略。</p>
+<p> 这时候，你就可以进行一下比较：<br> 如果你闭合开关，那么无论李zen干什么，你都可以拿到更高的分数<del>（除非他直接来找你）</del> ：<br> $0&gt;-1,2&gt;1$<br> 此时，如果有两个策略 $α$ 与 $β$ ，无论他人选择什么，我们选 $α$ 得到的结果都严格优于选 $β$ ，那我们就称 $α$ 相对于 $β$ 是一个 <strong>严格优势策略(Strictly dominant strategy)</strong> 。<br> 比如这道题里的“闭合开关”就是个相对于“断开开关”的严格优势策略。</p>
 <p> 假如你选择了断开开关，而李zen选择闭合开关，你挂科了。<br> 这时候你就会得到一条重要的结论：</p>
-<h3 id="结论-1"><a href="#结论-1" class="headerlink" title="结论 1"></a>结论 1</h3><p> <strong>永远，永远不要选择劣势策略。</strong><br> 这里的“严格劣势策略(Strictly dominated strategy)”是相对于“严格优势策略”而说的，指有一个策略，不管别人选择什么，你选它的结果都严格劣于选其他的策略。</p>
+<h3 id="结论-1"><a href="#结论-1" class="headerlink" title="结论 1"></a>结论 1</h3><p> <strong>永远，永远不要选择劣势策略。</strong><br> 这里的 <strong>“严格劣势策略(Strictly dominated strategy)”</strong> 是相对于 <strong>“严格优势策略”</strong> 而说的，指有一个策略，不管别人选择什么，你选它的结果都严格劣于选其他的策略。</p>
 <p> 懂的都懂。</p>
 <hr>
 <p> 所以说，你们两个人都选择断开开关，都得B，不是很好的吗？</p>
@@ -319,7 +352,7 @@
 <h2 id="更深的层次"><a href="#更深的层次" class="headerlink" title="更深的层次"></a>更深的层次</h2><p> 我们刚才通过举例子知道了什么是博弈，但我们真的知道什么是博弈吗？</p>
 <h3 id="博弈的组成"><a href="#博弈的组成" class="headerlink" title="博弈的组成"></a>博弈的组成</h3><p> 一个博弈由三部分组成：</p>
 <h4 id="1-参与人-Players"><a href="#1-参与人-Players" class="headerlink" title="1. 参与人(Players)"></a>1. 参与人(Players)</h4><p> 在这里，我们使用小写字母 $i$ , $j$ 等来代表参与人。</p>
-<h4 id="2-策略-Strategy"><a href="#2-策略-Strategy" class="headerlink" title="2. 策略(Strategy)"></a>2. 策略(Strategy)</h4><p> 在这里，我们使用带有下标的小写字母 $s_i$ 来代表参与人 $i$ 的某一个策略。<br> 我们使用带有下标的大写字母 $S_i$ 来代表参与人 $i$ 的所有可能的策略集合。<br> 我们使用小写字母 $s_{-i}$ 来表示除参与人 $i$ 之外的所有参与人的策略。（这里我不确定是 $s-i$ 还是 $s_{-i}$ ，因为视频上看不清）</p>
+<h4 id="2-策略-Strategy"><a href="#2-策略-Strategy" class="headerlink" title="2. 策略(Strategy)"></a>2. 策略(Strategy)</h4><p> 在这里，我们使用带有下标的小写字母 $s_i$ 来代表参与人 $i$ 的某一个策略。<br> 我们使用带有下标的大写字母 $S_i$ 来代表参与人 $i$ 的所有可能的策略集合。<br> 我们使用小写字母 $s_{-i}$ 来表示除参与人 $i$ 之外的所有参与人的策略。</p>
 <h4 id="3-收益-Payoff"><a href="#3-收益-Payoff" class="headerlink" title="3. 收益(Payoff)"></a>3. 收益(Payoff)</h4><p> 在这里，我们使用带有下标的大写字母 $U_i (s)$ 来代表参与人 $i$ 在所有参与者使用的策略为 $s$ 时所能得到的收益。（这一段好长啊）</p>
 <p> 另外的，我们使用小写字母 $s$ 来表示一个博弈。</p>
 <p> 好了，现在让我们来使用我们刚刚学会的表示方法来表示我们之前学过的东西。</p>
@@ -352,9 +385,36 @@
 <p> AJ在统计完结果后让挑战对象互相看了对方的答案，但是你不知道李zen看了你的答案，同时李zen也不知道你看了他的答案。<br> 这时候，公共知识的构建就停止在了某一层。这时候，我们就称其为 <strong>相互知识(Mutual knowledge)</strong> 。</p>
 <p> 是不是很简单？</p>
 <h3 id="中位选民定理"><a href="#中位选民定理" class="headerlink" title="中位选民定理"></a>中位选民定理</h3><p> 班长轮换时间到！<br> 现在我们有两位班长候选人：bobo与武嘉。<br> 而班级内将会产生十个不同的小团体，每个团体投一票。他们只会投给自己理想中的班长——也就是与自己交集最多的人。<br> 小团体之间互无交集。<br> bobo和武嘉需要将自己定位到某一个小团体内，以计算选票。<br> 现在我们将这些小团体分别命名为 $α,β,γ,δ,ε,ζ,η,θ,ι,κ$ 。</p>
-<p> 假如bobo选了η，而武嘉选了γ，那么他们两个人分别得到 全班 $55%$ 与 $45%$ 的票数。bobo会赢。
- </p>
-
+<p> 假如bobo选了η，而武嘉选了γ，那么他们两个人分别得到 $5.5$ 票与 $4.5$ 票。bobo会赢。</p>
+<p> 现在我们来模拟一下所有可能的结果。</p>
+<p> <img src="https://i.loli.net/2021/09/24/7rGpuJPQ4eTLN6n.png" alt="博弈5.png"></p>
+<p> 很明显，策略 $α$ 劣势于策略 $β$ ；去除策略 $α$ 后，策略 $β$ 劣势于策略 $γ$ ；去除策略 $β$ 后，策略 $γ$ 劣势于策略 $δ$ ；去除策略 $γ$ 后，策略 $δ$ 劣势于策略 $ε$ 。<br> 同样的，策略 $κ$ 劣势于策略 $ι$ ；去除策略 $κ$ 后，策略 $ι$ 劣势于策略 $θ$ ；去除策略 $ι$ 后，策略 $θ$ 劣势于策略 $η$ ；去除策略 $θ$ 后，策略 $η$ 劣势于策略 $ζ$ 。<br> 而策略 $ε$ 与策略 $ζ$ 没有优劣关系。<br> 所以说，最后bobo和武嘉在进行玩迭代剔除劣势策略后，只能选择融入 $ε$ 和 $ζ$ 两个小团体之一了。</p>
+<p> 这就是著名的 <strong>中位选民定理(Median Voter Theorem)</strong> 了。</p>
+<h3 id="最佳对策与期望收益"><a href="#最佳对策与期望收益" class="headerlink" title="最佳对策与期望收益"></a>最佳对策与期望收益</h3><p> 现在让我们玩一个随机的游戏。<br> 题面如下：</p>
+<p> <img src="https://i.loli.net/2021/09/24/ftmEhcYzuSdZkyI.png" alt="博弈6.png"></p>
+<p> 现在我们可以看到，没有明显的优势策略或劣势策略。</p>
+<p> 那我们该怎么办呢？<br> 首先，我们可以看到，当李zen选择←时，选↑是我们的最佳对策；<br> 当李zen选择→时，选↓是我们的最佳对策。</p>
+<p> 但是你并不知道zen会选择什么。</p>
+<p> 你开始用AJ教你的数学知识来对每一个选项的期望收益进行一个模拟。<br> 假设李zen选择←和→的几率是相等的，那么我们的期望收益如下：<br> $U_{top} \  vs \  (\frac{1}{2} , \frac{1}{2} ) = 5 \times \frac{1}{2} + 0 \times \frac{1}{2} = 2 \frac{1}{2} $<br> $U_{middle} \  vs \  (\frac{1}{2} , \frac{1}{2} ) = 1 \times \frac{1}{2} + 4 \times \frac{1}{2} = 2 \frac{1}{2} $<br> $U_{down} \  vs \  (\frac{1}{2} , \frac{1}{2} ) = 4 \times \frac{1}{2} + 2 \times \frac{1}{2} = 3 $<br> 此时我们可以看到，选择↓是我们的最佳对策（也是最安全的对策），因为 $2 \frac{1}{2} &lt; 3 $ 。</p>
+<p> 但是如果你知道了李zen选择←或→的概率呢？</p>
+<p> 上图。</p>
+<p> <img src="https://i.loli.net/2021/09/24/mroUEi69tjgV1Cu.png" alt="博弈7.png"></p>
+<p> 图中的横轴代表李zen选←的概率，同时选→的概率是（1-选←的概率）。<br> 纵轴代表不同选择的期望收益。</p>
+<p> 所以，我们可以看到，在李zen选择某一策略的概率不同时，我们的最佳对策是不一样的。</p>
+<p> 在这里，我们可以这样定义 <strong>最佳对策(Best Responce)</strong> :<br> 当<br> $$ U_i ( \hat{s_i} ,s_{-i} ) \geq U_i ( s_i’ ,s_{-i} ) \quad (s_i’ \in S_i ) $$<br> 或<br> $$ U_i ( \hat{s_i} ,s_{-i} ) = max( U_i ( S_i , s_{-i})) $$<br> 或<br> $$ EU_i ( \hat{s_i} ,p ) \geq max( EU_i ( s_i’ , p)) \quad (s_i’ \in S_i ) $$<br> 时，我们称 $ \hat{s_i} $ 是策略 $s_{-i} $ 的最佳对策。<br> 其中， $EU_i ( s_i , p ) $ 指的是策略 $s_i$ 在参与人 $i$ 持信念 $p$ 时的期望收益。</p>
+<h3 id="纳什均衡"><a href="#纳什均衡" class="headerlink" title="纳什均衡"></a>纳什均衡</h3><p> 假设你需要和李zen一起完成一个项目。你将会付出 $s_y$ 个小时的时间，而zen将会付出 $s_z$ 个小时，其中 $s_y , s_z \in [0,10] $ 。<br> 你们的收益为：</p>
+<p> $$ U_y = 2 ( s_y + s_z + b s_y s_z ) - s_y^2 $$<br> $$ U_z = 2 ( s_y + s_z + b s_y s_z ) - s_z^2 $$</p>
+<p> 此时让我们来算一下我们怎么最大化我们的收益。</p>
+<p> 首先求一下导，把 $s_z$ 当做常数：</p>
+<p> $$ U_y’ = 2 ( 1 + b s_z ) - 2 s_y $$<br> $$ U_y’’ = -2 &lt; 0 $$</p>
+<p> 此时令 $U_y’ = 0 $ ，可以求出最佳对策：</p>
+<p> $$ 2 ( 1 + b s_z ) - 2 s_y = 0 $$<br> $$ 1 + b s_z = s_y $$<br> $$ s_y = \frac{1}{1-b} $$<br> 此时画一下图：</p>
+<p> <img src="https://i.loli.net/2021/09/25/mwYX56SC4WaQtcT.png" alt="博弈8.png"></p>
+<p> 此时我们可以看到，两个人的最佳对策函数交于了一点。<br> 在实际情况中，因为你们两个都想偷懒，所以你们会不断剔除掉双方付出过多的策略，最终直到选择那个交点。<br> 这个就叫做 <strong>纳什均衡(Nash Equilibrium)</strong> 。<br> 其定义是：<br> 对于一个已选对策的集合$ \lbrace s_1^* , s_2^* , s_3^* , \dots , s_m^* \rbrace $ ，其纳什均衡是满足下列条件的策略集合：<br> 对于 $ \forall $ 参与人 $i$ 来说，其策略 $ s_i^* $ 是 $ s_{-i}^* $ 的最佳对策。</p>
+<p> 要实现纳什均衡，我们需要几个动机。</p>
+<h4 id="动机-1"><a href="#动机-1" class="headerlink" title="动机 1"></a>动机 1</h4><p> <strong>人们永不反悔。</strong><br> 或者说，在所有人都已经选定好每个人的策略了之后，改变自己的策略并不会有额外收益。</p>
+<h4 id="动机-2"><a href="#动机-2" class="headerlink" title="动机 2"></a>动机 2</h4><p> <strong>纳什均衡可以被看做一种自我实施的信念。</strong></p>
+<h4 id="动机-3"><a href="#动机-3" class="headerlink" title="动机 3"></a>动机 3</h4>
     </div>
 
     
@@ -368,10 +428,6 @@
     赞赏
   </button>
   <div class="post-reward">
-      <div>
-        <img src="/images/aifadian.jpg" alt="南陽劉子驥 aka KaiserWilheim 爱发电">
-        <span>爱发电</span>
-      </div>
 
   </div>
 </div>
@@ -430,6 +486,8 @@
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
 
 
 

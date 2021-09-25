@@ -20,12 +20,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="质数 。 一类很奇异的数字。 质数的定义是：  “在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”   于是我们就可以想到一个简单的算法来求n是不是质数： 简单的算法 12345678for(int i&#x3D;2;i&lt;&#x3D;sqrt(n);i++)&amp;#123;if(n%i&#x3D;&#x3D;0)&amp;#123;	cout&lt;&lt;&quot;いいえ&quot;&lt;&lt;endl;	break">
+<meta name="description" content="质数 。 一类很奇异的数字。 质数的定义是：  “在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”   于是我们就可以想到一个简单的算法来求n是不是质数： 简单的算法 12345678for(int i&#x3D;2;i&lt;&#x3D;sqrt(n);i++)&amp;#123;if(n%i&#x3D;&#x3D;0)&amp;#123;	cout&lt;&lt;&quot;いいえ&quot;&lt;&lt;endl;	brea">
 <meta property="og:type" content="article">
 <meta property="og:title" content="质数筛法学习笔记">
 <meta property="og:url" content="https://kaiserwilheim.github.io/prime_sieves/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="质数 。 一类很奇异的数字。 质数的定义是：  “在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”   于是我们就可以想到一个简单的算法来求n是不是质数： 简单的算法 12345678for(int i&#x3D;2;i&lt;&#x3D;sqrt(n);i++)&amp;#123;if(n%i&#x3D;&#x3D;0)&amp;#123;	cout&lt;&lt;&quot;いいえ&quot;&lt;&lt;endl;	break">
+<meta property="og:description" content="质数 。 一类很奇异的数字。 质数的定义是：  “在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”   于是我们就可以想到一个简单的算法来求n是不是质数： 简单的算法 12345678for(int i&#x3D;2;i&lt;&#x3D;sqrt(n);i++)&amp;#123;if(n%i&#x3D;&#x3D;0)&amp;#123;	cout&lt;&lt;&quot;いいえ&quot;&lt;&lt;endl;	brea">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/09/16/9FUrb7uVhWJ3da2.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/16/ZrR3XAqTa46xGHI.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/09/16/Vw8liybKC4zX6NO.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/16/fiZtvQesKYVyunW.png">
 <meta property="article:published_time" content="2021-09-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-21T11:46:38.974Z">
+<meta property="article:modified_time" content="2021-09-25T12:38:37.108Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="学习笔记">
@@ -86,11 +86,12 @@
       <h1 class="site-title">南陽劉子驥的博客</h1>
       <i class="logo-line"></i>
     </a>
-      <p class="site-subtitle" itemprop="description">15 yrs old,OIer,集训中</p>
+      <p class="site-subtitle" itemprop="description">XCT 来了，大佬给点装备吧</p>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -104,11 +105,37 @@
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>friends</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
         
@@ -170,7 +197,7 @@
         <a href="https://github.com/KaiserWilheim" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KaiserWilheim" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://space.bilibili.com/346304235" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;346304235" rel="noopener" target="_blank"><i class="fa fa-television fa-fw"></i>Bilibili</a>
+        <a href="https://space.bilibili.com/346304235" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;346304235" rel="noopener" target="_blank"><i class="fab fa-television fa-fw"></i>Bilibili</a>
       </span>
   </div>
 
@@ -255,7 +282,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-09-21 19:46:38" itemprop="dateModified" datetime="2021-09-21T19:46:38+08:00">2021-09-21</time>
+        <time title="修改时间：2021-09-25 20:38:37" itemprop="dateModified" datetime="2021-09-25T20:38:37+08:00">2021-09-25</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -277,7 +304,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p> <strong>质数</strong> 。<br> 一类很奇异的数字。<br> 质数的定义是：<br>  <strong><strong>“在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”</strong></strong> </p>
+        <span id="more"></span>
+<p> <strong>质数</strong> 。<br> 一类很奇异的数字。<br> 质数的定义是：<br>  <strong><strong>“在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”</strong></strong> </p>
 <p> 于是我们就可以想到一个简单的算法来求n是不是质数：</p>
 <h2 id="简单的算法"><a href="#简单的算法" class="headerlink" title="简单的算法"></a>简单的算法</h2> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="built_in">sqrt</span>(n);i++)&#123;</span><br><span class="line"><span class="keyword">if</span>(n%i==<span class="number">0</span>)&#123;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;いいえ&quot;</span>&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;<span class="string">&quot;はい&quot;</span>&lt;&lt;endl;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 <p> 这个算法的时间复杂度是 $O(\sqrt[]{n})$ 。</p>
@@ -344,7 +372,7 @@
 <p>如果 $p$ 是奇素数，则 $x^2\equiv 1\pmod{p}$ 的解为 $x\equiv 1$ 或 $x\equiv p-1\pmod{p}$ 。<br> 这是很容易证明的：</p>
 </blockquote>
 <blockquote>
-<p>\begin{align}<br> x^2\equiv 1\pmod{p} \<br> x^2-1\equiv 0\pmod{p} \<br> (x-1)(x+1)\equiv 0\pmod{p} \<br> \end{align}</p>
+<p>$$ x^2 \equiv 1 \pmod{p} $$<br> $$ x^2-1 \equiv 0 \pmod{p} $$<br> $$ (x-1)(x+1) \equiv 0 \pmod{p} $$</p>
 </blockquote>
 <blockquote>
 <p>又∵ $p$ 为奇素数，其因子只有 $1$ 与 $p$ 两个。<br> ∴只有两解 $x\equiv 1$ 与 $x\equiv p-1 \pmod{p}$ 。</p>
@@ -365,10 +393,6 @@
     赞赏
   </button>
   <div class="post-reward">
-      <div>
-        <img src="/images/aifadian.jpg" alt="南陽劉子驥 aka KaiserWilheim 爱发电">
-        <span>爱发电</span>
-      </div>
 
   </div>
 </div>
@@ -428,6 +452,8 @@
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
 
 
 
