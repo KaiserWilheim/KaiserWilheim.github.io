@@ -20,12 +20,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="质数 。 一类很奇异的数字。 质数的定义是：  “在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”   于是我们就可以想到一个简单的算法来求n是不是质数： 简单的算法 12345678for(int i&#x3D;2;i&lt;&#x3D;sqrt(n);i++)&amp;#123;if(n%i&#x3D;&#x3D;0)&amp;#123;	cout&lt;&lt;&quot;いいえ&quot;&lt;&lt;endl;	brea">
+<meta name="description" content="质数 。 一类很奇异的数字。 质数的定义是：  “在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”  于是我们就可以想到一个简单的算法来求 $\mathfrak n$ 是不是质数： 简单的算法 12345678for(int i&#x3D;2;i&lt;&#x3D;sqrt(n);i++)&amp;#123;if(n%i&#x3D;&#x3D;0)&amp;#123;	cout&lt;&lt;&quot;いいえ&quot;&lt;&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="质数筛法学习笔记">
 <meta property="og:url" content="https://kaiserwilheim.github.io/prime_sieves/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="质数 。 一类很奇异的数字。 质数的定义是：  “在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”   于是我们就可以想到一个简单的算法来求n是不是质数： 简单的算法 12345678for(int i&#x3D;2;i&lt;&#x3D;sqrt(n);i++)&amp;#123;if(n%i&#x3D;&#x3D;0)&amp;#123;	cout&lt;&lt;&quot;いいえ&quot;&lt;&lt;endl;	brea">
+<meta property="og:description" content="质数 。 一类很奇异的数字。 质数的定义是：  “在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”  于是我们就可以想到一个简单的算法来求 $\mathfrak n$ 是不是质数： 简单的算法 12345678for(int i&#x3D;2;i&lt;&#x3D;sqrt(n);i++)&amp;#123;if(n%i&#x3D;&#x3D;0)&amp;#123;	cout&lt;&lt;&quot;いいえ&quot;&lt;&amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/09/16/9FUrb7uVhWJ3da2.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/16/ZrR3XAqTa46xGHI.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/09/16/Vw8liybKC4zX6NO.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/16/fiZtvQesKYVyunW.png">
 <meta property="article:published_time" content="2021-09-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-25T12:38:37.108Z">
+<meta property="article:modified_time" content="2021-09-25T15:23:37.240Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="学习笔记">
@@ -91,7 +91,6 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -105,37 +104,11 @@
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>friends</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup"><div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="搜索..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close" role="button">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
 
 </div>
         
@@ -282,7 +255,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-09-25 20:38:37" itemprop="dateModified" datetime="2021-09-25T20:38:37+08:00">2021-09-25</time>
+        <time title="修改时间：2021-09-25 23:23:37" itemprop="dateModified" datetime="2021-09-25T23:23:37+08:00">2021-09-25</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -305,11 +278,11 @@
     
     <div class="post-body" itemprop="articleBody">
         <span id="more"></span>
-<p> <strong>质数</strong> 。<br> 一类很奇异的数字。<br> 质数的定义是：<br>  <strong><strong>“在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”</strong></strong> </p>
-<p> 于是我们就可以想到一个简单的算法来求n是不是质数：</p>
+<p> <strong>质数</strong> 。<br> 一类很奇异的数字。<br> 质数的定义是：<br>  <strong>“在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数。”</strong></p>
+<p> 于是我们就可以想到一个简单的算法来求 $\mathfrak n$ 是不是质数：</p>
 <h2 id="简单的算法"><a href="#简单的算法" class="headerlink" title="简单的算法"></a>简单的算法</h2> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="built_in">sqrt</span>(n);i++)&#123;</span><br><span class="line"><span class="keyword">if</span>(n%i==<span class="number">0</span>)&#123;</span><br><span class="line">	cout&lt;&lt;<span class="string">&quot;いいえ&quot;</span>&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;<span class="string">&quot;はい&quot;</span>&lt;&lt;endl;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 <p> 这个算法的时间复杂度是 $O(\sqrt[]{n})$ 。</p>
-<p> 代码好写归好写，但是时间复杂度真的是太高了，有时候并不能满足我们的需要；更何况我们经常需要的操作是找出n以内的所有质数，而不是简单地判断一个数是否是质数。<br> 从$[1,n]$ 范围内的所有整数里挑质数其实很简单。<br> 很多人大概接触过这样一种方法：</p>
+<p> 代码好写归好写，但是时间复杂度真的是太高了，有时候并不能满足我们的需要；更何况我们经常需要的操作是找出 $\mathfrak n$以内的所有质数，而不是简单地判断一个数是否是质数。<br> 从$[1,n]$ 范围内的所有整数里挑质数其实很简单。<br> 很多人大概接触过这样一种方法：</p>
 <ul>
 <li>首先列出所有数字并按照从大到小的顺序排好：</li>
 </ul>
@@ -357,27 +330,27 @@
 <p> 附上代码：</p>
  <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n;</span><br><span class="line">cin&gt;&gt;n;</span><br><span class="line"><span class="keyword">int</span> prime[n];</span><br><span class="line"><span class="keyword">bool</span> visit[n];</span><br><span class="line"><span class="built_in">memset</span>(prime,<span class="number">0</span>,n);</span><br><span class="line"><span class="built_in">memset</span>(visit,<span class="literal">false</span>,n);</span><br><span class="line">prime[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">if</span>(!visit[i])&#123;</span><br><span class="line">		prime[prime[<span class="number">0</span>]+<span class="number">1</span>]=i;</span><br><span class="line">		prime[<span class="number">0</span>]++;<span class="comment">//记录质数 </span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> j=<span class="number">1</span>;j&lt;=prime[<span class="number">0</span>]&amp;&amp;i*prime[j]&lt;=n;j++)&#123;</span><br><span class="line">		visit[i*prime[j]]=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)&#123;</span><br><span class="line">			<span class="keyword">break</span>;<span class="comment">//判断是否是最小质因子 </span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">1</span>;i&lt;=prime[<span class="number">0</span>];i++)&#123;</span><br><span class="line">	<span class="keyword">if</span>(n%prime[i]==<span class="number">0</span>)&#123;</span><br><span class="line">		visit[n]=<span class="literal">true</span>;</span><br><span class="line">	&#125;<span class="comment">//最后一个一般筛不出来，特判一下 </span></span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">	<span class="keyword">if</span>(!visit[i])&#123;</span><br><span class="line">		cout&lt;&lt;i&lt;&lt;endl;<span class="comment">//输出 </span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> <strong>欧拉筛</strong> 的时间复杂度是 $O(n)$ （所以这就是为什么它也叫 <strong>线性筛</strong> ），在数据量很大的时候，速度会比埃氏筛快很多。</p>
-<p> 当 $n$ 很大的时候，找出n以内的所有质数已经不太现实了。但是，判断n是否为质数仍然是一种 <del>（看起来）</del> 可行的操作。<br> 这就用到了：</p>
+<p> 当 $\mathfrak n$ 很大的时候，找出n以内的所有质数已经不太现实了。但是，判断 $\mathfrak n$ 是否为质数仍然是一种 <del>（看起来）</del> 可行的操作。<br> 这就用到了：</p>
 <h2 id="Miller-Rabin-定理"><a href="#Miller-Rabin-定理" class="headerlink" title="$Miller-Rabin$ 定理"></a>$Miller-Rabin$ 定理</h2><p> $Miller-Rabin$ 定理涉及了两个定理：</p>
 <h3 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h3><p> 费马小定理是这样的：</p>
 <blockquote>
-<p>对于质数 $p$ 和任意整数 $a$ ，有 $a^p\equiv a\pmod{p}$。</p>
+<p>对于质数 $\mathfrak p$ 和任意整数 $\mathfrak a$ ，有 $a^p\equiv a\pmod{p}$。</p>
 </blockquote>
 <p> 这里我们需要用的是它的逆定理，即</p>
 <blockquote>
-<p>若满足 $a^p\equiv a\pmod{p}$ ， $p$ 为质数。<br> 此时我们两边同时约去一个 $a$ ，得 $a^{p-1} \equiv 1\pmod{p}$。</p>
+<p>若满足 $a^p\equiv a\pmod{p}$ ， $p$ 为质数。<br> 此时我们两边同时约去一个 $\mathfrak a$ ，得 $a^{p-1} \equiv 1\pmod{p}$。</p>
 </blockquote>
-<p> 很遗憾，费马小定理的逆定理不是个真命题，但满足条件的 $p$ 还是有很大概率是质数的。<br> 但是如果我们选取不同的 $a$ 进行多次测试，那么我们几乎就可以断定这个数是一个质数了。</p>
+<p> 很遗憾，费马小定理的逆定理不是个真命题，但满足条件的 $\mathfrak p$ 还是有很大概率是质数的。<br> 但是如果我们选取不同的 $\mathfrak a$ 进行多次测试，那么我们几乎就可以断定这个数是一个质数了。</p>
 <h3 id="二次探测定理"><a href="#二次探测定理" class="headerlink" title="二次探测定理"></a>二次探测定理</h3><blockquote>
-<p>如果 $p$ 是奇素数，则 $x^2\equiv 1\pmod{p}$ 的解为 $x\equiv 1$ 或 $x\equiv p-1\pmod{p}$ 。<br> 这是很容易证明的：</p>
+<p>如果 $\mathfrak p$ 是奇素数，则 $x^2\equiv 1\pmod{p}$ 的解为 $x\equiv 1$ 或 $x\equiv p-1\pmod{p}$ 。<br> 这是很容易证明的：</p>
 </blockquote>
 <blockquote>
 <p>$$ x^2 \equiv 1 \pmod{p} $$<br> $$ x^2-1 \equiv 0 \pmod{p} $$<br> $$ (x-1)(x+1) \equiv 0 \pmod{p} $$</p>
 </blockquote>
 <blockquote>
-<p>又∵ $p$ 为奇素数，其因子只有 $1$ 与 $p$ 两个。<br> ∴只有两解 $x\equiv 1$ 与 $x\equiv p-1 \pmod{p}$ 。</p>
+<p>又∵ $\mathfrak p$ 为奇素数，其因子只有 $1$ 与 $\mathfrak p$ 两个。<br> ∴只有两解 $x\equiv 1$ 与 $x\equiv p-1 \pmod{p}$ 。</p>
 </blockquote>
-<p> 如果 $a^{n−1}\equiv 1\pmod{n}$ 成立，$Miller−Rabin$ 算法不是立即找另一个 $a$ 进行测试，而是看 $n−1$ 是不是偶数。如果 $n−1$ 是偶数，另 $u=\frac{n-1}{2}$ ，并检查是否满足二次探测定理即 $a^u\equiv 1$ 或 $a^u\equiv n−1 \pmod{n}$ 。<br> 将这两条定理合起来，也就是最常见的 Miller−Rabin 测试 。<br> 单次时间复杂度是 $O(\log n)$ ，总复杂度就是 $O(times\times \log n)$ 了。
+<p> 如果 $a^{n−1}\equiv 1\pmod{n}$ 成立，$Miller−Rabin$ 算法不是立即找另一个 $\mathfrak a$ 进行测试，而是看 $n−1$ 是不是偶数。如果 $n−1$ 是偶数，另 $u=\frac{n-1}{2}$ ，并检查是否满足二次探测定理即 $a^u\equiv 1$ 或 $a^u\equiv n−1 \pmod{n}$ 。<br> 将这两条定理合起来，也就是最常见的 Miller−Rabin 测试 。<br> 单次时间复杂度是 $O(\log n)$ ，总复杂度就是 $O(times\times \log n)$ 了。
  </p>
 
     </div>
@@ -452,8 +425,6 @@
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
-<script src="/js/third-party/search/local-search.js"></script>
 
 
 
