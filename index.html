@@ -130,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -357,6 +357,86 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/%E8%82%9D%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南陽劉子驥的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/%E8%82%9D%E9%A2%98/" class="post-title-link" itemprop="url">test</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-10-01 00:00:00" itemprop="dateCreated datePublished" datetime="2022-10-01T00:00:00+08:00">2022-10-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-10-03 16:44:45" itemprop="dateModified" datetime="2021-10-03T16:44:45+08:00">2021-10-03</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="题目背景"><a href="#题目背景" class="headerlink" title="题目背景"></a>题目背景</h2><p><del>蒟蒻第一次出题awa</del><br>fxx是一名普通的高一化竞生。最近他学到了有机物的系统命名法。看着旁边的lzj娴熟的写下有机物的中文名称和英文名称，而他却什么也写不出来，fxx感觉十分沮丧。<br>终于有一天，fxx遇到了一道很难的题目。他去请教lzj，但lzj也看不太出来<br>就在fxx失望地准备对这道题进行攻坚的时候，同时也是一枚OIer的lzj拿出了电脑，打开了某个神秘程序，并输入了什么东西。<br>一阵风扇的轰鸣声过后，程序输出了结果——与答案丝毫不差。<br>fxx认为自己的智商收到了打击。现在他来请教同为OIer的你，想让你写出一个一样的程序，来帮他学习有机物命名。</p>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>由于fxx目前学到的有机化学知识有限，他是不会接触到桥环和螺环烷烃的。<br>每一个测试点只包含<strong>一个</strong>有机化合物。<br>对于每一个给定的有机化合物，我们先会给出它包含的<strong>碳原子</strong>个数 $n$ ，和它所包含的化学键的个数 $m$ 。<br>之后我们将会给出每一个化学键的参数：它的<strong>起始点</strong>，它的<strong>终止点</strong>，它是<strong>单键、双键还是叁键</strong>。<br>如果某个键连接的是<strong>碳原子、氮原子</strong>或<strong>氧原子</strong>，我们将会在<strong>给出元素符号之后</strong>给出它的<strong>编号</strong>。<br>如果某个键连接的是某个<strong>基团</strong>（如硝基），我们将会给出这个基团的<strong>简化形式</strong>（如硝基会被写成NO2）<br>保证不会出现非碳、氮、氧元素之间的连键。<br>题目中只会出现指定原子。<br>一些细节的规则以及题目中所有可能包含的基团等详情请见提示说明。<br>请你输出这个有机化合物的分子简式，以及这个有机物的英文系统命名。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行两个整数 $n$ ， $m$ 。<br>后面的 $m$ 行，每行包含两个字符串 $s_{i,1},s_{i,2}$ 与一个整数 $w$ 。字符串 $s_{i1}$ 表示它的起始点，字符串 $s_{i2}$ 表示它的终止点，整数 $w$ 表示这个键是单键双键还是叁键。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>包含2行。<br>第一行为所给出的有机物的分子简式。<br>第二行为所给出的有机物的英文系统命名。</p>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><p>1.乙醇<br>2.草酸<br>3.<img src="https://i.loli.net/2021/10/03/cMUGxgPD6H5ZAV4.gif" alt="题目2.gif"></p>
+<h2 id="提示说明"><a href="#提示说明" class="headerlink" title="提示说明"></a>提示说明</h2><h3 id="样例解释"><a href="#样例解释" class="headerlink" title="样例解释"></a>样例解释</h3><p>1.数据包含1个C-C单键与1个C-O单键。结构式为C-C-O，补全氢之后为CH3-CH2-OH，为乙醇。<br>2.数据包含1个C-C单键，2个C=O双键和2个C-O单键。为草酸。此处使用IUPAC命名法，命名为乙二酸。<br>3.数据包含18个C-C单键。具体命名法如下：<br><img src="https://i.loli.net/2021/10/03/cMUGxgPD6H5ZAV4.gif" alt="题目2.gif"></p>
+<h3 id="数据范围"><a href="#数据范围" class="headerlink" title="数据范围"></a>数据范围</h3><p>$0&lt;n&lt;100 , 0&lt;m&lt;4n$</p>
+<h3 id="题目中可能包含的原子"><a href="#题目中可能包含的原子" class="headerlink" title="题目中可能包含的原子"></a>题目中可能包含的原子</h3><p>C，H，O，N，Si，P，S，F，Cl，Br，I<br>注意：上面的序列代表了输出分子简式时的顺序。（我知道不太符合常理，但是好判啊awa）</p>
+<h3 id="题目中可能包含的基团"><a href="#题目中可能包含的基团" class="headerlink" title="题目中可能包含的基团"></a>题目中可能包含的基团</h3><p><img src="https://i.loli.net/2021/10/03/H6xevShEqIyYMmD.png" alt="题目1.png"><br>（不包括“-”或“=”！）</p>
+<h3 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h3><p>1.记得判断苯环！<br>2.记得判断异构！<br>3.本题的判定结果按照英文的系统命名法。请记住：基团顺序是字典序。<br>4.本题的结果使用IUPAC命名法，按照《基础有机化学》上面的规则，以KingDraw的转换结果为参考。比如异丙基必须写成(propan-2-yl)。<br>5.苯环上如有基团，请勿使用临间对或连偏均来命名。比如均三甲苯必须写成1,3,5-trimethylbenzene。<br>具体的标准可以参考<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IUPAC%E5%91%BD%E5%90%8D%E6%B3%95/1548739?fr=aladdin">这里</a>。<br>题目如有不妥，请私信我进行改正。<br>感谢。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/learning-notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -388,7 +468,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-02 22:08:46" itemprop="dateModified" datetime="2021-10-02T22:08:46+08:00">2021-10-02</time>
+        <time title="修改时间：2021-10-04 15:05:51" itemprop="dateModified" datetime="2021-10-04T15:05:51+08:00">2021-10-04</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -475,7 +555,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-02 21:52:05" itemprop="dateModified" datetime="2021-10-02T21:52:05+08:00">2021-10-02</time>
+        <time title="修改时间：2021-10-04 21:41:32" itemprop="dateModified" datetime="2021-10-04T21:41:32+08:00">2021-10-04</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -937,93 +1017,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/encoding_decoding/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/prime_sieves/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
-      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="南陽劉子驥的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/prime_sieves/" class="post-title-link" itemprop="url">质数筛法学习笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-09-16 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-16T00:00:00+08:00">2021-09-16</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-01 19:19:54" itemprop="dateModified" datetime="2021-10-01T19:19:54+08:00">2021-10-01</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>status : need to complete</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/prime_sieves/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
