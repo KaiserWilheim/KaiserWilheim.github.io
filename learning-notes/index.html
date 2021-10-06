@@ -28,7 +28,7 @@
 <meta property="og:description" content="status : temporary">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-04T07:05:51.137Z">
+<meta property="article:modified_time" content="2021-10-06T03:20:53.470Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -90,7 +90,9 @@
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li>
-        <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>friends</a></li>
+        <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+        <li class="menu-item menu-item-english"><a href="https://www.kaiserwilheim.en.github.io/" rel="noopener" target="_blank"><i class="fa fa-language fa-fw"></i>English</a></li>
+        <li class="menu-item menu-item-繁體中文"><a href="https://www.kaiserwilheim.comp.github.io/" rel="noopener" target="_blank"><i class="fa fa-language fa-fw"></i>繁體中文</a></li>
   </ul>
 </nav>
 
@@ -121,7 +123,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83"><span class="nav-number">1.</span> <span class="nav-text">高斯消元</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">行列式</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%85%E5%A4%84%E7%90%86%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">待处理信息</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -242,7 +244,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-04 15:05:51" itemprop="dateModified" datetime="2021-10-04T15:05:51+08:00">2021-10-04</time>
+        <time title="修改时间：2021-10-06 11:20:53" itemprop="dateModified" datetime="2021-10-06T11:20:53+08:00">2021-10-06</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -267,25 +269,7 @@
         <p>status : temporary</p>
 <span id="more"></span>
 
-<p> 矩阵A可以看做一个二维数组</p>
-<p> $ A \ (n * m) $<br> $ B \ (m * k) $<br> $ A \times B \ (n* k) $</p>
-<p> $$ C [i][j] = \sum^{ \infty }_{k} A [i][k] \times \sum B [k][j] $$</p>
-<p> 满足结合律、分配率，但不满足交换律</p>
-<h4 id="高斯消元"><a href="#高斯消元" class="headerlink" title="高斯消元"></a>高斯消元</h4><p> 这是一个二元一次方程组<br> $$\left{<br> \begin{array}<br> x+5y=7 \\<br> 3x+y=3<br> \end{array}$$<br> 我们可以用矩阵来表示：<br> $$\begin{bmatrix}<br> 1 &amp; 5 \\<br> 3 &amp; 1<br> \end{bmatrix}<br> \begin{bmatrix}<br> x \\<br> y<br> \end{bmatrix}<br> =<br> \begin{bmatrix}<br> 7 \\<br> 3<br> \end{bmatrix}$$</p>
-<p> $$ \big\Downarrow $$</p>
-<p> $$\left[<br> \begin{array}{cc|c}<br> 1 &amp; 3 &amp; 7 \\<br> 5 &amp; 1 &amp; 3<br> \end{array}<br> \right]$$</p>
-<p> {x,y,z;<empty>,y,z;<empty>,<empty>,z}（下三角矩阵） </p>
-<h4 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h4><p> $ A_{(n,n)} $</p>
-<p> |A|=det(A)</p>
-<p> 可行的行列选择：每行每列只选一个<br> 任意两个元素的行向量与列向量不同</p>
-<p> $ |A| = \sum{} (-1)^{t(b)} \prod{}{} A_{(i,b_i)} $</p>
-<p> t☞逆序对数</p>
-<p> 单位矩阵：<br> 主对角线上为1，其余为0；</p>
-<p> 线性相关：<br> eg: {x+y=1;2x+2y=2}</p>
-<p> [A|I] → [I|A^{-1}]</p>
-<p> [f(i),f(i+1]\times [0,1;1,1]^n = [f(n+1),f(n+2)]</p>
-<p> $ A \times \vec{x} = \vec{y} $</p>
-<p> $(B \times A) \times \vec{x} = B \times \vec{y} $<br> B称为A的逆矩阵</p>
+
 <p>四边形不等式</p>
 <p>如满足单调性，可抹掉$O(n)$的时间复杂度。</p>
 <p>(2S,3R,5R,6E,8R,9S)-10-[(2R,3R,4R,5S,6R)-6-[(1S,2R,3S,4S,5R,11S)-12-[(1R,3S,5S,7R)-5-[(8S)-9-[(2R,3R,4R,5R,6S)-6-[(2S,3S,4E,6S,9R,10R)-10-[(2S,4R,5S,6R)-6-[(2R,3R)-4-[(2R,3S,4R,5R)-6-[(2S,3Z,5E,8R,9S,10R,12Z,17S,18R,19R,20R)-20-{[(2R,3R,4R,5S,6R)-6-[(1Z,3R,4R)-5-[(1S,3R,5S,6R)-6-{2-[(2R,3R,5S)-5-(aminomethyl)-3-hydroxyoxolan-2-yl]ethyl}-2,7-dioxabicyclo[3.2.1]octan-3-yl]-3,4-dihydroxypent-1-en-1-yl]-3,4,5-trihydroxyoxan-2-yl]methyl}-8,9,10,17,18,19-hexahydroxy-2-methyl-14-methylidenehenicosa-3,5,12-trien-1-yl]-3,4,5-trihydroxyoxan-2-yl]-2,3-dihydroxybutyl]-4,5-dihydroxyoxan-2-yl]-2,6,9,10-tetrahydroxy-3-methyldec-4-en-1-yl]-3,4,5,6-tetrahydroxyoxan-2-yl]-8-hydroxynonyl]-1,3-dimethyl-6,8-dioxabicyclo[3.2.1]octan-7-yl]-1,2,3,4,5-pentahydroxy-11-methyldodecyl]-3,4,5-trihydroxyoxan-2-yl]-2,5,8,9-tetrahydroxy-N-[(1E)-2-[(3-hydroxypropyl)carbamoyl]eth-1-en-1-yl]-3,7-dimethyldec-6-enamide<br>$$<br>\begin{align}<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>={} &amp;<br>\end{align}<br>$$</p>
@@ -299,6 +283,7 @@
 <p>2.2360679774997896964091736687313<br>2.6457513110645905905016157536393<br>5.9160797830996160425673282915616</p>
 <p>7,11,77</p>
 <p>2.6457513110645905905016157536393<br>3.3166247903553998491149327366707<br>8.7749643873921220604063883074163</p>
+<h1 id="待处理信息"><a href="#待处理信息" class="headerlink" title="待处理信息"></a>待处理信息</h1><p>数字满足结合律<br>方向要一致</p>
 
     </div>
 
