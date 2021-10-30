@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/09/26/wo6Lc3VPdbTRvsX.png">
 <meta property="og:image" content="https://i.loli.net/2021/09/26/NLsOb3oUgT26yM7.png">
 <meta property="article:published_time" content="2021-09-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-17T09:15:03.746Z">
+<meta property="article:modified_time" content="2021-10-30T01:51:04.007Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="博弈论">
@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -258,7 +258,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-17 17:15:03" itemprop="dateModified" datetime="2021-10-17T17:15:03+08:00">2021-10-17</time>
+        <time title="修改时间：2021-10-30 09:51:04" itemprop="dateModified" datetime="2021-10-30T09:51:04+08:00">2021-10-30</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -335,21 +335,21 @@
 <h4 id="3-收益-Payoff"><a href="#3-收益-Payoff" class="headerlink" title="3. 收益(Payoff)"></a>3. 收益(Payoff)</h4><p> 在这里，我们使用带有下标的大写字母 $U_i (s)$ 来代表参与人 $i$ 在所有参与者使用的策略为 $s$ 时所能得到的收益。（这一段好长啊）</p>
 <p> 另外的，我们使用小写字母 $s$ 来表示一个博弈。</p>
 <p> 好了，现在让我们来使用我们刚刚学会的表示方法来表示我们之前学过的东西。</p>
-<p> 那么，如果策略 $s_i$ 相对于策略 $s_i’$ 是一个严格优势策略的话，那么我们就可以写下<br> \begin{equation}<br> U_i (s_i , s_{-i}) &gt; U_i (s_i’ , s_{-i})<br> \end{equation}</p>
-<p> 类似的，如果策略 $s_i$ 相对于策略 $s_i’$ 是一个严格劣势策略的话，那么我们就可以写下<br> \begin{equation}<br> U_i (s_i , s_{-i}) &lt; U_i (s_i’ , s_{-i})<br> \end{equation}</p>
+<p> 那么，如果策略 $s_i$ 相对于策略 $s_i’$ 是一个严格优势策略的话，那么我们就可以写下<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) &gt; U_i (s_i’ , s_{-i})<br> \end{equation}<br>$$</p>
+<p> 类似的，如果策略 $s_i$ 相对于策略 $s_i’$ 是一个严格劣势策略的话，那么我们就可以写下<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) &lt; U_i (s_i’ , s_{-i})<br> \end{equation}<br>$$</p>
 <h3 id="弱优与弱劣"><a href="#弱优与弱劣" class="headerlink" title="弱优与弱劣"></a>弱优与弱劣</h3><p> 如果策略 $s_i$ 相对于策略 $s_i’$ 是一个严格优势策略，那么无论他人选择何种策略，那么我们选 $s_i$ 得到的结果都严格优于选 $s_i’$。</p>
 <p> 但有时候我们并不能总见到这样的策略。</p>
-<p> 那我们定义一个策略 $s_i$ 为相对于另一个策略 $s_i’$ 为 <strong>弱优策略(Weakly dominant strategy)</strong> ，此时只需要将大于号填上等于即可。<br> 就像下面这样：<br> \begin{equation}<br> U_i (s_i , s_{-i}) \leq U_i (s_i’ , s_{-i})<br> \end{equation}</p>
-<p> 类似的， <strong>弱劣策略(Weakly dominated strategy)</strong> 的定义如下：<br> \begin{equation}<br> U_i (s_i , s_{-i}) \geq U_i (s_i’ , s_{-i})<br> \end{equation}</p>
+<p> 那我们定义一个策略 $s_i$ 为相对于另一个策略 $s_i’$ 为 <strong>弱优策略(Weakly dominant strategy)</strong> ，此时只需要将大于号填上等于即可。<br> 就像下面这样：<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) \leq U_i (s_i’ , s_{-i})<br> \end{equation}<br>$$</p>
+<p> 类似的， <strong>弱劣策略(Weakly dominated strategy)</strong> 的定义如下：<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) \geq U_i (s_i’ , s_{-i})<br> \end{equation}<br>$$</p>
 <p> 所以说，对于刚才你和李zen做的游戏，我们可以用这些表示来替换之前的说法：</p>
 <p> （先放图）<br> <img src="https://i.loli.net/2021/09/22/OSmtUF89Hs5covl.png" alt="博弈2.png"></p>
 <p> 其中，<br> $S_{you} = \lbrace 1,0 \rbrace $<br> $S_{zen} = \lbrace 1,0 \rbrace $<br> $U_{you} (1,1) = 0 $<br> $U_{zen} (1,1) = 0 $<br> $U_{you} (1,0) = 2 $<br> $U_{zen} (1,0) = -1 $<br> $U_{you} (0,1) = -1 $<br> $U_{zen} (0,1) = 2 $<br> $U_{you} (0,0) = 1 $<br> $U_{zen} (0,0) = 1 $<br> $U_{zen} (1,s_{-zen}) &gt; U_{zen} (0,s_{-zen}) $<br> $U_{you} (1,s_{-you}) &gt; U_{you} (0,s_{-you}) $</p>
 <p> 现在你就可以理解刚才我们讲的符号是什么意思了。</p>
-<h3 id="迭代剔除劣势策略"><a href="#迭代剔除劣势策略" class="headerlink" title="迭代剔除劣势策略"></a>迭代剔除劣势策略</h3><p> 让我们来做一个新的游戏。<br> 你，李zen，鳖，tue，zhua，还有广大四班人民群众一起做一个游戏。每一个人都需要从范围为 $[1,100]$ 的整数里面选一个数。<br> AJ将会统计大家的结果，并进行总结。<br> 总结后取平均数的 $\frac{2}{3}$ 作为基准数（向上取整）。基准数减去（你的结果与基准数的差）再除以基准数，得到一个百分数。这个百分数再乘以120就是你本次期末的数学成绩。</p>
+<h3 id="迭代剔除劣势策略"><a href="#迭代剔除劣势策略" class="headerlink" title="迭代剔除劣势策略"></a>迭代剔除劣势策略</h3><p> 让我们来做一个新的游戏。<br> 你，李zen，鳖，tue，zhua，还有广大四班人民群众一起做一个游戏。每一个人都需要从范围为 $[1,100]$ 的整数里面选一个数。<br> AJ将会统计大家的结果，并进行总结。<br> 总结后取平均数的 $\dfrac{2}{3}$ 作为基准数（向上取整）。基准数减去（你的结果与基准数的差）再除以基准数，得到一个百分数。这个百分数再乘以120就是你本次期末的数学成绩。</p>
 <p> 同时，AJ指定你和李zen为挑战对象。这意味着你如果比不过他，你就得承包他明年的巧克力供应了。</p>
 <p> 所以，你会选择哪一个数呢？</p>
 <ul>
-<li>首先，你知道即使大家都选择100，基准数也是 $67\frac{1}{3}$ ，所以说选择67以上的数字是不明智的选择。<br>现在你把目光聚集到了 $[1,67]$ 范围内的整数上。</li>
+<li>首先，你知道即使大家都选择100，基准数也是 $67\dfrac{1}{3}$ ，所以说选择67以上的数字是不明智的选择。<br>现在你把目光聚集到了 $[1,67]$ 范围内的整数上。</li>
 <li>其次，即使大家都选择67，那么基准数也将会是 $44$ ，所以选择44以上的数字也是不太明智的选择。<br>现在你把目光聚集到了 $[1,44]$ 范围内的整数上。</li>
 <li>然后，即使大家都选择了44，那么基准数也将会是 $28$ ，所以选择28以上的数字也是不很明智的选择。</li>
 </ul>
@@ -374,19 +374,15 @@
 <p> 现在我们可以看到，没有明显的优势策略或劣势策略。</p>
 <p> 那我们该怎么办呢？<br> 首先，我们可以看到，当李zen选择←时，选↑是我们的最佳对策；<br> 当李zen选择→时，选↓是我们的最佳对策。</p>
 <p> 但是你并不知道zen会选择什么。</p>
-<p> 你开始用AJ教你的数学知识来对每一个选项的期望收益进行一个模拟。<br> 假设李zen选择←和→的几率是相等的，那么我们的期望收益如下：<br> \begin{align}<br> U_{top} \  vs \  (\frac{1}{2} , \frac{1}{2} ) &amp; = 5 \times \frac{1}{2} + 0 \times \frac{1}{2} = 2 \frac{1}{2} \\<br> U_{middle} \  vs \  (\frac{1}{2} , \frac{1}{2} ) &amp; = 1 \times \frac{1}{2} + 4 \times \frac{1}{2} = 2 \frac{1}{2} \\<br> U_{down} \  vs \  (\frac{1}{2} , \frac{1}{2} ) &amp; = 4 \times \frac{1}{2} + 2 \times \frac{1}{2} = 3<br> \end{align}<br> 此时我们可以看到，选择↓是我们的最佳对策（也是最安全的对策），因为 $2 \frac{1}{2} &lt; 3 $ 。</p>
+<p> 你开始用AJ教你的数学知识来对每一个选项的期望收益进行一个模拟。<br> 假设李zen选择←和→的几率是相等的，那么我们的期望收益如下：<br>$$<br> \begin{align}<br> U_{top} \  vs \  (\frac{1}{2} , \frac{1}{2} ) &amp; = 5 \times \frac{1}{2} + 0 \times \frac{1}{2} = 2 \frac{1}{2} \\<br> U_{middle} \  vs \  (\frac{1}{2} , \frac{1}{2} ) &amp; = 1 \times \frac{1}{2} + 4 \times \frac{1}{2} = 2 \frac{1}{2} \\<br> U_{down} \  vs \  (\frac{1}{2} , \frac{1}{2} ) &amp; = 4 \times \frac{1}{2} + 2 \times \frac{1}{2} = 3<br> \end{align}<br>$$<br> 此时我们可以看到，选择↓是我们的最佳对策（也是最安全的对策），因为 $2 \dfrac{1}{2} &lt; 3 $ 。</p>
 <p> 但是如果你知道了李zen选择←或→的概率呢？</p>
 <p> 上图。</p>
 <p> <img src="https://i.loli.net/2021/09/24/mroUEi69tjgV1Cu.png" alt="博弈7.png"></p>
 <p> 图中的横轴代表李zen选←的概率，同时选→的概率是（1-选←的概率）。<br> 纵轴代表不同选择的期望收益。</p>
 <p> 所以，我们可以看到，在李zen选择某一策略的概率不同时，我们的最佳对策是不一样的。</p>
 <p> 在这里，我们可以这样定义 <strong>最佳对策(Best Responce)</strong> :<br> 当<br> $$ U_i ( \hat{s_i} ,s_{-i} ) \geq U_i ( s_i’ ,s_{-i} ) \quad (s_i’ \in S_i ) $$<br> 或<br> $$ U_i ( \hat{s_i} ,s_{-i} ) = max( U_i ( S_i , s_{-i})) $$<br> 或<br> $$ EU_i ( \hat{s_i} ,p ) \geq max( EU_i ( s_i’ , p)) \quad (s_i’ \in S_i ) $$<br> 时，我们称 $ \hat{s_i} $ 是策略 $s_{-i} $ 的最佳对策。<br> 其中， $EU_i ( s_i , p ) $ 指的是策略 $s_i$ 在参与人 $i$ 持信念 $p$ 时的期望收益。<br> 同时，我们需要注意一下，对于不同的策略集合 $s_{-i}$ ，其最佳对策的数量可能是不同的，且可能不为一（就是最佳对策不会只有一个）。</p>
-<h2 id="纳什均衡"><a href="#纳什均衡" class="headerlink" title="纳什均衡"></a>纳什均衡</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p> 假设你需要和李zen一起完成一个项目。你将会付出 $s_y$ 个小时的时间，而zen将会付出 $s_z$ 个小时，其中 $s_y , s_z \in [0,10] $ 。<br> 你们的收益为：</p>
-<p> \begin{align}<br> U_y &amp; = 2 ( s_y + s_z + b s_y s_z ) - s_y^2 \\<br> U_z &amp; = 2 ( s_y + s_z + b s_y s_z ) - s_z^2<br> \end{align}</p>
-<p> 此时让我们来算一下我们怎么最大化我们的收益。</p>
-<p> 首先求一下导，把 $s_z$ 当做常数：</p>
-<p> \begin{align}<br> U_y’ &amp; = 2 ( 1 + b s_z ) - 2 s_y \\<br> U_y’’ &amp; = -2 &lt; 0<br> \end{align}</p>
-<p> 此时令 $U_y’ = 0 $ ，可以求出最佳对策：<br> \begin{align}<br> 2 ( 1 + b s_z ) - 2 s_y &amp; = 0 \\<br> 1 + b s_z &amp; = s_y \\<br> s_y &amp; = \frac{1}{1-b}<br> \end{align}<br> 此时画一下图：</p>
+<h2 id="纳什均衡"><a href="#纳什均衡" class="headerlink" title="纳什均衡"></a>纳什均衡</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p> 假设你需要和李zen一起完成一个项目。你将会付出 $s_y$ 个小时的时间，而zen将会付出 $s_z$ 个小时，其中 $s_y , s_z \in [0,10] $ 。<br> 你们的收益为：<br>$$<br> \begin{align}<br> U_y &amp; = 2 ( s_y + s_z + b s_y s_z ) - s_y^2 \\<br> U_z &amp; = 2 ( s_y + s_z + b s_y s_z ) - s_z^2<br> \end{align}<br>$$<br> 此时让我们来算一下我们怎么最大化我们的收益。</p>
+<p> 首先求一下导，把 $s_z$ 当做常数：<br>$$<br> \begin{align}<br> U_y’ &amp; = 2 ( 1 + b s_z ) - 2 s_y \\<br> U_y’’ &amp; = -2 &lt; 0<br> \end{align}<br>$$<br> 此时令 $U_y’ = 0 $ ，可以求出最佳对策：<br>$$<br>\begin{align}<br> 2 ( 1 + b s_z ) - 2 s_y &amp; = 0 \\<br> 1 + b s_z &amp; = s_y \\<br> s_y &amp; = \frac{1}{1-b}<br> \end{align}<br>$$<br> 此时画一下图：</p>
 <p> <img src="https://i.loli.net/2021/09/25/mwYX56SC4WaQtcT.png" alt="博弈8.png"></p>
 <p> 此时我们可以看到，两个人的最佳对策函数交于了一点。<br> 在实际情况中，因为你们两个都想偷懒，所以你们会不断剔除掉双方付出过多的策略，最终直到选择那个交点。<br> 这个就叫做 <strong>纳什均衡(Nash Equilibrium)</strong> 。<br> 其定义是：<br> 对于一个已选对策的集合$ \lbrace s_1^* , s_2^* , s_3^* , \dots , s_m^* \rbrace $ ，其纳什均衡是满足下列条件的策略集合：<br> 对于 $ \forall $ 参与人 $i$ 来说，其策略 $ s_i^* $ 是 $ s_{-i}^* $ 的最佳对策。</p>
 <p> 要实现纳什均衡，我们需要几个动机。</p>
