@@ -20,27 +20,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="感谢 CloudySky 和 宝硕 的大力支持。 没有他们就没有这个博客。  十分感谢。">
+<meta name="description" content="一种便携的用来求矩形面积并的算法。 （算法思想是会了，但是就是写不出来awa）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="感谢">
-<meta property="og:url" content="https://kaiserwilheim.github.io/thanks/index.html">
+<meta property="og:title" content="扫描线">
+<meta property="og:url" content="https://kaiserwilheim.github.io/scanning-line/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="感谢 CloudySky 和 宝硕 的大力支持。 没有他们就没有这个博客。  十分感谢。">
+<meta property="og:description" content="一种便携的用来求矩形面积并的算法。 （算法思想是会了，但是就是写不出来awa）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2999-12-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-01T11:21:33.792Z">
+<meta property="article:published_time" content="2021-11-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-11-12T12:12:27.651Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/thanks/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/scanning-line/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/thanks/","path":"thanks/","title":"感谢"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/scanning-line/","path":"scanning-line/","title":"扫描线"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>感谢 | 南陽劉子驥的博客</title>
+<title>扫描线 | 南陽劉子驥的博客</title>
   
 
 
@@ -109,7 +110,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -122,6 +123,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">思想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%B4%E7%B4%A0%E5%81%9A%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">朴素做法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-number">2.2.</span> <span class="nav-text">线段树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%AE%B5"><span class="nav-number">2.2.1.</span> <span class="nav-text">分段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E8%AE%B0"><span class="nav-number">2.2.2.</span> <span class="nav-text">标记</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -211,7 +213,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/thanks/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/scanning-line/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
@@ -224,7 +226,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          感谢
+          扫描线
         </h1>
 
         <div class="post-meta-container">
@@ -234,16 +236,19 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：3000-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="3000-01-01T00:00:00+08:00">3000-01-01</time>
+      <time title="创建时间：2021-11-12 00:00:00 / 修改时间：20:12:27" itemprop="dateCreated datePublished" datetime="2021-11-12T00:00:00+08:00">2021-11-12</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-01 19:21:33" itemprop="dateModified" datetime="2021-10-01T19:21:33+08:00">2021-10-01</time>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
       </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -255,9 +260,40 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>感谢 <strong>CloudySky</strong> 和 <strong>宝硕</strong> 的大力支持。</p>
-<p>没有他们就没有这个博客。</p>
-<p> 十分感谢。</p>
+        <p>一种便携的用来求矩形面积并的算法。</p>
+<p>（算法思想是会了，但是就是写不出来awa）</p>
+<span id="more"></span>
+
+<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><p>顾名思义，扫描线就是要模拟一根线，扫过整个图形。至于方向什么的自己根据喜好，这里选用从左往右的方式。</p>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="朴素做法"><a href="#朴素做法" class="headerlink" title="朴素做法"></a>朴素做法</h2><p>首先我们看一下这个例子：</p>
+<p>[pic here]</p>
+<p>我们有三个矩形，分别用红、蓝、绿三色标注了出来。</p>
+<p>他们相交的面积用其他的颜色标了出来。</p>
+<p>我们所得到的信息只有矩形的左下端点和右上端点的坐标。也就是我们标红的这几个点：</p>
+<p>[pic here]</p>
+<p>然后我们可以画出一根线来，扫过这个多边形的所有面积。</p>
+<p>这根线从最左边的边开始，每遇到一条边，就停下来计算之前扫到的面积，即为距上一条边的距离与扫描线落在图形上的长度之积，再加到之前的和上面。</p>
+<p>用动画来做就是这样的：</p>
+<p>[anime here]</p>
+<p>但是这样做有一处需要注意的地方： <strong>我们怎么才能知道每一次遇到一条边之后扫描线落在图像上的长度是多少</strong> ？</p>
+<p>如果我们每一次都去枚举、去找，我们程序的时间复杂度就达不到我们的要求了。</p>
+<p>这就是扫描线算法的精髓之处。</p>
+<h2 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h2><h3 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h3><p>我们把 $y$ 轴上的一段区间按照每一个存在的矩形的边的高度值分一下块：</p>
+<p>[pic here]</p>
+<p>我们只需要计算每一段所对应的在 $x$ 轴上的长度就行了。</p>
+<p>我们可以使用线段树这一强大的数据结构来帮助我们更快地进行区间修改。</p>
+<h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><p>我们在遇到某个矩形的一条边的时候，我们需要看一下这两个东西：</p>
+<p>1.它的长度；</p>
+<p>2.他是起始边还是终止边。</p>
+<p>如果是起始边的话，我们把他这条边所包含的所有区块都打上一个标记；如果是终止边的话，我们就把之前起始边打上的标记去掉。这样，只要有标记就是存在，不管有多少个；没有标记就是没有被覆盖，忽略不计。</p>
+<p>所以，我们的线段树节点需要存储这个区段被标记的次数。同时，我们还需要存储基本的线段树信息，还有它的长度。</p>
+<p>[code here]</p>
+<p>同时，我们用来存储矩形边的位置我们也需要改一下，使之能够存储这条边的上端点和下端点，还要标记这条边是起始边还是终止边。</p>
+<p>[code here]</p>
+<p>最终我们使用动画模拟一下就是这个样子的：</p>
+<p>[anime here]</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>上代码。</p>
+<p>[code here]</p>
 
     </div>
 
@@ -280,18 +316,21 @@
   </div>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/suoyin/" rel="prev" title="博客索引">
-                  <i class="fa fa-chevron-left"></i> 博客索引
+                <a href="/twelve-countings/" rel="prev" title="十二重计数法">
+                  <i class="fa fa-chevron-left"></i> 十二重计数法
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/marker/" rel="next" title="待办事项">
-                  待办事项 <i class="fa fa-chevron-right"></i>
+                <a href="/fun/" rel="next" title="每日一题">
+                  每日一题 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
