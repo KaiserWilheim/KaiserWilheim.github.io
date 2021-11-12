@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/11/12/W3OLxhVenapUIfH.png">
 <meta property="og:image" content="https://i.loli.net/2021/11/12/DYSGLaoR3ViAEB2.gif">
 <meta property="article:published_time" content="2021-11-11T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-11-12T14:18:02.871Z">
+<meta property="article:modified_time" content="2021-11-12T14:34:11.862Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary">
@@ -245,7 +245,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-11-12 00:00:00 / 修改时间：22:18:02" itemprop="dateCreated datePublished" datetime="2021-11-12T00:00:00+08:00">2021-11-12</time>
+      <time title="创建时间：2021-11-12 00:00:00 / 修改时间：22:34:11" itemprop="dateCreated datePublished" datetime="2021-11-12T00:00:00+08:00">2021-11-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -273,23 +273,28 @@
 
 <h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><p>顾名思义，扫描线就是要模拟一根线，扫过整个图形。至于方向什么的自己根据喜好，这里选用从左往右的方式。</p>
 <h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="朴素做法"><a href="#朴素做法" class="headerlink" title="朴素做法"></a>朴素做法</h2><p>首先我们看一下这个例子：</p>
-<p><img src="https://i.loli.net/2021/11/12/ykmlLC6RpHTZbUf.png" alt="扫描线1.png"></p>
+<img src="https://i.loli.net/2021/11/12/ykmlLC6RpHTZbUf.png" alt="扫描线1.png" style="zoom:200%;" />
+
 <p>我们有三个矩形，分别用红、蓝、绿三色标注了出来。</p>
 <p>他们相交的面积用其他的颜色标了出来。</p>
 <p>我们所得到的信息只有矩形的左下端点和右上端点的坐标。也就是我们标红的这几个点：</p>
-<p><img src="https://i.loli.net/2021/11/12/Naw9ZzMXnA6Jt7d.png" alt="扫描线2.png"></p>
+<img src="https://i.loli.net/2021/11/12/Naw9ZzMXnA6Jt7d.png" alt="扫描线2.png" style="zoom:200%;" />
+
 <p>然后我们可以画出一根线来，扫过这个多边形的所有面积。</p>
 <p>这根线从最左边的边开始，每遇到一条边，就停下来计算之前扫到的面积，即为距上一条边的距离与扫描线落在图形上的长度之积，再加到之前的和上面。</p>
 <p>用动画来做就是这样的：</p>
-<p><img src="https://i.loli.net/2021/11/12/HOqFuYboDMnsCKT.gif" alt="扫描线3.gif"></p>
+<img src="https://i.loli.net/2021/11/12/HOqFuYboDMnsCKT.gif" alt="扫描线3.gif" style="zoom:200%;" />
+
 <p>但是这样做有一处需要注意的地方： <strong>我们怎么才能知道每一次遇到一条边之后扫描线落在图像上的长度是多少</strong> ？</p>
 <p>如果我们每一次都去枚举、去找，我们程序的时间复杂度就达不到我们的要求了。</p>
 <p>这就是扫描线算法的精髓之处。</p>
 <h2 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h2><h3 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h3><p>我们把 $y$ 轴上的一段区间按照每一个存在的矩形的边的高度值分一下块：</p>
-<p><img src="https://i.loli.net/2021/11/12/pkELge24OblfDxI.png" alt="扫描线4.png"></p>
+<img src="https://i.loli.net/2021/11/12/pkELge24OblfDxI.png" alt="扫描线4.png" style="zoom:200%;" />
+
 <p>我们只需要计算每一段所对应的在 $x$ 轴上的长度就行了。</p>
 <p>我们可以使用线段树这一强大的数据结构来帮助我们更快地进行区间修改。</p>
-<p><img src="https://i.loli.net/2021/11/12/W3OLxhVenapUIfH.png" alt="扫描线5.png"></p>
+<img src="https://i.loli.net/2021/11/12/W3OLxhVenapUIfH.png" alt="扫描线5.png" style="zoom:200%;" />
+
 <h3 id="标记"><a href="#标记" class="headerlink" title="标记"></a>标记</h3><p>我们在遇到某个矩形的一条边的时候，我们需要看一下这两个东西：</p>
 <p>1.它的长度；</p>
 <p>2.他是起始边还是终止边。</p>
@@ -299,7 +304,8 @@
 <p>同时，我们用来存储矩形边的位置我们也需要改一下，使之能够存储这条边的上端点和下端点，还要标记这条边是起始边还是终止边。</p>
 <p>[code here]</p>
 <p>最终我们使用动画模拟一下就是这个样子的：</p>
-<p><img src="https://i.loli.net/2021/11/12/DYSGLaoR3ViAEB2.gif" alt="扫描线6.gif"></p>
+<img src="https://i.loli.net/2021/11/12/DYSGLaoR3ViAEB2.gif" alt="扫描线6.gif" style="zoom:200%;" />
+
 <h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p>上代码。</p>
 <p>[code here]</p>
 
