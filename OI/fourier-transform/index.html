@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/10/20/jXxYvVbk6ITR5Fc.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/20/Huv9WglE7MbLTAj.png">
 <meta property="article:published_time" content="2021-10-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-30T01:47:52.955Z">
+<meta property="article:modified_time" content="2021-11-23T09:18:27.600Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
@@ -109,8 +109,6 @@
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
-        <li class="menu-item menu-item-english"><a href="https://kaiserwilheim.github.io/en/" rel="section"><i class="fa fa-language fa-fw"></i>English</a></li>
-        <li class="menu-item menu-item-繁體中文"><a href="https://kaiserwilheim.github.io/tw/" rel="section"><i class="fa fa-language fa-fw"></i>繁體中文</a></li>
   </ul>
 </nav>
 
@@ -156,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -262,7 +260,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-30 09:47:52" itemprop="dateModified" datetime="2021-10-30T09:47:52+08:00">2021-10-30</time>
+        <time title="修改时间：2021-11-23 17:18:27" itemprop="dateModified" datetime="2021-11-23T17:18:27+08:00">2021-11-23</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -290,9 +288,7 @@
 <h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><p>今天AJ给大家留了一个作业：</p>
 <p>多项式相乘。<br>$$<br>\begin{gather}<br>f(x) = (x^2 + 3x - 1) \\<br>g(x) = (2x^2 + x -5) \\<br>f(x) \times g(x) = ?<br>\end{gather}<br>$$<br>大家都很认真、很用心地做了出来。<br>$$<br>\begin{align}<br>f(x) \times g(x) &amp; = (x^2 + 3x - 1) (2x^2 + x - 5) \\<br>&amp; = x^2 \times g(x) + 3x \times g(x) - g(x) \\<br>&amp; = (2x^4 + x^3 - 5x^2) + (6x^3 + 3x^2 - 15x) + (2x^2 + x - 5) \\<br>&amp; = 2x^4 + x^3 - 5x^2 + 6x^3 + 3x^2 - 15x + 2x^2 + x - 5 \\<br>&amp; = 2x^4 + 7x^3 - 4x^2 - 16x + 5<br>\end{align}<br>$$</p>
 <p>看起来很复杂，对吗？</p>
-<p>但是，精通数学的王哥在纸上写写画画几十秒钟之后，得出来的答案跟正确答案也是一样的。</p>
-<p>惊呆了的tüe问王哥他用的是什么办法。</p>
-<p>王哥回答：“ <strong>傅里叶变换</strong> 。”</p>
+<p>但是，精通数学的王哥在纸上写写画画几十秒钟之后，得出来的答案跟正确答案也是一样的。<br>惊呆了的tüe问王哥他用的是什么办法。<br>王哥回答：“ <strong>傅里叶变换</strong> 。”</p>
 <h1 id="多项式乘法的本质"><a href="#多项式乘法的本质" class="headerlink" title="多项式乘法的本质"></a>多项式乘法的本质</h1><p>王哥说：“我们知道，所有多项式都拥有如下的形式：<br>$$<br>f(x) = a_0 x^n + a_1 x^{n-1} + a_2 x^{n-2} + \cdots + a_{n-2} x^2 + a_{n-1} x +a_n<br>$$<br>我们也可以把一个多项式写成这样的形式：<br>$$<br>f(x) = \sum_{i=0}^n a_i x^{n-i}<br>$$<br>而两个多项式相乘 $f(x) \times g(x) = h(x)$ 的时候，相乘的结果的第 $k$ 项系数 $h_{k-1}$ 等于所有 $f_{i}$ 与 $g_{k-i}$ 乘积之和。</p>
 <p>所以，<br>$$<br>h_k = \sum_{i=0}^{k-1} f_i \times g_{k-1-i}<br>$$</p>
 <p>给个<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3803">模板题</a>的代码：</p>
@@ -300,15 +296,10 @@
 
 <p><a target="_blank" rel="noopener" href="https://www.luogu.org/blog/command-block/fft-xue-xi-bi-ji">$\blacktriangleright$</a></p>
 <h1 id="DFT"><a href="#DFT" class="headerlink" title="DFT"></a>DFT</h1><h2 id="多项式的点值表达"><a href="#多项式的点值表达" class="headerlink" title="多项式的点值表达"></a>多项式的点值表达</h2><p>为了简便表达，我们使用 $f_k$ 来代表 多项式 $f(x)$ 的第 $k+1$ 项系数。</p>
-<p>今天AJ的作业是昨天的延伸：</p>
-<p>给定一个 $n$ 次多项式的 $n+1$ 个点值，要求我们求出这个多项式。</p>
-<p>（还让武嘉给了样例，而武嘉给的样例是1,3,5,7,114514）</p>
-<p>全班只有王哥和某盒子做了出来。广告：<a target="_blank" rel="noopener" href="https://space.bilibili.com/470952379">CoolHezi</a></p>
-<p>他们用的是什么方法呢？</p>
+<p>今天AJ的作业是昨天的延伸：<br>给定一个 $n$ 次多项式的 $n+1$ 个点值，要求我们求出这个多项式。<br>（还让武嘉给了样例，而武嘉给的样例是1,3,5,7,114514）<br>全班只有王哥和某盒子做了出来。广告：<a target="_blank" rel="noopener" href="https://space.bilibili.com/470952379">CoolHezi</a><br>他们用的是什么方法呢？</p>
 <p><strong>拉格朗日插值</strong>。</p>
 <p>想要了解拉格朗日插值，可以参考我的这个博客：【我写完了这个再写拉插】</p>
-<p>现在我们只需要知道，给定了 $n+1$ 个任意点值，可以求出来经过这几个点的一个 $n$ 次多项式。</p>
-<p>如果两个多项式 $f(x)$ 和 $g(x)$ 在相同纵坐标上取点（设其分别为 $f(x)$  与 $g(x)$） 后相乘所得的结果（$f(x) \times g(x)$）等于两函数相乘后对应纵坐标处的点值（$h(x)$）。</p>
+<p>现在我们只需要知道，给定了 $n+1$ 个任意点值，可以求出来经过这几个点的一个 $n$ 次多项式。<br>如果两个多项式 $f(x)$ 和 $g(x)$ 在相同纵坐标上取点（设其分别为 $f(x)$  与 $g(x)$） 后相乘所得的结果（$f(x) \times g(x)$）等于两函数相乘后对应纵坐标处的点值（$h(x)$）。</p>
 <p>举个栗子：</p>
 <p>$$<br>f(x) = (x^2 + 3x - 1)<br>$$<br>$$<br>g(x) = (2x^2 + x -5)<br>$$</p>
 <p>我们分别取 $x \in [-1,1]$ 内的整数点所对应的点值：</p>
@@ -321,9 +312,7 @@
 <p>怎么办？</p>
 <p>多找几个啊。</p>
 <p>于是我们就可以求出最终的多项式。</p>
-<p>这就是FT的算法流程。</p>
-<p>“把<strong>系数</strong>表达转换为<strong>点值</strong>表达”的算法叫做<strong>DFT</strong></p>
-<p>“把<strong>点值</strong>表达转换为<strong>系数</strong>表达”的算法叫做<strong>IDFT</strong>(DFT的逆运算)</p>
+<p>这就是FT的算法流程。<br>“把<strong>系数</strong>表达转换为<strong>点值</strong>表达”的算法叫做<strong>DFT</strong><br>“把<strong>点值</strong>表达转换为<strong>系数</strong>表达”的算法叫做<strong>IDFT</strong>(DFT的逆运算)</p>
 <p>P.S:</p>
 <ul>
 <li>从一个多项式的系数表达确定其点值表达的过程称为<strong>求值</strong>(毕竟求点值表达的过程就是取了 n 个 x 然后扔进了多项式求了 n 个值出来)；</li>
@@ -331,8 +320,7 @@
 </ul>
 <h1 id="单位根与复数"><a href="#单位根与复数" class="headerlink" title="单位根与复数"></a>单位根与复数</h1><p>但是最终我们并没有觉得有什么可以加以利用的良好性质啊。<br>我们这些蒟蒻只会利用一些有理数和一些简单的无理数来进行一些简单的计算，再难一点的就不会了。</p>
 <p>（而且这个多项式的次数和系数稍微一大就bz了）</p>
-<p>但是，法国数学家 <strong>傅里叶</strong> 横空出世，找了一些毒瘤数据代入，结果发现可以分治而使时间复杂度降低。</p>
-<p>而他代入的正是单位根 $ω_{n+1}^{0 \to n}$ 。</p>
+<p>但是，法国数学家 <strong>傅里叶</strong> 横空出世，找了一些毒瘤数据代入，结果发现可以分治而使时间复杂度降低。<br>而他代入的正是单位根 $ω_{n+1}^{0 \to n}$ 。</p>
 <h2 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h2><p>首先我们需要介绍复数。</p>
 <p>（p.s.:下面我们使用的所有 $\sqrt{\quad}$ 标识都指的是平方根，算术平方根已使用+-来标记。）</p>
 <h3 id="复数的概念"><a href="#复数的概念" class="headerlink" title="复数的概念"></a>复数的概念</h3><h4 id="虚数"><a href="#虚数" class="headerlink" title="虚数"></a>虚数</h4><p>我们所学的数轴是一条直线。</p>
@@ -347,15 +335,12 @@
 <p>于是人们发明了一个概念：虚数。<br>而 $+\sqrt{-1}$ 在虚数里面叫做<strong>虚数单位</strong>，用 $i$ 表示。<br>所以，$i^2=-1$ 。</p>
 <p>但是又有人会问：“那 $-\sqrt{-1}$ 又怎么办？”</p>
 <p>用 $-i$ 呗。</p>
-<h3 id="复数及其运算"><a href="#复数及其运算" class="headerlink" title="复数及其运算"></a>复数及其运算</h3><p>复数形似 $a+bi$ 。</p>
-<p>其中 $a$ 称为实部( $\Re$ )， $b$ 称为虚部( $\Im $ )。</p>
-<p>复数也有加减乘除等运算。</p>
-<p>复数加减时实部虚部分别加减：<br>$$<br>(a+bi) \pm (c+di) = (a \pm c) + (b \pm d)i<br>$$</p>
-<p>复数相乘时实部虚部分别相乘：<br>$$<br>\begin{align}<br>(a+bi) \times (c+di) &amp; = a \times (c+di) + bi \times (c+di) \\<br>&amp; = ac + adi + bci - bd \\<br>&amp; = (ac - bd) + (ad + bc)i<br>\end{align}<br>$$<br>复数相除时就有点难办了。</p>
-<p>直觉告诉我们 $\dfrac{a+bi}{c+di}$ 不会好化简。</p>
-<p>这里需要引入一个概念：复数的共轭。</p>
-<p>$a+bi$ 的共轭是 $a-bi$ 。</p>
-<p>一个复数乘以其共轭最终得到的是一个实数。（ $(a+bi) \times (a-bi) = a^2 + b^2$ ）</p>
+<h3 id="复数及其运算"><a href="#复数及其运算" class="headerlink" title="复数及其运算"></a>复数及其运算</h3><p>复数形似 $a+bi$ 。<br>其中 $a$ 称为实部( $\Re$ )， $b$ 称为虚部( $\Im $ )。<br>复数也有加减乘除等运算。<br>复数加减时实部虚部分别加减：</p>
+<p>$$<br>(a+bi) \pm (c+di) = (a \pm c) + (b \pm d)i<br>$$</p>
+<p>复数相乘时实部虚部分别相乘：</p>
+<p>$$<br>\begin{align}<br>(a+bi) \times (c+di) &amp; = a \times (c+di) + bi \times (c+di) \\<br>&amp; = ac + adi + bci - bd \\<br>&amp; = (ac - bd) + (ad + bc)i<br>\end{align}<br>$$</p>
+<p>复数相除时就有点难办了。<br>直觉告诉我们 $\dfrac{a+bi}{c+di}$ 不会好化简。</p>
+<p>这里需要引入一个概念：复数的共轭。<br>$a+bi$ 的共轭是 $a-bi$ 。<br>一个复数乘以其共轭最终得到的是一个实数。（ $(a+bi) \times (a-bi) = a^2 + b^2$ ）</p>
 <p>所以当我们化简 $\dfrac{a+bi}{c+di}$ 的时候，我们只需要上下同乘分母的共轭就可以了：<br>$$<br>\begin{align}<br>\frac{a+bi}{c+di} &amp; = \frac{(a+bi)(c-di)}{(c+di)(c-di)} \\<br>&amp; = \frac{(ac+bd) + (bc-ad)i}{c^2+d^2} \\<br>&amp; = \frac{ac+bd}{c^2+d^2} + \frac{bc-ad}{c^2+d^2} i<br>\end{align}<br>$$</p>
 <h3 id="复数在数轴上的表示"><a href="#复数在数轴上的表示" class="headerlink" title="复数在数轴上的表示"></a>复数在数轴上的表示</h3><p>那我们怎么在数轴上表示复数呢？</p>
 <p>之前我们说过了，虚数单位 $i$ 找不到一个合适的与其对应的数轴上的点。</p>
@@ -363,14 +348,11 @@
 <p>于是有人加了一条垂直于原本数轴的轴，用来表示复数的虚部。</p>
 <p>就像这样：</p>
 <p><img src="https://i.loli.net/2021/10/18/L9kKUvWyAhiconp.png" alt="傅里叶6.png"></p>
-<p>于是我们举几个例子：<br><img src="https://i.loli.net/2021/10/19/cgUE58lZkOQJ17G.png" alt="傅里叶7.png"></p>
+<p>于是我们举几个例子：</p>
+<p><img src="https://i.loli.net/2021/10/19/cgUE58lZkOQJ17G.png" alt="傅里叶7.png"></p>
 <p>此时我们关注一下两个虚数的积：</p>
 <p><img src="https://i.loli.net/2021/10/19/RlLhAeVbzxXkHQf.png" alt="傅里叶8.png"></p>
-<p>如果我们连接表示复数的点和原点，我们可以看见这三条线的长度分别是 $\sqrt{3^2+4^2}=\sqrt{25}=5$ ，$\sqrt{5^2+2^2}=\sqrt{29}$ 与 $\sqrt{14^2+23^2}=\sqrt{725} =5\sqrt{29}$ 。</p>
-<p>凭借大家做几何题的直觉，我们可以看到， $5+2i$ 与 $x$ 轴的夹角与 $3+4i$ 与 $x$ 轴的夹角之和等于 $14+23i$ 与 $x$ 轴的夹角。</p>
-<p>而且，通过刚才的例子，我们也可以看见 $5+2i$ 与原点的连线的长度与 $3+4i$ 与原点的连线的长度之积等于 $14+23i$ 与原点连线的长度。</p>
-<p>数学家们为了简便地表示这些东西，发明了两个名词：<strong>幅角</strong>和<strong>模长</strong>。</p>
-<p>所以，我们可以说，<strong>两个复数相乘时，幅角相加，模长相乘。</strong></p>
+<p>如果我们连接表示复数的点和原点，我们可以看见这三条线的长度分别是 $\sqrt{3^2+4^2}=\sqrt{25}=5$ ，$\sqrt{5^2+2^2}=\sqrt{29}$ 与 $\sqrt{14^2+23^2}=\sqrt{725} =5\sqrt{29}$ 。<br>凭借大家做几何题的直觉，我们可以看到， $5+2i$ 与 $x$ 轴的夹角与 $3+4i$ 与 $x$ 轴的夹角之和等于 $14+23i$ 与 $x$ 轴的夹角。<br>而且，通过刚才的例子，我们也可以看见 $5+2i$ 与原点的连线的长度与 $3+4i$ 与原点的连线的长度之积等于 $14+23i$ 与原点连线的长度。<br>数学家们为了简便地表示这些东西，发明了两个名词：<strong>幅角</strong>和<strong>模长</strong>。<br>所以，我们可以说，<strong>两个复数相乘时，幅角相加，模长相乘。</strong></p>
 <p>证明：</p>
 <p>我们设三个点分别为 $A$  ，$B$ 与 $C$ 。</p>
 <p><img src="https://i.loli.net/2021/10/19/bVRTm4gy9dDhWnE.png" alt="傅里叶9.png"></p>
@@ -393,8 +375,7 @@
 <p>证毕。</p>
 <h2 id="单位根"><a href="#单位根" class="headerlink" title="单位根"></a>单位根</h2><p>现在我们来介绍单位根。</p>
 <p>单位根的意义是 $n$ 次方为 1 的复数，也就是 $x^n=1$ 的复数解。</p>
-<p>如果你学过三角函数的话你应该十分清楚什么是单位圆。</p>
-<p>而单位圆可以帮我们更好地理解什么是单位根和单位根为什么能够代入之后能实现分治。</p>
+<p>如果你学过三角函数的话你应该十分清楚什么是单位圆。<br>而单位圆可以帮我们更好地理解什么是单位根和单位根为什么能够代入之后能实现分治。</p>
 <p>我们先画出一个单位圆：</p>
 <p><img src="https://i.loli.net/2021/10/20/Eg1hOysmtHIK7YZ.png" alt="傅里叶12.png"></p>
 <p>我们知道， $1^n=1$ ，所以单位根的其中一个一定是 $1$ 。</p>
@@ -451,11 +432,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Comp</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="built_in">Comp</span>(<span class="keyword">double</span> xx = <span class="number">0</span>, <span class="keyword">double</span> yy = <span class="number">0</span>) &#123; x = xx, y = yy; &#125;</span><br><span class="line">	<span class="keyword">double</span> x, y;</span><br><span class="line">	Comp <span class="keyword">operator</span> + (Comp <span class="keyword">const</span> &amp;B) <span class="keyword">const</span></span><br><span class="line">	&#123;<span class="keyword">return</span> <span class="built_in">Comp</span>(x + B.x, y + B.y);&#125;</span><br><span class="line">	Comp <span class="keyword">operator</span> - (Comp <span class="keyword">const</span> &amp;B) <span class="keyword">const</span></span><br><span class="line">	&#123;<span class="keyword">return</span> <span class="built_in">Comp</span>(x - B.x, y - B.y);&#125;</span><br><span class="line">	Comp <span class="keyword">operator</span> * (Comp <span class="keyword">const</span> &amp;B) <span class="keyword">const</span></span><br><span class="line">	&#123;<span class="keyword">return</span> <span class="built_in">Comp</span>(x * B.x - y * B.y, x * B.y + y * B.x);&#125;</span><br><span class="line">	Comp <span class="keyword">operator</span> / (Comp <span class="keyword">const</span> &amp;B) <span class="keyword">const</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">double</span> t = B.x * B.x + B.y * B.y;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">Comp</span>((x * B.x + y * B.y) / t, (y * B.x - x * B.y) / t);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;a, b;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write</span><span class="params">(Comp n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">if</span>(n.x &gt; <span class="number">0</span>)&#123;</span><br><span class="line">		cout &lt;&lt; n.x;</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(n.x &lt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">putchar</span>(<span class="string">&#x27;(&#x27;</span>);</span><br><span class="line">		flag = <span class="literal">true</span>;</span><br><span class="line">		cout &lt;&lt; n.x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(n.y &gt; <span class="number">0</span>)&#123;</span><br><span class="line">		<span class="keyword">if</span>(n.x != <span class="number">0</span>)<span class="built_in">putchar</span>(<span class="string">&#x27;+&#x27;</span>);</span><br><span class="line">		cout &lt;&lt; n.y;</span><br><span class="line">		<span class="built_in">putchar</span>(<span class="string">&#x27;i&#x27;</span>);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(n.x == <span class="number">0</span>)&#123;</span><br><span class="line">			<span class="built_in">putchar</span>(<span class="string">&#x27;(&#x27;</span>);</span><br><span class="line">			flag = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		cout &lt;&lt; n.y;</span><br><span class="line">		<span class="built_in">putchar</span>(<span class="string">&#x27;i&#x27;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(flag)<span class="built_in">putchar</span>(<span class="string">&#x27;)&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin &gt;&gt; a.x &gt;&gt; a.y &gt;&gt; b.x &gt;&gt; b.y;</span><br><span class="line">	Comp c;</span><br><span class="line">	c = a + b;</span><br><span class="line">	<span class="built_in">write</span>(a), <span class="built_in">putchar</span>(<span class="string">&#x27;+&#x27;</span>), <span class="built_in">write</span>(b), <span class="built_in">putchar</span>(<span class="string">&#x27;=&#x27;</span>), <span class="built_in">write</span>(c), <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">	c = a - b;</span><br><span class="line">	<span class="built_in">write</span>(a), <span class="built_in">putchar</span>(<span class="string">&#x27;-&#x27;</span>), <span class="built_in">write</span>(b), <span class="built_in">putchar</span>(<span class="string">&#x27;=&#x27;</span>), <span class="built_in">write</span>(c), <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">	c = a * b;</span><br><span class="line">	<span class="built_in">write</span>(a), <span class="built_in">putchar</span>(<span class="string">&#x27;*&#x27;</span>), <span class="built_in">write</span>(b), <span class="built_in">putchar</span>(<span class="string">&#x27;=&#x27;</span>), <span class="built_in">write</span>(c), <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">	c = a / b;</span><br><span class="line">	<span class="built_in">write</span>(a), <span class="built_in">putchar</span>(<span class="string">&#x27;/&#x27;</span>), <span class="built_in">write</span>(b), <span class="built_in">putchar</span>(<span class="string">&#x27;=&#x27;</span>), <span class="built_in">write</span>(c), <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>$\color[rgb]{1,1,0.0625}{φ}$</p>
-<h3 id="预处理单位根"><a href="#预处理单位根" class="headerlink" title="预处理单位根"></a>预处理单位根</h3><p>我们之前应该提到过什么是单位根。但是怎么快速求出我们需要用的所有单位根呢？</p>
-<p>开根号的方法太慢了，打表又太难。</p>
-<p>所以我们使用三角函数。</p>
-<p>没学过三角函数的可以自己先学一下<del>（话说为什么你会先学傅里叶变换？）</del></p>
-<p>我们首先求出 $ω^1_n$ 。</p>
+<h3 id="预处理单位根"><a href="#预处理单位根" class="headerlink" title="预处理单位根"></a>预处理单位根</h3><p>我们之前应该提到过什么是单位根。但是怎么快速求出我们需要用的所有单位根呢？<br>开根号的方法太慢了，打表又太难。<br>所以我们使用三角函数。<br>没学过三角函数的可以自己先学一下<del>（话说为什么你会先学傅里叶变换？）</del><br>我们首先求出 $ω^1_n$ 。</p>
 <p>[anime here]</p>
 <p>C++的三角函数采用的是弧度制。而刚才我们已经介绍过什么是弧度了。</p>
 <p>所以， $ω^1_n$ 就等于 $\cos(\dfrac{2π}{n})+\sin(\dfrac{2π}{n})i$ 。</p>
@@ -510,8 +487,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/blank/" rel="next" title="blank">
-                  blank <i class="fa fa-chevron-right"></i>
+                <a href="/solutions/solution-p7913/" rel="next" title="p7913 廊桥分配 题解">
+                  p7913 廊桥分配 题解 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
