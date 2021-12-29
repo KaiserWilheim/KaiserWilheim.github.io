@@ -20,29 +20,35 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="摘要：$Base64$">
+<meta name="description" content="树链剖分。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Base64小记">
-<meta property="og:url" content="https://kaiserwilheim.github.io/OI/base64/index.html">
+<meta property="og:title" content="树链剖分">
+<meta property="og:url" content="https://kaiserwilheim.github.io/OI/heavy-link-decomposition/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="摘要：$Base64$">
+<meta property="og:description" content="树链剖分。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-18T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-11-14T01:11:06.869Z">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/iVkNYOTprWKF2Lz.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/Jgwz7DUojWMBms1.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/4Xcb2qKiFyD6IdM.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/ACztKMokjJgmYx7.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/4nWDzp72RSkBE1l.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/bS7Y1wiOglACmkt.png">
+<meta property="article:published_time" content="2021-12-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-29T12:34:34.706Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="算法">
-<meta property="article:tag" content="加密">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2021/12/29/iVkNYOTprWKF2Lz.png">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/OI/base64/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/OI/heavy-link-decomposition/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/OI/base64/","path":"OI/base64/","title":"Base64小记"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/OI/heavy-link-decomposition/","path":"OI/heavy-link-decomposition/","title":"树链剖分"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Base64小记 | 南陽劉子驥的博客</title>
+<title>树链剖分 | 南陽劉子驥的博客</title>
   
 
 
@@ -122,7 +128,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Base64"><span class="nav-number">1.</span> <span class="nav-text">$Base64$</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%9D%E6%83%B3"><span class="nav-number">2.</span> <span class="nav-text">思想</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E9%93%BE"><span class="nav-number">2.1.</span> <span class="nav-text">重链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%BE%B9"><span class="nav-number">2.1.1.</span> <span class="nav-text">重边</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%84%BF%E5%AD%90"><span class="nav-number">2.1.2.</span> <span class="nav-text">重儿子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%92%E5%88%86"><span class="nav-number">2.2.</span> <span class="nav-text">划分</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -212,7 +218,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/OI/base64/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/OI/heavy-link-decomposition/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
@@ -225,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Base64小记
+          树链剖分
         </h1>
 
         <div class="post-meta-container">
@@ -236,14 +242,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-09-19 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-19T00:00:00+08:00">2021-09-19</time>
+      <time title="创建时间：2021-12-27 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-27T00:00:00+08:00">2021-12-27</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-11-14 09:11:06" itemprop="dateModified" datetime="2021-11-14T09:11:06+08:00">2021-11-14</time>
+        <time title="修改时间：2021-12-29 20:34:34" itemprop="dateModified" datetime="2021-12-29T20:34:34+08:00">2021-12-29</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -265,27 +271,30 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>摘要：$Base64$</p>
+        <p>树链剖分。</p>
 <span id="more"></span>
 
-<p> 今年的CSP初赛刚刚拉下了帷幕。<br> 但我的心根本没有因此而平静啊ああああああああ！</p>
-<p> 今年的题目里有一道（准确来说是两道）题考点十分特殊。</p>
-<h2 id="Base64"><a href="#Base64" class="headerlink" title="$Base64$"></a>$Base64$</h2><p> $Base64$ 算法是一种广泛运用的加密算法。<br> 其原理是这样的：</p>
-<ol>
-<li>选取三位字符；</li>
-<li>转为ASCII码；</li>
-<li>拆分为4个6位长度的二进制数，并在每个数前加入两个前导零；</li>
-<li>按照表格转换为对应的字符；</li>
-<li>如果不够四个字符长就在后面补=。</li>
-</ol>
-<p> 因为每个转换后的二进制数有两个前导零，所以我们只需要64个对应的字符就可以完成加密。</p>
-<p> 范围 $[0,25]$ 、 $[26,51]$ 、 $[52,61]$ 分别对应 $A$-$Z$ 、 $a$-$z$ 、 $0$-$9$ 这些字符。<br> 数字62与63分别对应+与/。</p>
-<p> <strong>举个栗子：</strong></p>
-<p> $CSP$ 这三个字符分别对应的ASCII码是$67$ 、 $83$ 与 $80$ ，<br> 转换为二进制后分别为 $01000011$ 、 $01010011$ 与 $01010000$ 。<br> 按每六位拆分，可得结果为 $010000$、$110101$、$001101$与$010000$；<br> 再次转换为10进制，得 $16$、$52$、$13$与$16$；<br> 分别对应表中的 $Q0NQ$ 四个字符。</p>
-<p> 是不是很简单？</p>
-<p> 但是代码实现的时候却很难。<br> 电脑不会自己拆分二进制数（但是自己会加前导零），这就导致我们需要使用位运算。</p>
-<p> 先将映射表存储在base[64]数组里，反映射表存储在table[64]内，做好打表准备。<br> 假设明文存储在i[3]里，密文存储在o[4]里。<br> 那么：<br> <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">o[<span class="number">1</span>]=base[i[<span class="number">1</span>]&gt;&gt;<span class="number">2</span>];</span><br><span class="line">o[<span class="number">2</span>]=base[((i[<span class="number">1</span>]&lt;&lt;<span class="number">6</span>)%(<span class="number">1</span>&lt;&lt;<span class="number">6</span>))|(i[<span class="number">2</span>]&gt;&gt;<span class="number">4</span>)];</span><br><span class="line">o[<span class="number">3</span>]=base[((i[<span class="number">2</span>]&lt;&lt;<span class="number">4</span>)%(<span class="number">1</span>&lt;&lt;<span class="number">4</span>)|(i[<span class="number">3</span>]&gt;&gt;<span class="number">2</span>)];</span><br><span class="line">o[<span class="number">4</span>]=base[((i[<span class="number">3</span>]&lt;&lt;<span class="number">2</span>)%(<span class="number">1</span>&lt;&lt;<span class="number">2</span>))&gt;&gt;<span class="number">2</span>];</span><br></pre></td></tr></table></figure><br> 同理，</p>
-<p> ``` cpp<br> i[1]=table[(o[1]&lt;&lt;2)|(o[2]&gt;&gt;4)];<br> i[2]=table[((o[2]&lt;&lt;4)%(1&lt;&lt;4))|(o[3]&gt;&gt;4)];<br> i[3]=table[((o[3]&gt;&gt;4)%(1&lt;&lt;4))|o[4]];<br> 很简单是不是？</p>
+<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>树链剖分，简称“树剖”，又称“重链剖分”，是一种划分一棵树的方法。<br>这种方法可以将一棵树根据子树大小，也就是所谓的“重儿子“和”轻儿子“，来将一棵树划分成若干条”重链“，并可以保证，在任意一条路径上的连续的链都不超过 $\log_2n$ 个。</p>
+<p>树剖可以借助一些数据结构（如线段树）来以 $O(\log n)$ 的复杂度维护数上路径的信息，如“修改<strong>树上两点之间的路径上</strong>所有点的值”和“查询<strong>树上两点之间的路径上</strong>节点权值的<strong>和/极值/其他</strong>(在序列上可以用数据结构维护的、便于合并的信息)”等等。</p>
+<p>当然，除了上面那样做，树剖还可以快速地求LCA。</p>
+<p>树剖在洛谷上有一道模板题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3384">Luogu P3384</a><br>一道比较经典的例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2146">Luogu P2146 [NOI2015] 软件包管理器</a></p>
+<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><p>树剖的思想是，将一棵树按照“重边”来划分称为若干条“重链”。<br>当然，这里的“重链”只是指的一种常用的情况，其他的划分方法比如“长链剖分”等等就不在此赘述了。</p>
+<h2 id="重链"><a href="#重链" class="headerlink" title="重链"></a>重链</h2><p>“重链”的定义是若干条首尾衔接的“重边”。<br>那么，如果想要了解“重链”，就需要先了解<strong>重边</strong>。</p>
+<h3 id="重边"><a href="#重边" class="headerlink" title="重边"></a>重边</h3><p>“重边”的划分标准是它连接向一个重儿子。<br>这里需要注意的是，它只需要结束于一个重儿子，而无其他限制。<br>那么“重儿子”呢？</p>
+<h3 id="重儿子"><a href="#重儿子" class="headerlink" title="重儿子"></a>重儿子</h3><p>“重儿子”是“重子节点”的别称。<br>我们判断一个子节点是否为重子节点的标准是它的子树大小。</p>
+<p>对于一个节点的所有儿子，其中子树大小的那个儿子称为“重儿子”，其余的，则相对地称之为“轻儿子”。<br>连接某个节点和其重儿子的边叫做“重边”，而连接其与其轻儿子的边则相应地叫做“轻边”。</p>
+<h2 id="划分"><a href="#划分" class="headerlink" title="划分"></a>划分</h2><p>我们首先看一下例子：</p>
+<p><img src="https://s2.loli.net/2021/12/29/iVkNYOTprWKF2Lz.png" alt="树剖1.png"></p>
+<p>这是一棵树。<br>对于上面的这一棵树，我们可以进行如下的一些标记：<br>我们首先按照深度进行分层：</p>
+<p><img src="https://s2.loli.net/2021/12/29/Jgwz7DUojWMBms1.png" alt="树剖2.png"></p>
+<p>然后标出子树的大小：</p>
+<p><img src="https://s2.loli.net/2021/12/29/4Xcb2qKiFyD6IdM.png" alt="树剖3.png"></p>
+<p>然后标出轻儿子、重儿子、轻边和重边：</p>
+<p><img src="https://s2.loli.net/2021/12/29/ACztKMokjJgmYx7.png" alt="树剖4.png"></p>
+<p>然后标出重链：</p>
+<p><img src="https://s2.loli.net/2021/12/29/4nWDzp72RSkBE1l.png" alt="树剖5.png"></p>
+<p>最后标出DFS序：</p>
+<p><img src="https://s2.loli.net/2021/12/29/bS7Y1wiOglACmkt.png" alt="树剖6.png"></p>
 
     </div>
 
@@ -310,20 +319,19 @@
 
           <div class="post-tags">
               <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
-              <a href="/tags/%E5%8A%A0%E5%AF%86/" rel="tag"><i class="fa fa-tag"></i> 加密</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/OI/prime-sieves/" rel="prev" title="质数筛法">
-                  <i class="fa fa-chevron-left"></i> 质数筛法
+                <a href="/inorganic%20chemistry/orbitals/" rel="prev" title="轨道理论">
+                  <i class="fa fa-chevron-left"></i> 轨道理论
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/OI/mathematics/" rel="next" title="数学杂项整理">
-                  数学杂项整理 <i class="fa fa-chevron-right"></i>
+                <a href="/suoyin/" rel="next" title="博客索引">
+                  博客索引 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
