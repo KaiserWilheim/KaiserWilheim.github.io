@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-kw.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/128kw.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/64kw.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="树链剖分。Luogu P3384">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树链剖分">
+<meta property="og:url" content="https://kaiserwilheim.github.io/OI/heavy-path-decomposition/index.html">
+<meta property="og:site_name" content="南陽劉子驥的博客">
+<meta property="og:description" content="树链剖分。Luogu P3384">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/iVkNYOTprWKF2Lz.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/Jgwz7DUojWMBms1.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/4Xcb2qKiFyD6IdM.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/ACztKMokjJgmYx7.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/4nWDzp72RSkBE1l.png">
+<meta property="og:image" content="https://s2.loli.net/2021/12/29/bS7Y1wiOglACmkt.png">
+<meta property="article:published_time" content="2021-12-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-30T05:23:12.319Z">
+<meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2021/12/29/iVkNYOTprWKF2Lz.png">
+
+
+<link rel="canonical" href="https://kaiserwilheim.github.io/OI/heavy-path-decomposition/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/OI/heavy-path-decomposition/","path":"OI/heavy-path-decomposition/","title":"树链剖分"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>树链剖分 | 南陽劉子驥的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">南陽劉子驥的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">XCT 来了，大佬给点装备吧</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">6</span></a></li>
+        <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%9D%E6%83%B3"><span class="nav-number">2.</span> <span class="nav-text">思想</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E9%93%BE"><span class="nav-number">2.1.</span> <span class="nav-text">重链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E8%BE%B9"><span class="nav-number">2.1.1.</span> <span class="nav-text">重边</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%84%BF%E5%AD%90"><span class="nav-number">2.1.2.</span> <span class="nav-text">重儿子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%92%E5%88%86"><span class="nav-number">2.2.</span> <span class="nav-text">划分</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">例题</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="南陽劉子驥 aka KaiserWilheim"
+      src="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+  <p class="site-author-name" itemprop="name">南陽劉子驥 aka KaiserWilheim</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/KaiserWilheim" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KaiserWilheim" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/346304235" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;346304235" rel="noopener" target="_blank"><i class="fab fa-television fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      部分友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.baoshuo.ren/" title="https:&#x2F;&#x2F;blog.baoshuo.ren&#x2F;" rel="noopener" target="_blank">宝硕博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://cloudyskyet.github.io/" title="https:&#x2F;&#x2F;cloudyskyet.github.io&#x2F;" rel="noopener" target="_blank">Blog of Cloudysky</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://youwike.github.io/" title="https:&#x2F;&#x2F;youwike.github.io&#x2F;" rel="noopener" target="_blank">Blog of Youwike</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sjzezsyxx.github.io/" title="https:&#x2F;&#x2F;sjzezsyxx.github.io&#x2F;" rel="noopener" target="_blank">二南信竞团队</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/OI/heavy-path-decomposition/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南陽劉子驥的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          树链剖分
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-27 00:00:00" itemprop="dateCreated datePublished" datetime="2021-12-27T00:00:00+08:00">2021-12-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-12-30 13:23:12" itemprop="dateModified" datetime="2021-12-30T13:23:12+08:00">2021-12-30</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>树链剖分。<br>Luogu P3384</p>
+<span id="more"></span>
+
+<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>树链剖分，简称“树剖”，又称“重链剖分”，是一种划分一棵树的方法。<br>这种方法可以将一棵树根据子树大小，也就是所谓的“重儿子“和”轻儿子“，来将一棵树划分成若干条”重链“，并可以保证，在任意一条路径上的连续的链都不超过 $\log_2n$ 个。</p>
+<p>树剖可以借助一些数据结构（如线段树）来以 $O(\log n)$ 的复杂度维护数上路径的信息，如“修改<strong>树上两点之间的路径上</strong>所有点的值”和“查询<strong>树上两点之间的路径上</strong>节点权值的<strong>和/极值/其他</strong>(在序列上可以用数据结构维护的、便于合并的信息)”等等。</p>
+<p>当然，除了上面那样做，树剖还可以快速地求LCA。</p>
+<p>树剖在洛谷上有一道模板题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3384">Luogu P3384</a><br>一道比较经典的例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2146">Luogu P2146 [NOI2015] 软件包管理器</a></p>
+<h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><p>树剖的思想是，将一棵树按照“重边”来划分称为若干条“重链”。<br>当然，这里的“重链”只是指的一种常用的情况，其他的划分方法比如“长链剖分”等等就不在此赘述了。</p>
+<h2 id="重链"><a href="#重链" class="headerlink" title="重链"></a>重链</h2><p>“重链”的定义是若干条首尾衔接的“重边”。<br>那么，如果想要了解“重链”，就需要先了解<strong>重边</strong>。</p>
+<h3 id="重边"><a href="#重边" class="headerlink" title="重边"></a>重边</h3><p>“重边”的划分标准是它连接向一个重儿子。<br>这里需要注意的是，它只需要结束于一个重儿子，而无其他限制。<br>那么“重儿子”呢？</p>
+<h3 id="重儿子"><a href="#重儿子" class="headerlink" title="重儿子"></a>重儿子</h3><p>“重儿子”是“重子节点”的别称。<br>我们判断一个子节点是否为重子节点的标准是它的子树大小。</p>
+<p>对于一个节点的所有儿子，其中子树大小的那个儿子称为“重儿子”，其余的，则相对地称之为“轻儿子”。<br>连接某个节点和其重儿子的边叫做“重边”，而连接其与其轻儿子的边则相应地叫做“轻边”。</p>
+<h2 id="划分"><a href="#划分" class="headerlink" title="划分"></a>划分</h2><p>我们首先看一下例子：</p>
+<p><img src="https://s2.loli.net/2021/12/29/iVkNYOTprWKF2Lz.png" alt="树剖1.png"></p>
+<p>这是一棵树。<br>对于上面的这一棵树，我们可以进行如下的一些标记：<br>我们首先按照深度进行分层：</p>
+<p><img src="https://s2.loli.net/2021/12/29/Jgwz7DUojWMBms1.png" alt="树剖2.png"></p>
+<p>然后标出子树的大小：</p>
+<p><img src="https://s2.loli.net/2021/12/29/4Xcb2qKiFyD6IdM.png" alt="树剖3.png"></p>
+<p>然后标出轻儿子、重儿子、轻边和重边：</p>
+<p><img src="https://s2.loli.net/2021/12/29/ACztKMokjJgmYx7.png" alt="树剖4.png"></p>
+<p>然后标出重链：</p>
+<p><img src="https://s2.loli.net/2021/12/29/4nWDzp72RSkBE1l.png" alt="树剖5.png"></p>
+<p>最后标出DFS序：</p>
+<p><img src="https://s2.loli.net/2021/12/29/bS7Y1wiOglACmkt.png" alt="树剖6.png"></p>
+<p>这样就大功告成了。</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>树剖的实现是通过两个DFS进行的。</p>
+<p>第一个DFS记录了每个节点的父节点(vater)、深度(depth)、子树大小(sz)和重儿子(hs)：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> vater, <span class="keyword">int</span> depth)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	dep[p] = depth, fa[p] = vater, sz[p] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> j = e[i];</span><br><span class="line">		<span class="keyword">if</span>(j == vater) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">dfs1</span>(j, p, depth + <span class="number">1</span>);</span><br><span class="line">		sz[p] += sz[j];</span><br><span class="line">		<span class="keyword">if</span>(sz[hs[p]] &lt; sz[j]) hs[p] = j;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$\color[rgb]{1,1,0.0625}{φ}$</p>
+<p>第二个DFS记录了每个节点所在重链的链顶节点(top)、dfs序(id)和重新定向的节点编号(nw)：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	id[p] = ++cnt, nw[cnt] = w[p], top[p] = t;</span><br><span class="line">	<span class="keyword">if</span>(!son[p]) <span class="keyword">return</span>;</span><br><span class="line">	<span class="built_in">dfs2</span>(son[p], t);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> j = e[i];</span><br><span class="line">		<span class="keyword">if</span>(j == fa[p] || j == son[p]) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">dfs2</span>(j, j);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$\color[rgb]{1,1,0.0625}{φ}$</p>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p>洛谷上面提供了板子题。<br>题面见<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3384">这里</a>。<br>代码正确性见<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/record/65907262">提交记录</a>。</p>
+<p>我们首先照常打出线段树部分（<del>不会的可以看<a href="">这篇博客</a></del>各位读者们一定已经会线段树了罢）</p>
+<p>两个DFS也是已经有了的代码（见上面）</p>
+<p>我们这次使用邻接表来存储树的边信息：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> w[N], h[N], e[M], ne[M], idx;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	e[idx] = b, ne[idx] = h[a], h[a] = idx++;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$\color[rgb]{1,1,0.0625}{φ}$</p>
+<p>然后就有了这篇代码的核心部分：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> str;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>, M = N &lt;&lt; <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, rt, mod;</span><br><span class="line"><span class="keyword">int</span> w[N], h[N], e[M], ne[M], idx;</span><br><span class="line"><span class="keyword">int</span> id[N], nw[N], cnt;</span><br><span class="line"><span class="keyword">int</span> dep[N], sz[N], top[N], fa[N], son[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">segtree</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> l, r;</span><br><span class="line">	ll add, sum;</span><br><span class="line">&#125;tr[N &lt;&lt; <span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	e[idx] = b, ne[idx] = h[a], h[a] = idx++;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> father, <span class="keyword">int</span> depth)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	dep[p] = depth, fa[p] = father, sz[p] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> j = e[i];</span><br><span class="line">		<span class="keyword">if</span>(j == father) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">dfs1</span>(j, p, depth + <span class="number">1</span>);</span><br><span class="line">		sz[p] += sz[j];</span><br><span class="line">		<span class="keyword">if</span>(sz[son[p]] &lt; sz[j]) son[p] = j;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	id[p] = ++cnt, nw[cnt] = w[p], top[p] = t;</span><br><span class="line">	<span class="keyword">if</span>(!son[p]) <span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">	<span class="built_in">dfs2</span>(son[p], t);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> j = e[i];</span><br><span class="line">		<span class="keyword">if</span>(j == fa[p] || j == son[p]) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">dfs2</span>(j, j);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushup</span><span class="params">(<span class="keyword">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	tr[p].sum = (tr[p &lt;&lt; <span class="number">1</span>].sum + tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].sum) % mod;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> &amp;root = tr[p], &amp;left = tr[p &lt;&lt; <span class="number">1</span>], &amp;rght = tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">if</span>(root.add)</span><br><span class="line">	&#123;</span><br><span class="line">		left.add = (left.add + root.add) % mod;</span><br><span class="line">		left.sum = (left.sum + root.add * (left.r - left.l + <span class="number">1</span>)) % mod;</span><br><span class="line">		rght.add = (rght.add + root.add) % mod;</span><br><span class="line">		rght.sum = (rght.sum + root.add * (rght.r - rght.l + <span class="number">1</span>)) % mod;</span><br><span class="line">		root.add = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	tr[p] = &#123; l, r, <span class="number">0</span>, nw[r] &#125;;</span><br><span class="line">	<span class="keyword">if</span>(l == r) <span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">	<span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span>, l, mid);</span><br><span class="line">	<span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r);</span><br><span class="line">	<span class="built_in">pushup</span>(p);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">segadd</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>((l &lt;= tr[p].l) &amp;&amp; (r &gt;= tr[p].r))</span><br><span class="line">	&#123;</span><br><span class="line">		tr[p].add = (tr[p].add + k) % mod;</span><br><span class="line">		tr[p].sum = (tr[p].sum + k * (tr[p].r - tr[p].l + <span class="number">1</span>)) % mod;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">pushdown</span>(p);</span><br><span class="line">	<span class="keyword">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(l &lt;= mid) <span class="built_in">segadd</span>(p &lt;&lt; <span class="number">1</span>, l, r, k);</span><br><span class="line">	<span class="keyword">if</span>(r &gt; mid) <span class="built_in">segadd</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r, k);</span><br><span class="line">	<span class="built_in">pushup</span>(p);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">segsum</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>((l &lt;= tr[p].l) &amp;&amp; (r &gt;= tr[p].r)) <span class="keyword">return</span> tr[p].sum;</span><br><span class="line">	<span class="built_in">pushdown</span>(p);</span><br><span class="line">	<span class="keyword">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	ll res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(l &lt;= mid) res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span>, l, r);</span><br><span class="line">	<span class="keyword">if</span>(r &gt; mid) res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r);</span><br><span class="line">	<span class="keyword">return</span> res % mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>, &amp;n, &amp;m, &amp;rt, &amp;mod);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;w[i]);</span><br><span class="line">	<span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="keyword">sizeof</span> h);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> a, b;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">		<span class="built_in">add</span>(a, b);</span><br><span class="line">		<span class="built_in">add</span>(b, a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">dfs1</span>(rt, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">	<span class="built_in">dfs2</span>(rt, rt);</span><br><span class="line">	<span class="built_in">build</span>(<span class="number">1</span>, <span class="number">1</span>, n);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$\color[rgb]{1,1,0.0625}{φ}$</p>
+<p>然后就是对题目要求功能的实现。</p>
+<p>题目要求我们这样做：</p>
+<blockquote>
+<ol>
+<li>将树从 x 到 y 结点最短路径上所有节点的值都加上 z。</li>
+<li>求树从 x 到 y 结点最短路径上所有节点的值之和。</li>
+<li>将以 x 为根节点的子树内所有节点值都加上 z。</li>
+<li>求以 x 为根节点的子树内所有节点值之和。</li>
+</ol>
+</blockquote>
+<p>我们分类型进行实现。</p>
+<p>对于那些对某一棵子树进行的操作，我们直接调用线段树来进行操作，因为对于任意一棵子树，它里面的所有节点的DFS序就是连续的，也就意味着可以被当成一段区间来进行操作。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addtree</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">segadd</span>(<span class="number">1</span>, id[p], id[p] + sz[p] - <span class="number">1</span>, k);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">sumtree</span><span class="params">(<span class="keyword">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">segsum</span>(<span class="number">1</span>, id[p], id[p] + sz[p] - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$\color[rgb]{1,1,0.0625}{φ}$</p>
+<p>而对于路径的操作，我们使用这样一种策略：边走边计算。<br>首先，我们求出这一条最短路，也就是求出它们的最近公共祖先。<br>我们使用这样的思路来寻找他们的LCA：</p>
+<p>我们从较深的那一个节点开始不断向上跳重链，直到跳到与较浅的节点同一条重链上为止。此时，深度较浅的哪一个就是他们的LCA。</p>
+<p>不懂？看代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (top[u] != top[v]) &#123;</span><br><span class="line">    <span class="keyword">if</span> (dep[top[u]] &gt; dep[top[v]])</span><br><span class="line">      u = fa[top[u]];</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      v = fa[top[v]];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dep[u] &gt; dep[v] ? v : u;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://oi-wiki.org/graph/hld/"> $\blacktriangleright$ </a></p>
+<p>于是我们就可以写出路径加、路径求和的代码了：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addpath</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(top[p] != top[q])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(dep[top[p]] &lt; dep[top[q]]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">		<span class="built_in">segadd</span>(<span class="number">1</span>, id[top[p]], id[p], k);</span><br><span class="line">		p = fa[top[p]];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dep[p] &lt; dep[q]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">	<span class="built_in">segadd</span>(<span class="number">1</span>, id[q], id[p], k);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">sumpath</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(top[p] != top[q])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(dep[top[p]] &lt; dep[top[q]]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">		res += <span class="built_in">segsum</span>(<span class="number">1</span>, id[top[p]], id[p]);</span><br><span class="line">		p = fa[top[p]];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dep[p] &lt; dep[q]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">	res += <span class="built_in">segsum</span>(<span class="number">1</span>, id[q], id[p]);</span><br><span class="line">	<span class="keyword">return</span> res % mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$\color[rgb]{1,1,0.0625}{φ}$</p>
+<p>最后放一遍完整代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100010</span>, M = N &lt;&lt; <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, rt, mod;</span><br><span class="line"><span class="keyword">int</span> w[N], h[N], e[M], ne[M], idx;</span><br><span class="line"><span class="keyword">int</span> id[N], nw[N], cnt;</span><br><span class="line"><span class="keyword">int</span> dep[N], sz[N], top[N], fa[N], son[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">segtree</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> l, r;</span><br><span class="line">	ll add, sum;</span><br><span class="line">&#125;tr[N &lt;&lt; <span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	e[idx] = b, ne[idx] = h[a], h[a] = idx++;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> father, <span class="keyword">int</span> depth)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	dep[p] = depth, fa[p] = father, sz[p] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> j = e[i];</span><br><span class="line">		<span class="keyword">if</span>(j == father) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">dfs1</span>(j, p, depth + <span class="number">1</span>);</span><br><span class="line">		sz[p] += sz[j];</span><br><span class="line">		<span class="keyword">if</span>(sz[son[p]] &lt; sz[j]) son[p] = j;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	id[p] = ++cnt, nw[cnt] = w[p], top[p] = t;</span><br><span class="line">	<span class="keyword">if</span>(!son[p]) <span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">	<span class="built_in">dfs2</span>(son[p], t);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> j = e[i];</span><br><span class="line">		<span class="keyword">if</span>(j == fa[p] || j == son[p]) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">dfs2</span>(j, j);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushup</span><span class="params">(<span class="keyword">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	tr[p].sum = (tr[p &lt;&lt; <span class="number">1</span>].sum + tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].sum) % mod;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushdown</span><span class="params">(<span class="keyword">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> &amp;root = tr[p], &amp;left = tr[p &lt;&lt; <span class="number">1</span>], &amp;rght = tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">if</span>(root.add)</span><br><span class="line">	&#123;</span><br><span class="line">		left.add = (left.add + root.add) % mod;</span><br><span class="line">		left.sum = (left.sum + root.add * (left.r - left.l + <span class="number">1</span>)) % mod;</span><br><span class="line">		rght.add = (rght.add + root.add) % mod;</span><br><span class="line">		rght.sum = (rght.sum + root.add * (rght.r - rght.l + <span class="number">1</span>)) % mod;</span><br><span class="line">		root.add = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	tr[p] = &#123; l, r, <span class="number">0</span>, nw[r] &#125;;</span><br><span class="line">	<span class="keyword">if</span>(l == r) <span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">	<span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span>, l, mid);</span><br><span class="line">	<span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r);</span><br><span class="line">	<span class="built_in">pushup</span>(p);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">segadd</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>((l &lt;= tr[p].l) &amp;&amp; (r &gt;= tr[p].r))</span><br><span class="line">	&#123;</span><br><span class="line">		tr[p].add = (tr[p].add + k) % mod;</span><br><span class="line">		tr[p].sum = (tr[p].sum + k * (tr[p].r - tr[p].l + <span class="number">1</span>)) % mod;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">pushdown</span>(p);</span><br><span class="line">	<span class="keyword">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(l &lt;= mid) <span class="built_in">segadd</span>(p &lt;&lt; <span class="number">1</span>, l, r, k);</span><br><span class="line">	<span class="keyword">if</span>(r &gt; mid) <span class="built_in">segadd</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r, k);</span><br><span class="line">	<span class="built_in">pushup</span>(p);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">segsum</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>((l &lt;= tr[p].l) &amp;&amp; (r &gt;= tr[p].r)) <span class="keyword">return</span> tr[p].sum;</span><br><span class="line">	<span class="built_in">pushdown</span>(p);</span><br><span class="line">	<span class="keyword">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	ll res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(l &lt;= mid) res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span>, l, r);</span><br><span class="line">	<span class="keyword">if</span>(r &gt; mid) res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r);</span><br><span class="line">	<span class="keyword">return</span> res % mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addpath</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(top[p] != top[q])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(dep[top[p]] &lt; dep[top[q]]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">		<span class="built_in">segadd</span>(<span class="number">1</span>, id[top[p]], id[p], k);</span><br><span class="line">		p = fa[top[p]];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dep[p] &lt; dep[q]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">	<span class="built_in">segadd</span>(<span class="number">1</span>, id[q], id[p], k);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">sumpath</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(top[p] != top[q])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(dep[top[p]] &lt; dep[top[q]]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">		res += <span class="built_in">segsum</span>(<span class="number">1</span>, id[top[p]], id[p]);</span><br><span class="line">		p = fa[top[p]];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(dep[p] &lt; dep[q]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">	res += <span class="built_in">segsum</span>(<span class="number">1</span>, id[q], id[p]);</span><br><span class="line">	<span class="keyword">return</span> res % mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addtree</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">segadd</span>(<span class="number">1</span>, id[p], id[p] + sz[p] - <span class="number">1</span>, k);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">sumtree</span><span class="params">(<span class="keyword">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">segsum</span>(<span class="number">1</span>, id[p], id[p] + sz[p] - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>, &amp;n, &amp;m, &amp;rt, &amp;mod);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;w[i]);</span><br><span class="line">	<span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="keyword">sizeof</span> h);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> a, b;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">		<span class="built_in">add</span>(a, b);</span><br><span class="line">		<span class="built_in">add</span>(b, a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">dfs1</span>(rt, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">	<span class="built_in">dfs2</span>(rt, rt);</span><br><span class="line">	<span class="built_in">build</span>(<span class="number">1</span>, <span class="number">1</span>, n);</span><br><span class="line">	<span class="keyword">while</span>(m--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> op, x, y, z;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;op, &amp;x);</span><br><span class="line">		<span class="keyword">if</span>(op == <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;y, &amp;z);</span><br><span class="line">			<span class="built_in">addpath</span>(x, y, z);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(op == <span class="number">2</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;y);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, <span class="built_in">sumpath</span>(x, y));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(op == <span class="number">3</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;z);</span><br><span class="line">			<span class="built_in">addtree</span>(x, z);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(op == <span class="number">4</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, <span class="built_in">sumtree</span>(x));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>$\color[rgb]{1,1,0.0625}{φ}$</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>在爱发电上支持我一下吧</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/afdian.png" alt="南陽劉子驥 aka KaiserWilheim 爱发电">
+        <span>爱发电</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/inorganic%20chemistry/orbitals/" rel="prev" title="轨道理论">
+                  <i class="fa fa-chevron-left"></i> 轨道理论
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/suoyin/" rel="next" title="博客索引">
+                  博客索引 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">南陽劉子驥 aka KaiserWilheim</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-wanko"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
