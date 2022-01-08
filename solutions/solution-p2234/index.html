@@ -20,23 +20,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="南陽劉子驥的博客">
-<meta property="og:url" content="https://kaiserwilheim.github.io/tags/%E6%A8%A1%E6%8B%9F/index.html">
+<meta name="description" content="Luogu P2234 HNOI 2002">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P2234 营业额统计 题解">
+<meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-p2234/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
+<meta property="og:description" content="Luogu P2234 HNOI 2002">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-08T13:33:43.282Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/tags/%E6%A8%A1%E6%8B%9F/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/solutions/solution-p2234/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/模拟/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solutions/solution-p2234/","path":"solutions/solution-p2234/","title":"P2234 营业额统计 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: 模拟 | 南陽劉子驥的博客</title>
+<title>P2234 营业额统计 题解 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -202,90 +207,123 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">模拟
-          <small>标签</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solutions/solution-p2234/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南陽劉子驥的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          P2234 营业额统计 题解
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="创建时间：2022-01-08 00:00:00 / 修改时间：21:33:43" itemprop="dateCreated datePublished" datetime="2022-01-08T00:00:00+08:00">2022-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Luogu P2234</p>
+<p>HNOI 2002</p>
+<span id="more"></span>
+
+<p>对于这种题目，我们考虑使用STL大法。</p>
+<p>我们先插入两个哨兵，以防<del>不会用<code>.begin()</code>和<code>.end()</code></del>越界。<br>这里把哨兵的值设置为了$\pm 1 \times 10^7$。</p>
+<p>然后，边读入边判断。<br>如果这个数已经有过了，那么就直接+0就可以了。<br>如果这个数还没有出现过，那么将其加入set内，并查询其前驱与后继。<br>之后，取其与其前驱与后继值之差的较小值，并加入总和之中。<br>当然，如果其前驱与后继均为哨兵，那么就代表这个数是第一个，直接输出这个值。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">set&lt;<span class="keyword">int</span>&gt;his;<span class="comment">//历史记录</span></span><br><span class="line">set&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">	his.<span class="built_in">insert</span>(<span class="number">-1000000</span>), his.<span class="built_in">insert</span>(<span class="number">1000000</span>);<span class="comment">//插入哨兵</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> k;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;k);</span><br><span class="line">		<span class="keyword">if</span>(his.<span class="built_in">count</span>(k))<span class="keyword">continue</span>;<span class="comment">//这个数出现过，直接跳过后续判断</span></span><br><span class="line">		his.<span class="built_in">insert</span>(k);</span><br><span class="line">		<span class="keyword">int</span> minn = <span class="number">200020</span>;</span><br><span class="line">		it = his.<span class="built_in">find</span>(k);</span><br><span class="line">		it++;</span><br><span class="line">		minn = <span class="built_in">min</span>(minn, <span class="built_in">abs</span>(*it - k));<span class="comment">//这个数与其前驱之差</span></span><br><span class="line">		it--, it--;</span><br><span class="line">		minn = <span class="built_in">min</span>(minn, <span class="built_in">abs</span>(*it - k));<span class="comment">//这个数与其后继之差</span></span><br><span class="line">		tot += (minn&gt;<span class="number">200000</span>?k:minn);<span class="comment">//是否为第一个数</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, tot);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$\color[rgb]{1,1,0.0625}{φ}$</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-10-25T00:00:00+08:00"
-              content="2021-10-25">
-          10-25
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>在爱发电上支持我一下吧</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/afdian.png" alt="南陽劉子驥 aka KaiserWilheim 爱发电">
+        <span>爱发电</span>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/solutions/solution-p7913/" itemprop="url">
-            <span itemprop="name">p7913 廊桥分配 题解</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-09-29T00:00:00+08:00"
-              content="2021-09-29">
-          09-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/solutions/solution-p3982/" itemprop="url">
-            <span itemprop="name">P3982 龙盘雪峰信息解析器 题解</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-09-23T00:00:00+08:00"
-              content="2021-09-23">
-          09-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/solutions/solution-p1061/" itemprop="url">
-            <span itemprop="name">p1061 Jam的计数法 题解</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"><i class="fa fa-tag"></i> 题解</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/splay/" rel="prev" title="Splay">
+                  <i class="fa fa-chevron-left"></i> Splay
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/suoyin/" rel="next" title="博客索引">
+                  博客索引 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
 
 </div>
   </main>
