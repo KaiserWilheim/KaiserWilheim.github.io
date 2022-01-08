@@ -20,37 +20,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="简介： 树状数组">
+<meta name="description" content="化学热力学相关。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树状数组">
-<meta property="og:url" content="https://kaiserwilheim.github.io/OI/tree-array/index.html">
+<meta property="og:title" content="化学热力学初步">
+<meta property="og:url" content="https://kaiserwilheim.github.io/chemical-thermodynamics/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="简介： 树状数组">
+<meta property="og:description" content="化学热力学相关。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/10/14/w8Q9VlYpkiRZOuK.png">
-<meta property="og:image" content="https://i.loli.net/2021/10/14/etBbyiMgNhHA2zQ.png">
-<meta property="og:image" content="https://i.loli.net/2021/10/14/7J41bdLejGiP9wF.png">
-<meta property="og:image" content="https://i.loli.net/2021/10/14/vCznWK9uGPhIwO8.png">
-<meta property="og:image" content="https://i.loli.net/2021/10/14/j1TmJIP9xBknas5.png">
-<meta property="og:image" content="https://i.loli.net/2021/10/14/PAUqE1a8D6CGh3d.png">
-<meta property="og:image" content="https://i.loli.net/2021/10/14/r8mtGfDANz2XWHv.png">
-<meta property="og:image" content="https://i.loli.net/2021/10/14/JWnIe5SftkZjpL7.png">
-<meta property="article:published_time" content="2021-10-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-01-07T12:59:18.302Z">
+<meta property="article:published_time" content="2022-01-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-07T10:26:37.672Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="无机化学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.loli.net/2021/10/14/w8Q9VlYpkiRZOuK.png">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/OI/tree-array/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/chemical-thermodynamics/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/OI/tree-array/","path":"OI/tree-array/","title":"树状数组"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/chemical-thermodynamics/","path":"chemical-thermodynamics/","title":"化学热力学初步"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>树状数组 | 南陽劉子驥的博客</title>
+<title>化学热力学初步 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -133,7 +124,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84"><span class="nav-number">1.</span> <span class="nav-text">树状数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AD%90"><span class="nav-number">1.1.</span> <span class="nav-text">引子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.2.</span> <span class="nav-text">简要介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%BF%E5%AD%90"><span class="nav-number">1.3.</span> <span class="nav-text">板子</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E7%B3%BB%E4%B8%8E%E7%8E%AF%E5%A2%83"><span class="nav-number">2.1.</span> <span class="nav-text">体系与环境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%93%E7%B3%BB"><span class="nav-number">2.1.1.</span> <span class="nav-text">体系</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%93%E7%B3%BB%E7%9A%84%E7%A7%8D%E7%B1%BB"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">体系的种类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E4%B8%8E%E7%8A%B6%E6%80%81%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">状态与状态函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E7%9A%84%E5%8F%98%E5%8C%96"><span class="nav-number">2.2.1.</span> <span class="nav-text">状态的变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8F%E5%BA%A6%E4%B8%8E%E5%BC%BA%E5%BA%A6"><span class="nav-number">2.2.2.</span> <span class="nav-text">量度与强度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E7%8A%B6%E6%80%81"><span class="nav-number">2.3.</span> <span class="nav-text">标准状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%87%E7%A8%8B%E4%B8%8E%E9%80%94%E5%BE%84"><span class="nav-number">2.4.</span> <span class="nav-text">过程与途径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8"><span class="nav-number">2.5.</span> <span class="nav-text">相</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%83%AD%E4%B8%8E%E5%8A%9F"><span class="nav-number">3.</span> <span class="nav-text">热与功</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E7%A7%AF%E5%8A%9F"><span class="nav-number">3.2.</span> <span class="nav-text">体积功</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -228,7 +219,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/OI/tree-array/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/chemical-thermodynamics/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
@@ -241,7 +232,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          树状数组
+          化学热力学初步
         </h1>
 
         <div class="post-meta-container">
@@ -252,14 +243,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-10-13 00:00:00" itemprop="dateCreated datePublished" datetime="2021-10-13T00:00:00+08:00">2021-10-13</time>
+      <time title="创建时间：2022-01-05 00:00:00" itemprop="dateCreated datePublished" datetime="2022-01-05T00:00:00+08:00">2022-01-05</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-01-07 20:59:18" itemprop="dateModified" datetime="2022-01-07T20:59:18+08:00">2022-01-07</time>
+        <time title="修改时间：2022-01-07 18:26:37" itemprop="dateModified" datetime="2022-01-07T18:26:37+08:00">2022-01-07</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -267,7 +258,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+          <a href="/categories/%E6%97%A0%E6%9C%BA%E5%8C%96%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">无机化学</span></a>
         </span>
     </span>
 
@@ -281,37 +272,108 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>简介： 树状数组</p>
+        <p>化学热力学相关。</p>
 <span id="more"></span>
 
-<h1 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h1><p>一种神奇的数据结构。</p>
-<h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><p>当我们想要对一个数组进行单点加时，我们可以选择使用普通数组，时间复杂度是 $O(1)$；<br>当我们想要对一个数组进行区间求和时，我们可以选择使用前缀和数组，时间复杂度也是 $O(1)$；</p>
-<p>但是，前缀和数组在进行单点加时，时间复杂度是 $O(n)$ ；<br>而普通数组在进行区间求和时，时间复杂度也是 $O(n)$ ；</p>
-<p>我们能不能设计出一个数据结构，让我们在进行这两个操作时牺牲某一个操作的时间复杂度，而减少了另一个操作的时间复杂度呢？</p>
-<p>于是，树状数组就应运而生。</p>
-<h2 id="简要介绍"><a href="#简要介绍" class="headerlink" title="简要介绍"></a>简要介绍</h2><p>树状数组的存储原理是这个样子的：</p>
-<p>我们称原数组为 $a[i]$ ，我们正常所输入的数据就存储在这里。</p>
-<p>在原数组 $a[i]$ 的基础上，我们创建一个新的数组 $c[i]$ 。<br>数组 $c[i]$ 是以这个规则存储信息的：</p>
-<p>我们先列出所有的数组下标：</p>
-<p><img src="https://i.loli.net/2021/10/14/w8Q9VlYpkiRZOuK.png" alt="树状数组1.png"></p>
-<p>接下来我们开始考虑数字的 $lowbit$ 。</p>
-<p>所有奇数的 $lowbit$ 都是1。<br>我们在第一层标记上 $lowbit$ 为1的所有数字：</p>
-<p><img src="https://i.loli.net/2021/10/14/etBbyiMgNhHA2zQ.png" alt="树状数组2.png"></p>
-<p>接下来，我们依次标上数字的 $lowbit$ ：</p>
-<p><img src="https://i.loli.net/2021/10/14/7J41bdLejGiP9wF.png" alt="树状数组3.png"></p>
-<p><img src="https://i.loli.net/2021/10/14/vCznWK9uGPhIwO8.png" alt="树状数组4.png"></p>
-<p><img src="https://i.loli.net/2021/10/14/j1TmJIP9xBknas5.png" alt="树状数组5.png"></p>
-<p>最后，我们再进行一下延长，每一个块向左延长至长度为 $2^{lowbit(i)}$ 。</p>
-<p><img src="https://i.loli.net/2021/10/14/PAUqE1a8D6CGh3d.png" alt="树状数组6.png"></p>
-<p>我们对块进行一下标号：</p>
-<p><img src="https://i.loli.net/2021/10/14/r8mtGfDANz2XWHv.png" alt="树状数组7.png"></p>
-<p>这些绿色的块里面存储的是其下方所有数字的和。</p>
-<p>当然，我们进行值的更新的时候，不可能一个一个加起来再更新，这样复杂度又回到了原先的样子。</p>
-<p>我们更新时遵循的是这样一个路线：</p>
-<p><img src="https://i.loli.net/2021/10/14/JWnIe5SftkZjpL7.png" alt="树状数组8.png"></p>
-<p>因为每一个数有 $\log (n)$ 位，所以最终两个操作的时间复杂度都是 $O(\log n)$ 。</p>
-<h2 id="板子"><a href="#板子" class="headerlink" title="板子"></a>板子</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">500010</span>;</span><br><span class="line"><span class="keyword">int</span> a[N],tr[N];</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a&amp;-a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> c)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;=n;i+=<span class="built_in">lowbit</span>(i))&#123;</span><br><span class="line">		tr[i]+=c;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=x;i;i-=<span class="built_in">lowbit</span>(i))&#123;</span><br><span class="line">		res+=tr[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		cin&gt;&gt;a[i];</span><br><span class="line">		<span class="built_in">add</span>(i,a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> op,x,y;</span><br><span class="line">		cin&gt;&gt;op&gt;&gt;x&gt;&gt;y;</span><br><span class="line">		<span class="keyword">if</span>(op==<span class="number">1</span>)&#123;</span><br><span class="line">			a[x]+=y;</span><br><span class="line">			<span class="built_in">add</span>(x,y);</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">int</span> res=<span class="built_in">sum</span>(y)-<span class="built_in">sum</span>(x<span class="number">-1</span>);</span><br><span class="line">			cout&lt;&lt;res&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>化学热力学解决的是两种或多种物质反应的可能性。通过对热、能、功、熵的一系列计算，可以得出某一个反应的可能性（即自发行状况）和反应限度。<br>但化学热力学只是理论上说明了这个反应可以进行和最终会进行到哪里，而根本不考虑反应的现实程度。实际上，如果真正考虑反应的现实程度的话，那就是<a href="">化学动力学</a>的范畴了。</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><h2 id="体系与环境"><a href="#体系与环境" class="headerlink" title="体系与环境"></a>体系与环境</h2><h3 id="体系"><a href="#体系" class="headerlink" title="体系"></a>体系</h3><p>一般来说，我们称我们所正在研究的对象定义为体系，而与体系相对的（也就是除了体系之外的）就称之为环境；体系与环境加在一起称为宇宙。</p>
+<p>一般来说，体系的定义是带有一点随意的色彩的。当我们研究一个烧杯里面的溶液的时候，我们一般将体系定义为烧杯、烧杯内的溶液以及溶液上方的气体。当然，你也可以只看溶液，而将其他的一切都归为环境。</p>
+<h4 id="体系的种类"><a href="#体系的种类" class="headerlink" title="体系的种类"></a>体系的种类</h4><p>体系分为如下几类：孤立(isolated)体系，封闭(closed)体系以及开放(open)体系。</p>
+<p>区别如下：</p>
+<table>
+<thead>
+<tr>
+<th align="center">体系类型</th>
+<th align="center">能量交换</th>
+<th align="center">物质交换</th>
+<th align="center">例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">开放体系</td>
+<td align="center">有</td>
+<td align="center">有</td>
+<td align="center">敞口的烧杯</td>
+</tr>
+<tr>
+<td align="center">封闭体系</td>
+<td align="center">有</td>
+<td align="center">无</td>
+<td align="center">盖上盖子的水杯</td>
+</tr>
+<tr>
+<td align="center">孤立体系</td>
+<td align="center">无</td>
+<td align="center">无</td>
+<td align="center">保温壶（理想）</td>
+</tr>
+</tbody></table>
+<h2 id="状态与状态函数"><a href="#状态与状态函数" class="headerlink" title="状态与状态函数"></a>状态与状态函数</h2><p>状态函数是描述一个状态的物理量。<br>典型的状态函数有压强$p$，体积$V$，温度$T$等。<br>对于一个确定的状态，其状态函数也是确定的。反之亦然，对于一组确定的状态函数，其代表的状态也是确定的。</p>
+<p>举个栗子：<br>对于某一个标准状态下的理想气体体系，它的状态函数如下：<br>$$<br>\begin{align}<br>n &amp;=1 mol \\<br>p &amp;=1.013 \times 10^5 Pa \\<br>V &amp;=22.4 L \\<br>T &amp;=273 K<br>\end{align}<br>$$</p>
+<h3 id="状态的变化"><a href="#状态的变化" class="headerlink" title="状态的变化"></a>状态的变化</h3><p>和物理一样，状态函数的变化也是使用Δ来表示的，比如$ΔT$,$ΔV$等。<br>状态函数的变化量只与始态和终态有关。<br>参见这个口诀：“殊途同归变化等，周而复始变化零”</p>
+<h3 id="量度与强度"><a href="#量度与强度" class="headerlink" title="量度与强度"></a>量度与强度</h3><p>状态函数可分为两类：量度和强度。（说法不标准）</p>
+<p>具有量度性质的状态函数具有加和性，它的数值与系统内物质的量成正比，如体积$V$，质量$m$，熵$S$等等。</p>
+<p>具有强度性质的状态函数的数值取决于系统自身，与物质的量无关，不具有加和性，如温度$T$，压力$p$等等。</p>
+<h2 id="标准状态"><a href="#标准状态" class="headerlink" title="标准状态"></a>标准状态</h2><p>我们在之前列出了理想气体的标准状态,<a href="/chemical-thermodynamics/#%E7%8A%B6%E6%80%81%E4%B8%8E%E7%8A%B6%E6%80%81%E5%87%BD%E6%95%B0">见这里</a><br>但是，在化学热力学里，人们使用另一种不同的标准状态，称之为“热力学标况”。</p>
+<p>气体的标准态是$p^{\ominus} = 1 \times 10^5 Pa$，称为标准态气压。<br>溶液的标准态是$c^{\ominus} = 1 mol \cdot L^{-1}$（浓度）或$b^{\ominus} = 1 mol \cdot kg^{-1}$（活度）。</p>
+<p>其中，状态函数的符号上面都带有一个角标“$^{\ominus}$”，代表热力学标况。</p>
+<h2 id="过程与途径"><a href="#过程与途径" class="headerlink" title="过程与途径"></a>过程与途径</h2><p>过程: 体系的状态发生改变时, 从始态到终态, 就经历了一个热力学过程，简称过程。<br>途径:完成过程的具体步骤称为途径。</p>
+<p>二者关系：<br>过程是体系状态的改变，即从始态到终态的状态变化，体系状态发生的任何变化都称为过程，过程着重于始态和终态；但途径却是完成某一过程的具体步骤，完成某一过程可以有很多种途径，每种途径都包含过程，途径着重于具体方式。<br>根据途径的性质不同可以把过程分为以下4种典型类型：</p>
+<table>
+<thead>
+<tr>
+<th align="center">数据特点</th>
+<th align="center">别称</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$ΔT = 0$</td>
+<td align="center">等温过程；恒温过程</td>
+</tr>
+<tr>
+<td align="center">$Δp = 0$</td>
+<td align="center">等压过程；恒压过程</td>
+</tr>
+<tr>
+<td align="center">$ΔV = 0$</td>
+<td align="center">等容过程；恒容过程</td>
+</tr>
+<tr>
+<td align="center">$Q ＝ 0$</td>
+<td align="center">绝热过程；体系与环境间无热交换</td>
+</tr>
+</tbody></table>
+<p>过程还可以分为以下几类：</p>
+<table>
+<thead>
+<tr>
+<th align="center">类别</th>
+<th align="center">特点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">自发过程</td>
+<td align="center">不需要外界任何作用就自然而然地发生的过程。</td>
+</tr>
+<tr>
+<td align="center">非自发过程</td>
+<td align="center">没有外界作用不会自然而然地发生的过程。</td>
+</tr>
+<tr>
+<td align="center">可逆过程</td>
+<td align="center">某一系统经过一个过程，如果系统回到原来的状态，环境也复原。</td>
+</tr>
+<tr>
+<td align="center">不可逆过程</td>
+<td align="center">某一系统经过一个过程，如果系统回到原来的状态，而环境不能完全复原。</td>
+</tr>
+</tbody></table>
+<h2 id="相"><a href="#相" class="headerlink" title="相"></a>相</h2><p>相指的是体系中物理性质和化学性质完全相同的任何均匀部分。<br>相的一个特点是相和相之间有明显的界面。</p>
+<p>举一些例子，比如气态的物质就是在气相，液态的物质就在液相，固态的物质就在液相，溶液中的溶质就在水相，有机溶剂中的溶质就在有机相等等。</p>
+<h1 id="热与功"><a href="#热与功" class="headerlink" title="热与功"></a>热与功</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>热是是体系与环境之间因温度差异而进行的能量传递的一种形式。热不是物质，也不是系统的性质，而是大量物质微粒作无序运动引起的能量传递形式，用$Q$来表示。<br>而除热之外，体系与环境之间所有其他的能量传递形式都叫功，用$W$来表示。</p>
+<p>而在热力学中又把功分为两大类，一类叫膨胀功，即体积功；另一类则是除膨胀功以外的 “其他功”，叫非体积功，也叫“有用功” 。</p>
+<h2 id="体积功"><a href="#体积功" class="headerlink" title="体积功"></a>体积功</h2><p>假设我们有一个带有活塞的试管，里面充有一定量的气体。<br>试管内气体的压强为$p$。<br>我们对这个活塞做功，使其向内压缩$Δl$。<br>如果我们不考虑试管碎裂等等其他问题和活塞摩擦等的一些无关变量，那么我们所做的就是纯粹的体积功。<br>用公式表示是这个样子的：<br>$$<br>W=-F \cdot Δl<br>$$<br>我们再对这个式子做出一点推导：<br>$$<br>\begin{align}<br>W &amp;= -F \cdot Δl \\<br>&amp;= -\frac{F}{S} \cdot Δl \cdot S \\<br>&amp;= -p \cdot ΔV<br>\end{align}<br>$$<br>这个$W=-pΔV$就是当前活塞做功的公式。当我们不考虑其他功的时候，体积功$W_{\tt{体}}$就等于总功$W$。</p>
+<p>对于绝大多数的体系，如果我们不加以说明，我们就认为这个体系只做了体积功，即$W=W_{\tt{体}}$。</p>
 
     </div>
 
@@ -335,20 +397,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+              <a href="/tags/%E6%97%A0%E6%9C%BA%E5%8C%96%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 无机化学</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/OI/special-numbers/" rel="prev" title="特殊的数">
-                  <i class="fa fa-chevron-left"></i> 特殊的数
+                <a href="/solutions/solution-p2146/" rel="prev" title="P2146 软件包管理器 题解">
+                  <i class="fa fa-chevron-left"></i> P2146 软件包管理器 题解
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/OI/fourier-transform/" rel="next" title="傅里叶变换">
-                  傅里叶变换 <i class="fa fa-chevron-right"></i>
+                <a href="/splay/" rel="next" title="Splay">
+                  Splay <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

@@ -9,4 +9,7 @@ K:Mein Fürher...Steiner...
 J:Steiner konnte nicht genügend Kräfte für einen Angriff massieren. Der Angriff Steiner ist nicht erfolgt.
 H:Es bleiben im Haum: Keitel, Jodl, Krebs und Burgdorf.
 H:Das war ein Befehl! Der Angriff STeiners war ein Befehl! Wer sind Sie, dass Sie es wagen, sich meinen Befehlen zu widersetzen?
+H:So weit ist ed also gekommen...Das Militär hat mich belogen! Jeder hat mich belogen, sogar die SS! Die gesamte Generalität ist nichts weiter als ein Haufen niederträchtiger, treuloser Feiglinge!
+B:Mein Fürher, ich kann nicht zulassen dass Sie Soldaten, die für Sie verbluten...
+H:Sie sind Feiglinge! Verräter! Versager!
 
