@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://kaiserwilheim.github.io/pics/SAM.svg">
 <meta property="article:published_time" content="2022-01-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-01-24T13:27:37.972Z">
+<meta property="article:modified_time" content="2022-01-26T06:23:35.806Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="自动机">
@@ -127,7 +127,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%90%E4%B8%B2"><span class="nav-number">3.</span> <span class="nav-text">子串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">4.</span> <span class="nav-text">性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9D%9F%E4%BD%8D%E7%BD%AE-endpos"><span class="nav-number">4.1.</span> <span class="nav-text">结束位置 endpos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BC%80%E9%93%BE%E6%8E%A5-link"><span class="nav-number">4.2.</span> <span class="nav-text">后缀链接 link</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA"><span class="nav-number">5.</span> <span class="nav-text">构建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E7%BB%88%E6%AD%A2%E7%8A%B6%E6%80%81"><span class="nav-number">5.1.1.</span> <span class="nav-text">寻找终止状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%98%8E"><span class="nav-number">5.1.2.</span> <span class="nav-text">证明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">5.2.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E5%87%BA%E7%8E%B0"><span class="nav-number">6.1.</span> <span class="nav-text">检查字符串是否出现</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%90%E4%B8%B2"><span class="nav-number">3.</span> <span class="nav-text">子串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">4.</span> <span class="nav-text">性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9D%9F%E4%BD%8D%E7%BD%AE-endpos"><span class="nav-number">4.1.</span> <span class="nav-text">结束位置 endpos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BC%80%E9%93%BE%E6%8E%A5-link"><span class="nav-number">4.2.</span> <span class="nav-text">后缀链接 link</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA"><span class="nav-number">5.</span> <span class="nav-text">构建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E7%BB%88%E6%AD%A2%E7%8A%B6%E6%80%81"><span class="nav-number">5.1.1.</span> <span class="nav-text">寻找终止状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%98%8E"><span class="nav-number">5.1.2.</span> <span class="nav-text">证明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">5.2.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E5%87%BA%E7%8E%B0"><span class="nav-number">6.1.</span> <span class="nav-text">检查字符串是否出现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E4%B8%8D%E5%90%8C%E5%AD%90%E4%B8%B2%E4%B8%AA%E6%95%B0"><span class="nav-number">6.2.</span> <span class="nav-text">求不同子串个数</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -142,7 +142,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -253,7 +253,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-01-24 21:27:37" itemprop="dateModified" datetime="2022-01-24T21:27:37+08:00">2022-01-24</time>
+        <time title="修改时间：2022-01-26 14:23:35" itemprop="dateModified" datetime="2022-01-26T14:23:35+08:00">2022-01-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -368,6 +368,16 @@
 <h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="检查字符串是否出现"><a href="#检查字符串是否出现" class="headerlink" title="检查字符串是否出现"></a>检查字符串是否出现</h2><blockquote>
 <p>给定一个字符串 $S$ 和多个模式串 $P$ ，我们需要检查模式串 $P$ 是否作为 $S$ 的一个子串出现过。</p>
 </blockquote>
+<p>我们首先给字符串 $S$ 构建后缀自动机。构建完了之后，我们从初始节点 $t_0$ 开始，不断向遍历trie树一样遍历后缀自动机。由于字符串 $S$ 内的每个字串都是其某个后缀的前缀，所以我们仅从初始节点开始遍历即可。<br>如果遍历完整个自动机都没有完全匹配，那么就说明模式串没有在原字符串里面出现过，反之亦然。</p>
+<p>如果我们在这样历的同时记录下最大匹配长度，那么还可以得到模式串在字符串内匹配的最大前缀长度。</p>
+<h2 id="求不同子串个数"><a href="#求不同子串个数" class="headerlink" title="求不同子串个数"></a>求不同子串个数</h2><blockquote>
+<p>给定一个字符串 $S$ ，计算其不同子串的个数。</p>
+</blockquote>
+<p>对其构造后缀自动机。<br>字符串 $S$ 中的每一个子串都相当于是自动机中的一些路径。因此不同字串的个数就等于自动几种以 $t_0$ 为起点的不同路径的条数。<br>考虑到后缀自动机是一个有向无环图，不同路径的条数可以通过动态规划来计算。<br>OIwiki上给的方法是这样的：</p>
+<blockquote>
+<p>令 $d_v$ 为从状态 $v$ 开始的路径数量（包括长度为零的路径），则我们有如下递推方程：<br>$$<br>d_v = 1 + \sum_{w:(v,w,c)\in DAWG} d_w<br>$$<br>即， $d_v$ 可以表示为所有 $v$ 的转移的末端的和。<br>所以不同字串的个数为 $d_{t_0}-1$ （因为需要去掉空字串）</p>
+</blockquote>
+<p>我个人更喜欢另一种方法：<br>利用后缀自动机的树形结构，每个节点对应的子串数量就是<code>len[i] - len[link[i]]</code>，对自动机所有节点求和即可。<br>这个在洛谷上有例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3804">Luogu P3804</a></p>
 
     </div>
 
@@ -399,13 +409,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/test/" rel="prev" title="test">
-                  <i class="fa fa-chevron-left"></i> test
+                <a href="/solutions/solution-l2759/" rel="prev" title="l2759 飞天鼠（フクロモモンガ） 题解">
+                  <i class="fa fa-chevron-left"></i> l2759 飞天鼠（フクロモモンガ） 题解
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/suffix-array/" rel="next" title="suffix-array">
-                  suffix-array <i class="fa fa-chevron-right"></i>
+                <a href="/suoyin/" rel="next" title="博客索引">
+                  博客索引 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
