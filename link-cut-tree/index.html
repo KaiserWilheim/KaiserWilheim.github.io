@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-kw.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/128kw.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/64kw.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Link&#x2F;Cut Tree.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Link Cut Tree">
+<meta property="og:url" content="https://kaiserwilheim.github.io/link-cut-tree/index.html">
+<meta property="og:site_name" content="南陽劉子驥的博客">
+<meta property="og:description" content="Link&#x2F;Cut Tree.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-02-13T00:29:12.886Z">
+<meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kaiserwilheim.github.io/link-cut-tree/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/link-cut-tree/","path":"link-cut-tree/","title":"Link Cut Tree"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Link Cut Tree | 南陽劉子驥的博客</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">南陽劉子驥的博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">逻辑搭建基础，变幻点燃世界</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">15</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li>
+        <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%BC%95%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">问题引入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8A%A8%E6%80%81%E6%A0%91%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">什么是动态树问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E5%BE%84%E2%80%A6%E2%80%A6%E3%82%93%E2%80%A6%E2%80%A6%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">路径……ん……树链剖分？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E-LCT-%E7%9A%84%E8%A7%92%E5%BA%A6%E5%9B%9E%E9%A1%BE%E4%B8%80%E4%B8%8B%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86"><span class="nav-number">1.2.1.</span> <span class="nav-text">从 LCT 的角度回顾一下树链剖分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E5%90%91%E5%8A%A8%E6%80%81%E6%A0%91%E9%97%AE%E9%A2%98"><span class="nav-number">1.2.2.</span> <span class="nav-text">转向动态树问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%93%BE%E5%89%96%E5%88%86%EF%BC%81"><span class="nav-number">1.2.3.</span> <span class="nav-text">实链剖分！</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LCT%EF%BC%81"><span class="nav-number">2.</span> <span class="nav-text">LCT！</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%85%E5%8A%A9%E6%A0%91"><span class="nav-number">2.1.</span> <span class="nav-text">辅助树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%83%E8%99%91%E5%8E%9F%E6%A0%91%E5%92%8C%E8%BE%85%E5%8A%A9%E6%A0%91%E7%9A%84%E7%BB%93%E6%9E%84%E5%85%B3%E7%B3%BB"><span class="nav-number">2.1.1.</span> <span class="nav-text">考虑原树和辅助树的结构关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.2.</span> <span class="nav-text">实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E4%BC%9A%E7%94%A8%E5%88%B0%E7%9A%84%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="nav-number">2.2.1.</span> <span class="nav-text">接下来会用到的变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E4%B8%8B%E6%9D%A5%E4%BC%9A%E7%94%A8%E5%88%B0%E7%9A%84%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E"><span class="nav-number">2.2.2.</span> <span class="nav-text">接下来会用到的函数声明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">一般数据结构函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Splay%E7%B3%BB%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">Splay系函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LCT%E7%8B%AC%E6%9C%89%E7%9A%84%E6%96%B0%E5%87%BD%E6%95%B0"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">LCT独有的新函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%AE%B2%E8%A7%A3"><span class="nav-number">2.3.</span> <span class="nav-text">函数讲解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pushup-%E4%B8%8E-pushdown"><span class="nav-number">2.3.1.</span> <span class="nav-text">pushup() 与 pushdown()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-splay-%E4%B8%8E-rotate"><span class="nav-number">2.3.2.</span> <span class="nav-text">get(),splay() 与 rotate()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isroot"><span class="nav-number">2.3.3.</span> <span class="nav-text">isroot()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#access"><span class="nav-number">2.3.4.</span> <span class="nav-text">access()</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="南陽劉子驥 aka KaiserWilheim"
+      src="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+  <p class="site-author-name" itemprop="name">南陽劉子驥 aka KaiserWilheim</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/KaiserWilheim" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KaiserWilheim" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/346304235" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;346304235" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      部分友链
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.baoshuo.ren/" title="https:&#x2F;&#x2F;blog.baoshuo.ren&#x2F;" rel="noopener" target="_blank">宝硕博客</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://cloudyskyet.github.io/" title="https:&#x2F;&#x2F;cloudyskyet.github.io&#x2F;" rel="noopener" target="_blank">Blog of Cloudysky</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://youwike.github.io/" title="https:&#x2F;&#x2F;youwike.github.io&#x2F;" rel="noopener" target="_blank">Blog of Youwike</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://sjzezsyxx.github.io/" title="https:&#x2F;&#x2F;sjzezsyxx.github.io&#x2F;" rel="noopener" target="_blank">二南信竞团队</a>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/KaiserWilheim" class="github-corner" title="看看我的Github主页吧" aria-label="看看我的Github主页吧" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/link-cut-tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南陽劉子驥的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Link Cut Tree
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-02-11 00:00:00" itemprop="dateCreated datePublished" datetime="2022-02-11T00:00:00+08:00">2022-02-11</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-02-13 08:29:12" itemprop="dateModified" datetime="2022-02-13T08:29:12+08:00">2022-02-13</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Link/Cut Tree.</p>
+<span id="more"></span>
+
+<p>Link/Cut Tree 又称 Link Cut Tree，简称 LCT，是一类用来解决动态树问题的数据结构。</p>
+<p>Splay 是 LCT 的基础。但是 LCT 在使用 Splay 的时候，还将其进行了一些<del>魔改</del>扩展。</p>
+<p>LCT 与 Splay 一样，包含了一(dà)些(liàng)函数来维持 LCT 的运转。</p>
+<h1 id="问题引入"><a href="#问题引入" class="headerlink" title="问题引入"></a>问题引入</h1><p>假设我们需要维护一棵树，使其支持如下操作：</p>
+<ul>
+<li>修改两点间路径权值。</li>
+<li>查询两点间路径权值和。</li>
+<li>修改某点子树权值。</li>
+<li>查询某点子树权值和。</li>
+</ul>
+<p>唔，看上去是一道树剖模版题。</p>
+<p>那么我们再加一个操作：</p>
+<ul>
+<li>断开并连接一些边，保证仍是一棵树。</li>
+</ul>
+<p>要求在线求出上面的答案。</p>
+<p>——这就需要动态树问题的解决方法：<ruby>リンク<rp>(</rp><rt>Link</rt><rp>)</rp></ruby><ruby>/<rp>(</rp><rt>/</rt><rp>)</rp></ruby><ruby>カット<rp>(</rp><rt>Cut</rt><rp>)</rp></ruby><ruby>ツリー<rp>(</rp><rt>Tree</rt><rp>)</rp></ruby>!</p>
+
+<h2 id="什么是动态树问题"><a href="#什么是动态树问题" class="headerlink" title="什么是动态树问题"></a>什么是动态树问题</h2><p>维护一个森林，支持删除某条边，加入某条边，并保证加边，删边之后仍是森林。动态树问题要求我们要维护这个森林的一些信息。</p>
+<p>一般的操作有询问两点连通性，询问两点路径权值和，连接两点或切断某条边、修改信息等。</p>
+<h2 id="路径……ん……树链剖分？"><a href="#路径……ん……树链剖分？" class="headerlink" title="路径……ん……树链剖分？"></a>路径……ん……树链剖分？</h2><p>既然需要询问路径上的问题，那么就可以想到使用树剖来帮助我们解决这样的问题。</p>
+<p>但是……<br>树剖对LCT的适用性怎么样？</p>
+<h3 id="从-LCT-的角度回顾一下树链剖分"><a href="#从-LCT-的角度回顾一下树链剖分" class="headerlink" title="从 LCT 的角度回顾一下树链剖分"></a>从 LCT 的角度回顾一下树链剖分</h3><p>首先我们对整棵树按子树大小进行了剖分，并重新按照dfs序标了号。</p>
+<p>我们发现重新标号之后，在树上形成了一些以链为单位的连续区间，并且可以用线段树进行区间操作。</p>
+<h3 id="转向动态树问题"><a href="#转向动态树问题" class="headerlink" title="转向动态树问题"></a>转向动态树问题</h3><p>我们发现我们刚刚讲的树剖是以子树大小作为划分条件。那我们能不能重定义一种剖分，使它更适应我们的动态树问题呢？</p>
+<p>考虑动态树问题需要什么链。</p>
+<p>由于动态维护一个森林，显然我们希望这个链是我们指定的链，以便利用来求解。</p>
+<p>这就需要……</p>
+<h3 id="实链剖分！"><a href="#实链剖分！" class="headerlink" title="实链剖分！"></a>实链剖分！</h3><p>对于一个点连向它所有儿子的边，我们自己选择一条边进行剖分。<br>我们称被选择的边为实边，其他边则为虚边。</p>
+<p>对于实边，我们称它所连接的儿子为实儿子。<br>对于一条由实边组成的链，我们同样称之为实链。</p>
+<p>请记住我们选择实链剖分的最重要的原因：它是我们选择的，灵活且可变。<br>正是它的这种灵活可变性，我们便可以采用 Splay 来维护这些实链。</p>
+<h1 id="LCT！"><a href="#LCT！" class="headerlink" title="LCT！"></a>LCT！</h1><p>我们可以简单的把 LCT 理解成用一些 Splay 来维护动态的树链剖分，以期实现动态树上的区间操作。对于每条实链，我们建一个 Splay 来维护整个链区间的信息。</p>
+<p>接下来，我们来学习 LCT 的具体结构。</p>
+<h2 id="辅助树"><a href="#辅助树" class="headerlink" title="辅助树"></a>辅助树</h2><p>鉴于我们维护的是一个森林，那么我们就需要一些东西将所有的树连成一个整体来维护。</p>
+<p>于是我们就推出了——辅助树！</p>
+<p>我们可以认为，一些Splay构成了一棵辅助树，而一些辅助树构成了LCT，其维护的是整个森林。</p>
+<ol>
+<li>辅助树由多棵 Splay 组成，每棵 Splay 维护原树中的一条路径，且中序遍历这棵 Splay 得到的点序列，从前到后对应原树“从上到下”的一条路径。</li>
+<li>原树每个节点与辅助树的 Splay 节点一一对应。</li>
+<li>辅助树的各棵 Splay 之间并不是独立的。每棵 Splay 的根节点的父亲节点本应是空，但在 LCT 中每棵 Splay 的根节点的父亲节点指向原树中 <strong>这条链</strong> 的父亲节点（即链最顶端的点的父亲节点）。这类父亲链接与通常 Splay 的父亲链接区别在于儿子认父亲，而父亲不认儿子，对应原树的一条 <strong>虚边</strong>。因此，每个连通块恰好有一个点的父亲节点为空。</li>
+<li>由于辅助树的以上性质，我们维护任何操作都不需要维护原树，辅助树可以在任何情况下拿出一个唯一的原树，我们只需要维护辅助树即可。</li>
+</ol>
+<h3 id="考虑原树和辅助树的结构关系"><a href="#考虑原树和辅助树的结构关系" class="headerlink" title="考虑原树和辅助树的结构关系"></a>考虑原树和辅助树的结构关系</h3><ul>
+<li>原树中的实链 : 在辅助树中节点都在一棵 Splay 中。</li>
+<li>原树中的虚链 : 在辅助树中，子节点所在 Splay 的 Father 指向父节点，但是父节点的两个儿子都不指向子节点。</li>
+<li>注意：原树的根不等于辅助树的根。</li>
+<li>原树的 Father 指向不等于辅助树的 Father 指向。</li>
+<li>辅助树是可以在满足辅助树、Splay 的性质下任意换根的。</li>
+<li>虚实链变换可以轻松在辅助树上完成，这也就是实现了动态维护树链剖分。</li>
+</ul>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><h3 id="接下来会用到的变量声明"><a href="#接下来会用到的变量声明" class="headerlink" title="接下来会用到的变量声明"></a>接下来会用到的变量声明</h3><ul>
+<li><code>s[N][2]</code> 左右儿子</li>
+<li><code>fa[N]</code> 节点的父亲指向</li>
+<li><code>sum[N]</code> 路径权值和</li>
+<li><code>val[N]</code> 点权</li>
+<li><code>rev[N]</code> 翻转标记</li>
+<li><code>tag[N]</code> 权值标记</li>
+<li><code>sz[N]</code> 辅助树上子树大小</li>
+<li>其他可能用到的变量</li>
+</ul>
+<h3 id="接下来会用到的函数声明"><a href="#接下来会用到的函数声明" class="headerlink" title="接下来会用到的函数声明"></a>接下来会用到的函数声明</h3><h4 id="一般数据结构函数"><a href="#一般数据结构函数" class="headerlink" title="一般数据结构函数"></a>一般数据结构函数</h4><ul>
+<li><code>pushup(x)</code></li>
+<li><code>pushdown(x)</code></li>
+</ul>
+<h4 id="Splay系函数"><a href="#Splay系函数" class="headerlink" title="Splay系函数"></a>Splay系函数</h4><ul>
+<li><code>get(x)</code> 获取 $x$ 是父亲的哪个儿子</li>
+<li><code>rotate(x)</code> 将 $x$ 向上旋转。</li>
+<li><code>splay(x)</code> 通过与<code>rotate</code>联动来实现将 $x$ 旋转至<strong>当前Splay的根</strong>。</li>
+</ul>
+<h4 id="LCT独有的新函数"><a href="#LCT独有的新函数" class="headerlink" title="LCT独有的新函数"></a>LCT独有的新函数</h4><ul>
+<li><code>access(x)</code> 把从根到 $x$ 的所有点放在一条实链里，使根到 $x$ 成为一条实路径，并且在同一棵 Splay 里。<strong>只有此操作是必须实现的，其他操作视题目而实现。</strong></li>
+<li><code>isroot(x)</code> 判断 $x$ 是否是所在树的根。</li>
+<li><code>update(x)</code> 在 <code>access</code> 操作之后，递归地从上到下 <code>pushdown</code> 更新信息。</li>
+<li><code>MakeRoot(x)</code> 使 $x$ 点成为其所在树的根。</li>
+<li><code>link(x, y)</code> 在 $x, y$ 两点间连一条边。</li>
+<li><code>cut(x, y)</code> 把 $x, y$ 两点间边删掉。</li>
+<li><code>find(x)</code> 找到 $x$ 所在树的根节点编号。</li>
+<li><code>fix(x, v)</code> 修改 $x$ 的点权为 $v$。</li>
+<li><code>split(x, y)</code> 提取出 $x, y$ 间的路径，方便做区间操作。</li>
+</ul>
+<h2 id="函数讲解"><a href="#函数讲解" class="headerlink" title="函数讲解"></a>函数讲解</h2><h3 id="pushup-与-pushdown"><a href="#pushup-与-pushdown" class="headerlink" title="pushup() 与 pushdown()"></a><code>pushup()</code> 与 <code>pushdown()</code></h3><p>这两个函数具体根据你所需要的维护的信息来写。</p>
+<h3 id="get-splay-与-rotate"><a href="#get-splay-与-rotate" class="headerlink" title="get(),splay() 与 rotate()"></a><code>get()</code>,<code>splay()</code> 与 <code>rotate()</code></h3><p>这三个是 Splay 系的函数。</p>
+<p>这两个有点不一样了呢。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> get(x) (s[fa[x]][1] == x)</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> y = fa[x], z = fa[y], k = <span class="built_in">get</span>(x);</span><br><span class="line">	<span class="keyword">if</span>(!<span class="built_in">isroot</span>(y)) s[z][s[z][<span class="number">1</span>] == y] = x;</span><br><span class="line">	<span class="comment">// 上面这句一定要写在前面，普通的 Splay 是不用的，因为 isroot  (后面会讲)</span></span><br><span class="line">	s[y][k] = s[x][!k], fa[s[x][!k]] = y;</span><br><span class="line">	s[x][!k] = y, fa[y] = x, fa[x] = z;</span><br><span class="line">	<span class="built_in">pushup</span>(y), <span class="built_in">pushup</span>(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">splay</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">update</span>(x);  <span class="comment">// 马上就能看到啦。在 Splay 之前要把旋转会经过的路径上的点都 pushdown</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> father; father = fa[x], !<span class="built_in">isroot</span>(x); <span class="built_in">rotate</span>(x))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!<span class="built_in">isroot</span>(father)) </span><br><span class="line">			<span class="built_in">rotate</span>(<span class="built_in">get</span>(father) == <span class="built_in">get</span>(x) ? fa : x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相关解释见<a href="/OI/splay">Splay</a>。</p>
+<h3 id="isroot"><a href="#isroot" class="headerlink" title="isroot()"></a><code>isroot()</code></h3><p>第一个 LCT 系函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> isroot(x) (s[fa[x]][0] != x &amp;&amp; s[fa[x]][1] != x)</span></span><br></pre></td></tr></table></figure>
+
+<p>在前面我们已经说过，LCT 具有 如果一个儿子不是实儿子，他的父亲找不到它的性质。<br>所以当一个点既不是它父亲的左儿子，又不是它父亲的右儿子，它就是当前 Splay 的根。</p>
+<h3 id="access"><a href="#access" class="headerlink" title="access()"></a><code>access()</code></h3><p>另一个 LCT 系函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">access</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> p;</span><br><span class="line">	<span class="keyword">for</span>(p = <span class="number">0</span>; x; p = x, x = fa[x])</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">splay</span>(x);</span><br><span class="line">		s[x][<span class="number">1</span>] = p;</span><br><span class="line">		<span class="built_in">pushup</span>(x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Access 是 LCT 的核心操作，试想我们像求解一条路径，而这条路径恰好就是我们当前的一棵 Splay，直接调用其信息即可。</p>
+<p><code>Access()</code> 其实很容易，只有如下四步操作：</p>
+<ol>
+<li>把当前节点转到根。</li>
+<li>把儿子换成之前的节点。</li>
+<li>更新当前点的信息。</li>
+<li>把当前点换成当前点的父亲，继续操作。</li>
+</ol>
+<p>这里提供的 Access 还有一个返回值。这个返回值相当于最后一次虚实链变换时虚边父亲节点的编号。该值有两个含义：</p>
+<ul>
+<li>连续两次 Access 操作时，第二次 Access 操作的返回值等于这两个节点的 LCA.</li>
+<li>表示 $x$ 到根的链所在的 Splay 树的根。这个节点一定已经被旋转到了根节点，且父亲一定为空。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>在爱发电上支持我一下吧</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/afdian.png" alt="南陽劉子驥 aka KaiserWilheim 爱发电">
+        <span>爱发电</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/simulate-annealing/" rel="prev" title="模拟退火">
+                  <i class="fa fa-chevron-left"></i> 模拟退火
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022-wh-8/" rel="next" title="2022寒假测试8解析">
+                  2022寒假测试8解析 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">南陽劉子驥 aka KaiserWilheim</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
