@@ -20,23 +20,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta property="og:type" content="website">
-<meta property="og:title" content="南陽劉子驥的博客">
-<meta property="og:url" content="https://kaiserwilheim.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/index.html">
+<meta name="description" content="Luogu P3676">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P3676 小清新数据结构题 题解">
+<meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-p3676/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
+<meta property="og:description" content="Luogu P3676">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-03-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-13T13:42:25.807Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/solutions/solution-p3676/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"tags/最短路/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solutions/solution-p3676/","path":"solutions/solution-p3676/","title":"P3676 小清新数据结构题 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>标签: 最短路 | 南陽劉子驥的博客</title>
+<title>P3676 小清新数据结构题 题解 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -208,50 +213,144 @@
 </noscript>
 
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">最短路
-          <small>标签</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solutions/solution-p3676/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南陽劉子驥的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          P3676 小清新数据结构题 题解
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+
+      <time title="创建时间：2022-03-13 00:00:00 / 修改时间：21:42:25" itemprop="dateCreated datePublished" datetime="2022-03-13T00:00:00+08:00">2022-03-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Luogu P3676</p>
+<span id="more"></span>
+
+<p>这道题用树剖暴力跑应该可以过。</p>
+<p>这道题告诉我们，需要我们求所有子树权值和的平方和。</p>
+<p>我们考虑使用线段树维护每一个点所对应的子树的相关信息。</p>
+<p>我们显然需要维护所有子树点权和的平方及平方和。</p>
+<p>那么，我们每一次改变一个点的点权的时候，影响的是其对应的到根的路径上的所有子树。<br>这就是一个区间加的问题。</p>
+<p>假设我们加上的值是 $k$，每一棵子树的权值和是 $s_i$，那么对于最后的结果的影响就是这样的：</p>
+<p>$$<br>\sum (s_i + k)^2 = k^2 + 2k \sum s_i + \sum s_i^2<br>$$</p>
+<p>那么我们还需要维护子树点权和的和。</p>
+<p>当然，我们需要维护一个懒标记，所以我们总共需要维护三个值：区间和，区间平方和与区间加的懒标记。</p>
+<p>然后我们考虑换根的问题。</p>
+<p>经分析，我们显然可以得出，换根操作只影响的是现在的根与1号节点之间这一条路径上的点。<br>对于这一条路径之外的点，其子树仍然为其子树，需要维护的信息不变。<br>而对于路径上的点，其父亲变成了它的一个儿子，而它的在这条路径上的儿子则变成了其新的父亲。假设它的子树权值和为 $s_i$，它在路径上的儿子的子树权值和是 $s_{i+1}$，所有子树的权值和的平方和为 $a_0$，则其新的权值为 $a_0 - s_{i+1}^2$。<br>假设这一条路径上一共有 $k$ 个点，从1到x分别标号为 $1,2,3,\dots , x$，$ans_x$ 表示根为 $x$ 时的答案，那么所有这样的点加起来就是这个样子的</p>
+<p>$$<br>ans_x = ans_1 + \sum_{i=2}^k (a_0 - s_i - s_{i-1})^2 = ans_1 + (k-1)a_0^2 - 2 \sum_{i=2}^k (s_i + s_{i-1}) + \sum_{i-2}^k (s_i + s_{i-1})^2<br>$$</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2022-01-16T00:00:00+08:00"
-              content="2022-01-16">
-          01-16
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>在爱发电上支持我一下吧</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/afdian.png" alt="南陽劉子驥 aka KaiserWilheim 爱发电">
+        <span>爱发电</span>
       </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/solutions/solution-l2759/" itemprop="url">
-            <span itemprop="name">L2759 蜜袋鼯（フクロモモンガ） 题解</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>南陽劉子驥 aka KaiserWilheim
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://kaiserwilheim.github.io/solutions/solution-p3676/" title="P3676 小清新数据结构题 题解">https://kaiserwilheim.github.io/solutions/solution-p3676/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"><i class="fa fa-tag"></i> 题解</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/hebrew-english/" rel="prev" title="亚兰字母拼写英语">
+                  <i class="fa fa-chevron-left"></i> 亚兰字母拼写英语
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/suoyin/" rel="next" title="博客索引">
+                  博客索引 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
 
 </div>
   </main>

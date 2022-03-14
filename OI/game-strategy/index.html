@@ -105,8 +105,8 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">15</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">16</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
   </ul>
 </nav>
@@ -153,18 +153,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -347,12 +347,12 @@
 <h4 id="3-收益-Payoff"><a href="#3-收益-Payoff" class="headerlink" title="3. 收益(Payoff)"></a>3. 收益(Payoff)</h4><p> 在这里，我们使用带有下标的大写字母 $U_i (s)$ 来代表参与人 $i$ 在所有参与者使用的策略为 $s$ 时所能得到的收益。（这一段好长啊）</p>
 <p> 另外的，我们使用小写字母 $s$ 来表示一个博弈。</p>
 <p> 好了，现在让我们来使用我们刚刚学会的表示方法来表示我们之前学过的东西。</p>
-<p> 那么，如果策略 $s_i$ 相对于策略 $s_i’$ 是一个严格优势策略的话，那么我们就可以写下<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) &gt; U_i (s_i’ , s_{-i})<br> \end{equation}<br>$$</p>
-<p> 类似的，如果策略 $s_i$ 相对于策略 $s_i’$ 是一个严格劣势策略的话，那么我们就可以写下<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) &lt; U_i (s_i’ , s_{-i})<br> \end{equation}<br>$$</p>
-<h3 id="弱优与弱劣"><a href="#弱优与弱劣" class="headerlink" title="弱优与弱劣"></a>弱优与弱劣</h3><p> 如果策略 $s_i$ 相对于策略 $s_i’$ 是一个严格优势策略，那么无论他人选择何种策略，那么我们选 $s_i$ 得到的结果都严格优于选 $s_i’$。</p>
+<p> 那么，如果策略 $s_i$ 相对于策略 $s_i&#39;$ 是一个严格优势策略的话，那么我们就可以写下<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) &gt; U_i (s_i&#39; , s_{-i})<br> \end{equation}<br>$$</p>
+<p> 类似的，如果策略 $s_i$ 相对于策略 $s_i&#39;$ 是一个严格劣势策略的话，那么我们就可以写下<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) &lt; U_i (s_i&#39; , s_{-i})<br> \end{equation}<br>$$</p>
+<h3 id="弱优与弱劣"><a href="#弱优与弱劣" class="headerlink" title="弱优与弱劣"></a>弱优与弱劣</h3><p> 如果策略 $s_i$ 相对于策略 $s_i&#39;$ 是一个严格优势策略，那么无论他人选择何种策略，那么我们选 $s_i$ 得到的结果都严格优于选 $s_i&#39;$。</p>
 <p> 但有时候我们并不能总见到这样的策略。</p>
-<p> 那我们定义一个策略 $s_i$ 为相对于另一个策略 $s_i’$ 为 <strong>弱优策略(Weakly dominant strategy)</strong> ，此时只需要将大于号填上等于即可。<br> 就像下面这样：<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) \leq U_i (s_i’ , s_{-i})<br> \end{equation}<br>$$</p>
-<p> 类似的， <strong>弱劣策略(Weakly dominated strategy)</strong> 的定义如下：<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) \geq U_i (s_i’ , s_{-i})<br> \end{equation}<br>$$</p>
+<p> 那我们定义一个策略 $s_i$ 为相对于另一个策略 $s_i&#39;$ 为 <strong>弱优策略(Weakly dominant strategy)</strong> ，此时只需要将大于号填上等于即可。<br> 就像下面这样：<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) \leq U_i (s_i&#39; , s_{-i})<br> \end{equation}<br>$$</p>
+<p> 类似的， <strong>弱劣策略(Weakly dominated strategy)</strong> 的定义如下：<br>$$<br> \begin{equation}<br> U_i (s_i , s_{-i}) \geq U_i (s_i&#39; , s_{-i})<br> \end{equation}<br>$$</p>
 <p> 所以说，对于刚才你和李zen做的游戏，我们可以用这些表示来替换之前的说法：</p>
 <p> （先放图）<br> <img src="https://i.loli.net/2021/09/22/OSmtUF89Hs5covl.png" alt="博弈2.png"></p>
 <p> 其中，<br> $S_{you} = \lbrace 1,0 \rbrace $<br> $S_{zen} = \lbrace 1,0 \rbrace $<br> $U_{you} (1,1) = 0 $<br> $U_{zen} (1,1) = 0 $<br> $U_{you} (1,0) = 2 $<br> $U_{zen} (1,0) = -1 $<br> $U_{you} (0,1) = -1 $<br> $U_{zen} (0,1) = 2 $<br> $U_{you} (0,0) = 1 $<br> $U_{zen} (0,0) = 1 $<br> $U_{zen} (1,s_{-zen}) &gt; U_{zen} (0,s_{-zen}) $<br> $U_{you} (1,s_{-you}) &gt; U_{you} (0,s_{-you}) $</p>
@@ -392,9 +392,9 @@
 <p> <img src="https://i.loli.net/2021/09/24/mroUEi69tjgV1Cu.png" alt="博弈7.png"></p>
 <p> 图中的横轴代表李zen选←的概率，同时选→的概率是（1-选←的概率）。<br> 纵轴代表不同选择的期望收益。</p>
 <p> 所以，我们可以看到，在李zen选择某一策略的概率不同时，我们的最佳对策是不一样的。</p>
-<p> 在这里，我们可以这样定义 <strong>最佳对策(Best Responce)</strong> :<br> 当<br> $$ U_i ( \hat{s_i} ,s_{-i} ) \geq U_i ( s_i’ ,s_{-i} ) \quad (s_i’ \in S_i ) $$<br> 或<br> $$ U_i ( \hat{s_i} ,s_{-i} ) = max( U_i ( S_i , s_{-i})) $$<br> 或<br> $$ EU_i ( \hat{s_i} ,p ) \geq max( EU_i ( s_i’ , p)) \quad (s_i’ \in S_i ) $$<br> 时，我们称 $ \hat{s_i} $ 是策略 $s_{-i} $ 的最佳对策。<br> 其中， $EU_i ( s_i , p ) $ 指的是策略 $s_i$ 在参与人 $i$ 持信念 $p$ 时的期望收益。<br> 同时，我们需要注意一下，对于不同的策略集合 $s_{-i}$ ，其最佳对策的数量可能是不同的，且可能不为一（就是最佳对策不会只有一个）。</p>
+<p> 在这里，我们可以这样定义 <strong>最佳对策(Best Responce)</strong> :<br> 当<br> $$ U_i ( \hat{s_i} ,s_{-i} ) \geq U_i ( s_i&#39; ,s_{-i} ) \quad (s_i&#39; \in S_i ) $$<br> 或<br> $$ U_i ( \hat{s_i} ,s_{-i} ) = max( U_i ( S_i , s_{-i})) $$<br> 或<br> $$ EU_i ( \hat{s_i} ,p ) \geq max( EU_i ( s_i&#39; , p)) \quad (s_i&#39; \in S_i ) $$<br> 时，我们称 $ \hat{s_i} $ 是策略 $s_{-i} $ 的最佳对策。<br> 其中， $EU_i ( s_i , p ) $ 指的是策略 $s_i$ 在参与人 $i$ 持信念 $p$ 时的期望收益。<br> 同时，我们需要注意一下，对于不同的策略集合 $s_{-i}$ ，其最佳对策的数量可能是不同的，且可能不为一（就是最佳对策不会只有一个）。</p>
 <h2 id="纳什均衡"><a href="#纳什均衡" class="headerlink" title="纳什均衡"></a>纳什均衡</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p> 假设你需要和李zen一起完成一个项目。你将会付出 $s_y$ 个小时的时间，而zen将会付出 $s_z$ 个小时，其中 $s_y , s_z \in [0,10] $ 。<br> 你们的收益为：<br>$$<br> \begin{align}<br> U_y &amp; = 2 ( s_y + s_z + b s_y s_z ) - s_y^2 \\<br> U_z &amp; = 2 ( s_y + s_z + b s_y s_z ) - s_z^2<br> \end{align}<br>$$<br> 此时让我们来算一下我们怎么最大化我们的收益。</p>
-<p> 首先求一下导，把 $s_z$ 当做常数：<br>$$<br> \begin{align}<br> U_y’ &amp; = 2 ( 1 + b s_z ) - 2 s_y \\<br> U_y’’ &amp; = -2 &lt; 0<br> \end{align}<br>$$<br> 此时令 $U_y’ = 0 $ ，可以求出最佳对策：<br>$$<br>\begin{align}<br> 2 ( 1 + b s_z ) - 2 s_y &amp; = 0 \\<br> 1 + b s_z &amp; = s_y \\<br> s_y &amp; = \frac{1}{1-b}<br> \end{align}<br>$$<br> 此时画一下图：</p>
+<p> 首先求一下导，把 $s_z$ 当做常数：<br>$$<br> \begin{align}<br> U_y&#39; &amp; = 2 ( 1 + b s_z ) - 2 s_y \\<br> U_y&#39;&#39; &amp; = -2 &lt; 0<br> \end{align}<br>$$<br> 此时令 $U_y&#39; = 0 $ ，可以求出最佳对策：<br>$$<br>\begin{align}<br> 2 ( 1 + b s_z ) - 2 s_y &amp; = 0 \\<br> 1 + b s_z &amp; = s_y \\<br> s_y &amp; = \frac{1}{1-b}<br> \end{align}<br>$$<br> 此时画一下图：</p>
 <p> <img src="https://i.loli.net/2021/09/25/mwYX56SC4WaQtcT.png" alt="博弈8.png"></p>
 <p> 此时我们可以看到，两个人的最佳对策函数交于了一点。<br> 在实际情况中，因为你们两个都想偷懒，所以你们会不断剔除掉双方付出过多的策略，最终直到选择那个交点。<br> 这个就叫做 <strong>纳什均衡(Nash Equilibrium)</strong> 。<br> 其定义是：<br> 对于一个已选对策的集合$ \lbrace s_1^* , s_2^* , s_3^* , \dots , s_m^* \rbrace $ ，其纳什均衡是满足下列条件的策略集合：<br> 对于 $ \forall $ 参与人 $i$ 来说，其策略 $ s_i^* $ 是 $ s_{-i}^* $ 的最佳对策。</p>
 <p> 要实现纳什均衡，我们需要几个动机。</p>
@@ -465,8 +465,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/solutions/solution-p1061/" rel="next" title="p1061 Jam的计数法 题解">
-                  p1061 Jam的计数法 题解 <i class="fa fa-chevron-right"></i>
+                <a href="/solutions/solution-p1061/" rel="next" title="P1061 Jam的计数法 题解">
+                  P1061 Jam的计数法 题解 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

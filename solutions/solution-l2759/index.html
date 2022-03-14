@@ -22,13 +22,13 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 <meta name="description" content="LibreOJ #2759 JOI 2014 Final T4">
 <meta property="og:type" content="article">
-<meta property="og:title" content="l2759 蜜袋鼯（フクロモモンガ） 题解">
+<meta property="og:title" content="L2759 蜜袋鼯（フクロモモンガ） 题解">
 <meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-l2759/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
 <meta property="og:description" content="LibreOJ #2759 JOI 2014 Final T4">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-28T02:59:28.817Z">
+<meta property="article:modified_time" content="2022-03-14T10:52:21.759Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="最短路">
@@ -39,10 +39,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solutions/solution-l2759/","path":"solutions/solution-l2759/","title":"l2759 蜜袋鼯（フクロモモンガ） 题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solutions/solution-l2759/","path":"solutions/solution-l2759/","title":"L2759 蜜袋鼯（フクロモモンガ） 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>l2759 蜜袋鼯（フクロモモンガ） 题解 | 南陽劉子驥的博客</title>
+<title>L2759 蜜袋鼯（フクロモモンガ） 题解 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -92,8 +92,8 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">15</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">16</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
   </ul>
 </nav>
@@ -140,18 +140,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -239,7 +239,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          l2759 蜜袋鼯（フクロモモンガ） 题解
+          L2759 蜜袋鼯（フクロモモンガ） 题解
         </h1>
 
         <div class="post-meta-container">
@@ -257,7 +257,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-02-28 10:59:28" itemprop="dateModified" datetime="2022-02-28T10:59:28+08:00">2022-02-28</time>
+        <time title="修改时间：2022-03-14 18:52:21" itemprop="dateModified" datetime="2022-03-14T18:52:21+08:00">2022-03-14</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -321,8 +321,8 @@
 <p>那我们就可以持续进行飞行操作，知道到达终点再向上爬到树顶。</p>
 <p>也就是说，我们将我们的操作从一系列的“飞跃-爬升”操作变成了一串连续的飞跃操作和一个爬升操作。</p>
 <p>显然，只要我们选择的路径一定，我们最后爬升的路程一定是一定的。<br>我们不妨设其为 $h$ 。</p>
-<p>如果我们在这种情况下，选择在中间进行一次爬升操作，假设我们爬升的高度为 $h’$ 。<br>那么，我们到达最后的高度就是$H_N - h + h’$。</p>
-<p>然而，我们总共还是爬升了 $h-h’+h’=h$ 的高度，总共爬升操作所用的时间也是不变的。</p>
+<p>如果我们在这种情况下，选择在中间进行一次爬升操作，假设我们爬升的高度为 $h&#39;$ 。<br>那么，我们到达最后的高度就是$H_N - h + h&#39;$。</p>
+<p>然而，我们总共还是爬升了 $h-h&#39;+h&#39;=h$ 的高度，总共爬升操作所用的时间也是不变的。</p>
 <p>更何况我们还会遇到到一棵树正上方时高度大于树高的时候，这时候我们就只能降低高度，而在最后多的时间来爬升刚才降低的那一段距离。<br>这会导致如果我们瞎爬升的话，结果会劣于非必要不爬升的结果。</p>
 <p>那么对于后半句，我们这样分析：</p>
 <p>假设一种极限情况，一路上的树一棵比一棵矮，且每一次从树顶开始飞行都会飞跃目标树。<br>那么如果我们选择爬升的高度太多，就会导致爬升高度的浪费。</p>
@@ -394,7 +394,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://kaiserwilheim.github.io/solutions/solution-l2759/" title="l2759 蜜袋鼯（フクロモモンガ） 题解">https://kaiserwilheim.github.io/solutions/solution-l2759/</a>
+      <a href="https://kaiserwilheim.github.io/solutions/solution-l2759/" title="L2759 蜜袋鼯（フクロモモンガ） 题解">https://kaiserwilheim.github.io/solutions/solution-l2759/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
