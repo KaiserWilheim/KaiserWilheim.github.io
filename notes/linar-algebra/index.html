@@ -23,7 +23,7 @@
 <meta name="description" content="简介：线性代数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性代数">
-<meta property="og:url" content="https://kaiserwilheim.github.io/OI/linar-algebra/index.html">
+<meta property="og:url" content="https://kaiserwilheim.github.io/notes/linar-algebra/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
 <meta property="og:description" content="简介：线性代数">
 <meta property="og:locale" content="zh_CN">
@@ -31,18 +31,18 @@
 <meta property="og:image" content="https://i.loli.net/2021/10/01/SMFi3Y2otIxq1Tl.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/02/kM5ZneSjdmqylBI.gif">
 <meta property="article:published_time" content="2021-09-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-30T01:52:45.635Z">
+<meta property="article:modified_time" content="2022-03-17T11:23:54.527Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.loli.net/2021/10/01/ydZtcIBgCxRmSvr.png">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/OI/linar-algebra/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/notes/linar-algebra/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/OI/linar-algebra/","path":"OI/linar-algebra/","title":"线性代数"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/notes/linar-algebra/","path":"notes/linar-algebra/","title":"线性代数"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>线性代数 | 南陽劉子驥的博客</title>
@@ -143,7 +143,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -229,7 +229,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/OI/linar-algebra/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/notes/linar-algebra/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
@@ -260,7 +260,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-10-30 09:52:45" itemprop="dateModified" datetime="2021-10-30T09:52:45+08:00">2021-10-30</time>
+        <time title="修改时间：2022-03-17 19:23:54" itemprop="dateModified" datetime="2022-03-17T19:23:54+08:00">2022-03-17</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -439,14 +439,15 @@
 <li>$(AB)^T=B^T \times A^T$.</li>
 </ol>
 <h3 id="幂运算"><a href="#幂运算" class="headerlink" title="幂运算"></a>幂运算</h3><p>与常数类似，矩阵也有幂运算。</p>
-<p>我们定义矩阵$A$的$k$次幂为$A$ $k$次自乘后所得的结果，即<br>$$<br>A^k=\underbrace{A \times A \times A \times \cdots \times A}_{k\text{个}}<br>\tag{3.5.1}<br>$$<br>特别的，我们定义$A^0=E$。</p>
+<p>我们定义矩阵$A$的$k$次幂为$A$ $k$次自乘后所得的结果。<br>特别的，我们定义$A^0=E$。</p>
 <p>矩阵的幂运算与常数的幂运算不是很类似。</p>
 <p>矩阵的幂运算不满足这些定律：</p>
-<p> $(A \times B)^k \neq A^k \times B^k$</p>
+<p>$(A \times B)^k \neq A^k \times B^k$</p>
 <p>$(A \pm B)^2 \neq A^2 \pm 2A \times B +B^2$</p>
 <p>但是，矩阵满足这样一个奇怪的东西：</p>
 <p>$(A+E)^2 = A^2 + 2A \times E + E^2$</p>
-<p>我们推导一下，可以得到这样一个结果：<br>$$<br>\begin{align}<br>(A+E)^2 ={} &amp; (A+E) \times (A+E) \\<br>={} &amp; (A^2 + E \times A) + (A \times E + E^2) \\<br>\end{align}<br>$$<br>$$<br>\because A \times E = E \times A = A \\<br>\therefore<br>\begin{align}<br>(A+E)^2 ={} &amp; (A^2 + A \times E) + (A \times E + E^2) \\<br>={} &amp; A^2 + 2A \times E + E^2<br>\end{align}<br>$$</p>
+<p>我们推导一下，可以得到这样一个结果：</p>
+<p>$$<br>\begin{align}<br>(A+E)^2 ={} &amp; (A+E) \times (A+E) \\<br>={} &amp; (A^2 + E \times A) + (A \times E + E^2) \\<br>\end{align}<br>$$<br>$$<br>\because A \times E = E \times A = A<br>$$<br>$$<br>\begin{align}<br>\therefore<br>(A+E)^2 ={} &amp; (A^2 + A \times E) + (A \times E + E^2) \\<br>={} &amp; A^2 + 2A \times E + E^2<br>\end{align}<br>$$</p>
 
     </div>
 
@@ -478,7 +479,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://kaiserwilheim.github.io/OI/linar-algebra/" title="线性代数">https://kaiserwilheim.github.io/OI/linar-algebra/</a>
+      <a href="https://kaiserwilheim.github.io/notes/linar-algebra/" title="线性代数">https://kaiserwilheim.github.io/notes/linar-algebra/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -499,8 +500,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/OI/special-numbers/" rel="next" title="特殊的数">
-                  特殊的数 <i class="fa fa-chevron-right"></i>
+                <a href="/OI/tree-array/" rel="next" title="树状数组">
+                  树状数组 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
