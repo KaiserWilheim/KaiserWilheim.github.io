@@ -20,15 +20,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="简介： 斯特林数">
+<meta name="description" content="简介： 卡特兰数，斯特林数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="特殊的数">
 <meta property="og:url" content="https://kaiserwilheim.github.io/OI/special-numbers/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="简介： 斯特林数">
+<meta property="og:description" content="简介： 卡特兰数，斯特林数">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-17T13:40:25.919Z">
+<meta property="article:modified_time" content="2022-03-18T13:29:08.791Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
@@ -124,7 +124,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">斯特林数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">第二类斯特林数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">1.1.2.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E5%80%BC"><span class="nav-number">1.1.3.</span> <span class="nav-text">求值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">第一类斯特林数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E5%80%BC-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">求值</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0-Catalan-Numbers"><span class="nav-number">1.</span> <span class="nav-text">卡特兰数(Catalan Numbers)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">引入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E6%9E%90"><span class="nav-number">1.1.1.</span> <span class="nav-text">分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E5%80%BC"><span class="nav-number">1.2.</span> <span class="nav-text">求值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0-Stirling-Numbers"><span class="nav-number">2.</span> <span class="nav-text">斯特林数(Stirling Numbers)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">第二类斯特林数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">2.1.2.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E5%80%BC-1"><span class="nav-number">2.1.3.</span> <span class="nav-text">求值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E6%8E%A8%E5%BC%8F"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">递推式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E9%A1%B9%E5%BC%8F"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">通项式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%B1%BB%E6%96%AF%E7%89%B9%E6%9E%97%E6%95%B0"><span class="nav-number">2.2.</span> <span class="nav-text">第一类斯特林数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E5%80%BC-2"><span class="nav-number">2.2.2.</span> <span class="nav-text">求值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E6%8E%A8%E5%BC%8F-1"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">递推式</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E6%95%B0-Eulerian-Numbers"><span class="nav-number">3.</span> <span class="nav-text">欧拉数(Eulerian Numbers)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E5%80%BC-3"><span class="nav-number">3.2.</span> <span class="nav-text">求值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.2.1.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -248,10 +248,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-03-17 00:00:00 / 修改时间：21:40:25" itemprop="dateCreated datePublished" datetime="2022-03-17T00:00:00+08:00">2022-03-17</time>
+      <time title="创建时间：2022-03-17 00:00:00" itemprop="dateCreated datePublished" datetime="2022-03-17T00:00:00+08:00">2022-03-17</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-03-18 21:29:08" itemprop="dateModified" datetime="2022-03-18T21:29:08+08:00">2022-03-18</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -272,10 +278,37 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>简介： 斯特林数</p>
+        <p>简介： 卡特兰数，斯特林数</p>
 <span id="more"></span>
 
-<h1 id="斯特林数"><a href="#斯特林数" class="headerlink" title="斯特林数"></a>斯特林数</h1><p>斯特林数分为第一类斯特林数和第二类斯特林数。</p>
+<h1 id="卡特兰数-Catalan-Numbers"><a href="#卡特兰数-Catalan-Numbers" class="headerlink" title="卡特兰数(Catalan Numbers)"></a>卡特兰数(Catalan Numbers)</h1><p>卡特兰数 (<del>Català</del>Catalan Numbers) 十分常用，序列的开头是 $1,1,2,5,14,42,\cdots$</p>
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><p>有关卡特兰数的例题有很多，其中最经典的是<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1044">下面这个</a>：</p>
+<p>我们有 $n$ 个元素和一个栈。这 $n$ 各元素是 $[1,n]$ 的所有整数，并且以升序排列。</p>
+<p>现在我们将所有的元素放入栈中，并最终让所有元素都出栈。栈的<code>pop()</code>和<code>push()</code>的顺序由你自己来决定，问有多少种可能的出栈顺序。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>我们显然可以看出，我们不能对着一个空的栈疯狂<code>pop()</code>，也不能对着一个空的进栈序列疯狂<code>push()</code>。<br>所以，每一个<code>pop()</code>操作必定对应着之前的一个<code>pop()</code>操作，且所有<code>pop()</code>操作的次数与<code>push()</code>操作的次数相等。</p>
+<p>我们尝试将<code>push()</code>和<code>pop()</code>抽象为前缀和的形式。<br>我们可以将<code>push()</code>转化为<code>+1</code>，<code>pop()</code>转化为<code>-1</code>。<br>那么，我们的要求就是：</p>
+<p>该序列的每一个前缀和必定大于等于0，且整个序列的和必定为0。</p>
+<p>这就需要我们使用卡特兰数。</p>
+<h2 id="求值"><a href="#求值" class="headerlink" title="求值"></a>求值</h2><p>我们这里使用 $c_n$ 来代表第 $n$ 项卡特兰数。</p>
+<p>我们通常使用的都是单个的卡特兰数（除非有多组测试数据），所以这里首先给出了通项公式。</p>
+<p>卡特兰数的通项公式是这个样子的：</p>
+<p>$$<br>c_n=\frac{C_{2n}^n}{n+1}<br>$$</p>
+<p>如果需要生成卡特兰数数列，那么我们可以进行递推：</p>
+<p>首先，$c_0=c_1=1$，这两个我们先自己手动输入进去。<br>之后我们可以根据这个递推公式来计算：</p>
+<p>$$<br>c_n = c_{n-1} \frac{4n-2}{n+1}<br>$$</p>
+<p>我们需要注意，在 $n \in [ 0,16 ] $ 的时候可以只开<code>int</code>；在 $n \in [ 17,35 ] $ 的时候就需要开<code>long long</code>了；而当 $n \geq 36$ 的时候就只能使用高精度或者用 Python 来求了。</p>
+<p>递推代码示例：</p>
+<p>Python：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ans = <span class="number">1</span></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;项数：&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1:&quot;</span> + <span class="built_in">str</span>(ans))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">    ans = ans * (<span class="number">4</span> * i - <span class="number">2</span>) // (i + <span class="number">1</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">str</span>(i) + <span class="string">&quot;:&quot;</span> + <span class="built_in">str</span>(ans))</span><br></pre></td></tr></table></figure>
+
+<p>例题 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1044">Luogu P1044</a> 代码示例：</p>
+<p>Python：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ans = <span class="number">1</span></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;&quot;</span>))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, n + <span class="number">1</span>):</span><br><span class="line">    ans = ans * (<span class="number">4</span> * i - <span class="number">2</span>) // (i + <span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(ans))</span><br></pre></td></tr></table></figure>
+
+<p>C++：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        ans = ans * (<span class="number">4</span> * i - <span class="number">2</span>) / (i + <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="斯特林数-Stirling-Numbers"><a href="#斯特林数-Stirling-Numbers" class="headerlink" title="斯特林数(Stirling Numbers)"></a>斯特林数(Stirling Numbers)</h1><p>斯特林数 (Stirling Numbers) 分为第一类斯特林数和第二类斯特林数。</p>
 <p>我们使用 $s_1(n,k)$ 来表示第一类斯特林数，使用 $s_2(n,k)$ 来表示第二类斯特林数。<br>通常的表达方式是这样的：<br>使用 $\begin{bmatrix} n \\ k \end{bmatrix}$ 来表示第一类斯特林数，使用 $\begin{Bmatrix} n \\ k \end{Bmatrix}$ 来表示第二类斯特林数。<br>但是因为这个样子在 $ \LaTeX $ 里面并不好打，所以我就索性换了个表达方式，以便我能够打出来。</p>
 <h2 id="第二类斯特林数"><a href="#第二类斯特林数" class="headerlink" title="第二类斯特林数"></a>第二类斯特林数</h2><p>第二类斯特林数比第一类更加常用（其实是所有这些数里除了组合数外最常用的），所以我们先介绍第二类斯特林数。</p>
 <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>第二类斯特林数 $s_2(n,k)$ $(n \geq k)$ 表示讲一个有 $n$ 件互不相同的物品的集合划分为 $k$ 个非空子集的方法数。</p>
@@ -289,7 +322,7 @@
 <li><p>特别的，我们规定 $s_2(0,0)=1$ ，$s_2(n,0)=0$ 。</p>
 </li>
 </ol>
-<h3 id="求值"><a href="#求值" class="headerlink" title="求值"></a>求值</h3><p>我们从较小的 $k$ 来入手。</p>
+<h3 id="求值-1"><a href="#求值-1" class="headerlink" title="求值"></a>求值</h3><p>我们从较小的 $k$ 来入手。</p>
 <p>当 $k \leq 1$ 时 比较好办，我们可以通过上面两个显而易见的性质推出来。</p>
 <p>而当 $k=2$ 时，我们可以这样想：<br>一个物品不是放在一个篮子里面就是放在另一个篮子里面，所以 $n$ 个物品一共有 $n^2$ 中不同的划分方式。<br>而因为两个篮子不区分，且有着非空的要求，所以最终的划分方式就只有 $2^{n-1}-1$ 种了。<br>所以，</p>
 <p>$$<br>s_2(n,k) = 2^{n-1}-1 \quad (n&gt;0)<br>$$</p>
@@ -299,10 +332,12 @@
 <p>我们仍然对每一个物品进行分析，只不过我们这次是倒序分析的。</p>
 <p>对于最后的一个物品，我们可以将其单独分成一堆，也可以将其放入之前的 $n-1$ 个物品组成的 $k$ 堆中的一堆中。</p>
 <p>对于前一个选择，我们有 $s_2(n-1,k-1)$ 中排列的方法；而对于后一种，我们有 $s_2(n-1,k)$ 中方法，最后还需乘以我们可以做出的选择数 $k$。</p>
-<p>所以总结一一下，我们有以下递推式：</p>
-<p>$$<br>s_2(n,k) = k \times s_2(n-1,k) + s_2(n-1,k-1)<br>$$</p>
+<h4 id="递推式"><a href="#递推式" class="headerlink" title="递推式"></a>递推式</h4><p>所以总结一一下，我们有以下递推式：</p>
+<p>$$<br>s_2(n,k) = k · s_2(n-1,k) + s_2(n-1,k-1)<br>$$</p>
 <p>或者使用更难打出来但更眼熟的表达方式：</p>
 <p>$$<br>\begin{Bmatrix}<br>n \\ k<br>\end{Bmatrix}<br>=<br>k<br>\begin{Bmatrix}<br>n-1 \\ k<br>\end{Bmatrix}<br>+<br>\begin{Bmatrix}<br>n-1 \\ k-1<br>\end{Bmatrix}<br>$$</p>
+<h4 id="通项式"><a href="#通项式" class="headerlink" title="通项式"></a>通项式</h4><p>还有一种直接求的通项公式，是这个样子的：</p>
+<p>$$<br>s_2(n,m)=\sum_{i=0}^m \frac{(-1)^{m-i} i^n}{i! (m-i)!}<br>$$</p>
 <h2 id="第一类斯特林数"><a href="#第一类斯特林数" class="headerlink" title="第一类斯特林数"></a>第一类斯特林数</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>第一类斯特林数 $s_1(n,k) (n \geq k)$ 也是一种描述将 $n$ 个互不相同的物品划分为 $k$ 个不同的轮换的方案。</p>
 <p>所谓轮换，就是指像项链一样的环形排列，可以类比成把所有的元素像珠子一样穿到项链上。</p>
 <p>比如说一个轮换 $[A,B,C,D]$，它有4种异构体：</p>
@@ -312,15 +347,113 @@
 <p>一共11种。</p>
 <p>所以， $s_1(4,2)=11$。</p>
 <p>我们不难看出，$s_1(n,k) \geq s_2(n,k)$。</p>
-<h3 id="求值-1"><a href="#求值-1" class="headerlink" title="求值"></a>求值</h3><p>我们仍然从较小的 $k$ 开始。</p>
-<p>当 $k=1$ 时，我们对于每一个空位考虑。第 $i$ 个空位可以随意选择 $n-i+1$ 个物品，总体就是 $\prod_{i=1}^n (n-i+1)$，显而易见是 $(n-1)!$。<br>所以：</p>
+<h3 id="求值-2"><a href="#求值-2" class="headerlink" title="求值"></a>求值</h3><p>我们仍然从较小的 $k$ 开始。</p>
+<p>当 $k=1$ 时，我们对于每一个空位考虑。第 $i$ 个空位可以随意选择 $n-i+1$ 个物品，总体就是 $\displaystyle \prod_{i=1}^n (n-i+1)$，显而易见是 $(n-1)!$。<br>所以：</p>
 <p>$$<br>s_1(n,1)=(n-1)!<br>$$</p>
-<p>当所有的轮换都至多含两个物品的时候，我们就会发现，此时的轮换与子集是等价的。<br>这种情况只能在 $k=n-1$ 的时候成立，也就是说，<br>$$<br>\begin{align}<br>s_1(n,n) &amp;= s_2(n,n) = 1 \\<br>s_1(n,n-1) &amp;= s_2(n,n-1) = C^n_2<br>\end{align}<br>$$</p>
-<p>我们考虑一般的情况。</p>
+<p>当所有的轮换都至多含两个物品的时候，我们就会发现，此时的轮换与子集是等价的。<br>这种情况只能在 $k=n-1$ 的时候成立，也就是说，<br>$$<br>\begin{align}<br>s_1(n,n) &amp;= s_2(n,n) = 1 \\<br>s_1(n,n-1) &amp;= s_2(n,n-1) = C^2_n<br>\end{align}<br>$$</p>
+<h4 id="递推式-1"><a href="#递推式-1" class="headerlink" title="递推式"></a>递推式</h4><p>我们考虑一般的情况。</p>
 <p>还是类似之前考虑 $s_2$ 时的方法，我们还是考虑最后一个元素。</p>
 <p>对于这个元素，我们可以将其单独成堆，也可以将其放在之前的任意一个轮换里面。</p>
 <p>显然，对于前者，我们有 $s_1(n-1,k-1)$ 种方案；对于后者，我们有 $s_1(n-1,k)$ 种方案，而这个物品有 $n-1$ 种放置的位置（指插在任意一个元素的后面），所以总共是这样的式子：</p>
-<p>$$<br>s_1(n,k) = (n-1) \times s_1(n-1,k) + s_1(n-1,k-1)<br>$$</p>
+<p>$$<br>s_1(n,k) = (n-1) · s_1(n-1,k) + s_1(n-1,k-1)<br>$$</p>
+<p>或者使用更难打出来但更眼熟的表达方式：</p>
+<p>$$<br>\begin{bmatrix}<br>n \\ k<br>\end{bmatrix}<br>=<br>(n-1)<br>\begin{bmatrix}<br>n-1 \\ k<br>\end{bmatrix}<br>+<br>\begin{bmatrix}<br>n-1 \\ k-1<br>\end{bmatrix}<br>$$</p>
+<p>第一类斯特林数没有实用的通项公式。</p>
+<h1 id="欧拉数-Eulerian-Numbers"><a href="#欧拉数-Eulerian-Numbers" class="headerlink" title="欧拉数(Eulerian Numbers)"></a>欧拉数(Eulerian Numbers)</h1><p>因为欧拉写了很多东西，所以欧拉数也不止一个，比如说 Eular Number, Eular&#39;s Number 等等。<br>但我们这里说的是 Eulerian Numbers 。请不要搞混。</p>
+<h2 id="定义-2"><a href="#定义-2" class="headerlink" title="定义"></a>定义</h2><p>我们这里使用 $e_k^n$ 来表示欧拉数。其他通常的表示方法还有 $\left\langle \begin{matrix} n \\ k \end{matrix} \right\rangle$ 。<br>当然，这个方法实在是太难写了，还不像斯特林数那么简单，所以我们这里只会在一些重要的地方出现类似后者的形式。</p>
+<p>$e_k^n$ 的意思是说，对于所有 $n$ 个数的排列，其中包含 $k$ 个<strong>升高</strong>的排列的个数。</p>
+<p>如果我们用 $\pi_k$ 代表数列里的第 $k$ 个数，那么“升高”的意思就是 $\pi_i &lt; \pi_{i+1}$。<br>欧拉数可以表示为满足 $\displaystyle \sum_{i=1}^{n-1} [ \pi_i &lt; \pi_{i+1} ] = k$ 的排列的个数。</p>
+<p>还是相似的例子，$e_2^4$ 包含的排列有下面11种：</p>
+<p>1324, 1423, 2314, 2413, 3412;<br>1243, 1342, 2341;<br>2134, 3124, 4123.</p>
+<p>这三行分别满足的是 $\pi_1 &lt; \pi_2 &gt; \pi_3 &lt; \pi_4$,$\pi_1 &lt; \pi_2 &lt; \pi_3 &gt; \pi_4$ 以及 $\pi_1 &gt; \pi_2 &lt; \pi_3 &lt; \pi_4$。</p>
+<p>所以说， $e_2^4 = 11$。</p>
+<h2 id="求值-3"><a href="#求值-3" class="headerlink" title="求值"></a>求值</h2><p>我们仍然考虑最后一个数来尝试得到递推式。</p>
+<p>显然，我们的最后一个数 $n$ 不管插在哪里，都会导致其左右两边的数小于它，产生一个升高。或者插到最开头的位置，这样子就一个升高都没有产生。</p>
+<p>所以说，我们每一次插入一个数，都会产生最多一个升高。</p>
+<p>所以说，</p>
+<p>$$<br>e_k^n = (n-k) · e_{k-1}^{n-1} + (k+1) · e_k^{n-1}<br>$$</p>
+<p>同时，我们发现 $k=0$ 时，无论 $n$ 为多少，我们只有一种解决方案——将所有数字倒序排列。</p>
+<p>而妄图产生 $\leq n$ 的升高也是徒劳的，这些 $n$ 与 $k$ 的组合都会导出 $e_k^n =0$ 的结果。</p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>来自 OI Wiki 的参考代码：</p>
+<p>Python：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">eulerianNumber</span>(<span class="params">n, m</span>):</span></span><br><span class="line">    <span class="keyword">if</span> m &gt;= n <span class="keyword">or</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> m == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> (((n - m) * eulerianNumber(n - <span class="number">1</span>, m - <span class="number">1</span>)) +  ((m + <span class="number">1</span>) * eulerianNumber(n - <span class="number">1</span>, m)))</span><br></pre></td></tr></table></figure>
+
+<p>C++：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">eulerianNumber</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(m &gt;= n || n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(m == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> (((n - m) * <span class="built_in">eulerianNumber</span>(n - <span class="number">1</span>, m - <span class="number">1</span>)) + ((m + <span class="number">1</span>) * <span class="built_in">eulerianNumber</span>(n - <span class="number">1</span>, m)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
 
