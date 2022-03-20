@@ -21,29 +21,28 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="感谢 CloudySky 和 宝硕 的大力支持。 没有他们就没有这个博客。 十分感谢。">
+<meta name="description" content="拉格朗日插值。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="感谢">
-<meta property="og:url" content="https://kaiserwilheim.github.io/thanks/index.html">
+<meta property="og:title" content="拉格朗日插值">
+<meta property="og:url" content="https://kaiserwilheim.github.io/maths/lagrange-interpolation/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="感谢 CloudySky 和 宝硕 的大力支持。 没有他们就没有这个博客。 十分感谢。">
+<meta property="og:description" content="拉格朗日插值。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img.shields.io/github/repo-size/kaiserwilheim/kaiserwilheim.github.io?style=for-the-badge">
-<meta property="article:published_time" content="2999-12-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-01-28T02:56:50.659Z">
+<meta property="article:published_time" content="2022-03-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-20T00:05:47.142Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.shields.io/github/repo-size/kaiserwilheim/kaiserwilheim.github.io?style=for-the-badge">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/thanks/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/maths/lagrange-interpolation/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/thanks/","path":"thanks/","title":"感谢"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/maths/lagrange-interpolation/","path":"maths/lagrange-interpolation/","title":"拉格朗日插值"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>感谢 | 南陽劉子驥的博客</title>
+<title>拉格朗日插值 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -226,7 +225,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/thanks/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/maths/lagrange-interpolation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
@@ -239,7 +238,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          感谢
+          拉格朗日插值
         </h1>
 
         <div class="post-meta-container">
@@ -250,15 +249,24 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：3000-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="3000-01-01T00:00:00+08:00">3000-01-01</time>
+      <time title="创建时间：2022-03-17 00:00:00" itemprop="dateCreated datePublished" datetime="2022-03-17T00:00:00+08:00">2022-03-17</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-01-28 10:56:50" itemprop="dateModified" datetime="2022-01-28T10:56:50+08:00">2022-01-28</time>
+        <time title="修改时间：2022-03-20 08:05:47" itemprop="dateModified" datetime="2022-03-20T08:05:47+08:00">2022-03-20</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -270,10 +278,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>感谢 <strong>CloudySky</strong> 和 <strong>宝硕</strong> 的大力支持。</p>
-<p>没有他们就没有这个博客。</p>
-<p>十分感谢。</p>
-<p><img src="https://img.shields.io/github/repo-size/kaiserwilheim/kaiserwilheim.github.io?style=for-the-badge" alt="GitHub repo size"></p>
+        <p>拉格朗日插值。</p>
+<span id="more"></span>
+
+<p>在学完函数以后，AJ想让我们求出一个函数，使得其带入自然数时生成的序列时给定的，并让武嘉给出了一个数列。</p>
+<p>崇尚<ruby>野獣<rt>やじゅう</rt></ruby><ruby>先輩<rt>せんぱい</rt></ruby>的武嘉给出了这样的一个序列：</p>
+<p>$$<br>1,3,5,7,9,114514<br>$$</p>
+<p>光看前五项貌似可以构建出 $f(x)=2x-1$ 来糊过去，但是第6项就不好办了。</p>
+<p>王哥说：“这都不会，快用<strong>拉格朗日插值</strong>！”</p>
+<hr>
+<p>引入完毕。</p>
+<p>拉格朗日插值法可以很快地将一系列的点值转化为一个经过所有给定点值的函数（或者称多项式）。</p>
+<p>拉格朗日给出的方法是这样的：</p>
+<p>首先我们给出两个二次多项式，分别称之为 $f(x)$ 与 $g(x)$。<br>两者的系数分别为 $a_f,b_f,c_f$ 与 $a_g,b_g,c_g$。</p>
+<p>假设有一个函数 $h(x)$ ，它等于 $f(x)+g(x)$，那么</p>
+<p>$$<br>\begin{align}<br>h(x) &amp;= f(x)+g(x) \\<br>&amp;= a_fx^2+b_fx+c_f + a_gx^2+b_gx+c_g \\<br>&amp;= (a_f+a_g)x^2 + (b_f+b_g)x + (c_f+c_g)<br>\end{align}<br>$$</p>
+<p>$h(x)$ 的每一项系数竟然是 $f(x)$ 与 $g(x)$ 该项系数之和。</p>
+<p>我们再来看代入数值之后的结果。</p>
+<p>我们不难看出，对于每一个 $x$ ，其对应的函数值 $f(x)$，$g(x)$ 与 $h(x)$ 满足 $h(x)=f(x)+g(x)$。</p>
+<p>然后拉格朗日就想，对于每一个点值，我们分别构造一个函数，使得其刚好经过当前点值代表的点，而其他点值处均为 $0$。<br>我们最后将所有的函数加起来，就得到了完美经过每个点值的函数了。</p>
+<p>而每一个函数又怎么求呢？</p>
+<p>我们先想个简单一点的，让这个函数在当前 $x$ 处为 $1$，其他 $x$ 处都为 $0$。</p>
+<p>首先，我们为了表示这些点值且与自由元 $x$ 区分，设其分别为 $(X_i,Y_i)$，总共有 $n$ 个，当前函数为 $F_k(x)$，代表着第 $k$ 个点值。</p>
+<p>那么，我们让函数为 $\displaystyle \prod_{i=1,i \neq k}^n (x - X_i)$，这样可以使除当前点之外的数都是 $0$。</p>
+<p>然后，我们将整个函数除以代入 $X_k$ 时的值，使 $F_k(X_k)=1$。<br>那么整个函数就变为了 $\displaystyle \prod_{i=1,i \neq k}^n \frac{x - X_i}{X_k - X_i}$。</p>
+<p>最后再乘上 $Y_k$，就可以得出我们当前的函数：$\displaystyle F_k(x) = Y_k \prod_{i=1,i \neq k}^n \frac{x - X_i}{X_k - X_i}$</p>
+<p>再把所有的东西加起来，得到</p>
+<p>$$<br>G(x) = \sum_{k=1}^n \bigg( Y_k \prod_{i=1,i \neq k}^n \frac{x - X_i}{X_k -X_i} \bigg)<br>$$</p>
+<p>所以，我们如果用拉格朗日插值法来计算AJ的课后作业的话，得到的式子就是这个样子的：</p>
+<p>$$<br>\begin{align}<br>G(x) &amp;= 1·\frac{(x-2)(x-3)(x-4)(x-5)(x-6)}{(1-2)(1-3)(1-4)(1-5)(1-6)}<br>\\ &amp;+ 3·\frac{(x-1)(x-3)(x-4)(x-5)(x-6)}{(2-1)(2-3)(2-4)(2-5)(2-6)}<br>\\ &amp;+ 5·\frac{(x-1)(x-2)(x-4)(x-5)(x-6)}{(3-1)(3-2)(3-4)(3-5)(3-6)}<br>\\ &amp;+ 7·\frac{(x-1)(x-2)(x-3)(x-5)(x-6)}{(4-1)(4-2)(4-3)(4-5)(4-6)}<br>\\ &amp;+ 9·\frac{(x-1)(x-2)(x-3)(x-4)(x-6)}{(5-1)(5-2)(5-3)(5-4)(5-6)}<br>\\ &amp;+ 114514·\frac{(x-1)(x-2)(x-3)(x-4)(x-5)}{(6-1)(6-2)(6-3)(6-4)(6-5)} \\<br>&amp;= \frac{114503}{120} x^5 - \frac{114503}{8} x^4 + \frac{1946551}{24} x^3 - \frac{1717545}{8} x^2 + \frac{15687031}{60} x - 114504<br>\end{align}<br>$$</p>
+<p>这里有一个 $O(n^2)$ 求出最后得出的多项式的系数的代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long </span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">5050</span>;</span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">998244353</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function">ll <span class="title">qpow</span><span class="params">(ll a, ll t = mod - <span class="number">2</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(t)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(t &amp; <span class="number">1</span>)ans = ans * a % mod;</span><br><span class="line">        a = a * a % mod;</span><br><span class="line">        t &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">ll x[N], y[N], c[N], fs[N], g[N], f[N];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>, &amp;x[i], &amp;y[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        c[i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">            <span class="keyword">if</span>(i != j)</span><br><span class="line">                c[i] = c[i] * (x[i] - x[j]) % mod;</span><br><span class="line">        c[i] = <span class="built_in">qpow</span>(c[i]) * y[i] % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    fs[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = n; j; j--)</span><br><span class="line">            fs[j] = (fs[j - <span class="number">1</span>] + fs[j] * (mod - x[i])) % mod;</span><br><span class="line">        fs[<span class="number">0</span>] = fs[<span class="number">0</span>] * (mod - x[i]) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ll buf = <span class="built_in">qpow</span>(mod - x[i]);</span><br><span class="line">        g[<span class="number">0</span>] = fs[<span class="number">0</span>] * buf % mod;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">            g[j] = (fs[j] - g[j - <span class="number">1</span>]) * buf % mod;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">            f[j] = (f[j] + c[i] * g[j]) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld &quot;</span>, (f[i] + mod) % mod);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.luogu.org/blog/command-block/zong-la-cha-dao-kuai-su-cha-zhi-qiu-zhi">$\blacktriangleright$</a></p>
 
     </div>
 
@@ -305,7 +342,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://kaiserwilheim.github.io/thanks/" title="感谢">https://kaiserwilheim.github.io/thanks/</a>
+      <a href="https://kaiserwilheim.github.io/maths/lagrange-interpolation/" title="拉格朗日插值">https://kaiserwilheim.github.io/maths/lagrange-interpolation/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -313,16 +350,22 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/suoyin/" rel="prev" title="博客索引">
-                  <i class="fa fa-chevron-left"></i> 博客索引
+                <a href="/maths/special-numbers/" rel="prev" title="特殊的数">
+                  <i class="fa fa-chevron-left"></i> 特殊的数
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/suoyin/" rel="next" title="博客索引">
+                  博客索引 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
