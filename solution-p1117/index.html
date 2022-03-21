@@ -21,27 +21,29 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="文章的索引。">
+<meta name="description" content="Luogu P1117 NOI 2016">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客索引">
-<meta property="og:url" content="https://kaiserwilheim.github.io/suoyin/index.html">
+<meta property="og:title" content="P1117 [NOI2016] 优秀的拆分 题解">
+<meta property="og:url" content="https://kaiserwilheim.github.io/solution-p1117/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="文章的索引。">
+<meta property="og:description" content="Luogu P1117 NOI 2016">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2998-12-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-20T00:06:46.102Z">
+<meta property="article:published_time" content="2022-03-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-03-21T13:50:24.879Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/suoyin/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/solution-p1117/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/suoyin/","path":"suoyin/","title":"博客索引"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solution-p1117/","path":"solution-p1117/","title":"P1117 [NOI2016] 优秀的拆分 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>博客索引 | 南陽劉子驥的博客</title>
+<title>P1117 [NOI2016] 优秀的拆分 题解 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -111,7 +113,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -124,7 +126,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E5%AD%90"><span class="nav-number">1.</span> <span class="nav-text">引子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OI"><span class="nav-number">2.</span> <span class="nav-text">OI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6"><span class="nav-number">2.1.</span> <span class="nav-text">数学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.3.</span> <span class="nav-text">数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E8%AE%BA%E7%9B%B8%E5%85%B3"><span class="nav-number">2.4.</span> <span class="nav-text">图论相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">2.5.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%94%E8%B5%9B%E8%AE%B0%E5%BD%95"><span class="nav-number">2.6.</span> <span class="nav-text">比赛记录</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="nav-number">3.</span> <span class="nav-text">其他学习笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8C%96%E5%AD%A6"><span class="nav-number">4.</span> <span class="nav-text">化学</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E6%9C%BA%E5%8C%96%E5%AD%A6%E7%9B%B8%E5%85%B3"><span class="nav-number">4.1.</span> <span class="nav-text">有机化学相关</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -225,7 +226,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/suoyin/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solution-p1117/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
@@ -238,7 +239,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          博客索引
+          P1117 [NOI2016] 优秀的拆分 题解
         </h1>
 
         <div class="post-meta-container">
@@ -248,16 +249,19 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2999-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="2999-01-01T00:00:00+08:00">2999-01-01</time>
+      <time title="创建时间：2022-03-21 00:00:00 / 修改时间：21:50:24" itemprop="dateCreated datePublished" datetime="2022-03-21T00:00:00+08:00">2022-03-21</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-03-20 08:06:46" itemprop="dateModified" datetime="2022-03-20T08:06:46+08:00">2022-03-20</time>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
       </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
 
   
 </div>
@@ -269,99 +273,23 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>文章的索引。</p>
+        <p>Luogu P1117</p>
+<p>NOI 2016</p>
 <span id="more"></span>
 
-<h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>$\rm{OI}$ 与 $\rm{Ch}$ 的交汇，能迸发出怎样的火花呢？</p>
-<p>为了便于<del>我自己及时更新</del>读者们挑选合适的文章，下面有几个符号，可以帮助读者大人们挑选。<del>（我有读者吗？）</del></p>
-<ul>
-<li>$\color[rgb]{0,0.5,1}{\sharp}$ 代表已经写完了</li>
-<li>$\color[rgb]{0.067,0.270588,0.078431}{\natural}$ 表示长期更新</li>
-<li>$\color[rgb]{1,0,0}{\flat}$ 表示我这个蒟蒻还没写完</li>
-<li><strong>止まれ</strong> 表示我因某种原因暂停更新<del>也就是咕咕咕了</del></li>
-<li>$\color[rgb]{0.5,0.4,0.4}{φ}$ 表示我虽然写完了，但是某些地方还需要完善，完善完了会换成 $\color[rgb]{0,0.5,1}{\sharp}$ 标志。</li>
-<li>$\color[rgb]{1,1,0.0625}{\aleph}$ 表示我这个蒟蒻觉得我自己写的很好。</li>
-</ul>
-<p>阅读博客的时候，我们经常会看到一些板子。</p>
-<p>如果某一个板子是我自己写的，在它的附近会有一个 $\color[rgb]{1,1,0.0625}{φ}$ 的标志。这些板子保证运行的正确性。大胆褐，不会有事的（指运行结果）。<br>如果某一个板子不是我写的，在它的附近会有一个 $\blacktriangleright$ 指向它的出处。这些板子不保证运行的正确性。使用之前请斟酌。 </p>
-<p>最后一次维护：我每天都在维护，所以就不写了</p>
-<h1 id="OI"><a href="#OI" class="headerlink" title="OI"></a>OI</h1><h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><p>数学是算法的基石。</p>
-<ul>
-<li><p><a href="/maths/mathematics">杂项整理</a> $\color[rgb]{0.067,0.270588,0.078431}{\natural}$<br>写不成博客的东西都在这里。</p>
-</li>
-<li><p><a href="/OI/prime-sieves">质数筛</a> $\color[rgb]{0,0.5,1}{\sharp}$<br>包含埃氏筛，欧拉筛与 $Miller-Rabin$ 算法。</p>
-</li>
-<li><p><a href="/maths/eular-and-m%C3%B6bius">欧拉与莫比乌斯</a> $\color[rgb]{0,0.5,1}{\sharp}$<br>包含欧拉函数、欧拉定理、莫比乌斯函数与莫比乌斯反演。</p>
-</li>
-<li><p><a href="/maths/special-numbers">特殊的数</a> $\color[rgb]{1,0,0}{\flat}$<br>包含斯特林数等。</p>
-</li>
-<li><p><a href="/maths/fourier-transform">傅里叶变换</a> $\color[rgb]{0.5,0.4,0.4}{φ}$<br>包含傅里叶变换和快速傅里叶变换，附带一些复数和单位根的知识。</p>
-</li>
-<li><p><a href="/maths/lagrange-interpolation">拉格朗日插值</a> $\color[rgb]{1,0,0}{\flat}$<br>包括拉格朗日插值。</p>
-</li>
-</ul>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>算法是程序的基础。</p>
-<ul>
-<li><p><a href="/OI/scanning-line">扫描线</a> $\color[rgb]{0,0.5,1}{\sharp}$<br>一种用来求矩形面积并的算法。</p>
-</li>
-<li><p><a href="/OI/heavy-path-decomposition">树链剖分</a> $\color[rgb]{0,0.5,1}{\sharp}$<br>树剖。</p>
-</li>
-<li><p><a href="/OI/point-divide">点分治</a> $\color[rgb]{0,0.5,1}{\sharp}$<br>点分治与点分树。</p>
-</li>
-</ul>
-<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><p>啊这……这里该怎么写……</p>
-<ul>
-<li><p><a href="/OI/tree-array">树状数组</a> $\color[rgb]{0,0.5,1}{\sharp}$<br>如题，树状数组。</p>
-</li>
-<li><p><a href="/OI/persistent-segment-tree-and-trie">可持久化线段树&amp;可持久化trie</a> $\color[rgb]{0,0.5,1}{\sharp}$<br>可持久化数据结构中的可持久化线段树与可持久化trie。</p>
-</li>
-<li><p><a href="/OI/suffix-array">后缀数组</a> $\color[rgb]{0,0.5,1}{\sharp}$<br>如题，后缀数组。</p>
-</li>
-<li><p><a href="/OI/suffix-avtomat">后缀自动机</a> $\color[rgb]{0,0.5,1}{\sharp}$<br>如题，后缀自动机。</p>
-</li>
-<li><p><a href="/OI/splay">Splay</a> $\color[rgb]{0.5,0.4,0.4}{φ}$<br>如题，Splay。</p>
-</li>
-<li><p><a href="/OI/link-cut-tree">Link/Cut Tree</a> $\color[rgb]{0.5,0.4,0.4}{φ}$<br>如题，LCT。</p>
-</li>
-</ul>
-<h2 id="图论相关"><a href="#图论相关" class="headerlink" title="图论相关"></a>图论相关</h2><p>是时候把图论的东西单独拿出来了。</p>
-<ul>
-<li><p><a href="/OI/flow">网络流</a> $\color[rgb]{0.5,0.4,0.4}{φ}$<br>如题，网络流相关内容。</p>
-</li>
-<li><p><a href="/OI/bipartie-graph">二分图</a><br>如题，二分图相关内容。</p>
-</li>
-</ul>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>题解还会有没写完的吗？</p>
-<ul>
-<li><a href="/solutions/solution-p1061">Luogu P1061</a> Jam的计数法</li>
-<li><a href="/solutions/solution-p2146">Luogu P2146</a> 软件包管理器</li>
-<li><a href="/solutions/solution-p2234">Luogu P2234</a> 营业额统计</li>
-<li><a href="/solutions/solution-p3982">Luogu P3982</a> 龙盘雪峰信息解析器</li>
-<li><a href="/solutions/solution-p7075">Luogu P7075</a> 儒略日</li>
-<li><a href="/solutions/solution-p7913">Luogu P7913</a> 廊桥分配</li>
-</ul>
-<ul>
-<li><a href="/solutions/solution-l2759">LibreOJ #2759</a> 蜜袋鼯（フクロモモンガ）</li>
-</ul>
-<h2 id="比赛记录"><a href="#比赛记录" class="headerlink" title="比赛记录"></a>比赛记录</h2><p>校内OJ的模拟赛记录。</p>
-<ul>
-<li><a href="/contestrecords/2022-wh-8">2022寒假模拟赛8</a> $\color[rgb]{0,0.5,1}{\sharp}$</li>
-</ul>
-<h1 id="其他学习笔记"><a href="#其他学习笔记" class="headerlink" title="其他学习笔记"></a>其他学习笔记</h1><p>其他东西的学习笔记。</p>
-<ul>
-<li><p><a href="/notes/game-strategy">博弈论学习笔记</a> <strong>止まれ</strong><br>如题，博弈论学习笔记。<br>咕了。</p>
-</li>
-<li><p><a href="/notes/linar-algebra">线性代数</a> <strong>止まれ</strong><br>包含行列式和矩阵的运算。<br>同样咕了。</p>
-</li>
-</ul>
-<h1 id="化学"><a href="#化学" class="headerlink" title="化学"></a>化学</h1><h2 id="有机化学相关"><a href="#有机化学相关" class="headerlink" title="有机化学相关"></a>有机化学相关</h2><ul>
-<li><a href="/chemistry/lewis-structure">Lewis结构式</a> $\color[rgb]{0,0.5,1}{\sharp}$<br>$Lewis$ 结构式， $Lewis$ 电子理论以及形式电荷。</li>
-<li>tbc<br>tbc</li>
-</ul>
-<hr>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12k4y1173i">展开</a><br>再见。</li>
-</ul>
+<p>据说暴力用哈希扫可以拿到95分。</p>
+<p>这一道题的思路是这个样子的：</p>
+<p>我们首先准备两个数组<code>a[]</code>和<code>b[]</code>，分别表示以 $i$ 结尾的形似AA的字串个数和以 $i$ 开头的形似AA的字串的个数，最终答案其实就是 $\displaystyle \sum_{i=1}^n a[i] \times b[i+1]$。</p>
+<p>然后考虑如何求出这两个数组。</p>
+<p>对于每一个位置，我们尝试枚举一个 $len$，然后求出当前位置 $i$ 与 $i+len$ 位置处的 <code>lcp</code> 与 <code>lcs</code> 。</p>
+<p>当两者长度加起来不小于 $len$ 的时候，就意味着我们可以找到至少一个长度为 $2len$ 的AA串。</p>
+<p>为什么呢？</p>
+<p>我们考虑从两个位置的 <code>lcs</code> 的开头处开始，分别向后截取出一段长度为 $len$ 的串。</p>
+<p>如果这个串被两者的 <code>lcs</code> 和两者的 <code>lcp</code> 拼起来组成的一个字串覆盖，那么我们就可以把这两个串拼起来，形成一个长度为 $2len$ 的AA串。<br>就像这样：</p>
+<p>[图片我明天再画]</p>
+<p>当两者长度加起来不够 $len$ 时，我们截出来的两端字串就不保证一样。<br>不，应该是保证不一样，要不然两者的 <code>lcp</code> 还可以更长一点。<br>这样就拼不出来一个长度为 $2len$ 的AA串了。</p>
+<p>[图片我明天再画]</p>
+<p>如果两者甚至有重合，那么我们就可以挑出来多个字串。我们这些会累积到后面。</p>
 
     </div>
 
@@ -393,7 +321,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://kaiserwilheim.github.io/suoyin/" title="博客索引">https://kaiserwilheim.github.io/suoyin/</a>
+      <a href="https://kaiserwilheim.github.io/solution-p1117/" title="P1117 [NOI2016] 优秀的拆分 题解">https://kaiserwilheim.github.io/solution-p1117/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -401,18 +329,22 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"><i class="fa fa-tag"></i> 题解</a>
+              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"><i class="fa fa-tag"></i> 字符串</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/maths/fourier-transform/" rel="prev" title="傅里叶变换">
-                  <i class="fa fa-chevron-left"></i> 傅里叶变换
+                <a href="/maths/lagrange-interpolation/" rel="prev" title="拉格朗日插值">
+                  <i class="fa fa-chevron-left"></i> 拉格朗日插值
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/thanks/" rel="next" title="感谢">
-                  感谢 <i class="fa fa-chevron-right"></i>
+                <a href="/maths/fourier-transform/" rel="next" title="傅里叶变换">
+                  傅里叶变换 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

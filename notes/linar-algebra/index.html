@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://i.loli.net/2021/10/01/SMFi3Y2otIxq1Tl.png">
 <meta property="og:image" content="https://i.loli.net/2021/10/02/kM5ZneSjdmqylBI.gif">
 <meta property="article:published_time" content="2021-09-30T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-17T11:23:54.527Z">
+<meta property="article:modified_time" content="2022-03-21T11:17:29.302Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
@@ -96,7 +96,7 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
   </ul>
@@ -144,7 +144,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -155,7 +155,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -261,7 +261,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-03-17 19:23:54" itemprop="dateModified" datetime="2022-03-17T19:23:54+08:00">2022-03-17</time>
+        <time title="修改时间：2022-03-21 19:17:29" itemprop="dateModified" datetime="2022-03-21T19:17:29+08:00">2022-03-21</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -300,19 +300,29 @@
 <p>解方程。</p>
 <p>$$<br>\begin{cases}<br>5x+6y=7 \\<br>9x+4y=3<br>\end{cases}<br>\tag {2.0.1}<br>$$<br>简单。</p>
 <p>学过二元一次方程组的人都能做得出来。</p>
-<p>我们首先消掉 $x$ ，把方程组变成这个样子：<br>$$<br>\begin{cases}<br>9 \times 5x + 9 \times 6y = 7 \times 9 \\<br>5 \times 9x + 5 \times 4y = 3 \times 5<br>\end{cases}<br>\tag{2.0.2}<br>$$<br>可得<br>$$<br>\begin{align}<br>x &amp; = \frac{7 \times 4 - 6 \times 3}{5 \times 4 - 6 \times 9} \tag{2.0.3} \\<br>y &amp; = \frac{3 \times 5 - 7 \times 9}{5 \times 4 - 6 \times 9} \tag{2.0.4}<br>\end{align}<br>$$<br>然而班里唯一学过高等数学（现在不是了）的王哥用另一种方法做了出来。</p>
+<p>我们首先消掉 $x$ ，把方程组变成这个样子：</p>
+<p>$$<br>\begin{cases}<br>9 \times 5x + 9 \times 6y = 7 \times 9 \\<br>5 \times 9x + 5 \times 4y = 3 \times 5<br>\end{cases}<br>\tag{2.0.2}<br>$$</p>
+<p>可得</p>
+<p>$$<br>\begin{align}<br>x &amp; = \frac{7 \times 4 - 6 \times 3}{5 \times 4 - 6 \times 9} \tag{2.0.3} \\<br>y &amp; = \frac{3 \times 5 - 7 \times 9}{5 \times 4 - 6 \times 9} \tag{2.0.4}<br>\end{align}<br>$$</p>
+<p>然而班里唯一学过高等数学（现在不是了）的王哥用另一种方法做了出来。</p>
 <h2 id="二阶行列式"><a href="#二阶行列式" class="headerlink" title="二阶行列式"></a>二阶行列式</h2><p>$$<br>\begin{align}<br>x &amp; = \frac{\begin{vmatrix} 7 &amp; 6 \\ 3 &amp; 4 \end{vmatrix}}{\begin{vmatrix} 5 &amp; 6 \\ 9 &amp; 4 \end{vmatrix}} \tag{2.1.1} \\<br>y &amp; = \frac{\begin{vmatrix} 3 &amp; 7 \\ 9 &amp; 5 \end{vmatrix}}{\begin{vmatrix} 5 &amp; 6 \\ 9 &amp; 4 \end{vmatrix}} \tag{2.1.2}<br>\end{align}<br>$$</p>
 <p>王哥后来解释道：“这玩意叫做二阶行列式。二阶行列式是这么用的：<br>$$<br>\begin{vmatrix} a &amp; b \\ c &amp; d \end{vmatrix} = ad - bc<br>\tag{2.1.3}<br>$$<br>所以最终展开之后是大家得到的答案。”</p>
 <p>于是，同学们开始广泛地<del>瞎玩</del>使用二阶行列式。</p>
 <h2 id="三阶行列式"><a href="#三阶行列式" class="headerlink" title="三阶行列式"></a>三阶行列式</h2><p>但是tue不满足于二阶行列式。他追问：“有二阶的，是不是还会有三阶的？”</p>
-<p>王哥：“是的。但是三阶行列式更加复杂。比如这个：<br>$$<br>\begin{vmatrix}<br>a &amp; b &amp; c \\<br>d &amp; e &amp; f \\<br>g &amp; h &amp; i<br>\end{vmatrix}<br>= aei+bfg+cdh-afh-bdi-ceg<br>\tag{2.2.1}<br>$$<br>二阶行列式展开后的结果是主对角线上的数字相乘减去次对角线上的数字相乘，十分简单；但是三阶行列式就不一样了。它展开后的结果是这样的：</p>
-<p>我们要把这个行列式在它的右边誊写一遍，像这样：<br>$$<br>\begin{vmatrix}<br>a &amp; b &amp; c \\<br>d &amp; e &amp; f \\<br>g &amp; h &amp; i<br>\end{vmatrix}<br>\begin{vmatrix}<br>a &amp; b &amp; c \\<br>d &amp; e &amp; f \\<br>g &amp; h &amp; i<br>\end{vmatrix}<br>\tag{2.2.2}<br>$$<br>然后连线：</p>
+<p>王哥：“是的。但是三阶行列式更加复杂。比如这个：</p>
+<p>$$<br>\begin{vmatrix}<br>a &amp; b &amp; c \\<br>d &amp; e &amp; f \\<br>g &amp; h &amp; i<br>\end{vmatrix}<br>= aei+bfg+cdh-afh-bdi-ceg<br>\tag{2.2.1}<br>$$</p>
+<p>二阶行列式展开后的结果是主对角线上的数字相乘减去次对角线上的数字相乘，十分简单；但是三阶行列式就不一样了。它展开后的结果是这样的：</p>
+<p>我们要把这个行列式在它的右边誊写一遍，像这样：</p>
+<p>$$<br>\begin{vmatrix}<br>a &amp; b &amp; c \\<br>d &amp; e &amp; f \\<br>g &amp; h &amp; i<br>\end{vmatrix}<br>\begin{vmatrix}<br>a &amp; b &amp; c \\<br>d &amp; e &amp; f \\<br>g &amp; h &amp; i<br>\end{vmatrix}<br>\tag{2.2.2}<br>$$</p>
+<p>然后连线：</p>
 <p>先连与主对角线平行的三条，不重复的连结所有数字</p>
 <p><img src="https://i.loli.net/2021/10/01/ydZtcIBgCxRmSvr.png" alt="线代1.png"></p>
 <p>再连与次对角线平行的三条，不重复的连结所有数字</p>
 <p><img src="https://i.loli.net/2021/10/01/SMFi3Y2otIxq1Tl.png" alt="线代2.png"></p>
 <p>最后把三条蓝色线（与主对角线平行）上的数字分别相乘后求和减去三条绿色线（与次对角线平行）上的数字分别相乘之后的积之和。</p>
-<p>就是这样：<br>$$<br>\begin{vmatrix}<br>a &amp; b &amp; c \\<br>d &amp; e &amp; f \\<br>g &amp; h &amp; i<br>\end{vmatrix}<br>= \color{blue}{(aei+bfg+cdh)} - \color{green}{(afh+bdi+ceg)}<br>\tag{2.2.3}<br>$$<br>这样算起来十分麻烦，还容易算错，所以，现阶段我不建议使用三阶行列式。”</p>
+<p>就是这样：</p>
+<p>$$<br>\begin{vmatrix}<br>a &amp; b &amp; c \\<br>d &amp; e &amp; f \\<br>g &amp; h &amp; i<br>\end{vmatrix}<br>= \color{blue}{(aei+bfg+cdh)} - \color{green}{(afh+bdi+ceg)}<br>\tag{2.2.3}<br>$$</p>
+<p>这样算起来十分麻烦，还容易算错，所以，现阶段我不建议使用三阶行列式。”</p>
 <h2 id="n阶行列式"><a href="#n阶行列式" class="headerlink" title="n阶行列式"></a>n阶行列式</h2><p>$n$ 阶行列式的展开遵循这样的规则：</p>
 <ul>
 <li>首先列出所有列标的排列组合可能；</li>
@@ -320,7 +330,9 @@
 <li>将每一个列标所对应的排列中的元素相乘，其中保证元素不重复（或者说行标取标准排列）；</li>
 <li>最后再将偶排列的和减去奇排列的和。</li>
 </ul>
-<p>用式子表示大概就是这样：<br>$$<br>\begin{vmatrix}<br>a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; \dots &amp; a_{1,n} \\<br>a_{2,1} &amp; a_{2,2} &amp; a_{2,3} &amp; \dots &amp; a_{2,n} \\<br>a_{3,1} &amp; a_{3,2} &amp; a_{3,3} &amp; \dots &amp; a_{3,n} \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>a_{n,1} &amp; a_{n,2} &amp; a_{n,3} &amp; \dots &amp; a_{n,n}<br>\end{vmatrix}<br>=<br>\sum_{j1 , j2 , \dots , jn} (-1)^{N(j1 , j2 , \dots , jn)}<br>a_1 j_1 \ a_2 j_2 \ \dots a_n j_n<br>\tag{2.3.1}<br>$$</p>
+<p>用式子表示大概就是这样：</p>
+<p>$$<br>\begin{vmatrix}<br>a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; \dots &amp; a_{1,n} \\<br>a_{2,1} &amp; a_{2,2} &amp; a_{2,3} &amp; \dots &amp; a_{2,n} \\<br>a_{3,1} &amp; a_{3,2} &amp; a_{3,3} &amp; \dots &amp; a_{3,n} \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>a_{n,1} &amp; a_{n,2} &amp; a_{n,3} &amp; \dots &amp; a_{n,n}<br>\end{vmatrix}<br>=<br>\sum_{j1 , j2 , \dots , jn} (-1)^{N(j1 , j2 , \dots , jn)}<br>a_1 j_1 \ a_2 j_2 \ \dots a_n j_n<br>\tag{2.3.1}</p>
+<p>$$</p>
 <p>我们通常这样表示：$D (或 Det(a))= |a_{i,j}| $ 。</p>
 <p>并且，显而易见的，特别地，$|a_{1,1}| = a_{1,1}$ 。</p>
 <p>然后我们会看见： $\exists |a| \neq |a|$<br>比如：$|-1| \neq |-1|$ 。<br>因为左右两边一个是行列式，另一个是绝对值。<br>这个一定要分清。</p>
@@ -331,9 +343,9 @@
 <h3 id="上、下三角行列式"><a href="#上、下三角行列式" class="headerlink" title="上、下三角行列式"></a>上、下三角行列式</h3><p>形如<br>$$<br>\begin{vmatrix}<br>a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; \cdots &amp; a_{1,n} \\<br>&amp; a_{2,2} &amp; a_{2,3} &amp; \cdots &amp; a_{2,n} \\<br>&amp;&amp; a_{3,3} &amp; \cdots &amp; a_{3,n} \\<br>&amp;&amp;&amp; \ddots &amp; \vdots \\<br>&amp;&amp;&amp;&amp; a_{n,n}<br>\end{vmatrix}<br>\tag{2.4.2}<br>$$<br>的行列式称作<strong>上三角行列式</strong>，而形如<br>$$<br>\begin{vmatrix}<br>a_{1,1} &amp;&amp;&amp;&amp; \\<br>a_{2,1} &amp; a_{2,2} &amp;&amp;&amp; \\<br>a_{3,1} &amp; a_{3,2} &amp; a_{3,3} &amp;&amp; \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \\<br>a_{n,1} &amp; a_{n,2} &amp; a_{n,3} &amp; \cdots &amp; a_{n,n}<br>\end{vmatrix}<br>\tag{2.4.3}<br>$$<br>的称作<strong>下三角行列式</strong>。</p>
 <p>展开后的结果是：$D_{上三角}=(-1)^{\frac{n(n-1)}{2}}\prod\limits_{i-1}^n a_{i,i}$ ，$D_{下三角}=(-1)^{\frac{n(n-1)}{2}}\prod\limits_{i-1}^n a_{i,i}$</p>
 <p>记住：不论是对角形还是上下三角，用的都是<strong>主对角线</strong>。</p>
-<h3 id="范德蒙德行列式"><a href="#范德蒙德行列式" class="headerlink" title="范德蒙德行列式"></a>范德蒙德行列式</h3><p>跳转：<a href="/linar-algebra/#%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7(Vandermonde)%E8%A1%8C%E5%88%97%E5%BC%8F">范德蒙德行列式</a></p>
-<h3 id="对称行列式"><a href="#对称行列式" class="headerlink" title="对称行列式"></a>对称行列式</h3><p>跳转：<a href="/linar-algebra/#%E5%AF%B9%E7%A7%B0%E8%A1%8C%E5%88%97%E5%BC%8F">对称行列式</a></p>
-<h3 id="反对称行列式"><a href="#反对称行列式" class="headerlink" title="反对称行列式"></a>反对称行列式</h3><p>跳转：<a href="/linar-algebra/#%E5%8F%8D%E5%AF%B9%E7%A7%B0%E8%A1%8C%E5%88%97%E5%BC%8F">反对称行列式</a></p>
+<h3 id="范德蒙德行列式"><a href="#范德蒙德行列式" class="headerlink" title="范德蒙德行列式"></a>范德蒙德行列式</h3><p>跳转：<a href="/notes/linar-algebra/#%E8%8C%83%E5%BE%B7%E8%92%99%E5%BE%B7(Vandermonde)%E8%A1%8C%E5%88%97%E5%BC%8F">范德蒙德行列式</a></p>
+<h3 id="对称行列式"><a href="#对称行列式" class="headerlink" title="对称行列式"></a>对称行列式</h3><p>跳转：<a href="/notes/linar-algebra/#%E5%AF%B9%E7%A7%B0%E8%A1%8C%E5%88%97%E5%BC%8F">对称行列式</a></p>
+<h3 id="反对称行列式"><a href="#反对称行列式" class="headerlink" title="反对称行列式"></a>反对称行列式</h3><p>跳转：<a href="/notes/linar-algebra/#%E5%8F%8D%E5%AF%B9%E7%A7%B0%E8%A1%8C%E5%88%97%E5%BC%8F">反对称行列式</a></p>
 <h2 id="行列式的性质"><a href="#行列式的性质" class="headerlink" title="行列式的性质"></a>行列式的性质</h2><h3 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h3><p>与矩阵一样，行列式也可以进行转置。</p>
 <p>行列式 $D$ 转置之后的行列式，我们称其为 行列式 $D$ 的转置行列式，记作 $D^T$ 或者 $D&#39;$ （少用）。</p>
 <h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><p>$(D^T)^T \equiv D$ .</p>
@@ -353,7 +365,7 @@
 <p><img src="https://i.loli.net/2021/10/02/kM5ZneSjdmqylBI.gif" alt="线代4.gif"></p>
 <h2 id="子式与余子式"><a href="#子式与余子式" class="headerlink" title="子式与余子式"></a>子式与余子式</h2><p>我们去掉一个$n$阶行列式$D_{n \times n}$的 $k$ 行与 $k$ 列之后，我们就得到了它的一个 $k$ 阶余子式。</p>
 <p>例如这个行列式：<br>$$<br>\begin{vmatrix}<br>a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; a_{1,4} \\<br>a_{2,1} &amp; a_{2,2} &amp; a_{2,3} &amp; a_{2,4} \\<br>a_{3,1} &amp; a_{3,2} &amp; a_{3,3} &amp; a_{3,4} \\<br>a_{4,1} &amp; a_{4,2} &amp; a_{4,3} &amp; a_{4,4}<br>\end{vmatrix}<br>\tag{2.6.1}<br>$$<br>我们取走 $a_{3,2}$ 所在的行与列之后，得到的行列式是这样的：<br>$$<br>\begin{vmatrix}<br>a_{1,1} &amp; a_{1,3} &amp; a_{1,4} \\<br>a_{2,1} &amp; a_{2,3} &amp; a_{2,4} \\<br>a_{4,1} &amp; a_{4,3} &amp; a_{4,4}<br>\end{vmatrix}<br>\tag{2.6.2}<br>$$<br>我们称这样得到的余子式为 $M_{3,2}$ 。</p>
-<p>如果我们将 $M_{3,2}*(-1)^{3+2}$ 的话，我们就得到了原行列式的代数余子式，记作$A_{3,2}$ 。</p>
+<p>如果我们将 $M_{3,2} \times (-1)^{3+2}$ 的话，我们就得到了原行列式的代数余子式，记作$A_{3,2}$ 。</p>
 <h3 id="定理1"><a href="#定理1" class="headerlink" title="定理1"></a>定理1</h3><p>$D = \sum\limits_{j=1}^{n} a_{i,j}A_{i,j}$， 或 $D = \sum\limits_{i=1}^{n} a_{i,j}A_{i,j}$</p>
 <h3 id="定理2"><a href="#定理2" class="headerlink" title="定理2"></a>定理2</h3><p>某一行元素与另一行元素的代数余子式乘积之和为0。</p>
 <h3 id="子式"><a href="#子式" class="headerlink" title="子式"></a>子式</h3><p>对于一个$n$阶行列式$D_{n \times n}$，我们取其中的$k$行$k$列的交点，可以得到一个$k$阶的行列式。</p>
@@ -368,7 +380,8 @@
 <h3 id="加边法"><a href="#加边法" class="headerlink" title="加边法"></a>加边法</h3><p>假如有一个行列式如下：<br>$$<br>\begin{vmatrix}<br>1+a_1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\<br>1 &amp; 1+a_2 &amp; 1 &amp; \cdots &amp; 1 \\<br>1 &amp; 1 &amp; 1+a_3 &amp; \cdots &amp; 1 \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1+a_n<br>\end{vmatrix}<br>\tag{2.8.2}<br>$$<br>我们在解这个行列式的时候，可以给这个行列式在最左面加一列0，再在最上面加一行1，如下：<br>$$<br>\begin{vmatrix}<br>1 &amp; 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1\\<br>0 &amp; 1+a_1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\<br>0 &amp; 1 &amp; 1+a_2 &amp; 1 &amp; \cdots &amp; 1 \\<br>0 &amp; 1 &amp; 1 &amp; 1+a_3 &amp; \cdots &amp; 1 \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>0 &amp; 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1+a_n<br>\end{vmatrix}<br>\tag{2.8.3}<br>$$<br>此时，我们再对这个行列式做出进一步的计算：<br>$$<br>= \begin{vmatrix}1&amp;1&amp;1&amp;\cdots&amp;1\\-1&amp;a_1&amp;&amp;&amp;\\-1&amp;&amp;a_2&amp;&amp;\\\vdots&amp;&amp;&amp;\ddots&amp;\\-1&amp;&amp;&amp;&amp;a_n\end{vmatrix}<br>\tag{2.8.4}<br>\label{tri}<br>$$<br>$$<br>= \begin{vmatrix}x&amp;1&amp;1&amp;\cdots&amp;1\\&amp;a_1&amp;&amp;&amp;\\&amp;&amp;a_2&amp;&amp;\\&amp;&amp;&amp;\ddots&amp;\\&amp;&amp;&amp;&amp;a_n\end{vmatrix}<br>\tag{2.8.5}<br>$$<br>其中，$x=1+ \sum\limits_{i=1}^{n} \dfrac{1}{a_i}$ 。</p>
 <p>注意：<strong>加边的时候不能改变行列式的值！</strong></p>
 <p>其中的$\ref{tri}$ 叫做“三叉形行列式”。</p>
-<h2 id="特殊行列式-2"><a href="#特殊行列式-2" class="headerlink" title="特殊行列式(2)"></a>特殊行列式(2)</h2><h3 id="范德蒙德-Vandermonde-行列式"><a href="#范德蒙德-Vandermonde-行列式" class="headerlink" title="范德蒙德(Vandermonde)行列式"></a>范德蒙德(Vandermonde)行列式</h3><p>形如<br>$$<br>\begin{vmatrix}<br>1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\<br>x_1 &amp; x_2 &amp; x_3 &amp; \cdots &amp; x_n \\<br>x^2_1 &amp; x^2_2 &amp; x^2_3 &amp; \cdots &amp;x^2_n\\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>x^{n-1}_1 &amp; x^{n-1}_2 &amp; x^{n-1}_3 &amp; \cdots &amp; x^{n-1}_n<br>\end{vmatrix}<br>\tag{2.9.1}<br>$$<br>的行列式叫做<strong>范德蒙德行列式</strong>。</p>
+<h2 id="特殊行列式-2"><a href="#特殊行列式-2" class="headerlink" title="特殊行列式(2)"></a>特殊行列式(2)</h2><h3 id="范德蒙德-Vandermonde-行列式"><a href="#范德蒙德-Vandermonde-行列式" class="headerlink" title="范德蒙德(Vandermonde)行列式"></a>范德蒙德(Vandermonde)行列式</h3><p>形如<br>$$<br>\begin{vmatrix}<br>1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\<br>x_1 &amp; x_2 &amp; x_3 &amp; \cdots &amp; x_n \\<br>x^2_1 &amp; x^2_2 &amp; x^2_3 &amp; \cdots &amp;x^2_n\\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>x_1^{n-1} &amp; x_2^{n-1} &amp; x_3^{n-1} &amp; \cdots &amp; x_n^{n-1}<br>\end{vmatrix}<br>\tag{2.9.1}<br>$$</p>
+<p>的行列式叫做<strong>范德蒙德行列式</strong>。</p>
 <p>其结果是这样的：<br>$$<br>\begin{vmatrix} x_1^0 &amp; \cdots &amp; x_n^0 \\ \vdots &amp; \ddots &amp; \vdots \\ x_1^{n-1} &amp; \cdots &amp; x_n^{n-1} \end{vmatrix} = \prod_{i=j=1}^n (x_i-x_j) \tag{2.9.2}<br>$$</p>
 <h3 id="对称行列式-1"><a href="#对称行列式-1" class="headerlink" title="对称行列式"></a>对称行列式</h3><p>形如<br>$$<br>\begin{vmatrix}<br>x &amp; a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\<br>a_{1,1} &amp; x &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\<br>a_{1,2} &amp; a_{2,2} &amp; x &amp; \cdots &amp; a_{3,n} \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>a_{1,n} &amp; a_{2,n} &amp; a_{3,n} &amp; \cdots &amp; x<br>\end{vmatrix}<br>\tag{2.9.3}<br>$$<br>的行列式叫做对称行列式，即$a_{i,j}=a_{j,i}$。</p>
 <p>对称行列式中：</p>
@@ -384,11 +397,11 @@
 </ul>
 <p>在奇数阶反对称行列式中，$D=0$ ；</p>
 <p>证明：<br>$$<br>\begin{gathered}<br>\because<br>\begin{cases}<br>D=D^T \\<br>D=-D^T<br>\end{cases}<br>\\<br>\therefore D=-D \\<br>\therefore 2D=0 \\<br>\therefore D=0<br>\end{gathered}<br>\tag{2.9.5}<br>$$</p>
-<h2 id="克拉默-Cramer-法则"><a href="#克拉默-Cramer-法则" class="headerlink" title="克拉默(Cramer)法则"></a>克拉默(Cramer)法则</h2><p>就像<a href="/linar-algebra/#%E4%BA%8C%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F">这里</a>所说的那样，行列式可以用来解多元一次方程组。</p>
+<h2 id="克拉默-Cramer-法则"><a href="#克拉默-Cramer-法则" class="headerlink" title="克拉默(Cramer)法则"></a>克拉默(Cramer)法则</h2><p>就像<a href="/notes/linar-algebra/#%E4%BA%8C%E9%98%B6%E8%A1%8C%E5%88%97%E5%BC%8F">这里</a>所说的那样，行列式可以用来解多元一次方程组。</p>
 <p>比如下面这个：<br>$$<br>\begin{cases}<br>x_1+x_2+x_3=1\\<br>x_1-x_2+5x_3=6\\<br>-x_1+x_2+6x_3=9<br>\end{cases}<br>$$</p>
 <p>其中，<br>$$<br>\begin{cases}<br>x_1=\frac{D_1}{D}\\<br>x_2=\frac{D_2}{D}\\<br>x_3=\frac{D_3}{D}<br>\end{cases}<br>\tag{2.10.1}<br>$$<br>其中，<br>$$<br>\begin{cases}<br>D=\begin{vmatrix}1&amp;1&amp;1\\1&amp;-1&amp;5\\-1&amp;1&amp;6\end{vmatrix}\\<br>D_1=\begin{vmatrix}1&amp;1&amp;1\\6&amp;-1&amp;5\\9&amp;1&amp;6\end{vmatrix}\\<br>D_2=\begin{vmatrix}1&amp;1&amp;1\\1&amp;6&amp;5\\-1&amp;9&amp;6\end{vmatrix}\\<br>D_3=\begin{vmatrix}1&amp;1&amp;1\\1&amp;-1&amp;6\\-1&amp;1&amp;9\end{vmatrix}<br>\end{cases}<br>\tag{2.10.2}<br>$$<br>简化一点，就是这样：<br>$$<br>\begin{gather}<br>\begin{cases}<br>a_1x_1+b_1x_2+c_1x_3=d_1\\<br>a_2x_1+b_2x_2+c_2x_3=d_2\\<br>a_3x_1+b_3x_2+c_3x_3=d_3<br>\end{cases}\\<br>\tag{2.10.3}<br>\text{其中，}\\<br>\begin{cases}<br>x_1=\frac{D_1}{D}\\<br>x_2=\frac{D_2}{D}\\<br>x_3=\frac{D_3}{D}<br>\end{cases}\\<br>\tag{2.10.4}<br>\text{其中，}\\<br>\begin{cases}<br>D=\begin{vmatrix}a_1&amp;b_1&amp;c_1\\a_2&amp;b_2&amp;c_2\\a_3&amp;b_3&amp;c_3\end{vmatrix}\\<br>D_1=\begin{vmatrix}d_1&amp;b_1&amp;c_1\\d_2&amp;b_2&amp;c_2\\d_3&amp;b_3&amp;c_3\end{vmatrix}\\<br>D_2=\begin{vmatrix}a_1&amp;d_1&amp;c_1\\a_2&amp;d_2&amp;c_2\\a_3&amp;d_3&amp;c_3\end{vmatrix}\\<br>D_3=\begin{vmatrix}a_1&amp;b_1&amp;d_1\\a_2&amp;b_2&amp;d_2\\a_3&amp;b_3&amp;d_3\end{vmatrix}<br>\end{cases}<br>\tag{2.10.5}<br>\end{gather}<br>$$</p>
 <h1 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h1><p>形如<br>$$<br>A =<br>\begin{bmatrix}<br>a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; \dots &amp; a_{1,n} \\<br>a_{2,1} &amp; a_{2,2} &amp; a_{2,3} &amp; \dots &amp; a_{2,n} \\<br>a_{3,1} &amp; a_{3,2} &amp; a_{3,3} &amp; \dots &amp; a_{3,n} \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>a_{m,1} &amp; a_{m,2} &amp; a_{m,3} &amp; \dots &amp; a_{m,n}<br>\end{bmatrix}<br>\tag{3.0.1}<br>$$</p>
-<p>的数据结构，我们称之为大小为 $m*m$ 的矩阵，可以简记为 $A_{m \times n}$ 。</p>
+<p>的数据结构，我们称之为大小为 $m \times m$ 的矩阵，可以简记为 $A_{m \times n}$ 。</p>
 <p>显而易见，$\begin{bmatrix}n\end{bmatrix}=n$。</p>
 <h2 id="特殊形态的矩阵"><a href="#特殊形态的矩阵" class="headerlink" title="特殊形态的矩阵"></a>特殊形态的矩阵</h2><h3 id="行矩阵"><a href="#行矩阵" class="headerlink" title="行矩阵"></a>行矩阵</h3><p>只有一行的矩阵。</p>
 <p>例：$A_{1 \times 3}=\begin{bmatrix}1&amp;1&amp;1\end{bmatrix}$</p>
