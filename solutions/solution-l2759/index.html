@@ -29,7 +29,7 @@
 <meta property="og:description" content="LibreOJ #2759 JOI 2014 Final T4">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-20T08:06:09.334Z">
+<meta property="article:modified_time" content="2022-03-22T13:04:45.665Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
@@ -92,7 +92,7 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
   </ul>
@@ -132,7 +132,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="南陽劉子驥 aka KaiserWilheim"
-      src="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      src="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
   <p class="site-author-name" itemprop="name">南陽劉子驥 aka KaiserWilheim</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -140,7 +140,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -151,7 +151,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -229,7 +229,7 @@
     <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solutions/solution-l2759/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
       <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
       <meta itemprop="description" content="">
     </span>
@@ -257,7 +257,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-03-20 16:06:09" itemprop="dateModified" datetime="2022-03-20T16:06:09+08:00">2022-03-20</time>
+        <time title="修改时间：2022-03-22 21:04:45" itemprop="dateModified" datetime="2022-03-22T21:04:45+08:00">2022-03-22</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -282,7 +282,7 @@
         <p>LibreOJ #2759</p>
 <p>JOI 2014 Final T4</p>
 <span id="more"></span>
-
+<hr>
 <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><details class="note "><summary><p>题面原文</p>
 </summary>
 <p>フクロモモンガの $\rm{JOI}$ 君が住んでいる森にはユーカリの木が $N$ 本生えており，それらの木には $1$ から $N$ の番号がついている．木 $i$ の高さは $H_i$ メートルである.<br>$\rm{JOI}$ 君が相互に直接飛び移ることのできる木の組が $M$ 組あり，各組の木の間を飛び移るためにかかる時間が定まっている. $\rm{JOI}$ 君が木の間を飛び移っている間は，地面からの高さが $1$ 秒あたり $1$ メートル下がる．すなわち，$\rm{JOI}$ 君の現在の地面からの高さが $h$ メートル，木の間を飛び移るためにかかる時間が $t$ 秒であるとき，飛び移った後の地面からの高さは $h − t$ メートルとなる．ただし，$h − t$ が $0$ よりも小さくなる場合や行き先の木の高さよりも大きくなる場合は飛び移ることができない．<br>さらに，$\rm{JOI}$ 君は木の側面を上下に移動することによって，地面からの高さを $0$ メートルから今いる木の高さの範囲で増減させることができる．JOI 君が地面からの高さを 1 メートル増加または減少させるためには $1$ 秒の時間がかかる．<br>$\rm{JOI}$ 君は，木 $1$ の高さ $X$ メートルの位置から木 $N$ の頂上 (高さ $H_N$ メートルの位置) に行こうとしており，そのためにかかる時間の最小値を知りたい．</p>

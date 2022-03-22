@@ -32,9 +32,9 @@
 <meta property="article:published_time" content="2022-01-20T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-03-21T13:34:35.097Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
-<meta property="article:tag" content="字符串">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="自动机">
+<meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://kaiserwilheim.github.io/pics/SAM.svg">
 
@@ -96,7 +96,7 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
   </ul>
@@ -136,7 +136,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="南陽劉子驥 aka KaiserWilheim"
-      src="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      src="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
   <p class="site-author-name" itemprop="name">南陽劉子驥 aka KaiserWilheim</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -144,7 +144,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -155,7 +155,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -233,7 +233,7 @@
     <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/OI/suffix-avtomat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
       <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
       <meta itemprop="description" content="">
     </span>
@@ -337,7 +337,7 @@
 <p>最后，我们将<code>last</code>的值更新为<code>cur</code>。</p>
 <h3 id="寻找终止状态"><a href="#寻找终止状态" class="headerlink" title="寻找终止状态"></a>寻找终止状态</h3><p>如果我们还想要知道哪些状态是终止状态而那些不是，我们可以在构建完 $s$ 对应的后缀自动机之后再进行寻找。</p>
 <p>我们从刚才最后一步得到的<code>last</code>处开始遍历后缀链接，直到最终到达初始节点。<br>我们将沿途的所有状态都标记为终止状态，因为他们存储着原字符串 $s$ 的至少一个后缀。</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>这里我们引用一下<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfNg==">OI-Wiki<i class="fa fa-external-link-alt"></i></span>上的证明。</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>这里我们引用一下<a target="_blank" rel="noopener" href="https://oi-wiki.org/string/sam/#_6">OI-Wiki</a>上的证明。</p>
 <details class="note "><summary><p>正确性证明</p>
 </summary>
 <ul>
@@ -370,7 +370,7 @@
 
 </details>
 
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM4MDQ=">洛谷板子题<i class="fa fa-external-link-alt"></i></span>代码如下：</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3804">洛谷板子题</a>代码如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2000010</span>;</span><br><span class="line"><span class="keyword">int</span> tot = <span class="number">1</span>, last = <span class="number">1</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> len, fa;</span><br><span class="line">    <span class="keyword">int</span> s[<span class="number">26</span>];</span><br><span class="line">&#125;node[N];</span><br><span class="line"><span class="keyword">char</span> str[N];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> f[N];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ans;</span><br><span class="line"><span class="keyword">int</span> h[N], e[N], ne[N], idx;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">extend</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = last, np = last = ++tot;</span><br><span class="line">    f[tot] = <span class="number">1</span>;</span><br><span class="line">    node[np].len = node[p].len + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(; (p) &amp;&amp; (!node[p].s[c]); p = node[p].fa)node[p].s[c] = np;</span><br><span class="line">    <span class="keyword">if</span>(!p)</span><br><span class="line">    &#123;</span><br><span class="line">        node[np].fa = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> q = node[p].s[c];</span><br><span class="line">        <span class="keyword">if</span>(node[q].len == node[p].len + <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            node[np].fa = q;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> nq = ++tot;</span><br><span class="line">            node[nq] = node[q];</span><br><span class="line">            node[nq].len = node[p].len + <span class="number">1</span>;</span><br><span class="line">            node[q].fa = node[np].fa = nq;</span><br><span class="line">            <span class="keyword">for</span>(; (p) &amp;&amp; (node[p].s[c] == q); p = node[p].fa)node[p].s[c] = nq;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[idx] = b, ne[idx] = h[a], h[a] = idx++;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = h[u]; ~i; i = ne[i])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">dfs</span>(e[i]);</span><br><span class="line">        f[u] += f[e[i]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(f[u] &gt; <span class="number">1</span>)ans = <span class="built_in">max</span>(ans, f[u] * node[u].len);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, str);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; str[i]; i++)<span class="built_in">extend</span>(str[i] - <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">    <span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(h));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= tot; i++)<span class="built_in">add</span>(node[i].fa, i);</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="检查字符串是否出现"><a href="#检查字符串是否出现" class="headerlink" title="检查字符串是否出现"></a>检查字符串是否出现</h2><blockquote>
@@ -385,8 +385,8 @@
 <blockquote>
 <p>令 $d_v$ 为从状态 $v$ 开始的路径数量（包括长度为零的路径），则我们有如下递推方程：<br>$$<br>d_v = 1 + \sum_{w:(v,w,c)\in DAWG} d_w<br>$$<br>即， $d_v$ 可以表示为所有 $v$ 的转移的末端的和。<br>所以不同字串的个数为 $d_{t_0}-1$ （因为需要去掉空字串）</p>
 </blockquote>
-<p>我个人更喜欢另一种方法：<br>利用后缀自动机的树形结构，每个节点对应的子串数量就是<code>len[i] - len[link[i]]</code>，对自动机所有节点求和即可。<br>这个在洛谷上有例题：<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM4MDQ=">Luogu P3804<i class="fa fa-external-link-alt"></i></span></p>
-<p>其他的应用可以见<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfMTM=">OIwiki<i class="fa fa-external-link-alt"></i></span>。</p>
+<p>我个人更喜欢另一种方法：<br>利用后缀自动机的树形结构，每个节点对应的子串数量就是<code>len[i] - len[link[i]]</code>，对自动机所有节点求和即可。<br>这个在洛谷上有例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3804">Luogu P3804</a></p>
+<p>其他的应用可以见<a target="_blank" rel="noopener" href="https://oi-wiki.org/string/sam/#_13">OIwiki</a>。</p>
 
     </div>
 
@@ -427,9 +427,9 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"><i class="fa fa-tag"></i> 字符串</a>
               <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
               <a href="/tags/%E8%87%AA%E5%8A%A8%E6%9C%BA/" rel="tag"><i class="fa fa-tag"></i> 自动机</a>
+              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"><i class="fa fa-tag"></i> 字符串</a>
           </div>
 
         

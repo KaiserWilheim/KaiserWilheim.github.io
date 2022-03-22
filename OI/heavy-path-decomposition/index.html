@@ -100,7 +100,7 @@
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
   </ul>
@@ -140,7 +140,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="南陽劉子驥 aka KaiserWilheim"
-      src="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      src="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
   <p class="site-author-name" itemprop="name">南陽劉子驥 aka KaiserWilheim</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -148,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -159,7 +159,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -237,7 +237,7 @@
     <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/OI/heavy-path-decomposition/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png">
+      <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
       <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
       <meta itemprop="description" content="">
     </span>
@@ -293,7 +293,7 @@
 <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>树链剖分（简称“树剖”，又称“重链剖分”）是一种将一棵树转化为一段连续的区间的方法。<br>这种方法可以将一棵树根据子树大小，也就是所谓的“重儿子”和“轻儿子”，来将一棵树划分成若干条”重链“，并可以保证，在任意一条路径上的连续的链都不超过 $\log_2n$ 个。</p>
 <p>树剖可以借助一些数据结构（如线段树）来以 $O(\log n)$ 的复杂度维护数上路径的信息，如“修改<strong>树上两点之间的路径上</strong>所有点的值”和“查询<strong>树上两点之间的路径上</strong>节点权值的<strong>和/极值/其他</strong>(在序列上可以用数据结构维护的、便于合并的信息)”等等。</p>
 <p>当然，除了上面那样做，树剖还可以快速地求LCA。</p>
-<p>树剖在洛谷上有一道模板题：<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDMzODQ=">Luogu P3384<i class="fa fa-external-link-alt"></i></span><br>一道比较经典的例题：<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDIxNDY=">Luogu P2146 [NOI2015] 软件包管理器<i class="fa fa-external-link-alt"></i></span></p>
+<p>树剖在洛谷上有一道模板题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3384">Luogu P3384</a><br>一道比较经典的例题：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2146">Luogu P2146 [NOI2015] 软件包管理器</a></p>
 <h1 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h1><p>树剖的思想是，将一棵树按照“重边”来划分称为若干条“重链”。<br>当然，这里的“重链”只是指的一种常用的情况，其他的划分方法比如“长链剖分”等等就不在此赘述了。</p>
 <h2 id="重链"><a href="#重链" class="headerlink" title="重链"></a>重链</h2><p>“重链”的定义是若干条首尾衔接的“重边”。<br>那么，如果想要了解“重链”，就需要先了解<strong>重边</strong>。</p>
 <h3 id="重边"><a href="#重边" class="headerlink" title="重边"></a>重边</h3><p>“重边”的划分标准是它连接向一个重儿子。<br>这里需要注意的是，它只需要结束于一个重儿子，而无其他限制。<br>那么“重儿子”呢？</p>
@@ -322,7 +322,7 @@
 <p>第二个DFS记录了每个节点所在重链的链顶节点(top)、dfs序(id)和重新定向的节点编号(nw)：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    id[p] = ++cnt, nw[cnt] = w[p], top[p] = t;<span class="comment">//初始化节点信息，记录其DFS序</span></span><br><span class="line">    <span class="keyword">if</span>(!son[p]) <span class="keyword">return</span>;<span class="comment">//是否为叶节点</span></span><br><span class="line">    <span class="built_in">dfs2</span>(son[p], t);<span class="comment">//优先搜索在同一条重链上的重儿子</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> j = e[i];</span><br><span class="line">        <span class="keyword">if</span>(j == fa[p] || j == son[p]) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="built_in">dfs2</span>(j, j);<span class="comment">//搜索轻儿子，开一条新的重链，链顶为当前轻儿子</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">114514</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>$\color[rgb]{1,1,0.0625}{φ}$</p>
-<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p>洛谷上面提供了板子题。<br>题面见<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDMzODQ=">这里<i class="fa fa-external-link-alt"></i></span>。<br>代码正确性见<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3JlY29yZC82NTkwNzI2Mg==">提交记录<i class="fa fa-external-link-alt"></i></span>。</p>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p>洛谷上面提供了板子题。<br>题面见<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3384">这里</a>。<br>代码正确性见<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/record/65907262">提交记录</a>。</p>
 <p>我们首先照常打出线段树部分（<del>不会的可以看<a href="">这篇博客</a></del>各位读者们一定已经会线段树了罢）</p>
 <p>两个DFS也是已经有了的代码（见上面）</p>
 <p>然后就有了这篇代码的核心部分：</p>
@@ -349,7 +349,7 @@
 <p>我们从较深的那一个节点开始不断向上跳重链，直到跳到与较浅的节点同一条重链上为止。此时，深度较浅的哪一个就是他们的LCA。</p>
 <p>不懂？看代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">while</span> (top[u] != top[v]) &#123;</span><br><span class="line">    <span class="keyword">if</span> (dep[top[u]] &gt; dep[top[v]])</span><br><span class="line">      u = fa[top[u]];</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      v = fa[top[v]];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> dep[u] &gt; dep[v] ? v : u;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9ncmFwaC9obGQv"> $\blacktriangleright$ <i class="fa fa-external-link-alt"></i></span></p>
+<p><a target="_blank" rel="noopener" href="https://oi-wiki.org/graph/hld/"> $\blacktriangleright$ </a></p>
 <p>于是我们就可以写出路径加、路径求和的代码了：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addpath</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(top[p] != top[q])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(dep[top[p]] &lt; dep[top[q]]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">        <span class="built_in">segadd</span>(<span class="number">1</span>, id[top[p]], id[p], k);</span><br><span class="line">        p = fa[top[p]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dep[p] &lt; dep[q]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">    <span class="built_in">segadd</span>(<span class="number">1</span>, id[q], id[p], k);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">sumpath</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(top[p] != top[q])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(dep[top[p]] &lt; dep[top[q]]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">        res += <span class="built_in">segsum</span>(<span class="number">1</span>, id[top[p]], id[p]);</span><br><span class="line">        p = fa[top[p]];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dep[p] &lt; dep[q]) <span class="built_in">swap</span>(p, q);</span><br><span class="line">    res += <span class="built_in">segsum</span>(<span class="number">1</span>, id[q], id[p]);</span><br><span class="line">    <span class="keyword">return</span> res % mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>$\color[rgb]{1,1,0.0625}{φ}$</p>
