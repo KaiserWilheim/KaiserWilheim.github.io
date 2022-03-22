@@ -380,7 +380,7 @@
 
 <h2 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h2><p>这道题是个背包计数的问题，背包的容量是模m循环的。<br>记<code>f[i][j]</code>表示考虑了前 $i$个整数，当前余数是 $j$，有选和不选两种情况。那么对于一次询问 $q$，我们直接做的复杂度是 $O(nm)$，总复杂度 $O(nmq)$。这档暴力分应该拿到。</p>
 <p>我们注意到m很小，而n很大，也就是说有很多重复的值，那么我们考虑设计一个下标为<code>dp[m][m]</code>的DP方法，每次考虑一类数。<br>假设第 $i$ 种数有 <code>k[i]</code> 个，我们的转移是：<br>$$<br>dp[i][j]=\sum_{h=0}^{k[i]} C_{k[i]}^h dp[i-1][j - h \times a[i] \bmod m]<br>$$<br>注意到 $\sum k[i]=n$ ，以及dp数组的第二维最大只有m，因此我们可以每次 $O(k[i])$ 地预处理出组合数的系数，表示<code>dp[i-1][j]</code>的贡献。写成伪代码就是：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for h : [0, k[i]]</span><br><span class="line">    c[h % m] += C(k[i], h)</span><br></pre></td></tr></table></figure>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for h : <span class="comment">[0, k<span class="comment">[i]</span>]</span></span><br><span class="line">    c<span class="comment">[h % m]</span> += C(k<span class="comment">[i]</span>, h)</span><br></pre></td></tr></table></figure>
 
 <p>然后我们再递推<code>dp[i][j]</code>，把 $dp[i-1][j]\times c[k]\to dp[i][j+k\times i\bmod m]$ 即可。</p>
 <p>总复杂度$O(q(n+m^3))$。</p>
