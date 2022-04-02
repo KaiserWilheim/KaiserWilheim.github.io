@@ -18,9 +18,8 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="LibreOJ #2759 JOI 2014 Final T4">
 <meta property="og:type" content="article">
@@ -30,7 +29,7 @@
 <meta property="og:description" content="LibreOJ #2759 JOI 2014 Final T4">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-30T12:52:52.905Z">
+<meta property="article:modified_time" content="2022-03-31T11:12:25.392Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
@@ -265,7 +264,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-30 20:52:52" itemprop="dateModified" datetime="2022-03-30T20:52:52+08:00">2022-03-30</time>
+      <time title="修改时间：2022-03-31 19:12:25" itemprop="dateModified" datetime="2022-03-31T19:12:25+08:00">2022-03-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -291,7 +290,7 @@
 <p>JOI 2014 Final T4</p>
 <span id="more"></span>
 <hr>
-<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><details class="note "><summary><p>题面原文</p>
+<h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><details class="note info"><summary><p>题面原文</p>
 </summary>
 <p>フクロモモンガの $\rm{JOI}$ 君が住んでいる森にはユーカリの木が $N$ 本生えており，それらの木には $1$ から $N$ の番号がついている．木 $i$ の高さは $H_i$ メートルである.<br>$\rm{JOI}$ 君が相互に直接飛び移ることのできる木の組が $M$ 組あり，各組の木の間を飛び移るためにかかる時間が定まっている. $\rm{JOI}$ 君が木の間を飛び移っている間は，地面からの高さが $1$ 秒あたり $1$ メートル下がる．すなわち，$\rm{JOI}$ 君の現在の地面からの高さが $h$ メートル，木の間を飛び移るためにかかる時間が $t$ 秒であるとき，飛び移った後の地面からの高さは $h − t$ メートルとなる．ただし，$h − t$ が $0$ よりも小さくなる場合や行き先の木の高さよりも大きくなる場合は飛び移ることができない．<br>さらに，$\rm{JOI}$ 君は木の側面を上下に移動することによって，地面からの高さを $0$ メートルから今いる木の高さの範囲で増減させることができる．JOI 君が地面からの高さを 1 メートル増加または減少させるためには $1$ 秒の時間がかかる．<br>$\rm{JOI}$ 君は，木 $1$ の高さ $X$ メートルの位置から木 $N$ の頂上 (高さ $H_N$ メートルの位置) に行こうとしており，そのためにかかる時間の最小値を知りたい．</p>
 <p><strong>課題</strong></p>
@@ -309,7 +308,7 @@
 
 </details>
 
-<details class="note "><summary><p>题面翻译</p>
+<details class="note default"><summary><p>题面翻译</p>
 </summary>
 <p>蜜袋鼯 $\rm{JOI}$ 君住着的森林里长着编号为 $1$ 到 $N$ 的 $N$ 棵桉树。第 $i$ 棵树的高度是 $H_i$ 米。<br>$\rm{JOI}$ 君能在其中的 $M$ 对桉树之间直接飞行，在各对树木之间飞行所需的时间是固定的。当 $\rm{JOI}$ 君在树木之间飞行的时候，他离地面的高度会每秒下降 $1$ 米。也就是说，如果 $\rm{JOI}$ 君现在离地高度是 $h$ 米，在树木之间飞行需要 $t$ 秒，那么飞行之后的离地高度就会变成 $h-t$ 米。当  小于 $0$ 或大于目标树木的高度时则不能飞行。<br>$\rm{JOI}$ 君还能沿着树的侧面上下移动，使得他的离地高度在 $0$ 到当前所在树木高度的范围内变化。$\rm{JOI}$ 君每使自己的离地高度增加或减少 $1$ 米都需要 $1$ 秒的时间。<br>$\rm{JOI}$ 君要从 $1$ 号树木上高度为 $X$ 米的位置出发，到树木 $N$ 的顶端（高度为 $H_N$ 米的位置）去。他想知道为了达成这个目标所需时间的最小值。<br>给出各棵树木的高度、$\rm{JOI}$ 君能直接飞行的树木对和 $\rm{JOI}$ 君最初所在位置的高度，请求出到达树木 $N$ 顶端所需时间的最小值。</p>
 <p><strong>输入格式</strong></p>
@@ -322,15 +321,15 @@
 
 <h1 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h1><p>首先我们考虑一下我们的策略。</p>
 <p>无论给出何种方案，我们都需要遵守一个原则：非必要不爬升，且爬升时只爬升至足够飞过去的高度即可。</p>
-<details class="note "><summary><p>简单说明</p>
+<details class="note primary"><summary><p>简单说明</p>
 </summary>
 <p>对于前半句，我们这样分析：</p>
 <p>我们假设可以突破高度只能大于等于0的限制。</p>
 <p>那我们就可以持续进行飞行操作，知道到达终点再向上爬到树顶。</p>
 <p>也就是说，我们将我们的操作从一系列的“飞跃-爬升”操作变成了一串连续的飞跃操作和一个爬升操作。</p>
 <p>显然，只要我们选择的路径一定，我们最后爬升的路程一定是一定的。<br>我们不妨设其为 $h$ 。</p>
-<p>如果我们在这种情况下，选择在中间进行一次爬升操作，假设我们爬升的高度为 $h&#39;$ 。<br>那么，我们到达最后的高度就是$H_N - h + h&#39;$。</p>
-<p>然而，我们总共还是爬升了 $h-h&#39;+h&#39;&#x3D;h$ 的高度，总共爬升操作所用的时间也是不变的。</p>
+<p>如果我们在这种情况下，选择在中间进行一次爬升操作，假设我们爬升的高度为 $h’$ 。<br>那么，我们到达最后的高度就是$H_N - h + h’$。</p>
+<p>然而，我们总共还是爬升了 $h-h’+h’&#x3D;h$ 的高度，总共爬升操作所用的时间也是不变的。</p>
 <p>更何况我们还会遇到到一棵树正上方时高度大于树高的时候，这时候我们就只能降低高度，而在最后多的时间来爬升刚才降低的那一段距离。<br>这会导致如果我们瞎爬升的话，结果会劣于非必要不爬升的结果。</p>
 <p>那么对于后半句，我们这样分析：</p>
 <p>假设一种极限情况，一路上的树一棵比一棵矮，且每一次从树顶开始飞行都会飞跃目标树。<br>那么如果我们选择爬升的高度太多，就会导致爬升高度的浪费。</p>
@@ -447,8 +446,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
@@ -456,7 +454,6 @@
 
 
 
-  <script src="/js/third-party/fancybox.js"></script>
 
 
   

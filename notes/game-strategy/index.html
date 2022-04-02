@@ -18,9 +18,8 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":true,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="简介： 博弈论">
 <meta property="og:type" content="article">
@@ -372,16 +371,16 @@
 <h4 id="3-收益-Payoff"><a href="#3-收益-Payoff" class="headerlink" title="3. 收益(Payoff)"></a>3. 收益(Payoff)</h4><p>在这里，我们使用带有下标的大写字母 $U_i (s)$ 来代表参与人 $i$ 在所有参与者使用的策略为 $s$ 时所能得到的收益。（这一段好长啊）</p>
 <p>另外的，我们使用小写字母 $s$ 来表示一个博弈。</p>
 <p>好了，现在让我们来使用我们刚刚学会的表示方法来表示我们之前学过的东西。</p>
-<p>那么，如果策略 $s_i$ 相对于策略 $s_i&#39;$ 是一个严格优势策略的话，那么我们就可以写下</p>
-<p>$$<br>\begin{equation}<br>U_i (s_i , s_{-i}) &gt; U_i (s_i&#39; , s_{-i})<br>\end{equation}<br>$$</p>
-<p>类似的，如果策略 $s_i$ 相对于策略 $s_i&#39;$ 是一个严格劣势策略的话，那么我们就可以写下</p>
-<p>$$<br>\begin{equation}<br>U_i (s_i , s_{-i}) &lt; U_i (s_i&#39; , s_{-i})<br>\end{equation}<br>$$</p>
-<h3 id="弱优与弱劣"><a href="#弱优与弱劣" class="headerlink" title="弱优与弱劣"></a>弱优与弱劣</h3><p>如果策略 $s_i$ 相对于策略 $s_i&#39;$ 是一个严格优势策略，那么无论他人选择何种策略，那么我们选 $s_i$ 得到的结果都严格优于选 $s_i&#39;$。</p>
+<p>那么，如果策略 $s_i$ 相对于策略 $s_i’$ 是一个严格优势策略的话，那么我们就可以写下</p>
+<p>$$<br>\begin{equation}<br>U_i (s_i , s_{-i}) &gt; U_i (s_i’ , s_{-i})<br>\end{equation}<br>$$</p>
+<p>类似的，如果策略 $s_i$ 相对于策略 $s_i’$ 是一个严格劣势策略的话，那么我们就可以写下</p>
+<p>$$<br>\begin{equation}<br>U_i (s_i , s_{-i}) &lt; U_i (s_i’ , s_{-i})<br>\end{equation}<br>$$</p>
+<h3 id="弱优与弱劣"><a href="#弱优与弱劣" class="headerlink" title="弱优与弱劣"></a>弱优与弱劣</h3><p>如果策略 $s_i$ 相对于策略 $s_i’$ 是一个严格优势策略，那么无论他人选择何种策略，那么我们选 $s_i$ 得到的结果都严格优于选 $s_i’$。</p>
 <p>但有时候我们并不能总见到这样的策略。</p>
-<p>那我们定义一个策略 $s_i$ 为相对于另一个策略 $s_i&#39;$ 为 <strong>弱优策略(Weakly dominant strategy)</strong> ，此时只需要将大于号填上等于即可。<br>就像下面这样：</p>
-<p>$$<br>\begin{equation}<br>U_i (s_i , s_{-i}) \leq U_i (s_i&#39; , s_{-i})<br>\end{equation}<br>$$</p>
+<p>那我们定义一个策略 $s_i$ 为相对于另一个策略 $s_i’$ 为 <strong>弱优策略(Weakly dominant strategy)</strong> ，此时只需要将大于号填上等于即可。<br>就像下面这样：</p>
+<p>$$<br>\begin{equation}<br>U_i (s_i , s_{-i}) \leq U_i (s_i’ , s_{-i})<br>\end{equation}<br>$$</p>
 <p>类似的， <strong>弱劣策略(Weakly dominated strategy)</strong> 的定义如下：</p>
-<p>$$<br>\begin{equation}<br>U_i (s_i , s_{-i}) \geq U_i (s_i&#39; , s_{-i})<br>\end{equation}<br>$$</p>
+<p>$$<br>\begin{equation}<br>U_i (s_i , s_{-i}) \geq U_i (s_i’ , s_{-i})<br>\end{equation}<br>$$</p>
 <p>所以说，对于刚才你和李zen做的游戏，我们可以用这些表示来替换之前的说法：</p>
 <p>（先放图）</p>
 <p><img src="https://i.loli.net/2021/09/22/OSmtUF89Hs5covl.png" alt="博弈2.png"></p>
@@ -446,11 +445,11 @@
 <p>图中的横轴代表李zen选←的概率，同时选→的概率是（1-选←的概率）。纵轴代表不同选择的期望收益。</p>
 <p>所以，我们可以看到，在李zen选择某一策略的概率不同时，我们的最佳对策是不一样的。</p>
 <p>在这里，我们可以这样定义 <strong>最佳对策(Best Responce)</strong> :<br>当</p>
-<p>$$<br>U_i ( \hat{s_i} ,s_{-i} ) \geq U_i ( s_i&#39; ,s_{-i} ) \quad (s_i&#39; \in S_i )<br>$$</p>
+<p>$$<br>U_i ( \hat{s_i} ,s_{-i} ) \geq U_i ( s_i’ ,s_{-i} ) \quad (s_i’ \in S_i )<br>$$</p>
 <p>或</p>
 <p>$$<br>U_i ( \hat{s_i} ,s_{-i} ) &#x3D; max( U_i ( S_i , s_{-i}))<br>$$</p>
 <p>或</p>
-<p>$$<br>EU_i ( \hat{s_i} ,p ) \geq max( EU_i ( s_i&#39; , p)) \quad (s_i&#39; \in S_i )<br>$$</p>
+<p>$$<br>EU_i ( \hat{s_i} ,p ) \geq max( EU_i ( s_i’ , p)) \quad (s_i’ \in S_i )<br>$$</p>
 <p>时，我们称 $ \hat{s_i} $ 是策略 $s_{-i} $ 的最佳对策。</p>
 <p>其中， $EU_i ( s_i , p ) $ 指的是策略 $s_i$ 在参与人 $i$ 持信念 $p$ 时的期望收益。</p>
 <p>同时，我们需要注意一下，对于不同的策略集合 $s_{-i}$ ，其最佳对策的数量可能是不同的，且可能不为一（就是最佳对策不会只有一个）。</p>
@@ -459,8 +458,8 @@
 <p>$$<br>\begin{align}<br>U_y &amp; &#x3D; 2 ( s_y + s_z + b s_y s_z ) - s_y^2 \\<br>U_z &amp; &#x3D; 2 ( s_y + s_z + b s_y s_z ) - s_z^2<br>\end{align}<br>$$</p>
 <p>此时让我们来算一下我们怎么最大化我们的收益。</p>
 <p>首先求一下导，把 $s_z$ 当做常数：</p>
-<p>$$<br>\begin{align}<br>U_y&#39; &amp; &#x3D; 2 ( 1 + b s_z ) - 2 s_y \\<br>U_y&#39;&#39; &amp; &#x3D; -2 &lt; 0<br>\end{align}<br>$$</p>
-<p>此时令 $U_y&#39; &#x3D; 0 $ ，可以求出最佳对策：</p>
+<p>$$<br>\begin{align}<br>U_y’ &amp; &#x3D; 2 ( 1 + b s_z ) - 2 s_y \\<br>U_y’’ &amp; &#x3D; -2 &lt; 0<br>\end{align}<br>$$</p>
+<p>此时令 $U_y’ &#x3D; 0 $ ，可以求出最佳对策：</p>
 <p>$$<br>\begin{align}<br>2 ( 1 + b s_z ) - 2 s_y &amp; &#x3D; 0 \\<br>1 + b s_z &amp; &#x3D; s_y \\<br>s_y &amp; &#x3D; \frac{1}{1-b}<br>\end{align}<br>$$</p>
 <p>此时画一下图：</p>
 <p><img src="https://i.loli.net/2021/09/25/mwYX56SC4WaQtcT.png" alt="博弈8.png"></p>
@@ -569,8 +568,7 @@
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
@@ -578,7 +576,6 @@
 
 
 
-  <script src="/js/third-party/fancybox.js"></script>
 
 
   
