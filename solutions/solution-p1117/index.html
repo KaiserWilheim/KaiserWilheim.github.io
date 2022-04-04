@@ -14,10 +14,12 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Segoe+UI:300,300italic,400,400italic,700,700italic%7CCascadia+Code:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.10.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
@@ -32,7 +34,7 @@
 <meta property="og:image" content="https://s2.loli.net/2022/03/22/1Yo3UAOuptlvKz5.png">
 <meta property="og:image" content="https://s2.loli.net/2022/03/22/EdSZAXvpG17hPYF.gif">
 <meta property="article:published_time" content="2022-03-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-03-30T06:59:18.808Z">
+<meta property="article:modified_time" content="2022-04-03T12:59:41.567Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="字符串">
 <meta property="article:tag" content="题解">
@@ -100,7 +102,7 @@
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">14</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">37</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">38</span></a></li>
         <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
   </ul>
 </nav>
@@ -146,7 +148,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -174,7 +176,7 @@
       </span>
   </div>
   <div class="cc-license site-overview-item animated" itemprop="license">
-    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/true/by_nc_sa.svg" alt="Creative Commons"></span>
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></span>
   </div>
 
 
@@ -268,7 +270,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-03-30 14:59:18" itemprop="dateModified" datetime="2022-03-30T14:59:18+08:00">2022-03-30</time>
+      <time title="修改时间：2022-04-03 20:59:41" itemprop="dateModified" datetime="2022-04-03T20:59:41+08:00">2022-04-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -294,6 +296,9 @@
 <p>NOI 2016</p>
 <span id="more"></span>
 <hr>
+<div class="note warning"><p>本文图片出了一些大病，不建议点击放大。</p>
+</div>
+
 <p>据说暴力用哈希扫可以拿到95分。</p>
 <p>这一道题的思路是这个样子的：</p>
 <p>我们首先准备两个数组<code>a[]</code>和<code>b[]</code>，分别表示以 $i$ 结尾的形似AA的字串个数和以 $i$ 开头的形似AA的字串的个数，最终答案其实就是 $\displaystyle \sum_{i&#x3D;1}^n a[i] \times b[i+1]$。</p>
@@ -303,13 +308,13 @@
 <p>为什么呢？</p>
 <p>我们考虑从两个位置的 <code>lcs</code> 的开头处开始，分别向后截取出一段长度为 $len$ 的串。</p>
 <p>如果这个串被两者的 <code>lcs</code> 和两者的 <code>lcp</code> 拼起来组成的一个字串覆盖，那么我们就可以把这两个串拼起来，形成一个长度为 $2len$ 的AA串。<br>就像这样：</p>
-<img src="https://s2.loli.net/2022/03/22/mo9Hg7zp3YlCWjf.png" alt="p1117-1.png" style="zoom:250%;" />
+<img src="https://s2.loli.net/2022/03/22/mo9Hg7zp3YlCWjf.png" alt="p1117-1.png" width="60%" />
 
 <p>当两者长度加起来不够 $len$ 时，我们截出来的两端字串就不保证一样。<br>不，应该是保证不一样，要不然两者的 <code>lcp</code> 还可以更长一点。<br>这样就拼不出来一个长度为 $2len$ 的AA串了。</p>
-<img src="https://s2.loli.net/2022/03/22/1Yo3UAOuptlvKz5.png" alt="p1117-2.png" style="zoom:250%;" />
+<img src="https://s2.loli.net/2022/03/22/1Yo3UAOuptlvKz5.png" alt="p1117-2.png" width="60%" />
 
 <p>如果两者甚至有重合，那么我们就可以挑出来多个字串。我们这些会累积到后面。</p>
-<img src="https://s2.loli.net/2022/03/22/EdSZAXvpG17hPYF.gif" alt="p1117-3.gif" style="zoom:250%;" />
+<img src="https://s2.loli.net/2022/03/22/EdSZAXvpG17hPYF.gif" alt="p1117-3.gif" width="60%" />
 
 <p>就是这样。</p>
 <p>简单来说，我们需要做的就是：</p>
@@ -408,6 +413,7 @@
 
 
 
+  <script src="/js/third-party/pace.js"></script>
 
   
 
