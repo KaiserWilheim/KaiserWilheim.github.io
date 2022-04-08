@@ -33,11 +33,11 @@
 <meta property="og:image" content="https://s2.loli.net/2022/04/06/DjtOJRCaSzxwZAB.png">
 <meta property="og:image" content="https://s2.loli.net/2022/04/06/udZE5v41asjfBYh.png">
 <meta property="og:image" content="https://s2.loli.net/2022/04/07/2QdAr9Jchl4tunG.png">
-<meta property="og:image" content="https://kaiserwilheim.github.io/%5Cpics%5CAC2.gif">
-<meta property="og:image" content="https://kaiserwilheim.github.io/%5Cpics%5CAC3.png">
-<meta property="og:image" content="https://kaiserwilheim.github.io/%5Cpics%5CAC4.png">
+<meta property="og:image" content="https://kaiserwilheim.github.io/pics/AC2.gif">
+<meta property="og:image" content="https://kaiserwilheim.github.io/pics/AC3.png">
+<meta property="og:image" content="https://kaiserwilheim.github.io/pics/AC4.png">
 <meta property="article:published_time" content="2022-04-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-07T13:50:47.972Z">
+<meta property="article:modified_time" content="2022-04-08T10:11:03.733Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="字符串">
@@ -275,7 +275,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-07 21:50:47" itemprop="dateModified" datetime="2022-04-07T21:50:47+08:00">2022-04-07</time>
+      <time title="修改时间：2022-04-08 18:11:03" itemprop="dateModified" datetime="2022-04-08T18:11:03+08:00">2022-04-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -362,7 +362,7 @@
 <p>下图中用不同的颜色来区分不同状态的边、点：</p>
 <p>#FF9955 代表在队列中，等待构建fail指针的点；<br>#FFCC00 代表正在构建fail指针的点；<br>#AAD400 代表已经构建完fail指针的点；</p>
 <p>#FF0000 代表正在构建的fail指针；<br>#FFDD55 代表已经构建完成的fail指针。</p>
-<p><img src="/%5Cpics%5CAC2.gif" alt="AC2.gif"></p>
+<p><img src="/pics/AC2.gif" alt="AC2.gif"></p>
 <p>代码：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">struct trie</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    int s[26];</span></span><br><span class="line"><span class="comment">    int cnt;</span></span><br><span class="line"><span class="comment">    int fail;</span></span><br><span class="line"><span class="comment">&#125;tr[N];</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_fail</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt;q;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">        <span class="keyword">if</span>(tr[<span class="number">0</span>].s[i])q.<span class="built_in">push</span>(tr[u].s[i]);</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(tr[u].s[i])</span><br><span class="line">            &#123;</span><br><span class="line">                tr[tr[u].s[i]].fail = tr[tr[u].fail].s[i];</span><br><span class="line">                q.<span class="built_in">push</span>(tr[u].s[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                tr[u].s[i] = tr[tr[u].fail].s[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -372,9 +372,9 @@
 <p>然后我们将当前节点的部分空儿子指向当前节点的fail指针指向的节点的对应儿子上。<br>原因就是，反正也是失配了，与其花时间判失配跳fail指针再访问，不如直接访问我们想要它到的节点。<br>所以我们在匹配的时候一直走（结构体意义上的）树边，直到整个跑完就可以了。</p>
 <p>照这样建完fail指针之后，我们会将原先的Trie树变为一张“Trie图”。</p>
 <p>由于边太多太密，我就不画了。可能会补上一张CSAcademy的图。<br>（太糊了，感觉会不久后撤下，就先存本地了）</p>
-<p><img src="/%5Cpics%5CAC3.png"></p>
+<p><img src="/pics/AC3.png"></p>
 <p>（这是原数据）</p>
-<p><img src="/%5Cpics%5CAC4.png"></p>
+<p><img src="/pics/AC4.png"></p>
 <p>（这是图）</p>
 <h2 id="匹配"><a href="#匹配" class="headerlink" title="匹配"></a>匹配</h2><p>明天再写。</p>
 
