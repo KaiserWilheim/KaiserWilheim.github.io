@@ -23,23 +23,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.eu.org","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="南陽劉子驥的博客">
-<meta property="og:url" content="https://kaiserwilheim.eu.org/archives/2021/index.html">
+    <meta name="description" content="Luogu P4643">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P4643 [国家集训队] 阿狸和桃子的游戏 题解">
+<meta property="og:url" content="https://kaiserwilheim.eu.org/solutions/solution-p4643/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
+<meta property="og:description" content="Luogu P4643">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-24T09:03:09.101Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="贪心">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://kaiserwilheim.eu.org/archives/2021/">
+<link rel="canonical" href="https://kaiserwilheim.eu.org/solutions/solution-p4643/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"archives/2021/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.eu.org/solutions/solution-p4643/","path":"solutions/solution-p4643/","title":"P4643 [国家集训队] 阿狸和桃子的游戏 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>归档 | 南陽劉子驥的博客</title>
+<title>P4643 [国家集训队] 阿狸和桃子的游戏 题解 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -72,7 +78,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">南陽劉子驥的博客</h1>
+      <p class="site-title">南陽劉子驥的博客</p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">逻辑搭建基础，变幻点燃世界</p>
@@ -213,291 +219,137 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.eu.org/solutions/solution-p4643/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
+      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南陽劉子驥的博客">
+      <meta itemprop="description" content="">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="P4643 [国家集训队] 阿狸和桃子的游戏 题解 | 南陽劉子驥的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          P4643 [国家集训队] 阿狸和桃子的游戏 题解
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-04-24 00:00:00 / 修改时间：17:03:09" itemprop="dateCreated datePublished" datetime="2022-04-24T00:00:00+08:00">2022-04-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Luogu P4643</p>
+<span id="more"></span>
+<hr>
+<p>题目大意是，我们需要从一个带有边权和点权的图上对点进行染色，并按照一个特定的规则计分，最终输出两人得分之差，要求差最大。</p>
+<p>某一个人的得分是其染色的点权值之和，再加上两端点均被其染色的边权之和。</p>
+<hr>
+<p>因为我们需要求的是两人得分之差，所以原本一条边的两端点分别被两人染色之后边权互不归属的情况可以看做两人各取一半。<br>同理，如果一条边的两个端点都被同一个人染了色之后，这条边的两半权值都被这个人拿走了，与我们题目里的情况符合。</p>
+<p>那我们就可以将边的权值一分为二，分别加到两个端点上，然后将这道题目变成选择最大点权和。</p>
+<p>因为两人均采取最优策略，所以桃子取到了最大值之后，阿狸就会取次大值，然后桃子去第三大的值，如此往复。</p>
+<p>于是我们就可以将点按照权值降序两两一组，求所有组内点权之差的总和。</p>
+<p>然后我们就可以输出答案了。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10010</span>;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> k;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;k);</span><br><span class="line">        a[i] = k &lt;&lt; <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> x, y, z;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;x, &amp;y, &amp;z);</span><br><span class="line">        a[x] += z;</span><br><span class="line">        a[y] += z;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(a + <span class="number">1</span>, a + <span class="number">1</span> + n);</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = n; i &gt;= <span class="number">1</span>; i -= <span class="number">2</span>)ans += a[i] - a[i - <span class="number">1</span>];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, ans / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>南陽劉子驥 aka KaiserWilheim
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://kaiserwilheim.eu.org/solutions/solution-p4643/" title="P4643 [国家集训队] 阿狸和桃子的游戏 题解">https://kaiserwilheim.eu.org/solutions/solution-p4643/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
+              <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"># 贪心</a>
+          </div>
+
         
-        <span class="collection-header">还行! 目前共计 48 篇日志。 继续努力。</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-12-27T00:00:00+08:00"
-              content="2021-12-27">
-          12-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/OI/heavy-path-decomposition/" itemprop="url">
-            <span itemprop="name">树链剖分</span>
-          </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/solution-flow/" rel="prev" title="网络流 做题记录">
+                  <i class="fa fa-chevron-left"></i> 网络流 做题记录
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/solutions/solution-p4551/" rel="next" title="P4551 最长异或路径">
+                  P4551 最长异或路径 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-11-24T00:00:00+08:00"
-              content="2021-11-24">
-          11-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/chemistry/orbitals/" itemprop="url">
-            <span itemprop="name">轨道理论</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-11-21T00:00:00+08:00"
-              content="2021-11-21">
-          11-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/chemistry/lewis-structure/" itemprop="url">
-            <span itemprop="name">Lewis电子理论</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-11-12T00:00:00+08:00"
-              content="2021-11-12">
-          11-12
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/OI/scanning-line/" itemprop="url">
-            <span itemprop="name">扫描线</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-10-25T00:00:00+08:00"
-              content="2021-10-25">
-          10-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/solutions/solution-p7913/" itemprop="url">
-            <span itemprop="name">P7913 廊桥分配 题解</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-10-13T00:00:00+08:00"
-              content="2021-10-13">
-          10-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/OI/tree-array/" itemprop="url">
-            <span itemprop="name">树状数组</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-10-01T00:00:00+08:00"
-              content="2021-10-01">
-          10-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/notes/linar-algebra/" itemprop="url">
-            <span itemprop="name">线性代数</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-09-29T00:00:00+08:00"
-              content="2021-09-29">
-          09-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/solutions/solution-p3982/" itemprop="url">
-            <span itemprop="name">P3982 龙盘雪峰信息解析器 题解</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-09-23T00:00:00+08:00"
-              content="2021-09-23">
-          09-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/solutions/solution-p1061/" itemprop="url">
-            <span itemprop="name">P1061 Jam的计数法 题解</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-09-22T00:00:00+08:00"
-              content="2021-09-22">
-          09-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/notes/game-strategy/" itemprop="url">
-            <span itemprop="name">博弈论（广义）学习笔记</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-09-21T00:00:00+08:00"
-              content="2021-09-21">
-          09-21
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/maths/mathematics/" itemprop="url">
-            <span itemprop="name">数学杂项整理</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-09-16T00:00:00+08:00"
-              content="2021-09-16">
-          09-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/OI/prime-sieves/" itemprop="url">
-            <span itemprop="name">质数筛法</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-09-13T00:00:00+08:00"
-              content="2021-09-13">
-          09-13
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/solutions/solution-p7075/" itemprop="url">
-            <span itemprop="name">P7075 儒略日 题解</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
 
+
+
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -545,7 +397,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"7e86d1ed3d637767f43e","client_secret":"8c30b836730da8aa5cf28c69e8af4d026f0655e7","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"92cc57c5b6692cf1dbd9fda9f0368952"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"7e86d1ed3d637767f43e","client_secret":"8c30b836730da8aa5cf28c69e8af4d026f0655e7","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"b227f2ee67a8ee235ff508d2c0f4bb90"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

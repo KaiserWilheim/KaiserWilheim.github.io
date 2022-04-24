@@ -23,29 +23,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.eu.org","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Luogu P1061">
+    <meta name="description" content="Luogu P4551">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P1061 Jam的计数法 题解">
-<meta property="og:url" content="https://kaiserwilheim.eu.org/solutions/solution-p1061/index.html">
+<meta property="og:title" content="P4551 最长异或路径">
+<meta property="og:url" content="https://kaiserwilheim.eu.org/solutions/solution-p4551/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="Luogu P1061">
+<meta property="og:description" content="Luogu P4551">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-22T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-20T07:55:35.219Z">
+<meta property="article:published_time" content="2022-04-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-04-24T10:32:40.134Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="题解">
-<meta property="article:tag" content="模拟">
+<meta property="article:tag" content="字典树">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://kaiserwilheim.eu.org/solutions/solution-p1061/">
+<link rel="canonical" href="https://kaiserwilheim.eu.org/solutions/solution-p4551/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.eu.org/solutions/solution-p1061/","path":"solutions/solution-p1061/","title":"P1061 Jam的计数法 题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.eu.org/solutions/solution-p4551/","path":"solutions/solution-p4551/","title":"P4551 最长异或路径"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>P1061 Jam的计数法 题解 | 南陽劉子驥的博客</title>
+<title>P4551 最长异或路径 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -230,7 +230,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.eu.org/solutions/solution-p1061/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.eu.org/solutions/solution-p4551/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
@@ -243,12 +243,12 @@
     </span>
     
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="P1061 Jam的计数法 题解 | 南陽劉子驥的博客">
+      <meta itemprop="name" content="P4551 最长异或路径 | 南陽劉子驥的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          P1061 Jam的计数法 题解
+          P4551 最长异或路径
         </h1>
 
         <div class="post-meta-container">
@@ -258,15 +258,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-09-23 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-23T00:00:00+08:00">2021-09-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-20 15:55:35" itemprop="dateModified" datetime="2022-04-20T15:55:35+08:00">2022-04-20</time>
+      <time title="创建时间：2022-04-24 00:00:00 / 修改时间：18:32:40" itemprop="dateCreated datePublished" datetime="2022-04-24T00:00:00+08:00">2022-04-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -288,16 +282,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Luogu P1061</p>
+        <p>Luogu P4551</p>
 <span id="more"></span>
 <hr>
-<p>这道题可以使用简单地使用模拟的方法来解决。</p>
-<p>我们先把所有的字符转化成 $[1,26]$ 范围内的整数，便于运算；<br>接下来我们建立另外一个数组，存储 $[t-w+1,t]$ 范围内的整数，这代表某一位数字可以达到的最大值。<br>因为题目要求后面的数字严格大于前面的数字，所以我们降序存储的序列代表着最大的那个数。</p>
-<p>接下来，进行判断。<br>如果最后一个数达到最大值，那就往前搜索，直到某一个数没有达到最大值为止。<br>之后将没有达到最大值的最低位+1，剩下的位顺序排列。</p>
-<p>上代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> str;</span><br><span class="line"><span class="type">int</span> a[<span class="number">30</span>],b[<span class="number">30</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> s,t,w,st=<span class="number">1</span>;</span><br><span class="line">    cin&gt;&gt;s&gt;&gt;t&gt;&gt;w;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=w;i++)&#123;</span><br><span class="line">        b[i]=t-(w-i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=w;i++)&#123;</span><br><span class="line">        <span class="type">char</span> c;</span><br><span class="line">        cin&gt;&gt;c;</span><br><span class="line">        a[i]=c-<span class="string">&#x27;a&#x27;</span>+<span class="number">1</span>;</span><br><span class="line">        a[<span class="number">0</span>]+=a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">        st=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=w;j&gt;=<span class="number">1</span>;j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a[j]&gt;=b[j])&#123;</span><br><span class="line">                a[j]=<span class="number">-1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=w;j&gt;=<span class="number">1</span>;j--)&#123;</span><br><span class="line">            <span class="keyword">if</span>((a[j]==<span class="number">-1</span>)&amp;&amp;(a[j<span class="number">-1</span>]!=<span class="number">-1</span>))&#123;</span><br><span class="line">                st=<span class="number">0</span>;</span><br><span class="line">                a[j<span class="number">-1</span>]++; </span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k=j;k&lt;=w;k++)&#123;</span><br><span class="line">                    a[k]=a[k<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">                &#125;				</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(st==<span class="number">1</span>)a[w]++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;=w;j++)&#123;</span><br><span class="line">            <span class="type">char</span> c=a[j]+<span class="string">&#x27;a&#x27;</span><span class="number">-1</span>;</span><br><span class="line">            cout&lt;&lt;c;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">        <span class="keyword">if</span>(a[<span class="number">0</span>]==(s+s-w+<span class="number">1</span>)*w/<span class="number">2</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>$\color[rgb]{1,1,0.0625}{φ}$</p>
-<p>感谢阅读。</p>
+<p>做这道题需要一个有关异或的性质，就是：</p>
+<p>假设我们有两个数 $x$ 和 $y$，不论 $x$ 和 $y$ 是多少，我们都有 $x \oplus y \oplus y &#x3D; x$，即一个数异或另一个数两次仍为自身。</p>
+<p>那我们需要找的最长异或路径，可以转化为两个点到根的路径的异或值的最大值。</p>
+<p>因为对于两个点 $x$ 和 $y$，我们需要求的就是 $\operatorname{dis}(x,\operatorname{lca}(x,y)) \oplus \operatorname{dis}(y,\operatorname{lca}(x,y))$。我们可以将 $\operatorname{dis}(1,x) \oplus \operatorname{dis}(1,y)$ 分解为 $\operatorname{dis}(1,\operatorname{lca}(x,y)) \oplus \operatorname{dis}(\operatorname{lca}(x,y),x) \oplus \operatorname{dis}(1,\operatorname{lca}(x,y)) \oplus \operatorname{dis}(1,\operatorname{lca}(x,y))$，然后利用性质转化为 $\operatorname{dis}(x,\operatorname{lca}(x,y)) \oplus \operatorname{dis}(y,\operatorname{lca}(x,y))$。</p>
+<p>而所有的 $\operatorname{dis}(1,x)$ 只需要使用一次DFS即可求出。</p>
+<p>然后就是找异或最大值。</p>
+<p>我们将所有的 $\operatorname{dis}(1,x)$ 放进一棵Trie树里面，然后就可以寻找异或最大值了。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>, M = N &lt;&lt; <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">TrieTree</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> s[<span class="number">2</span>];</span><br><span class="line">    <span class="type">int</span> occ;</span><br><span class="line">&#125;tr[N * <span class="number">32</span>];</span><br><span class="line"><span class="type">int</span> tot = <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> w[M], h[N], e[M], ne[M], idx;</span><br><span class="line"><span class="type">int</span> dis[N];</span><br><span class="line"><span class="type">int</span> ans;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[idx] = b;</span><br><span class="line">    w[idx] = v;</span><br><span class="line">    ne[idx] = h[a];</span><br><span class="line">    h[a] = idx++;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">30</span>, p = <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> c = ((x &gt;&gt; i) &amp; <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(!tr[p].s[c])tr[p].s[c] = ++tot;</span><br><span class="line">        p = tr[p].s[c];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">30</span>, p = <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> c = ((x &gt;&gt; i) &amp; <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(tr[p].s[c ^ <span class="number">1</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            p = tr[p].s[c ^ <span class="number">1</span>];</span><br><span class="line">            res |= (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            p = tr[p].s[c];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans = <span class="built_in">max</span>(ans, res);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">insert</span>(dis[p]);</span><br><span class="line">    <span class="built_in">get</span>(dis[p]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> v = e[i];</span><br><span class="line">        <span class="keyword">if</span>(v == fa)<span class="keyword">continue</span>;</span><br><span class="line">        dis[v] = dis[p] ^ w[i];</span><br><span class="line">        <span class="built_in">dfs</span>(v, p);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="built_in">sizeof</span>(h));</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> a, b, v;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;a, &amp;b, &amp;v);</span><br><span class="line">        <span class="built_in">add</span>(a, b, v);</span><br><span class="line">        <span class="built_in">add</span>(b, a, v);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -315,7 +311,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://kaiserwilheim.eu.org/solutions/solution-p1061/" title="P1061 Jam的计数法 题解">https://kaiserwilheim.eu.org/solutions/solution-p1061/</a>
+      <a href="https://kaiserwilheim.eu.org/solutions/solution-p4551/" title="P4551 最长异或路径">https://kaiserwilheim.eu.org/solutions/solution-p4551/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</span> 许可协议。转载请注明出处！
@@ -325,20 +321,20 @@
 
           <div class="post-tags">
               <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
-              <a href="/tags/%E6%A8%A1%E6%8B%9F/" rel="tag"># 模拟</a>
+              <a href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/" rel="tag"># 字典树</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/notes/game-strategy/" rel="prev" title="博弈论（广义）学习笔记">
-                  <i class="fa fa-chevron-left"></i> 博弈论（广义）学习笔记
+                <a href="/solutions/solution-p4643/" rel="prev" title="P4643 [国家集训队] 阿狸和桃子的游戏 题解">
+                  <i class="fa fa-chevron-left"></i> P4643 [国家集训队] 阿狸和桃子的游戏 题解
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/solutions/solution-p3982/" rel="next" title="P3982 龙盘雪峰信息解析器 题解">
-                  P3982 龙盘雪峰信息解析器 题解 <i class="fa fa-chevron-right"></i>
+                <a href="/suoyin/" rel="next" title="博客索引">
+                  博客索引 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -399,7 +395,7 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"7e86d1ed3d637767f43e","client_secret":"8c30b836730da8aa5cf28c69e8af4d026f0655e7","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"bb5deb882888ff364b4a3f973df866ff"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"7e86d1ed3d637767f43e","client_secret":"8c30b836730da8aa5cf28c69e8af4d026f0655e7","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"ae52916f6e8b794b3ed737074c65d236"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
