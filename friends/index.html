@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <script src="/live2d-widget/autoload.js"></script>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-kw.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/128kw.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/64kw.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pics/apple-touch-icon-kw.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pics/128kw.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pics/64kw.png">
+  <link rel="mask-icon" href="/pics/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="https://fonts.googleapis.cn/css?family=Noto+Sans:300,300italic,400,400italic,700,700italic%7CNoto+Serif+Tangut:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.eu.org","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.10.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.eu.org","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="欢迎互换友链~ 链接格式有一定要求，请见一下的本站链接示例。 请先挂好本站的链接 OwO 12345- site: 南陽劉子驥的博客  owner: 南陽劉子驥or- site: Blog of KaiserWilheim  owner: KaiserWilheim （两者选其一即可，但需要对应） 123456link: kaiserwilheim.github.iodescription: 逻辑">
 <meta property="og:type" content="website">
@@ -85,6 +84,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -92,18 +92,38 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">22</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">50</span></a></li>
-        <li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">44</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
         
@@ -144,8 +164,8 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">50</span>
-          <span class="site-state-item-name">日志</span>
+          <span class="site-state-item-count">44</span>
+          <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
@@ -155,7 +175,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -223,8 +243,6 @@
 
 
     <div class="main-inner page posts-expand">
-  
-  
 
 
     
@@ -250,37 +268,37 @@
 <p>（两者选其一即可，但需要对应）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">link: kaiserwilheim.github.io</span><br><span class="line">description: 逻辑搭建基础，变换点燃世界</span><br><span class="line">picture: </span><br><span class="line">  https://i.loli.net/2021/09/20/sfakBvuxcDypFZW.png (bigger)</span><br><span class="line">  https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png (smaller)</span><br><span class="line">color: #ad1453</span><br></pre></td></tr></table></figure>
 
-<h1 id="机房-Dalao"><a href="#机房-Dalao" class="headerlink" title="机房 Dalao"></a>机房 Dalao</h1><div class="link-grid"><div class="link-grid-container" style="--bg-color: #bec4ce">
+<h1 id="机房-Dalao"><a href="#机房-Dalao" class="headerlink" title="机房 Dalao"></a>机房 Dalao</h1><div class="link-grid"><div class="link-grid-container">
 <object class="link-grid-image" data="/pics/89725506.png"></object>
 <p>CloudySky</p><p>纵使世界万般残酷，总有温暖值得守护</p>
 <a target="_blank" rel="noopener" href="https://cloudyskyet.github.io/"></a>
-</div><div class="link-grid-container" style="--bg-color: #b8d6ff">
+</div><div class="link-grid-container">
 <object class="link-grid-image" data="https://cdn.jsdelivr.net/npm/bsi@0.0.5/avatar/128x128.png"></object>
 <p>宝硕</p><p>学习，就是发现自己越来越菜的过程。</p>
 <a target="_blank" rel="noopener" href="https://blog.baoshuo.ren/"></a>
-</div><div class="link-grid-container" style="--bg-color: #ffe784">
+</div><div class="link-grid-container">
 <object class="link-grid-image" data="/pics/youwike.png"></object>
 <p>Youwike</p><p>我将会骄傲的说，这世界我来过<br>人生就是要大起大落<br>追求卓越</p>
 <a target="_blank" rel="noopener" href="https://youwike.github.io/"></a>
-</div><div class="link-grid-container" style="--bg-color: #114514">
+</div><div class="link-grid-container">
 <object class="link-grid-image" data="/pics/siminhe.jpg"></object>
 <p>Noob_Compiler</p><p>卷不死就往死里卷！</p>
 <a target="_blank" rel="noopener" href="https://noobcompiler.github.io/"></a>
-</div><div class="link-grid-container" style="--bg-color: #6478e4">
+</div><div class="link-grid-container">
 <object class="link-grid-image" data="/pics/91672298.png"></object>
 <p>Johnsonloy</p><p>我的出生就是为了用鲜花将你淹没。</p>
 <a target="_blank" rel="noopener" href="https://johnsonloy.github.io/"></a>
 </div></div>
 
-<h1 id="Dalao-in-the-north"><a href="#Dalao-in-the-north" class="headerlink" title="Dalao in the north"></a>Dalao in the north</h1><div class="link-grid"><div class="link-grid-container" style="--bg-color: #dfd3a6">
+<h1 id="Dalao-in-the-north"><a href="#Dalao-in-the-north" class="headerlink" title="Dalao in the north"></a>Dalao in the north</h1><div class="link-grid"><div class="link-grid-container">
 <object class="link-grid-image" data="https://xixike.github.io/images/avatar.jpg"></object>
 <p>xixike</p><p>人间忽晚，山河已秋</p>
 <a target="_blank" rel="noopener" href="https://xixike.github.io/"></a>
-</div><div class="link-grid-container" style="--bg-color: #0080ff">
+</div><div class="link-grid-container">
 <object class="link-grid-image" data="/pics/88422246.png"></object>
 <p>Acestar</p><p>A drop of tear blurs memories of the past.</p>
 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/acestar/"></a>
-</div><div class="link-grid-container" style="--bg-color: #f5a7b8">
+</div><div class="link-grid-container">
 <object class="link-grid-image" data="/pics/91811830.png"></object>
 <p>RevolutionBP</p><p>Light up the sky</p>
 <a target="_blank" rel="noopener" href="https://revolutionbp.github.io/"></a>
@@ -312,6 +330,22 @@
   </span>
   <span class="author" itemprop="copyrightHolder">南陽劉子驥 aka KaiserWilheim</span>
 </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">258k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:54</span>
+  </span>
+</div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
   </div>
 
@@ -325,6 +359,8 @@
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
 
 
 
