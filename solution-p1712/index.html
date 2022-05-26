@@ -22,28 +22,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.eu.org","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="测试博客显示情况——二">
+    <meta name="description" content="Luogu P1712LibreOJ #2086BZOJ 4653 NOI 2016">
 <meta property="og:type" content="article">
-<meta property="og:title" content="𗼇𗟲">
-<meta property="og:url" content="https://kaiserwilheim.eu.org/tangut/index.html">
+<meta property="og:title" content="P1712 [NOI2016] 区间 题解">
+<meta property="og:url" content="https://kaiserwilheim.eu.org/solution-p1712/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="测试博客显示情况——二">
+<meta property="og:description" content="Luogu P1712LibreOJ #2086BZOJ 4653 NOI 2016">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-21T11:52:32.913Z">
+<meta property="article:published_time" content="2022-05-25T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-26T11:48:19.465Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
-<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="线段树">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://kaiserwilheim.eu.org/tangut/">
+<link rel="canonical" href="https://kaiserwilheim.eu.org/solution-p1712/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.eu.org/tangut/","path":"tangut/","title":"𗼇𗟲"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.eu.org/solution-p1712/","path":"solution-p1712/","title":"P1712 [NOI2016] 区间 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>𗼇𗟲 | 南陽劉子驥的博客</title>
+<title>P1712 [NOI2016] 区间 题解 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -252,7 +253,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.eu.org/tangut/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.eu.org/solution-p1712/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
@@ -265,12 +266,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="𗼇𗟲 | 南陽劉子驥的博客">
+      <meta itemprop="name" content="P1712 [NOI2016] 区间 题解 | 南陽劉子驥的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          𗼇𗟲
+          P1712 [NOI2016] 区间 题解
         </h1>
 
         <div class="post-meta-container">
@@ -280,15 +281,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-05-08 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-08T00:00:00+08:00">2022-05-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-21 19:52:32" itemprop="dateModified" datetime="2022-05-21T19:52:32+08:00">2022-05-21</time>
+      <time title="创建时间：2022-05-26 00:00:00 / 修改时间：19:48:19" itemprop="dateCreated datePublished" datetime="2022-05-26T00:00:00+08:00">2022-05-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -296,7 +291,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
         </span>
     </span>
 
@@ -307,14 +302,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>23</span>
+      <span>2.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -325,18 +320,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="995629453065148db4d540eadf7f0431fcb0d75738c81b397a63e6540c5d0e2e">0c63164426605f29c68b35118afdec0d67df8dc61bc65797a759a4b7b10fb3ae18f634f88bb78396c2601f8eed1a6d537d25e930636c94352100e4cc657766c52e73910ee5e2e60e9a313b03012101de85c26a999ee857e12bac3f1688ae41a156af7e4000d40f66defb721d7a31761e8ca08db5d47d84e555eb11c16a2038cc54f4073218906f93ba142f4729b03a635e70c2829707aa159e0ca0c9fa84086cc1d19f0052d43fa47b74b644fdc42d4977335d17950120d37339c62a63b634f43ee74e143f2209fb85843713136c6aba44444cd40cac053e30d07b0ebb30edca</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">写出𗼇𗟲二字的拼音</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+        <p>Luogu P1712<br>LibreOJ #2086<br>BZOJ 4653</p>
+<p>NOI 2016</p>
+<span id="more"></span>
+<hr>
+<p>既然题目没有规定覆盖的顺序，且想让我们最小化选定的区间长度的极差，那我们不妨就先按照区间长度排一个序。</p>
+<p>这一道题中的区间长度计算方式是 $l_i - r_i$，但是无伤大雅，毕竟我们按照比较常见的方式计算之后的结果会将1约掉，使得最后的结果没有差别。</p>
+<p>之后，我们考虑一下如何枚举答案，最朴素的做法就是利用尺取法来不断判断现在选出的区间是否满足了要求，满足了就更新一下答案。<br>更新完答案之后，我们将左端点右移到不满足条件了就可以了。</p>
+<p>最后我们考虑区间覆盖的时候如何快速判断是否符合要求，答案是线段树维护区间最大值。<br>当然，我们这里值域太大了，需要进行一发离散化。</p>
+<p>于是我们就顺利地解决了这个问题。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">500010</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SegTree</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> l, r;</span><br><span class="line">    <span class="type">int</span> max, tag;</span><br><span class="line">&#125;tr[N &lt;&lt; <span class="number">4</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushup</span><span class="params">(<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tr[p].max = <span class="built_in">max</span>(tr[p &lt;&lt; <span class="number">1</span>].max, tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].max);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushdown</span><span class="params">(<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tr[p].tag)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">auto</span> &amp;root = tr[p], &amp;left = tr[p &lt;&lt; <span class="number">1</span>], &amp;rght = tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>];</span><br><span class="line">        left.tag += root.tag;</span><br><span class="line">        left.max += root.tag;</span><br><span class="line">        rght.tag += root.tag;</span><br><span class="line">        rght.max += root.tag;</span><br><span class="line">        root.tag = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tr[p].l = l, tr[p].r = r;</span><br><span class="line">    tr[p].max = tr[p].tag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(l == r)<span class="keyword">return</span>;</span><br><span class="line">    <span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span>, l, mid);</span><br><span class="line">    <span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">segadd</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r, <span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tr[p].l &gt;= l &amp;&amp; tr[p].r &lt;= r)</span><br><span class="line">    &#123;</span><br><span class="line">        tr[p].max += k;</span><br><span class="line">        tr[p].tag += k;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">pushdown</span>(p);</span><br><span class="line">    <span class="type">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(l &lt;= mid)<span class="built_in">segadd</span>(p &lt;&lt; <span class="number">1</span>, l, r, k);</span><br><span class="line">    <span class="keyword">if</span>(r &gt; mid)<span class="built_in">segadd</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r, k);</span><br><span class="line">    <span class="built_in">pushup</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">query</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> l, r;</span><br><span class="line">    <span class="type">int</span> len;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> query &amp;a)<span class="type">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> len &lt; a.len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;a[N];</span><br><span class="line"><span class="type">int</span> x[N &lt;&lt; <span class="number">1</span>], idx;</span><br><span class="line">map&lt;<span class="type">int</span>, <span class="type">int</span>&gt;dic;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a[i].l, &amp;a[i].r);</span><br><span class="line">        a[i].len = a[i].r - a[i].l;</span><br><span class="line">        x[i * <span class="number">2</span> - <span class="number">2</span>] = a[i].l, x[i * <span class="number">2</span> - <span class="number">1</span>] = a[i].r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(x, x + <span class="number">2</span> * n);</span><br><span class="line">    idx = <span class="built_in">unique</span>(x, x + <span class="number">2</span> * n) - x;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; idx; i++)</span><br><span class="line">        dic.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(x[i], i + <span class="number">1</span>));</span><br><span class="line">    <span class="built_in">sort</span>(a + <span class="number">1</span>, a + <span class="number">1</span> + n);</span><br><span class="line">    <span class="built_in">build</span>(<span class="number">1</span>, <span class="number">1</span>, idx);</span><br><span class="line">    <span class="type">int</span> hh = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> l = dic[a[i].l], r = dic[a[i].r];</span><br><span class="line">        <span class="built_in">segadd</span>(<span class="number">1</span>, l, r, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(tr[<span class="number">1</span>].max &gt;= m)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(tr[<span class="number">1</span>].max &gt;= m &amp;&amp; hh &lt;= n)</span><br><span class="line">            &#123;</span><br><span class="line">                hh++;</span><br><span class="line">                <span class="type">int</span> hl = dic[a[hh].l], hr = dic[a[hh].r];</span><br><span class="line">                <span class="built_in">segadd</span>(<span class="number">1</span>, hl, hr, <span class="number">-1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            ans = <span class="built_in">min</span>(ans, a[i].len - a[hh].len);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(ans == <span class="number">0x3f3f3f3f</span>)<span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
     </div>
 
     
@@ -353,7 +348,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://kaiserwilheim.eu.org/tangut/" title="𗼇𗟲">https://kaiserwilheim.eu.org/tangut/</a>
+      <a href="https://kaiserwilheim.eu.org/solution-p1712/" title="P1712 [NOI2016] 区间 题解">https://kaiserwilheim.eu.org/solution-p1712/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</span> 许可协议。转载请注明出处！
@@ -362,20 +357,21 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
+              <a href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="tag"># 线段树</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/maths/matrix/" rel="prev" title="矩阵">
-                  <i class="fa fa-chevron-left"></i> 矩阵
+                <a href="/OI/splay/" rel="prev" title="Splay">
+                  <i class="fa fa-chevron-left"></i> Splay
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/OI/scapegoat-tree/" rel="next" title="替罪羊树">
-                  替罪羊树 <i class="fa fa-chevron-right"></i>
+                <a href="/suoyin/" rel="next" title="博客索引">
+                  博客索引 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -454,7 +450,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d25987c3458bdccaa51c4a86747ea4ec"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d56b876b8dca4bbe5b407916b71a6bbc"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
