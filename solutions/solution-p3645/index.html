@@ -22,29 +22,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.eu.org","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Luogu P1251LibreOJ #6008 网络流24题之一。">
+    <meta name="description" content="Luogu P3645LibreOJ #2887UOJ #111BZOJ #4070 APIO 2015">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P1251 餐巾计划问题 题解">
-<meta property="og:url" content="https://kaiserwilheim.eu.org/solutions/solution-p1251/index.html">
+<meta property="og:title" content="P3645 [APIO2015] 雅加达的摩天楼 题解">
+<meta property="og:url" content="https://kaiserwilheim.eu.org/solutions/solution-p3645/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="Luogu P1251LibreOJ #6008 网络流24题之一。">
+<meta property="og:description" content="Luogu P3645LibreOJ #2887UOJ #111BZOJ #4070 APIO 2015">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-19T12:00:53.372Z">
+<meta property="article:published_time" content="2022-05-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-27T10:42:12.875Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="题解">
-<meta property="article:tag" content="网络流">
+<meta property="article:tag" content="最短路">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://kaiserwilheim.eu.org/solutions/solution-p1251/">
+<link rel="canonical" href="https://kaiserwilheim.eu.org/solutions/solution-p3645/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.eu.org/solutions/solution-p1251/","path":"solutions/solution-p1251/","title":"P1251 餐巾计划问题 题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.eu.org/solutions/solution-p3645/","path":"solutions/solution-p3645/","title":"P3645 [APIO2015] 雅加达的摩天楼 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>P1251 餐巾计划问题 题解 | 南陽劉子驥的博客</title>
+<title>P3645 [APIO2015] 雅加达的摩天楼 题解 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -253,7 +253,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.eu.org/solutions/solution-p1251/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.eu.org/solutions/solution-p3645/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
@@ -266,12 +266,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="P1251 餐巾计划问题 题解 | 南陽劉子驥的博客">
+      <meta itemprop="name" content="P3645 [APIO2015] 雅加达的摩天楼 题解 | 南陽劉子驥的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          P1251 餐巾计划问题 题解
+          P3645 [APIO2015] 雅加达的摩天楼 题解
         </h1>
 
         <div class="post-meta-container">
@@ -281,15 +281,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2022-03-22 00:00:00" itemprop="dateCreated datePublished" datetime="2022-03-22T00:00:00+08:00">2022-03-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-19 20:00:53" itemprop="dateModified" datetime="2022-04-19T20:00:53+08:00">2022-04-19</time>
+      <time title="创建时间：2022-05-27 00:00:00 / 修改时间：18:42:12" itemprop="dateCreated datePublished" datetime="2022-05-27T00:00:00+08:00">2022-05-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -308,7 +302,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>2.2k</span>
+      <span>1.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -326,34 +320,25 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Luogu P1251<br>LibreOJ #6008</p>
-<p>网络流24题之一。</p>
+        <p>Luogu P3645<br>LibreOJ #2887<br>UOJ #111<br>BZOJ #4070</p>
+<p>APIO 2015</p>
 <span id="more"></span>
 <hr>
-<p>题目要求我们安排餐巾的清洗分配。</p>
-<p>可能是戴森球计划搭产线搭多了吧，这道题我一开始就把餐巾从一个地方到另一个地方（如从餐厅到快洗部）想成了一道流。</p>
-<p>我们就可以把餐厅向快洗部和慢洗部连边。</p>
-<p>但是呢，我们还需要处理快洗部和慢洗部需要的时间问题，还有处理所有的延时送洗的操作。</p>
-<p>我们于是就考虑将每天的餐厅拆成不同的点。<br>当然，每天的快洗部和慢洗部也需要拆成不同的点。</p>
-<p>这样就可以保证我们可以让餐巾进行时间穿梭了，而不再是只局限于一天之内。</p>
-<p>还有，我们需要将餐巾进行最大化利用来省钱，毕竟每多存在一块餐巾，就多需要花费我们 $p$ 分钱。</p>
-<p>我们考虑将拆分后的餐厅继续拆分，拆成一个输入和一个输出。输入代表今天餐厅的餐巾到底是从哪里运过来的，而输出就代表今天使用的餐巾的最终去处。</p>
-<p>这时候，我们就已经需要了 $4n$ 个点了（不包括源点和汇点），其中餐厅输入，餐厅输出，快洗部和慢洗部各 $n$ 个点。</p>
-<p>但是我们考虑简化一下。</p>
-<p>我们考虑省去快洗部和慢洗部，可以看做自己内部员工洗干净了。<br>这样，我们可以直接连接某一天的输出和另一天的输入了。</p>
-<p>最后开始连边。</p>
-<ol>
-<li>源点与餐厅输出连一条容量为当天用量，费用为0的边；</li>
-<li>汇点与餐厅输入连一条容量为当天用量，费用为0的边；</li>
-<li>餐厅输出与下一日的餐厅输出连一条容量为无限，费用为0的边。</li>
-<li>源点与餐厅输入连一条容量为无限，费用为 $p$ 的边；</li>
-<li>餐厅输出与 $n$ 天后的餐厅输入连一条容量为无限，费用为 $s$ 的边，代表快洗部；</li>
-<li>餐厅输出与 $m$ 天后的餐厅输入连一条容量为无限，费用为 $f$ 的边，代表慢洗部。</li>
-</ol>
-<p>然后跑一个最小费用最大流即可，最终的费用就是答案。</p>
-<p>上代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">5010</span>, M = <span class="number">100010</span>, INF = <span class="number">1e8</span>;</span><br><span class="line"><span class="type">int</span> n, m, S, T;</span><br><span class="line"><span class="type">int</span> p, x, xp, y, yp;</span><br><span class="line"><span class="type">int</span> need[N];</span><br><span class="line"><span class="type">int</span> s[N];</span><br><span class="line"><span class="type">int</span> h[N], e[M], f[M], w[M], ne[M], idx;</span><br><span class="line"><span class="type">int</span> q[N], d[N], pre[N], incf[N];</span><br><span class="line"><span class="type">bool</span> st[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c, <span class="type">int</span> d)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[idx] = b, f[idx] = c, w[idx] = d, ne[idx] = h[a]; h[a] = idx++;</span><br><span class="line">    e[idx] = a, f[idx] = <span class="number">0</span>, w[idx] = -d, ne[idx] = h[b], h[b] = idx++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">spfa</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> hh = <span class="number">0</span>, tt = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">memset</span>(d, <span class="number">0x3f</span>, <span class="keyword">sizeof</span> d);</span><br><span class="line">    <span class="built_in">memset</span>(incf, <span class="number">0</span>, <span class="keyword">sizeof</span> incf);</span><br><span class="line">    q[<span class="number">0</span>] = S, d[S] = <span class="number">0</span>, incf[S] = INF;</span><br><span class="line">    <span class="keyword">while</span>(hh != tt)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> t = q[hh++];</span><br><span class="line">        <span class="keyword">if</span>(hh == N) hh = <span class="number">0</span>;</span><br><span class="line">        st[t] = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = h[t]; ~i; i = ne[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> ver = e[i];</span><br><span class="line">            <span class="keyword">if</span>(f[i] &amp;&amp; d[ver] &gt; d[t] + w[i])</span><br><span class="line">            &#123;</span><br><span class="line">                d[ver] = d[t] + w[i];</span><br><span class="line">                pre[ver] = i;</span><br><span class="line">                incf[ver] = <span class="built_in">min</span>(f[i], incf[t]);</span><br><span class="line">                <span class="keyword">if</span>(!st[ver])</span><br><span class="line">                &#123;</span><br><span class="line">                    q[tt++] = ver;</span><br><span class="line">                    <span class="keyword">if</span>(tt == N) tt = <span class="number">0</span>;</span><br><span class="line">                    st[ver] = <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> incf[T] &gt; <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">EK</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> cost = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">spfa</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> t = incf[T];</span><br><span class="line">        cost += t * d[T];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = T; i != S; i = e[pre[i] ^ <span class="number">1</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            f[pre[i]] -= t;</span><br><span class="line">            f[pre[i] ^ <span class="number">1</span>] += t;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cost;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;n);</span><br><span class="line">    S = <span class="number">0</span>, T = n * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="keyword">sizeof</span> h);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)<span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;need[i]);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld%lld%lld&quot;</span>, &amp;p, &amp;x, &amp;xp, &amp;y, &amp;yp);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> r = need[i];</span><br><span class="line">        <span class="built_in">add</span>(S, i, r, <span class="number">0</span>);</span><br><span class="line">        <span class="built_in">add</span>(n + i, T, r, <span class="number">0</span>);</span><br><span class="line">        <span class="built_in">add</span>(S, n + i, INF, p);</span><br><span class="line">        <span class="keyword">if</span>(i &lt; n) <span class="built_in">add</span>(i, i + <span class="number">1</span>, INF, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">if</span>(i + x &lt;= n) <span class="built_in">add</span>(i, n + i + x, INF, xp);</span><br><span class="line">        <span class="keyword">if</span>(i + y &lt;= n) <span class="built_in">add</span>(i, n + i + y, INF, yp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, <span class="built_in">EK</span>());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<p>题目说，只要一栋楼里面的一只doge知道了消息，那么他就可以在不产生任何代价的情况下将这条消息传递给这栋楼里面的所有doge。</p>
+<p>利用这一条信息，我们可以将doge的行动转化为摩天楼之间的边，一只doge能够前往的两栋楼之间会直接或间接联通。</p>
+<p>于是我们就可以想到跑最短路。图上的所有边权均为1，从0到1的最短路即为传递消息的代价。</p>
+<p>然后再看数据范围：</p>
+<p>$N \in [1,30000 ] , M \in [ 2,30000 ] , P_i \in [ 1,30000 ]$</p>
+<p>当头一棒。</p>
+<p>我们可怜的最短路算法承受不起如此多的边（$O(n^2)$ 级别），我们甚至可以将这张图看做一张完全图来计算时间复杂度，而结果必然是爆炸。</p>
+<p>我们如果一开始分析错误了，把它当做费用流来跑SPFA的话，最多能拿到36分(UOJ&amp;LibreOJ)&#x2F;75分(Luogu)。</p>
+<p>我们如果使用链式前向星连边、建边，跑Dijkstra的话，可以拿到36分(UOJ&amp;LibreOJ)&#x2F;80分(Luogu)的好成绩。</p>
+<p>然后我们会发现上面会MLE，于是选用vector存边。<br>我们如果使用vector连边、建边，跑Dijkstra的话，可以拿到和上面一样的好成绩，并且仍然MLE。</p>
+<p>然后我们考虑换个连边方式，不在让每一条边的边权都是相同的了，考虑从一栋楼向其他的楼连边，边权为跳跃次数，妄图减少内存用量。</p>
+<p>结果仍为失败。</p>
+<p>我们不再考虑显式连边，而考虑在转移的时候再连边，这里就需要用SPFA了。</p>
+<p>然后再跑一遍就可以过了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">30010</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt;e[N];</span><br><span class="line"><span class="type">int</span> dis[N], vis[N];</span><br><span class="line">queue&lt;<span class="type">int</span>&gt;q;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">spfa</span><span class="params">(<span class="type">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">63</span>, <span class="built_in">sizeof</span>(dis));</span><br><span class="line">    dis[s] = <span class="number">0</span>, vis[s] = <span class="number">1</span>;</span><br><span class="line">    q.<span class="built_in">push</span>(s);</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        vis[u] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> i : e[u])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; u + i * j &lt; n; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">int</span> v = u + i * j;</span><br><span class="line">                <span class="keyword">if</span>(dis[v] &gt; dis[u] + j)</span><br><span class="line">                &#123;</span><br><span class="line">                    dis[v] = dis[u] + j;</span><br><span class="line">                    <span class="keyword">if</span>(!vis[v])</span><br><span class="line">                    &#123;</span><br><span class="line">                        q.<span class="built_in">push</span>(v);</span><br><span class="line">                        vis[v] = <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; u - i * j &gt;= <span class="number">0</span>; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">int</span> v = u - i * j;</span><br><span class="line">                <span class="keyword">if</span>(dis[v] &gt; dis[u] + j)</span><br><span class="line">                &#123;</span><br><span class="line">                    dis[v] = dis[u] + j;</span><br><span class="line">                    <span class="keyword">if</span>(!vis[v])</span><br><span class="line">                    &#123;</span><br><span class="line">                        q.<span class="built_in">push</span>(v);</span><br><span class="line">                        vis[v] = <span class="number">1</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="type">int</span> s, t;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> a, b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">0</span>)s = a;</span><br><span class="line">        <span class="keyword">if</span>(i == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            t = a;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        e[a].<span class="built_in">push_back</span>(b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">spfa</span>(s);</span><br><span class="line">    <span class="keyword">if</span>(dis[t] == <span class="number">0x3f3f3f3f</span>)<span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> cout &lt;&lt; dis[t] &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -371,7 +356,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://kaiserwilheim.eu.org/solutions/solution-p1251/" title="P1251 餐巾计划问题 题解">https://kaiserwilheim.eu.org/solutions/solution-p1251/</a>
+      <a href="https://kaiserwilheim.eu.org/solutions/solution-p3645/" title="P3645 [APIO2015] 雅加达的摩天楼 题解">https://kaiserwilheim.eu.org/solutions/solution-p3645/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</span> 许可协议。转载请注明出处！
@@ -381,20 +366,20 @@
 
           <div class="post-tags">
               <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
-              <a href="/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/" rel="tag"># 网络流</a>
+              <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/" rel="tag"># 最短路</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/solutions/solution-p1117/" rel="prev" title="P1117 [NOI2016] 优秀的拆分 题解">
-                  <i class="fa fa-chevron-left"></i> P1117 [NOI2016] 优秀的拆分 题解
+                <a href="/solutions/solution-p2824/" rel="prev" title="P2824 [HEOI2016/TJOI2016] 排序 题解">
+                  <i class="fa fa-chevron-left"></i> P2824 [HEOI2016/TJOI2016] 排序 题解
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/solutions/solution-p1505/" rel="next" title="P1505 [国家集训队] 旅游 题解">
-                  P1505 [国家集训队] 旅游 题解 <i class="fa fa-chevron-right"></i>
+                <a href="/suoyin/" rel="next" title="博客索引">
+                  博客索引 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -473,7 +458,7 @@
 
 <link rel="stylesheet" href="/lib/gitalk/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"/lib/gitalk/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"cfb090972dd9b476b7702f6f010ba4d9"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"/lib/gitalk/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"043120d89df2a8aabb0f1379ec739aba"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
