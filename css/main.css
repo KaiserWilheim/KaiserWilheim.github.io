@@ -615,7 +615,7 @@ pre code {
 }
 .post-body .link-grid .link-grid-container p:first-of-type {
   color: var(--bg-color);
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 .post-body .link-grid .link-grid-container p:last-of-type {
   color: #000;
