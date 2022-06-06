@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>亚兰字母拼写英语</title>
-    <url>/hebrew-english/</url>
+    <url>/2022/03/11/hebrew-english/</url>
     <content><![CDATA[<p>一种使用亚兰字母来拼写英语的方案。<br>（测试博客显示情况用）<br>𗼇𗟲</p>
 <span id="more"></span>
 
@@ -124,7 +124,7 @@
   </entry>
   <entry>
     <title>博客索引</title>
-    <url>/suoyin/</url>
+    <url>/2999/01/01/suoyin/</url>
     <content><![CDATA[<p>文章的索引。</p>
 <span id="more"></span>
 
@@ -241,7 +241,7 @@
   </entry>
   <entry>
     <title>𗼇𗟲</title>
-    <url>/tangut/</url>
+    <url>/2022/05/08/tangut/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
   <script id="hbeData" type="hbeData" data-hmacdigest="995629453065148db4d540eadf7f0431fcb0d75738c81b397a63e6540c5d0e2e">0c63164426605f29c68b35118afdec0d67df8dc61bc65797a759a4b7b10fb3ae18f634f88bb78396c2601f8eed1a6d537d25e930636c94352100e4cc657766c52e73910ee5e2e60e9a313b03012101de85c26a999ee857e12bac3f1688ae41a156af7e4000d40f66defb721d7a31761e8ca08db5d47d84e555eb11c16a2038cc54f4073218906f93ba142f4729b03a635e70c2829707aa159e0ca0c9fa84086cc1d19f0052d43fa47b74b644fdc42d4977335d17950120d37339c62a63b634f43ee74e143f2209fb85843713136c6aba44444cd40cac053e30d07b0ebb30edca</script>
   <div class="hbe hbe-content">
@@ -263,7 +263,7 @@
   </entry>
   <entry>
     <title>感谢</title>
-    <url>/thanks/</url>
+    <url>/3000/01/01/thanks/</url>
     <content><![CDATA[<p>感谢 <strong>CloudySky</strong> 和 <strong>宝硕</strong> 的大力支持。</p>
 <p>没有他们就没有这个博客。</p>
 <p>十分感谢。</p>
@@ -272,7 +272,7 @@
   </entry>
   <entry>
     <title>二分图</title>
-    <url>/OI/bipartite-graph/</url>
+    <url>/2022/03/14/OI/bipartite-graph/</url>
     <content><![CDATA[<p>二分图相关内容。</p>
 <span id="more"></span>
 
@@ -321,7 +321,7 @@
   </entry>
   <entry>
     <title>差分约束</title>
-    <url>/OI/difference-constraint/</url>
+    <url>/2022/03/30/OI/difference-constraint/</url>
     <content><![CDATA[<p>差分约束系统。</p>
 <span id="more"></span>
 
@@ -417,7 +417,7 @@
   </entry>
   <entry>
     <title>KMP 算法与前缀函数</title>
-    <url>/OI/kmp/</url>
+    <url>/2022/04/03/OI/kmp/</url>
     <content><![CDATA[<p>KMP算法与前缀函数。</p>
 <span id="more"></span>
 
@@ -492,7 +492,7 @@
   </entry>
   <entry>
     <title>树链剖分</title>
-    <url>/OI/heavy-path-decomposition/</url>
+    <url>/2021/12/27/OI/heavy-path-decomposition/</url>
     <content><![CDATA[<p>树链剖分。<br>Luogu P3384</p>
 <span id="more"></span>
 
@@ -565,7 +565,7 @@
   </entry>
   <entry>
     <title>扫描线</title>
-    <url>/OI/scanning-line/</url>
+    <url>/2021/11/12/OI/scanning-line/</url>
     <content><![CDATA[<p>一种便携的用来求矩形面积并的算法。</p>
 <span id="more"></span>
 
@@ -608,7 +608,7 @@
   </entry>
   <entry>
     <title>替罪羊树</title>
-    <url>/OI/scapegoat-tree/</url>
+    <url>/2022/05/21/OI/scapegoat-tree/</url>
     <content><![CDATA[<p>替罪羊树。</p>
 <span id="more"></span>
 
@@ -743,7 +743,7 @@
   </entry>
   <entry>
     <title>Splay</title>
-    <url>/OI/splay/</url>
+    <url>/2022/05/24/OI/splay/</url>
     <content><![CDATA[<p>Splay.</p>
 <span id="more"></span>
 <p>（2022年5月24日重构）</p>
@@ -854,7 +854,7 @@
   </entry>
   <entry>
     <title>Trie 与 AC自动机</title>
-    <url>/OI/trie-and-AK-avtomat/</url>
+    <url>/2022/04/05/OI/trie-and-AK-avtomat/</url>
     <content><![CDATA[<p>Trie树（字典树）与AC自动机。</p>
 <span id="more"></span>
 
@@ -969,7 +969,7 @@
   </entry>
   <entry>
     <title>树状数组</title>
-    <url>/OI/tree-array/</url>
+    <url>/2021/10/13/OI/tree-array/</url>
     <content><![CDATA[<p>简介： 树状数组</p>
 <span id="more"></span>
 
@@ -1015,7 +1015,7 @@
   </entry>
   <entry>
     <title>Lewis电子理论</title>
-    <url>/chemistry/lewis-structure/</url>
+    <url>/2021/11/21/chemistry/lewis-structure/</url>
     <content><![CDATA[<p>$Lewis$ 电子理论， $Lewis$ 结构式，和形式电荷。</p>
 <span id="more"></span>
 
@@ -1160,7 +1160,7 @@
   </entry>
   <entry>
     <title>欧拉和莫比乌斯</title>
-    <url>/maths/eular-and-m%C3%B6bius/</url>
+    <url>/2022/02/07/maths/eular-and-m%C3%B6bius/</url>
     <content><![CDATA[<p>简介：欧拉定理，欧拉函数和莫比乌斯函数</p>
 <span id="more"></span>
 
@@ -1279,7 +1279,7 @@
   </entry>
   <entry>
     <title>拉格朗日插值</title>
-    <url>/maths/lagrange-interpolation/</url>
+    <url>/2022/03/17/maths/lagrange-interpolation/</url>
     <content><![CDATA[<p>拉格朗日插值。</p>
 <span id="more"></span>
 
@@ -1331,7 +1331,7 @@
   </entry>
   <entry>
     <title>后缀自动机</title>
-    <url>/OI/suffix-avtomat/</url>
+    <url>/2022/01/21/OI/suffix-avtomat/</url>
     <content><![CDATA[<p>后缀自动机(SAM)。</p>
 <span id="more"></span>
 
@@ -1362,7 +1362,7 @@
 </blockquote>
 <p>证明：我们考虑等价类中两个子串：最长的，记为 $u$ ；最短的，记为 $v$ 。如果 $u&#x3D;v$ 那么显然不用证明。如果不是，那么对于长度在区间 $[ |u| , |v| ]$ 内的子串。根据引理1，在这个等价类中，必定存在子串有 $v$ 为后缀且同时为 $u$ 的后缀。</p>
 <h2 id="后缀链接-link"><a href="#后缀链接-link" class="headerlink" title="后缀链接 link"></a>后缀链接 <code>link</code></h2><p>根据引理3，我们可以知道对于任意状态，其中包含的字串都是其中最长子串的一段连续后缀。这段连续后缀不一定可以覆盖 $[ 1,|\text{最长子串}| ]$ 这一整个区间，但一定是连续的。<br>我们可以将其看做是不断将最长子串的首个字符删去得到子串的一个过程。</p>
-<p>而当我们不断删去，直到删去最短子串的首个字符的时候，我们会发现我们已经离开了这个状态。<br>我们可以根据这样一个走向创建一系列的新边。<br>这些新边就被称为link边，也叫做后缀链接。<br>有些地方也叫fa&#x2F;father边。</p>
+<p>而当我们不断删去，直到删去最短子串的首个字符的时候，我们会发现我们已经离开了这个状态。<br>我们可以根据这样一个走向创建一系列的新边。<br>这些新边就被称为link边，也叫做后缀链接。<br>有些地方也叫fa&#x2F;father边。 </p>
 <blockquote>
 <p><strong>引理4</strong>： 所有后缀链接构成一棵根节点为 $t_0$ 的树。</p>
 </blockquote>
@@ -1414,7 +1414,7 @@
   </entry>
   <entry>
     <title>数学杂项整理</title>
-    <url>/maths/mathematics/</url>
+    <url>/2021/09/21/maths/mathematics/</url>
     <content><![CDATA[<p>这里是一个数学杂项（也就是太短暂时写不成博客）的整理。</p>
 <span id="more"></span>
 
@@ -1477,7 +1477,7 @@
   </entry>
   <entry>
     <title>矩阵</title>
-    <url>/maths/matrix/</url>
+    <url>/2022/05/07/maths/matrix/</url>
     <content><![CDATA[<p>矩阵与矩阵相关运算。</p>
 <span id="more"></span>
 
@@ -1581,7 +1581,7 @@
   </entry>
   <entry>
     <title>特殊的数</title>
-    <url>/maths/special-numbers/</url>
+    <url>/2022/03/17/maths/special-numbers/</url>
     <content><![CDATA[<p>简介： 卡特兰数，斯特林数，欧拉数，调和级数</p>
 <span id="more"></span>
 
@@ -1673,7 +1673,7 @@
   </entry>
   <entry>
     <title>L2759 蜜袋鼯（フクロモモンガ） 题解</title>
-    <url>/solutions/solution-l2759/</url>
+    <url>/2022/01/16/solutions/solution-l2759/</url>
     <content><![CDATA[<p>LibreOJ #2759</p>
 <p>JOI 2014 Final T4</p>
 <span id="more"></span>
@@ -1748,7 +1748,7 @@
   </entry>
   <entry>
     <title>L2980. 「THUSCH 2017」 大魔法师 题解</title>
-    <url>/solutions/solution-l2980/</url>
+    <url>/2022/04/17/solutions/solution-l2980/</url>
     <content><![CDATA[<p>LibreOJ #2980<br>Luogu P7453</p>
 <span id="more"></span>
 <hr>
@@ -1791,7 +1791,7 @@
   </entry>
   <entry>
     <title>P1117 [NOI2016] 优秀的拆分 题解</title>
-    <url>/solutions/solution-p1117/</url>
+    <url>/2022/03/21/solutions/solution-p1117/</url>
     <content><![CDATA[<p>Luogu P1117<br>LibreOJ #2083<br>UOJ #219</p>
 <p>NOI 2016</p>
 <span id="more"></span>
@@ -1838,7 +1838,7 @@
   </entry>
   <entry>
     <title>P1251 餐巾计划问题 题解</title>
-    <url>/solutions/solution-p1251/</url>
+    <url>/2022/03/22/solutions/solution-p1251/</url>
     <content><![CDATA[<p>Luogu P1251<br>LibreOJ #6008</p>
 <p>网络流24题之一。</p>
 <span id="more"></span>
@@ -1878,7 +1878,7 @@
   </entry>
   <entry>
     <title>P1486 [NOI2004] 郁闷的出纳员 题解</title>
-    <url>/solutions/solution-p1486/</url>
+    <url>/2022/03/23/solutions/solution-p1486/</url>
     <content><![CDATA[<p>Luogu P1486<br>LibreOJ #10145</p>
 <p>NOI 2004</p>
 <span id="more"></span>
@@ -1910,7 +1910,7 @@
   </entry>
   <entry>
     <title>P1505 [国家集训队] 旅游 题解</title>
-    <url>/solutions/solution-p1505/</url>
+    <url>/2022/03/23/solutions/solution-p1505/</url>
     <content><![CDATA[<p>Luogu P1505</p>
 <span id="more"></span>
 <hr>
@@ -1941,7 +1941,7 @@
   </entry>
   <entry>
     <title>P1712 [NOI2016] 区间 题解</title>
-    <url>/solutions/solution-p1712/</url>
+    <url>/2022/05/26/solutions/solution-p1712/</url>
     <content><![CDATA[<p>Luogu P1712<br>LibreOJ #2086<br>BZOJ 4653</p>
 <p>NOI 2016</p>
 <span id="more"></span>
@@ -1964,7 +1964,7 @@
   </entry>
   <entry>
     <title>P2042 [NOI2005] 维护数列 题解</title>
-    <url>/solutions/solution-p2042/</url>
+    <url>/2022/04/18/solutions/solution-p2042/</url>
     <content><![CDATA[<p>Luogu P2042</p>
 <p>NOI 2005</p>
 <span id="more"></span>
@@ -2036,7 +2036,7 @@
   </entry>
   <entry>
     <title>P2146 软件包管理器 题解</title>
-    <url>/solutions/solution-p2146/</url>
+    <url>/2022/01/02/solutions/solution-p2146/</url>
     <content><![CDATA[<p>Luogu P2146<br>LibreOJ #2130</p>
 <p>2015 NOI</p>
 <span id="more"></span>
@@ -2073,7 +2073,7 @@
   </entry>
   <entry>
     <title>P2414 [NOI2011] 阿狸的打字机 题解</title>
-    <url>/solutions/solution-p2414/</url>
+    <url>/2022/04/19/solutions/solution-p2414/</url>
     <content><![CDATA[<p>Luogu P2414<br>LibreOJ #2444</p>
 <p>NOI 2011</p>
 <span id="more"></span>
@@ -2155,7 +2155,7 @@
   </entry>
   <entry>
     <title>P2824 [HEOI2016/TJOI2016] 排序 题解</title>
-    <url>/solutions/solution-p2824/</url>
+    <url>/2022/05/27/solutions/solution-p2824/</url>
     <content><![CDATA[<p>Luogu P2824<br>LibreOJ #2055</p>
 <p>HEOI 2016<br>TJOI 2016</p>
 <span id="more"></span>
@@ -2175,7 +2175,7 @@
 <p>既然是区间修改了，那么我们就可以使用——线段树！</p>
 <p>每一次询问当前区间内有多少个1，然后根据上面的想法区间覆盖即可，而询问区间内1的个数可以使用维护区间和的方式来得出。</p>
 <p>然后就显而易见了。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> q;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SegTree</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> l, r;</span><br><span class="line">    <span class="type">int</span> sum, tag;</span><br><span class="line">&#125;tr[N &lt;&lt; <span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushup</span><span class="params">(<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tr[p].sum = tr[p &lt;&lt; <span class="number">1</span>].sum + tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushdown</span><span class="params">(<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> &amp;root = tr[p], &amp;left = tr[p &lt;&lt; <span class="number">1</span>], &amp;rght = tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span>(root.tag != <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        left.sum = (left.r - left.l + <span class="number">1</span>) * root.tag;</span><br><span class="line">        rght.sum = (rght.r - rght.l + <span class="number">1</span>) * root.tag;</span><br><span class="line">        left.tag = root.tag;</span><br><span class="line">        rght.tag = root.tag;</span><br><span class="line">        root.tag = <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tr[p].l = l, tr[p].r = r;</span><br><span class="line">    <span class="keyword">if</span>(l == r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span>, l, mid);</span><br><span class="line">    <span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tr[p].tag = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">if</span>(tr[p].l == tr[p].r)</span><br><span class="line">    &#123;</span><br><span class="line">        tr[p].sum = (a[tr[p].l] &gt;= k);</span><br><span class="line">        tr[p].tag = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">init</span>(p &lt;&lt; <span class="number">1</span>, k);</span><br><span class="line">    <span class="built_in">init</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, k);</span><br><span class="line">    <span class="built_in">pushup</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">segchg</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r, <span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tr[p].l &gt;= l &amp;&amp; tr[p].r &lt;= r)</span><br><span class="line">    &#123;</span><br><span class="line">        tr[p].sum = (tr[p].r - tr[p].l + <span class="number">1</span>) * k;</span><br><span class="line">        tr[p].tag = k;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">pushdown</span>(p);</span><br><span class="line">    <span class="type">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(l &lt;= mid)<span class="built_in">segchg</span>(p &lt;&lt; <span class="number">1</span>, l, r, k);</span><br><span class="line">    <span class="keyword">if</span>(r &gt; mid)<span class="built_in">segchg</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r, k);</span><br><span class="line">    <span class="built_in">pushup</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">segsum</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tr[p].l &gt;= l &amp;&amp; tr[p].r &lt;= r)<span class="keyword">return</span> tr[p].sum;</span><br><span class="line">    <span class="built_in">pushdown</span>(p);</span><br><span class="line">    <span class="type">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(l &lt;= mid)res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span>, l, r);</span><br><span class="line">    <span class="keyword">if</span>(r &gt; mid)res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> op[N], L[N], R[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;op[i], &amp;L[i], &amp;R[i]);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;q);</span><br><span class="line">    <span class="built_in">build</span>(<span class="number">1</span>, <span class="number">1</span>, n);</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">-1</span>;</span><br><span class="line">    <span class="type">int</span> l = <span class="number">1</span>, r = n;</span><br><span class="line">    <span class="keyword">while</span>(l &lt;= r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">init</span>(<span class="number">1</span>, mid);</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> cnt = <span class="built_in">segsum</span>(<span class="number">1</span>, L[i], R[i]);</span><br><span class="line">            <span class="keyword">if</span>(op[i] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">segchg</span>(<span class="number">1</span>, L[i], R[i] - cnt, <span class="number">0</span>);</span><br><span class="line">                <span class="built_in">segchg</span>(<span class="number">1</span>, R[i] - cnt + <span class="number">1</span>, R[i], <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(op[i] == <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">segchg</span>(<span class="number">1</span>, L[i], L[i] + cnt - <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">                <span class="built_in">segchg</span>(<span class="number">1</span>, L[i] + cnt, R[i], <span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> pos = <span class="built_in">segsum</span>(<span class="number">1</span>, q, q);</span><br><span class="line">        <span class="keyword">if</span>(pos == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">            ans = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            r = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> q;</span><br><span class="line"><span class="type">int</span> a[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">SegTree</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> l, r;</span><br><span class="line">	<span class="type">int</span> sum, tag;</span><br><span class="line">&#125;tr[N &lt;&lt; <span class="number">3</span>];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushup</span><span class="params">(<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	tr[p].sum = tr[p &lt;&lt; <span class="number">1</span>].sum + tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushdown</span><span class="params">(<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> &amp;root = tr[p], &amp;left = tr[p &lt;&lt; <span class="number">1</span>], &amp;rght = tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">if</span>(root.tag != <span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		left.sum = (left.r - left.l + <span class="number">1</span>) * root.tag;</span><br><span class="line">		rght.sum = (rght.r - rght.l + <span class="number">1</span>) * root.tag;</span><br><span class="line">		left.tag = root.tag;</span><br><span class="line">		rght.tag = root.tag;</span><br><span class="line">		root.tag = <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	tr[p].l = l, tr[p].r = r;</span><br><span class="line">	<span class="keyword">if</span>(l == r)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span>, l, mid);</span><br><span class="line">	<span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	tr[p].tag = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span>(tr[p].l == tr[p].r)</span><br><span class="line">	&#123;</span><br><span class="line">		tr[p].sum = (a[tr[p].l] &gt;= k);</span><br><span class="line">		tr[p].tag = <span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">init</span>(p &lt;&lt; <span class="number">1</span>, k);</span><br><span class="line">	<span class="built_in">init</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, k);</span><br><span class="line">	<span class="built_in">pushup</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">segchg</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r, <span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(tr[p].l &gt;= l &amp;&amp; tr[p].r &lt;= r)</span><br><span class="line">	&#123;</span><br><span class="line">		tr[p].sum = (tr[p].r - tr[p].l + <span class="number">1</span>) * k;</span><br><span class="line">		tr[p].tag = k;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">pushdown</span>(p);</span><br><span class="line">	<span class="type">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(l &lt;= mid)<span class="built_in">segchg</span>(p &lt;&lt; <span class="number">1</span>, l, r, k);</span><br><span class="line">	<span class="keyword">if</span>(r &gt; mid)<span class="built_in">segchg</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r, k);</span><br><span class="line">	<span class="built_in">pushup</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">segsum</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(tr[p].l &gt;= l &amp;&amp; tr[p].r &lt;= r)<span class="keyword">return</span> tr[p].sum;</span><br><span class="line">	<span class="built_in">pushdown</span>(p);</span><br><span class="line">	<span class="type">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(l &lt;= mid)res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span>, l, r);</span><br><span class="line">	<span class="keyword">if</span>(r &gt; mid)res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r);</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> op[N], L[N], R[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;op[i], &amp;L[i], &amp;R[i]);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;q);</span><br><span class="line">	<span class="built_in">build</span>(<span class="number">1</span>, <span class="number">1</span>, n);</span><br><span class="line">	<span class="type">int</span> ans = <span class="number">-1</span>;</span><br><span class="line">	<span class="type">int</span> l = <span class="number">1</span>, r = n;</span><br><span class="line">	<span class="keyword">while</span>(l &lt;= r)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		<span class="built_in">init</span>(<span class="number">1</span>, mid);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> cnt = <span class="built_in">segsum</span>(<span class="number">1</span>, L[i], R[i]);</span><br><span class="line">			<span class="keyword">if</span>(op[i] == <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">segchg</span>(<span class="number">1</span>, L[i], R[i] - cnt, <span class="number">0</span>);</span><br><span class="line">				<span class="built_in">segchg</span>(<span class="number">1</span>, R[i] - cnt + <span class="number">1</span>, R[i], <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(op[i] == <span class="number">1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">segchg</span>(<span class="number">1</span>, L[i], L[i] + cnt - <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">				<span class="built_in">segchg</span>(<span class="number">1</span>, L[i] + cnt, R[i], <span class="number">0</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">int</span> pos = <span class="built_in">segsum</span>(<span class="number">1</span>, q, q);</span><br><span class="line">		<span class="keyword">if</span>(pos == <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			l = mid + <span class="number">1</span>;</span><br><span class="line">			ans = mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			r = mid - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
       <categories>
@@ -2189,7 +2189,7 @@
   </entry>
   <entry>
     <title>P3586 [POI2015] Logistyka 题解</title>
-    <url>/solutions/solution-p3586/</url>
+    <url>/2022/04/11/solutions/solution-p3586/</url>
     <content><![CDATA[<p>Luogu P3586</p>
 <p>POI 2015</p>
 <span id="more"></span>
@@ -2235,7 +2235,7 @@
   </entry>
   <entry>
     <title>P3644 [APIO2015] 巴邻旁之桥 题解</title>
-    <url>/solutions/solution-p3644/</url>
+    <url>/2022/04/20/solutions/solution-p3644/</url>
     <content><![CDATA[<p>Luogu P3644<br>LibreOJ #2888</p>
 <p>APIO 2015</p>
 <span id="more"></span>
@@ -2293,7 +2293,7 @@
   </entry>
   <entry>
     <title>P3645 [APIO2015] 雅加达的摩天楼 题解</title>
-    <url>/solutions/solution-p3645/</url>
+    <url>/2022/05/27/solutions/solution-p3645/</url>
     <content><![CDATA[<p>Luogu P3645<br>LibreOJ #2887<br>UOJ #111<br>BZOJ #4070</p>
 <p>APIO 2015</p>
 <span id="more"></span>
@@ -2324,7 +2324,7 @@
   </entry>
   <entry>
     <title>P4551 最长异或路径 题解</title>
-    <url>/solutions/solution-p4551/</url>
+    <url>/2022/04/24/solutions/solution-p4551/</url>
     <content><![CDATA[<p>Luogu P4551</p>
 <span id="more"></span>
 <hr>
@@ -2348,7 +2348,7 @@
   </entry>
   <entry>
     <title>P4643 [国家集训队] 阿狸和桃子的游戏 题解</title>
-    <url>/solutions/solution-p4643/</url>
+    <url>/2022/04/24/solutions/solution-p4643/</url>
     <content><![CDATA[<p>Luogu P4643</p>
 <span id="more"></span>
 <hr>
@@ -2374,7 +2374,7 @@
   </entry>
   <entry>
     <title>#549. 农夫奶牛的约翰们 题解</title>
-    <url>/solutions/solution-sy549/</url>
+    <url>/2022/04/12/solutions/solution-sy549/</url>
     <content><![CDATA[<p><span class="exturl" data-url="aHR0cDovLzE5Mi4xNjguMC4xMTE6MTkyNi9wcm9ibGVtLzU0OQ==">http://192.168.0.111:1926/problem/549<i class="fa fa-external-link-alt"></i></span></p>
 <span id="more"></span>
 
@@ -2444,7 +2444,7 @@
   </entry>
   <entry>
     <title>网络流 做题记录</title>
-    <url>/solution-flow/</url>
+    <url>/2022/04/21/solution-flow/</url>
     <content><![CDATA[<p>网络流相关做题记录。</p>
 <span id="more"></span>
 
@@ -2678,7 +2678,7 @@
   </entry>
   <entry>
     <title>网络流</title>
-    <url>/OI/flow/</url>
+    <url>/2022/02/28/OI/flow/</url>
     <content><![CDATA[<p>网络流。</p>
 <span id="more"></span>
 
@@ -2934,7 +2934,7 @@
   </entry>
   <entry>
     <title>线段树</title>
-    <url>/OI/segment-tree/</url>
+    <url>/2022/04/12/OI/segment-tree/</url>
     <content><![CDATA[<p>线段树及其衍生，如动态开点线段树、可持久化权值线段树等等。</p>
 <span id="more"></span>
 
@@ -3097,7 +3097,7 @@
   </entry>
   <entry>
     <title>2022寒假测试8解析</title>
-    <url>/contestrecords/2022-wh-8/</url>
+    <url>/2022/02/17/contestrecords/2022-wh-8/</url>
     <content><![CDATA[<p>2022年寒假第8次测试解析。</p>
 <span id="more"></span>
 
@@ -3222,7 +3222,7 @@
   </entry>
   <entry>
     <title>傅里叶变换</title>
-    <url>/maths/fourier-transform/</url>
+    <url>/2022/03/21/maths/fourier-transform/</url>
     <content><![CDATA[<p>简介： 傅里叶变换和FFT、复数、单位根<br>（20220321重修）</p>
 <span id="more"></span>
 
@@ -3436,7 +3436,7 @@
   </entry>
   <entry>
     <title>博弈论（广义）学习笔记</title>
-    <url>/notes/game-strategy/</url>
+    <url>/2021/09/22/notes/game-strategy/</url>
     <content><![CDATA[<p>简介： 博弈论</p>
 <span id="more"></span>
 
@@ -3640,7 +3640,7 @@
   </entry>
   <entry>
     <title>线性代数</title>
-    <url>/notes/linar-algebra/</url>
+    <url>/2021/10/01/notes/linar-algebra/</url>
     <content><![CDATA[<p>简介：线性代数</p>
 <span id="more"></span>
 
@@ -3826,6 +3826,88 @@
       </categories>
       <tags>
         <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>虚树</title>
+    <url>/2022/06/05/virtual-tree/</url>
+    <content><![CDATA[<p>虚树。</p>
+<span id="more"></span>
+
+<p>虚树，顾名思义，是一棵树。</p>
+<p>有时候题目给的树太大了，同时每一次处理询问的时候总会有大量的不可避免的冗余信息需要处理，这时候就需要我们对当前的树建立一棵虚树来选择性地忽略掉一些不重要的信息，进而减小了时间复杂度。</p>
+<p>一般需要建立虚树的题目会在树上选择出几个关键点进行询问，而不关心其它的信息。同时我们还可以注意到，关键点的个数一般是与树的大小是同阶的（即在同一个数量级内）。这指的是，假如我们每一次询问的关键点个数是 $k_i$ 个，一共有 $m$ 次询问，那么 $\log_{10} (\sum k_i) &#x3D; \log_{10} n$。</p>
+<h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>比如说这道题：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDI0OTU=">Luogu P2495<i class="fa fa-external-link-alt"></i></span> [SDOI2011] 消耗战</p>
+<p>这一道题需要我们找到使所有关键点都不与根节点连接的割边方案，并且需要使这个割边方案中边的权值和最小。</p>
+<p>对于这个问题，我们有一套经典的DP方案：</p>
+<p>设 $dp[u]$ 表示使编号为 $u$ 的点不与其子树中任意一个关键点联通的最小代价。</p>
+<p>设 $w(i,j)$ 表示连接 $i$ 与 $j$ 的边的权值。</p>
+<p>那么我们可以枚举 $u$ 的儿子 $v$：</p>
+<ul>
+<li>若 $v$ 不是关键点，那么 $dp[u]&#x3D;dp[u]+\min(dp[v],w(u,v))$；</li>
+<li>若 $v$ 是关键点，那么 $dp[u]&#x3D;dp[u]+w(u,v)$。</li>
+</ul>
+<p>单次DP的时间复杂度是 $O(n)$ 的。因为题目给出了 $m$ 次询问，并且每一次询问时关键点的信息还会改变，所以我们每一次询问的时候必须得重新DP一遍，这让我们总体的时间复杂度成为了 $O(nm)$。</p>
+<p>然后看题目要求：</p>
+<blockquote>
+<p>对于 $100\%$ 的数据，$2\leq n \leq 2.5\times 10^5, 1\leq m\leq 5\times 10^5, \sum k_i \leq 5\times 10^5$。</p>
+</blockquote>
+<p>我们一眼就可以看出来以 $O(nm)$ 的复杂度是绝对过不去的。</p>
+<p>经试验验证(LibreOJ)，以下面的代码可以跑出来50分的好成绩：<span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcy8xNDc2ODM0">提交寄录<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="虚树"><a href="#虚树" class="headerlink" title="虚树"></a>虚树</h1><p>我们重新来看一遍DP的过程。</p>
+<p>我们在枚举某一个节点的所有儿子的时候，假设这个节点 $u$ 下面的子树内没有一个关键点，那么这个DP的过程就是冗余的。</p>
+<p>既然我们不需要 $u$ 及其子树的信息了，那么它也就没有了继续存在于图内的必要了。</p>
+<p>而如果 $u$ 下面的子树内有关键点，那么他也不一定能留下。</p>
+<p>鉴于我们只关心关键点之间的连通性，我们关心的只有两类点：一是关键点，二是可能是两个关键点的LCA的点。<br>前者的数量是给定的，而后者只会在树分叉的地方出现，数量不会大于关键点的个数。</p>
+<p>我们就可以对这两种点建立一棵新的树，而树上的边权就是我们关心的信息——在这道题内就是两端点在原树上的路径中的最小边权。</p>
+<p>然后我们就可以对着明显缩水了的树进行DP了。</p>
+<p>如果我们使用正确的求LCA算法的话（比如 $O(\log n)$ 的树剖），我们的时间复杂度就是 $O(\log \sum k_i)$ 了。</p>
+<p>而由于 $\sum k_i$ 与 $n$ 同阶，所以我们可以近似的将我们的时间复杂度看为 $O(n \log n)$。</p>
+<h1 id="建立"><a href="#建立" class="headerlink" title="建立"></a>建立</h1><p>既然有了思想，我们就可以着手建立虚树了。</p>
+<p>我们当然不可能逐个枚举关键点的LCA并加进去来建立，这样的复杂度仍然是 $O(k^2)$ 级别的，我们无法接受。</p>
+<p>我们需要尝试将这个算法优化，至少优化到 $O(k)$ 级别（不算LCA的 $O(\log n)$），这样我们才能够通过上面的数据范围。</p>
+<p>自己手模一下，可以发现LCA只会在树分叉的地方出现，所以我们只需要维护树分叉的地方就可以了。</p>
+<p>那怎么维护呢？</p>
+<p>我们可以尝试维护极右链。</p>
+<p>对于这样的一棵树：</p>
+<img src="https://s2.loli.net/2022/06/06/MWQe1lCIjOadpfs.png" alt="vt1.png" width="50%" />
+
+<p>现在它的极右链是这块红色的链：</p>
+<img src="https://s2.loli.net/2022/06/06/8hxmdLiXeOlfGtQ.png" alt="vt2.png" width="50%" />
+
+<p>那么假设我们最后的点是这个红色点，美剧导的下一个点是这个蓝色的点：</p>
+<img src="https://s2.loli.net/2022/06/06/oEYqybwUDK7VZGg.png" alt="vt3.png" width="50%" />
+
+<p>蓝色的点向上到根节点的路径有与之前已经建好了的树重合的部分，也有之前没有出现过的部分（蓝色的链）。</p>
+<p>我们把这个点加入树中的同时，还需要加入它与之前的极右链中的交点，即其与上一个关键点的LCA。</p>
+<p>然后，最新的极右链就是这个：</p>
+<img src="https://s2.loli.net/2022/06/06/VsBZlrqPUDuJweT.png" alt="vt4.png" width="50%" />
+
+<p>为了保证不会损坏虚树的结构，首先我们将所有的关键点按照DFS序来排序，保证逐个遍历的时候不会有新的关键点出现在当前极右链的左边。</p>
+<p>然后我们使用栈来维护遍历的顺序，就像我们DFS时的系统栈一样，记录下之前遍历的点。</p>
+<p>下面的代码里面的注释就是对该步骤的解释：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	v.<span class="built_in">init</span>();<span class="comment">//清空链式前向星</span></span><br><span class="line">	<span class="built_in">sort</span>(a + <span class="number">1</span>, a + <span class="number">1</span> + k, cmp);<span class="comment">//将关键点按照DFS序排序</span></span><br><span class="line">	sta[tt = <span class="number">1</span>] = <span class="number">1</span>;<span class="comment">//1号节点入栈</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= k; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> g = <span class="built_in">lca</span>(a[i], sta[tt]);</span><br><span class="line">		<span class="comment">//拎出来当前节点与栈顶节点在原树上的LCA</span></span><br><span class="line">		<span class="keyword">if</span>(g != sta[tt])</span><br><span class="line">		&#123;<span class="comment">//如果LCA不是栈顶的节点，就意味着当前节点不在当前节点所维护的链上</span></span><br><span class="line">			<span class="keyword">while</span>(id[g] &lt; id[sta[tt - <span class="number">1</span>]])</span><br><span class="line">			&#123;<span class="comment">//当次大节点的DFS序大于LCA的DFS序</span></span><br><span class="line">				<span class="type">int</span> p = sta[tt - <span class="number">1</span>], q = sta[tt--];</span><br><span class="line">				ll d = <span class="built_in">minpath</span>(p, q);</span><br><span class="line">				v.<span class="built_in">add</span>(p, q, d);</span><br><span class="line">				v.<span class="built_in">add</span>(q, p, d);</span><br><span class="line">				<span class="comment">//那就说明栈顶节点不需要再维护了</span></span><br><span class="line">				<span class="comment">//连边，弹栈</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(id[g] &gt; id[sta[tt - <span class="number">1</span>]])</span><br><span class="line">			&#123;<span class="comment">//如果LCA不是次大节点</span></span><br><span class="line">				ll d = <span class="built_in">minpath</span>(g, sta[tt]);</span><br><span class="line">				v.<span class="built_in">add</span>(g, sta[tt], d);</span><br><span class="line">				v.<span class="built_in">add</span>(sta[tt], g, d);</span><br><span class="line">				tt--;</span><br><span class="line">				sta[++tt] = g;</span><br><span class="line">				<span class="comment">//那就说明LCA从来没有在栈内出现过</span></span><br><span class="line">				<span class="comment">//与栈顶元素连边并弹出之</span></span><br><span class="line">				<span class="comment">//然后就入栈</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;<span class="comment">//否则LCA就是次大节点</span></span><br><span class="line">				<span class="type">int</span> p = sta[tt - <span class="number">1</span>], q = sta[tt--];</span><br><span class="line">				ll d = <span class="built_in">minpath</span>(p, q);</span><br><span class="line">				v.<span class="built_in">add</span>(p, q, d);</span><br><span class="line">				v.<span class="built_in">add</span>(q, p, d);</span><br><span class="line">				<span class="comment">//直接连边弹栈即可，不用入栈了</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		sta[++tt] = a[i];<span class="comment">//当前节点入栈</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(tt &gt; <span class="number">1</span>)</span><br><span class="line">	&#123;<span class="comment">//将剩下的最后一条极右链连接起来</span></span><br><span class="line">		<span class="type">int</span> p = sta[tt - <span class="number">1</span>], q = sta[tt];</span><br><span class="line">		ll d = <span class="built_in">minpath</span>(p, q);</span><br><span class="line">		v.<span class="built_in">add</span>(p, q, d);</span><br><span class="line">		v.<span class="built_in">add</span>(q, p, d);</span><br><span class="line">		tt--;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后就可以愉快地在虚树上进行dp了，方法与之前一样。</p>
+<p>现在我们的复杂度大大减小，就可以拿到——80分的好成绩！<span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcy8xNDc2NjAy">提交寄录<i class="fa fa-external-link-alt"></i></span></p>
+<p>然后我们就不理解了。</p>
+<p>我的理论复杂度也是对的，应该没有什么问题。</p>
+<p>我们回忆一下我们代码的实现：</p>
+<p>我们在每一次建立虚树之前，都把整个链式前向星都清空了一遍。</p>
+<p>这时我们可以再懒一点，我们可以不需要清空链式前向星，只需要将每一个入栈的节点在入栈的时候清空该节点的表头即可。</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">void build()</span><br><span class="line">&#123;</span><br><span class="line"><span class="deletion">-   v.init();</span></span><br><span class="line"><span class="addition">+   v.idx = 0;</span></span><br><span class="line">	sort(a + 1, a + 1 + k, cmp);</span><br><span class="line">	sta[tt = 1] = 1;</span><br><span class="line"><span class="addition">+   v.h[1] = -1;</span></span><br><span class="line">	for(int i = 1; i &lt;= k; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int g = lca(a[i], sta[tt]);</span><br><span class="line">		if(g != sta[tt])</span><br><span class="line">		&#123;</span><br><span class="line">			while(id[g] &lt; id[sta[tt - 1]])</span><br><span class="line">			&#123;</span><br><span class="line">				int p = sta[tt - 1], q = sta[tt--];</span><br><span class="line">				ll d = minpath(p, q);</span><br><span class="line">				v.add(p, q, d);</span><br><span class="line">				v.add(q, p, d);</span><br><span class="line">			&#125;</span><br><span class="line">			if(id[g] &gt; id[sta[tt - 1]])</span><br><span class="line">			&#123;</span><br><span class="line">				ll d = minpath(g, sta[tt]);</span><br><span class="line"><span class="addition">+			   v.h[g] = -1;</span></span><br><span class="line">				v.add(g, sta[tt], d);</span><br><span class="line">				v.add(sta[tt], g, d);</span><br><span class="line">				tt--;</span><br><span class="line">				sta[++tt] = g;</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				int p = sta[tt - 1], q = sta[tt--];</span><br><span class="line">				ll d = minpath(p, q);</span><br><span class="line">				v.add(p, q, d);</span><br><span class="line">				v.add(q, p, d);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="addition">+	   v.h[a[i]] = -1;</span></span><br><span class="line">		sta[++tt] = a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	while(tt &gt; 1)</span><br><span class="line">	&#123;</span><br><span class="line">		int p = sta[tt - 1], q = sta[tt--];</span><br><span class="line">		ll d = minpath(p, q);</span><br><span class="line">		v.add(p, q, d);</span><br><span class="line">		v.add(q, p, d);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>剩下的节点我们就不需要管了，因为我们甚至没有访问他们的机会。</p>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><h2 id="Luogu-P2495-SDOI2011-消耗战"><a href="#Luogu-P2495-SDOI2011-消耗战" class="headerlink" title="Luogu P2495 [SDOI2011] 消耗战"></a>Luogu P2495 [SDOI2011] 消耗战</h2><p>题面在这里：<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDI0OTU=">https://www.luogu.com.cn/problem/P2495<i class="fa fa-external-link-alt"></i></span></p>
+<p>上面已经讲了做法了，就是一个树形DP。</p>
+<p>代码见这里：<a href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p2000-p2999/p2495/p2495.cpp"><code>Luogu P2495</code></a></p>
+]]></content>
+      <categories>
+        <category>图论</category>
+      </categories>
+      <tags>
+        <tag>图论</tag>
       </tags>
   </entry>
 </search>

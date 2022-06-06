@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/pics/apple-touch-icon-kw.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pics/128kw.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pics/64kw.png">
+  <link rel="mask-icon" href="/pics/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.cn/css?family=Noto+Sans:300,300italic,400,400italic,700,700italic%7CNoto+Serif+Tangut:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="矩阵与矩阵相关运算。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="矩阵">
+<meta property="og:url" content="http://example.com/2022/05/07/maths/matrix/index.html">
+<meta property="og:site_name" content="南陽劉子驥的博客">
+<meta property="og:description" content="矩阵与矩阵相关运算。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-05-09T03:05:56.626Z">
+<meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="线性代数">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2022/05/07/maths/matrix/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2022/05/07/maths/matrix/","path":"2022/05/07/maths/matrix/","title":"矩阵"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>矩阵 | 南陽劉子驥的博客</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">南陽劉子驥的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">逻辑搭建基础，变幻点燃世界</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">20</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">45</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.1.</span> <span class="nav-text">矩阵是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E7%9A%84%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.</span> <span class="nav-text">特殊的矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E7%9F%A9%E9%98%B5%E4%B8%8E%E5%88%97%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.1.</span> <span class="nav-text">行矩阵与列矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%B6%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.2.</span> <span class="nav-text">零矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%9F%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.3.</span> <span class="nav-text">负矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E9%98%B5"><span class="nav-number">1.2.4.</span> <span class="nav-text">方阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E4%BD%8D%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.5.</span> <span class="nav-text">单位矩阵</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%BF%90%E7%AE%97"><span class="nav-number">1.3.</span> <span class="nav-text">矩阵的运算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E5%87%8F"><span class="nav-number">1.3.1.</span> <span class="nav-text">加减</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E4%B9%98"><span class="nav-number">1.3.2.</span> <span class="nav-text">数乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E4%B9%98"><span class="nav-number">1.3.3.</span> <span class="nav-text">点乘</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%82"><span class="nav-number">1.3.4.</span> <span class="nav-text">幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AC%E7%BD%AE"><span class="nav-number">1.3.5.</span> <span class="nav-text">转置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%8A%A0%E9%80%9F%E9%80%92%E6%8E%A8"><span class="nav-number">3.1.</span> <span class="nav-text">矩阵加速递推</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E8%BD%AC%E7%A7%BB%E7%9F%A9%E9%98%B5"><span class="nav-number">3.1.1.</span> <span class="nav-text">如何构建转移矩阵</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E8%BE%85%E5%8A%A9%E7%BB%B4%E6%8A%A4%E4%BF%A1%E6%81%AF"><span class="nav-number">3.2.</span> <span class="nav-text">矩阵辅助维护信息</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="南陽劉子驥 aka KaiserWilheim"
+      src="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
+  <p class="site-author-name" itemprop="name">南陽劉子驥 aka KaiserWilheim</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0thaXNlcldpbGhlaW0=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KaiserWilheim"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMzQ2MzA0MjM1" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;346304235"><i class="fa fa-tv fa-fw"></i>Bilibili</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9AbmFueWFuZ2xpdXppamk=" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;@nanyangliuziji"><i class="fab fa-twitter fa-fw"></i>Twitter</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90Lm1lL0thaXNlcldpbGhlaW0=" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;KaiserWilheim"><i class="fab fa-telegram fa-fw"></i>Telegram</span>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC96aC1DTg=="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_nd.svg" alt="Creative Commons"></span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Friends
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmJhb3NodW8ucmVuLw==" title="https:&#x2F;&#x2F;blog.baoshuo.ren&#x2F;">宝硕博客</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9jbG91ZHlza3lldC5naXRodWIuaW8v" title="https:&#x2F;&#x2F;cloudyskyet.github.io&#x2F;">Blog of Cloudysky</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly95b3V3aWtlLmdpdGh1Yi5pby8=" title="https:&#x2F;&#x2F;youwike.github.io&#x2F;">Blog of Youwike</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9zanplenN5eHguZ2l0aHViLmlvLw==" title="https:&#x2F;&#x2F;sjzezsyxx.github.io&#x2F;">二南信竞团队</span>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL0thaXNlcldpbGhlaW0=" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/07/maths/matrix/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
+      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南陽劉子驥的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="矩阵 | 南陽劉子驥的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          矩阵
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-07 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-07T00:00:00+08:00">2022-05-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-09 11:05:56" itemprop="dateModified" datetime="2022-05-09T11:05:56+08:00">2022-05-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" itemprop="url" rel="index"><span itemprop="name">线性代数</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>矩阵与矩阵相关运算。</p>
+<span id="more"></span>
+
+<p>在数学中，矩阵是一种很重要的表现形式；在OI中，矩阵也是一种很重要的数据结构。<br>矩阵通常可以用在线性齐次递推式的加速上，比如说加速斐波那契数列的递推过程。<br>矩阵还可以让多个数据关联起来，并简便地进行区间维护。</p>
+<h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>为了更好地区分矩阵与其他量，我们这里将代表矩阵的符号进行了特殊处理，就像这个样子：</p>
+<p>$A \to \mathbf{A}$</p>
+<h2 id="矩阵是什么"><a href="#矩阵是什么" class="headerlink" title="矩阵是什么"></a>矩阵是什么</h2><p>由 $n \times m$ 个元素组成的，形如<br>$$<br>\mathbf{A} &#x3D;<br>\begin{bmatrix}<br>a_{1,1} &amp; a_{1,2} &amp; a_{1,3} &amp; \dots &amp; a_{1,m} \\<br>a_{2,1} &amp; a_{2,2} &amp; a_{2,3} &amp; \dots &amp; a_{2,m} \\<br>a_{3,1} &amp; a_{3,2} &amp; a_{3,3} &amp; \dots &amp; a_{3,m} \\<br>\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>a_{n,1} &amp; a_{n,2} &amp; a_{n,3} &amp; \dots &amp; a_{n,m}<br>\end{bmatrix}<br>$$<br>的 $n$ 行 $m$ 列的数表，我们称之为大小为 $n \times m$ 的矩阵，可以简记为 $\mathbf{A_{\mathcal{n \times m}}}$ 。</p>
+<h2 id="特殊的矩阵"><a href="#特殊的矩阵" class="headerlink" title="特殊的矩阵"></a>特殊的矩阵</h2><p>特殊的矩阵由很多种，比如单位矩阵、上三角矩阵等等。</p>
+<h3 id="行矩阵与列矩阵"><a href="#行矩阵与列矩阵" class="headerlink" title="行矩阵与列矩阵"></a>行矩阵与列矩阵</h3><p>行矩阵就是只有一行的矩阵，列矩阵就是只有一列的矩阵。</p>
+<h3 id="零矩阵"><a href="#零矩阵" class="headerlink" title="零矩阵"></a>零矩阵</h3><p>元素全为 $0$ 的矩阵。<br>零矩阵简记为 $\mathbf{0}$。</p>
+<h3 id="负矩阵"><a href="#负矩阵" class="headerlink" title="负矩阵"></a>负矩阵</h3><p>对于一个矩阵 $\mathbf{A}$ 的负矩阵 $-\mathbf{A}$，其中每个元素都与矩阵 $\mathbf{A}$ 内相同位置的元素互为相反数。</p>
+<h3 id="方阵"><a href="#方阵" class="headerlink" title="方阵"></a>方阵</h3><p>方阵指的就是正方形的矩阵，其行数与列数相等。<br>此时，其行数（或列数，反正他们相等）就可以被称作该矩阵的阶。</p>
+<p>简单来说，一个 $n$ 阶方阵 $\mathbf{A_{\mathcal{n}}}$ 其实就是相当于一个 $n \times n$ 的矩阵 $\mathbf{A_{\mathcal{n \times n}}}$。</p>
+<h3 id="单位矩阵"><a href="#单位矩阵" class="headerlink" title="单位矩阵"></a>单位矩阵</h3><p>单位矩阵就是指，在主对角线上的元素都是 $1$，其余元素都为 $0$ 的矩阵。<br>主对角线就是指 $(1,1)$ 到 $(n,n)$。这也说明单位矩阵都是正方形的。</p>
+<p>单位矩阵简记为 $\mathbf{I}$。</p>
+<p>单位矩阵也有其相应的阶，比如1到4阶的单位矩阵分别是这个样子的：$\mathbf{I_{\mathrm{1}}}&#x3D;\begin{bmatrix}1\end{bmatrix}$，$\mathbf{I_{\mathrm{2}}}&#x3D;\begin{bmatrix}1&amp;\\&amp;1\end{bmatrix}$，$\mathbf{I_{\mathrm{3}}}&#x3D;\begin{bmatrix}1&amp;&amp;\\&amp;1&amp;\\&amp;&amp;1\end{bmatrix}$，$\mathbf{I_{\mathrm{4}}}&#x3D;\begin{bmatrix}1&amp;&amp;&amp;\\&amp;1&amp;&amp;\\&amp;&amp;1&amp;\\&amp;&amp;&amp;1\end{bmatrix}$。</p>
+<p>形象一点，就是这样：<br>（为 $0$ 的元素太多时一般将其省略）</p>
+<p>$$<br>\mathbf{I} &#x3D;<br>\begin{bmatrix}<br>1&amp; &amp; &amp; \\<br> &amp;1&amp; &amp; \\<br> &amp; &amp; \ddots &amp; \\<br> &amp; &amp; &amp;1<br>\end{bmatrix}<br>$$</p>
+<p>单位矩阵的一个很重要的性质就是，任何矩阵乘以单位矩阵的结果还是其本身，即 $\mathbf{AI} &#x3D; \mathbf{IA} &#x3D; \mathbf{A}$。</p>
+<p>有时候还可能将单位矩阵称为 $\mathbf{E}$，但是很少见，我目前还没有见过。</p>
+<h2 id="矩阵的运算"><a href="#矩阵的运算" class="headerlink" title="矩阵的运算"></a>矩阵的运算</h2><p>矩阵可以进行四则运算，但是与正常的数字还是有所不同。</p>
+<h3 id="加减"><a href="#加减" class="headerlink" title="加减"></a>加减</h3><p>矩阵的加减要求两个矩阵必须行数列数均相同才可以进行。</p>
+<p>加减的时候，每一对位置相同的元素相加或者相减。</p>
+<p>形象一点就是这个样子：</p>
+<p>$$<br>\mathbf{A} \pm \mathbf{B}<br>&#x3D;<br>\begin{bmatrix}<br>a &amp; b &amp; c \\<br>d &amp; e &amp; f<br>\end{bmatrix}<br>\pm<br>\begin{bmatrix}<br>g &amp; h &amp; i \\<br>j &amp; k &amp; l<br>\end{bmatrix}<br>&#x3D;<br>\begin{bmatrix}<br>a \pm g &amp; b \pm h &amp; c \pm i \\<br>d \pm j &amp; e \pm k &amp; f \pm l<br>\end{bmatrix}<br>$$</p>
+<p>矩阵的加法满足交换律和结合律。</p>
+<h3 id="数乘"><a href="#数乘" class="headerlink" title="数乘"></a>数乘</h3><p>就是一个矩阵乘以一个数。</p>
+<p>乘起来的时候，矩阵内的每一个元素都要乘以这个数。</p>
+<p>形象一点就是这样：</p>
+<p>$$<br>λ\mathbf{A}<br>&#x3D;<br>λ \times<br>\begin{bmatrix}<br>a &amp; b &amp; c \\<br>d &amp; e &amp; f<br>\end{bmatrix}<br>&#x3D;<br>\begin{bmatrix}<br>λa &amp; λb &amp; λc \\<br>λd &amp; λe &amp; λf<br>\end{bmatrix}<br>$$</p>
+<p>矩阵的数乘满足交换律、结合律和分配律。</p>
+<p>如果将刚才这个过程反过来的话，就叫做矩阵提公因子。</p>
+<h3 id="点乘"><a href="#点乘" class="headerlink" title="点乘"></a>点乘</h3><p>点乘是矩阵运算中很重要的一部分。</p>
+<p>点乘又叫做矩阵乘法，（基本上）是OI中矩阵的精髓。</p>
+<p>矩阵乘法不满足交换律，是因为其需要满足左侧矩阵的列数与右侧矩阵的行数相等。</p>
+<p>形象一点，就是 $\mathbf{A_{\mathcal{n \times p}}} \times \mathbf{B_{\mathcal{p \times m}}} &#x3D; \mathbf{C_{\mathcal{n \times m}}}$。</p>
+<p>具体操作的时候是这个样子的：</p>
+<p>我们以 $\mathbf{A_{\mathrm{3 \times 3}}} \times \mathbf{B_{\mathrm{3 \times 2}}}$ 为例。</p>
+<p>$$<br>\begin{align}<br>&amp; \mathbf{A_{\mathrm{3 \times 3}}} \times \mathbf{B_{\mathrm{3 \times 2}}} \\<br>&#x3D;{} &amp;<br>\begin{bmatrix}<br>a_{1,1} &amp; a_{1,2} &amp; a_{1,3} \\ a_{2,1} &amp; a_{2,2} &amp; a_{2,3} \\ a_{3,1} &amp; a_{3,2} &amp; a_{3,3}<br>\end{bmatrix}<br>\times<br>\begin{bmatrix}<br>b_{1,1} &amp; b_{1,2} \\ b_{2,1} &amp; b_{2,2} \\ b_{3,1} &amp; b_{3,2}<br>\end{bmatrix}\\<br>&#x3D;{} &amp;<br>\begin{bmatrix}<br>a_{1,1}b_{1,1}+a_{1,2}b_{2,1}+a_{1,3}b_{3,1} &amp; a_{2,1}b_{1,1}+a_{2,2}b_{2,1}+a_{2,3}b_{3,1} &amp; a_{3,1}b_{1,1}+a_{3,2}b_{2,1}+a_{3,3}b_{3,1} \\<br>a_{1,1}b_{1,2}+a_{1,2}b_{2,2}+a_{1,3}b_{3,2} &amp; a_{2,1}b_{1,2}+a_{2,2}b_{2,2}+a_{2,3}b_{3,2} &amp; a_{3,1}b_{1,2}+a_{3,2}b_{2,2}+a_{3,3}b_{3,2}<br>\end{bmatrix}<br>\end{align}<br>$$</p>
+<p>除了交换律以外，矩阵乘法只满足结合律和左、右分配律。</p>
+<h3 id="幂"><a href="#幂" class="headerlink" title="幂"></a>幂</h3><p>矩阵的幂运算与正常的幂运算一样，都是自乘多少次，但是由于矩阵乘法的特殊性质，我们只能给方阵求幂。</p>
+<p>$\mathbf{A^{\mathcal{k}}} &#x3D; \underbrace{\mathbf{AAAA \cdots AA}}_{\text{k of}}$</p>
+<p>根据这种性质，我们可以像对数字一样进行快速幂，逻辑与之前一样。</p>
+<h3 id="转置"><a href="#转置" class="headerlink" title="转置"></a>转置</h3><p>转置就是将一个矩阵顺时针旋转90度。</p>
+<p>例：<br>$$<br>\begin{bmatrix}<br>1&amp;1&amp;4\\5&amp;1&amp;4<br>\end{bmatrix}^T<br>&#x3D;<br>\begin{bmatrix}<br>5&amp;1\\1&amp;1\\4&amp;4<br>\end{bmatrix}<br>$$</p>
+<p>我们使用 $\mathbf{A}^T$ 来表示矩阵 $\mathbf{A}$ 的转置。</p>
+<p>转置满足以下法则：<br>$$<br>\begin{align}<br>(\mathbf{A}^T)^T &amp;&#x3D; \mathbf{A} \\<br>(\lambda \mathbf{A})^T &amp;&#x3D; \lambda \mathbf{A}^T \\<br>(\mathbf{AB})^T &amp;&#x3D; \mathbf{B}^T \mathbf{A}^T<br>\end{align}<br>$$</p>
+<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>我们可以使用一个二维数组来存储矩阵。</p>
+<p>就像这个样子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Matrix</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    <span class="type">int</span> a[N][N];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>定义一个初始化函数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Matrix</span>() &#123;&#125;;</span><br><span class="line"><span class="built_in">Matrix</span>(<span class="type">int</span> n, <span class="type">int</span> m) : <span class="built_in">n</span>(n), <span class="built_in">m</span>(m) &#123; <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="built_in">sizeof</span>(a)) &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>重载一下运算符：</p>
+<p>加：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">friend</span> Matrix <span class="keyword">operator</span> + (<span class="type">const</span> Matrix &amp;lhs, <span class="type">const</span> Matrix &amp;rhs)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">Matrix <span class="title">res</span><span class="params">(lhs.n, lhs.m)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lhs.n; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= lhs.m; j++)</span><br><span class="line">            res.a[i][j] = lhs.a[i][j] + rhs.a[i][j];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>乘：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">friend</span> Matrix <span class="keyword">operator</span> * (<span class="type">const</span> Matrix &amp;lhs, <span class="type">const</span> Matrix &amp;rhs)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">Matrix <span class="title">res</span><span class="params">(lhs.n, rhs.m)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lhs.n; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= rhs.m; j++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt;= lhs.m; k++)</span><br><span class="line">                res.a[i][j] += lhs.a[i][k] * rhs.a[k][j];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>乘方（快速幂）：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">friend</span> Matrix <span class="keyword">operator</span> ^ (Matrix rhs, <span class="type">int</span> x)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function">Matrix <span class="title">res</span><span class="params">(rhs.n, rhs.n)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= rhs.n; i++)res.a[i][i] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(x)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x &amp; <span class="number">1</span>) res = res * rhs;</span><br><span class="line">        rhs = rhs * rhs;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>再继续加一些其他的重载运算符之后就是这个样子：</p>
+<details class="note default"><summary><p>矩阵结构体</p>
+</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Matrix</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    <span class="type">int</span> a[N][N];</span><br><span class="line">    <span class="built_in">Matrix</span>() &#123;&#125;;</span><br><span class="line">    <span class="built_in">Matrix</span>(<span class="type">int</span> n, <span class="type">int</span> m) : <span class="built_in">n</span>(n), <span class="built_in">m</span>(m) &#123; <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="built_in">sizeof</span>(a)) &#125;;</span><br><span class="line">    <span class="keyword">friend</span> Matrix <span class="keyword">operator</span> + (<span class="type">const</span> Matrix &amp;lhs, <span class="type">const</span> Matrix &amp;rhs)</span><br><span class="line">    &#123;<span class="comment">//加</span></span><br><span class="line">        <span class="function">Matrix <span class="title">res</span><span class="params">(lhs.n, lhs.m)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lhs.n; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= lhs.m; j++)</span><br><span class="line">                res.a[i][j] = lhs.a[i][j] + rhs.a[i][j];</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">friend</span> Matrix <span class="keyword">operator</span> - (<span class="type">const</span> Matrix &amp;lhs, <span class="type">const</span> Matrix &amp;rhs)</span><br><span class="line">    &#123;<span class="comment">//减</span></span><br><span class="line">        <span class="function">Matrix <span class="title">res</span><span class="params">(lhs.n, lhs.m)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lhs.n; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= lhs.m; j++)</span><br><span class="line">                res.a[i][j] = lhs.a[i][j] - rhs.a[i][j];</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    Matrix <span class="keyword">operator</span> -() <span class="type">const</span></span><br><span class="line">    &#123;<span class="comment">//取反</span></span><br><span class="line">        <span class="function">Matrix <span class="title">res</span><span class="params">(n, m)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">                res.a[i][j] = -a[i][j];</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">friend</span> Matrix <span class="keyword">operator</span> * (<span class="type">const</span> Matrix &amp;lhs, <span class="type">const</span> Matrix &amp;rhs)</span><br><span class="line">    &#123;<span class="comment">//点乘</span></span><br><span class="line">        <span class="function">Matrix <span class="title">res</span><span class="params">(lhs.n, rhs.m)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lhs.n; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= rhs.m; j++)</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt;= lhs.m; k++)</span><br><span class="line">                    res.a[i][j] += lhs.a[i][k] * rhs.a[k][j];</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">friend</span> Matrix <span class="keyword">operator</span> * (<span class="type">const</span> Matrix &amp;lhs, <span class="type">int</span> k)</span><br><span class="line">    &#123;<span class="comment">//数乘</span></span><br><span class="line">        <span class="function">Matrix <span class="title">res</span><span class="params">(lhs.n, lhs.m)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lhs.n; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= lhs.m; j++)</span><br><span class="line">                res.a[i][j] = lhs.a[i][j] * k;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">friend</span> Matrix <span class="keyword">operator</span> ^ (Matrix lhs, <span class="type">int</span> n)</span><br><span class="line">    &#123;<span class="comment">//快速幂</span></span><br><span class="line">        <span class="function">Matrix <span class="title">res</span><span class="params">(lhs.n, lhs.n)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lhs.n; i++)res.a[i][i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(x)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(n &amp; <span class="number">1</span>) res = res * lhs;</span><br><span class="line">            lhs = lhs * lhs;</span><br><span class="line">            x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</details>
+
+<p>但其实更常见的是这样子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">Matrix</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    <span class="type">int</span> a[N][N];</span><br><span class="line">    <span class="built_in">Matrix</span>() &#123;&#125;;</span><br><span class="line">    <span class="built_in">Matrix</span>(<span class="type">int</span> n, <span class="type">int</span> m) : <span class="built_in">n</span>(n), <span class="built_in">m</span>(m) &#123; <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="built_in">sizeof</span>(a)) &#125;;</span><br><span class="line">    <span class="keyword">friend</span> Matrix <span class="keyword">operator</span> + (<span class="type">const</span> Matrix &amp;lhs, <span class="type">const</span> Matrix &amp;rhs)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function">Matrix <span class="title">res</span><span class="params">(lhs.n, lhs.m)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lhs.n; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= lhs.m; j++)</span><br><span class="line">                res.a[i][j] = lhs.a[i][j] + rhs.a[i][j];</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">friend</span> Matrix <span class="keyword">operator</span> * (<span class="type">const</span> Matrix &amp;lhs, <span class="type">const</span> Matrix &amp;rhs)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function">Matrix <span class="title">res</span><span class="params">(lhs.n, rhs.m)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lhs.n; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">1</span>; j &lt;= rhs.m; j++)</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> k = <span class="number">1</span>; k &lt;= lhs.m; k++)</span><br><span class="line">                    res.a[i][j] += lhs.a[i][k] * rhs.a[k][j];</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">friend</span> Matrix <span class="keyword">operator</span> ^ (Matrix lhs, <span class="type">int</span> n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function">Matrix <span class="title">res</span><span class="params">(lhs.n, lhs.n)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lhs.n; i++)res.a[i][i] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(x)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(n &amp; <span class="number">1</span>) res = res * lhs;</span><br><span class="line">            lhs = lhs * lhs;</span><br><span class="line">            x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="矩阵加速递推"><a href="#矩阵加速递推" class="headerlink" title="矩阵加速递推"></a>矩阵加速递推</h2><p>就以矩阵加速斐波那契数列递推为例吧。</p>
+<p>我们将第 $n$ 项斐波那契数简写为 $F_n$。</p>
+<p>我们知道 $F_n &#x3D; F_{n-1} + F_{n-2}$，我们就考虑把斐波那契数列的相邻两项放在一个行（或者列，根据个人习惯）矩阵里面，就像这个样子：$\begin{bmatrix}F_i&amp;F_{i-1}\end{bmatrix}$。</p>
+<p>我们需要把 $\begin{bmatrix}F_i&amp;F_{i-1}\end{bmatrix}$ 变成 $\begin{bmatrix}F_{i-1}+F_i&amp;F_i\end{bmatrix}$，同时需要用到矩阵乘法。</p>
+<p>因为<br>$$<br>\begin{bmatrix}<br>a &amp; b<br>\end{bmatrix}<br>\times<br>\begin{bmatrix}<br>x &amp; y\\<br>z &amp; w<br>\end{bmatrix}<br>&#x3D;<br>\begin{bmatrix}<br>ax+bz &amp; ay+bw<br>\end{bmatrix}<br>$$</p>
+<p>所以我们如果想让 $\begin{bmatrix}a&amp;b\end{bmatrix}$ 变成 $\begin{bmatrix}a+b&amp;a\end{bmatrix}$ 的话，我们就需要将其乘以 $\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}$。</p>
+<p>然后就是矩阵快速幂了。<br>因为我们一开始的 $\begin{bmatrix}1&amp;1\end{bmatrix}$ 是 $\begin{bmatrix}F_2&amp;F_1\end{bmatrix}$，所以我们只需要将其乘以 $\begin{bmatrix}1&amp;1\\1&amp;0\end{bmatrix}^{n-2}$ 即可得到 $F_n$。</p>
+<h3 id="如何构建转移矩阵"><a href="#如何构建转移矩阵" class="headerlink" title="如何构建转移矩阵"></a>如何构建转移矩阵</h3><p>我们考虑我们是如何从一个状态转移到下一个状态的。</p>
+<p>对于一个函数 $f(x)$，我们假定它具有这样的转移式子：</p>
+<p>$$<br>f(x) &#x3D; f(x-1) + 2f(x-2) + 2^x + 2<br>$$</p>
+<p>我们的状态矩阵就是这个样子的：$\begin{bmatrix}f(x)&amp;f(x-1)&amp;2^x&amp;1\end{bmatrix}$。</p>
+<p>然后我们考虑我们如何从 $\begin{bmatrix}f(x-1)&amp;f(x-2)&amp;2^{x-1}&amp;1\end{bmatrix}$ 变为 $\begin{bmatrix}f(x)&amp;f(x-1)&amp;2^x&amp;1\end{bmatrix}$</p>
+<p>我们将 $\begin{bmatrix}f(x)&amp;f(x-1)&amp;2^x&amp;1\end{bmatrix}$ 展开，得</p>
+<p>$$<br>\begin{align}<br>f(x) &amp;&#x3D; f(x-1) \times 1 + f(x-2) \times 2 + 2^{x-1} \times 2 + 1 \times 2 \\<br>f(x-1) &amp;&#x3D; f(x-1) \times 1 + f(x-2) \times 0 + 2^{x-1} \times 0 + 1 \times 0 \\<br>2^x &amp;&#x3D; f(x-1) \times 0 + f(x-2) \times 0 + 2^{x-1} \times 2 + 1 \times 0 \\<br>1 &amp;&#x3D; f(x-1) \times 0 + f(x-2) \times 0 + 2^{x-1} \times 0 + 1 \times 1<br>\end{align}<br>$$</p>
+<p>然后我们就可以得到我们的转移矩阵了：</p>
+<p>$$<br>\begin{bmatrix}<br>1&amp;1&amp;0&amp;0\\<br>2&amp;0&amp;0&amp;0\\<br>2&amp;0&amp;2&amp;0\\<br>2&amp;0&amp;0&amp;1<br>\end{bmatrix}<br>$$</p>
+<h2 id="矩阵辅助维护信息"><a href="#矩阵辅助维护信息" class="headerlink" title="矩阵辅助维护信息"></a>矩阵辅助维护信息</h2><p>这种一般就是对于那种同时需要维护多种信息，还需要支持一大堆复杂的操作，但是推式子的时候不会超过一次的那种题，就比如说这一个：</p>
+<p><a href="/solutions/solution-l2980/">THUSC 大魔法师</a></p>
+<p>我们可以发现其操作（$A_i &#x3D; A_i + k$，$B_i &#x3D; B_i \times k$，$C_i &#x3D; k$）均未出现两个未知量相乘的情况，即可判定其可以利用矩阵乘法来维护。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>南陽劉子驥 aka KaiserWilheim
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2022/05/07/maths/matrix/" title="矩阵">http://example.com/2022/05/07/maths/matrix/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
+              <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"># 线性代数</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/04/24/solutions/solution-p4551/" rel="prev" title="P4551 最长异或路径 题解">
+                  <i class="fa fa-chevron-left"></i> P4551 最长异或路径 题解
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/08/tangut/" rel="next" title="𗼇𗟲">
+                  𗼇𗟲 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">南陽劉子驥 aka KaiserWilheim</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">122k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:51</span>
+  </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"a80b8d2a2dc58ec0d59c674cddc65759"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
