@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/pics/apple-touch-icon-kw.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pics/128kw.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pics/64kw.png">
+  <link rel="mask-icon" href="/pics/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.cn/css?family=Noto+Sans:300,300italic,400,400italic,700,700italic%7CNoto+Serif+Tangut:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="线段树及其衍生，如动态开点线段树、可持久化权值线段树等等。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线段树">
+<meta property="og:url" content="http://example.com/OI/segment-tree/index.html">
+<meta property="og:site_name" content="南陽劉子驥的博客">
+<meta property="og:description" content="线段树及其衍生，如动态开点线段树、可持久化权值线段树等等。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/04/13/wjkzCcr7e4pBQyS.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/13/BYmKAP7NDaSytMq.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/13/kHphs28SOJVRoGT.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/13/hRWnlYSrVU7d51f.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/13/Zphkae3wVJO1Lrq.gif">
+<meta property="og:image" content="https://s2.loli.net/2022/04/13/O6IKkaHo5cg1i3V.png">
+<meta property="og:image" content="https://s2.loli.net/2022/04/13/O6IKkaHo5cg1i3V.png">
+<meta property="article:published_time" content="2022-04-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-07T10:34:37.969Z">
+<meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="数据结构">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/04/13/wjkzCcr7e4pBQyS.png">
+
+
+<link rel="canonical" href="http://example.com/OI/segment-tree/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/OI/segment-tree/","path":"OI/segment-tree/","title":"线段树"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>线段树 | 南陽劉子驥的博客</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">南陽劉子驥的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">逻辑搭建基础，变幻点燃世界</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">48</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BA%BF%E6%AE%B5%E6%A0%91%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什么是线段树？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">线段树的结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E5%8C%BA%E9%97%B4%E8%AF%A2%E9%97%AE"><span class="nav-number">3.</span> <span class="nav-text">线段树的区间询问</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E5%8C%BA%E9%97%B4%E4%BF%AE%E6%94%B9"><span class="nav-number">4.</span> <span class="nav-text">线段树的区间修改</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%87%92%E6%A0%87%E8%AE%B0"><span class="nav-number">4.1.</span> <span class="nav-text">懒标记</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">例题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A9%E5%B1%95"><span class="nav-number">6.</span> <span class="nav-text">扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E8%AE%B0%E6%B0%B8%E4%B9%85%E5%8C%96"><span class="nav-number">6.1.</span> <span class="nav-text">标记永久化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%B8%8A%E4%BA%8C%E5%88%86"><span class="nav-number">6.2.</span> <span class="nav-text">线段树上二分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%BC%80%E7%82%B9%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-number">6.3.</span> <span class="nav-text">动态开点线段树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E6%9D%83%E5%80%BC%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-number">6.4.</span> <span class="nav-text">可持久化权值线段树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98-1"><span class="nav-number">6.4.1.</span> <span class="nav-text">例题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C"><span class="nav-number">6.5.</span> <span class="nav-text">区间最大子段和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE"><span class="nav-number">6.6.</span> <span class="nav-text">线段树优化建图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%EF%BC%9A"><span class="nav-number">6.6.1.</span> <span class="nav-text">例题：</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="南陽劉子驥 aka KaiserWilheim"
+      src="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
+  <p class="site-author-name" itemprop="name">南陽劉子驥 aka KaiserWilheim</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0thaXNlcldpbGhlaW0=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KaiserWilheim"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMzQ2MzA0MjM1" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;346304235"><i class="fa fa-tv fa-fw"></i>Bilibili</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9AbmFueWFuZ2xpdXppamk=" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;@nanyangliuziji"><i class="fab fa-twitter fa-fw"></i>Twitter</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90Lm1lL0thaXNlcldpbGhlaW0=" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;KaiserWilheim"><i class="fab fa-telegram fa-fw"></i>Telegram</span>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC96aC1DTg=="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_nd.svg" alt="Creative Commons"></span>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Friends
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmJhb3NodW8ucmVuLw==" title="https:&#x2F;&#x2F;blog.baoshuo.ren&#x2F;">宝硕博客</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9jbG91ZHlza3lldC5naXRodWIuaW8v" title="https:&#x2F;&#x2F;cloudyskyet.github.io&#x2F;">Blog of Cloudysky</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly95b3V3aWtlLmdpdGh1Yi5pby8=" title="https:&#x2F;&#x2F;youwike.github.io&#x2F;">Blog of Youwike</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cHM6Ly9zanplenN5eHguZ2l0aHViLmlvLw==" title="https:&#x2F;&#x2F;sjzezsyxx.github.io&#x2F;">二南信竞团队</span>
+        </li>
+    </ul>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL0thaXNlcldpbGhlaW0=" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/OI/segment-tree/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
+      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南陽劉子驥的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="线段树 | 南陽劉子驥的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          线段树
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-12 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-12T00:00:00+08:00">2022-04-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-06-07 18:34:37" itemprop="dateModified" datetime="2022-06-07T18:34:37+08:00">2022-06-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>线段树及其衍生，如动态开点线段树、可持久化权值线段树等等。</p>
+<span id="more"></span>
+
+<h1 id="什么是线段树？"><a href="#什么是线段树？" class="headerlink" title="什么是线段树？"></a>什么是线段树？</h1><p>线段树是一种数据结构，其可以以 $O( \log n)$ 的时间复杂度处理维护区间信息的问题。<br>其维护的信息满足可以快速合并两个区间的信息（例如区间和、区间最大（小）值。</p>
+<p>线段树同时可以支持区间修改，但是区间修改时必须能够快速求出每个区间维护的信息。</p>
+<h1 id="线段树的结构"><a href="#线段树的结构" class="headerlink" title="线段树的结构"></a>线段树的结构</h1><p>线段树在建立的时候，会将每一个区间长度不为1的区间进行二分，并递归对这两个区间进行判定。</p>
+<p>这是一棵区间长度为12的线段树：</p>
+<p><img src="https://s2.loli.net/2022/04/13/wjkzCcr7e4pBQyS.png" alt="segtree1.png"></p>
+<p>我们可以明显看到，线段树是一棵二叉树。<br>线段树的高度一般是 $\log n$ 的，这就需要我们建立 $2^{\lceil \log n \rceil + 1}$ 个节点，这将会耗费我们大量的空间。</p>
+<p>一般情况下，我们为了访问方便，也为了节省空间，我们一般将一个节点（设其编号为 $p$）的左儿子和右儿子分别设为 $p &lt;&lt; 1$ 和 $p &lt;&lt; 1 | 1$，就相当于是在一棵满二叉树上面访问。</p>
+<p>于是我们就给出编号：</p>
+<p><img src="https://s2.loli.net/2022/04/13/BYmKAP7NDaSytMq.png" alt="segtree2.png"></p>
+<p>下面给出示例代码：</p>
+<p>假设我们维护的是区间和，并使用类似</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">SegTree</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> l, r;</span><br><span class="line">	<span class="type">int</span> sum;</span><br><span class="line">&#125;tr;</span><br></pre></td></tr></table></figure>
+
+<p>的结构体来存储数据，那么建立线段树的函数就是像下面这个样子的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	tr[p].l = l, tr[p].r = r;</span><br><span class="line">	<span class="keyword">if</span>(l == r)</span><br><span class="line">	&#123;</span><br><span class="line">		tr[p].sum = a[l];</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span>, l, mid);</span><br><span class="line">	<span class="built_in">build</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r);</span><br><span class="line">	tr[p].sum = tr[p &lt;&lt; <span class="number">1</span>].sum + tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>].sum;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="线段树的区间询问"><a href="#线段树的区间询问" class="headerlink" title="线段树的区间询问"></a>线段树的区间询问</h1><p>我们这里以区间求和为例。</p>
+<p>我们先手动模拟一下区间求和的过程：</p>
+<p>假设我们对这样一个长度为12的序列 $\lbrace 1,1,4,5,1,4,1,9,1,9,8,1 \rbrace$ 建立线段树，那么我们每一个区间的数据是这个样子的：</p>
+<p><img src="https://s2.loli.net/2022/04/13/kHphs28SOJVRoGT.png" alt="segtree3.png"></p>
+<p>我们假设需要对 $[2,8]$ 这个区间内的数据进行求和，那么我们覆盖的区间就是这个样子的：</p>
+<p><img src="https://s2.loli.net/2022/04/13/hRWnlYSrVU7d51f.png" alt="segtree4.png"></p>
+<p>我们想象一下将区间向上推：</p>
+<p><img src="https://s2.loli.net/2022/04/13/Zphkae3wVJO1Lrq.gif" alt="segtree4.gif"></p>
+<p>最后我们将 $[2,8]$ 这个大区间分为 $[2,2] \cup [3,3] \cup [4,6] \cup [7,8]$ 这几个小区间。</p>
+<p><img src="https://s2.loli.net/2022/04/13/O6IKkaHo5cg1i3V.png" alt="segtree5.png"></p>
+<p>我们每一次二分递归的时候，如果当前区间被我们询问的区间完全包含就返回当前区间的值，如果没有完全包含就递归询问左右区间，并输出两个区间的返回值之和。</p>
+<p>在递归询问左右两区间的时候需要注意一下子区间是否与询问的区间有重合部分，如果两者交集为空，那就不需要询问了。</p>
+<p>下面给出示例代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">segadd</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(tr[p].l &gt;= l &amp;&amp; tr[p].r &lt;= r)<span class="keyword">return</span> tr[p].sum;</span><br><span class="line">	<span class="type">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(l &lt;= mid)res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span>, l, r);</span><br><span class="line">	<span class="keyword">if</span>(r &gt; mid)res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r);</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="线段树的区间修改"><a href="#线段树的区间修改" class="headerlink" title="线段树的区间修改"></a>线段树的区间修改</h1><p>区间修改和区间求和有着相同的思路。</p>
+<p>我们这里以区间加为例。</p>
+<p>还是之前的例子，如果我们想要给区间 $[2,8]$ 同时加上一个数会怎样？</p>
+<p>让我们再来看一下这个图：</p>
+<p><img src="https://s2.loli.net/2022/04/13/O6IKkaHo5cg1i3V.png" alt="segtree5.png"></p>
+<p>其中白色的区间是完全和我们询问没有任何关系的区间，黄色的区间是与我们询问的区间有交集，但是没有被新闻区间所包含的区间。</p>
+<p>红色的区间和橙色的区间都被询问区间所包含，其中红色的区间是我们在区间求和的时候返回了值的区间，橙色的区间虽然被询问区间包含，但是我们没有访问到他们。</p>
+<p>区间修改也是一样的思路。我们只需要将需要的区间修改即可，剩下的被询问区间包含的区间只需要标记一下就可以了。</p>
+<p>这里需要用到懒标记的思想。</p>
+<h2 id="懒标记"><a href="#懒标记" class="headerlink" title="懒标记"></a>懒标记</h2><p>懒标记的意思就是很懒的标记。我们用到它的时候才会将它兑现，否则他就在那里静静地待着就可以了。</p>
+<p>我们考虑给结构体里面加上一个懒标记，就像这样：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">SegTree</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> l, r;</span><br><span class="line">	<span class="type">int</span> sum;</span><br><span class="line">	<span class="type">int</span> tag;<span class="comment">//&lt;- 就是这个</span></span><br><span class="line">&#125;tr;</span><br></pre></td></tr></table></figure>
+
+<p>当某个区间有懒标记的时候，就意味着它的子树里面的所有区间都应该被修改，但是目前没有应用上。</p>
+<p>但是拥有懒标记的区间的值在修改的时候已经被修改好了。</p>
+<p>每一次我们递归询问子区间的时候，我们就需要将这个懒标记下传（如果有的话）。<br>我们需要一个<code>pushdown</code>函数来完成这件事。</p>
+<p>我们这里仍然以区间加为例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">pushdown</span><span class="params">(<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> &amp;root = tr[p], &amp;left = tr[p &lt;&lt; <span class="number">1</span>], &amp;rght = tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">if</span>(root.tag)</span><br><span class="line">	&#123;</span><br><span class="line">		left.sum += root.tag * (left.r - left.l + <span class="number">1</span>);</span><br><span class="line">		rght.sum += root.tag * (rght.r - rght.l + <span class="number">1</span>);</span><br><span class="line">		<span class="comment">//更新子区间值</span></span><br><span class="line">		left.tag += root.tag;</span><br><span class="line">		rght.tag += root.tag;</span><br><span class="line">		<span class="comment">//更新子区间懒标记</span></span><br><span class="line">		root.tag = <span class="number">0</span>;<span class="comment">//懒标记清空</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDMzNzI=">Luogu P3372 【模板】线段树 1<i class="fa fa-external-link-alt"></i></span></p>
+<p>参考代码：<span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20va2Fpc2Vyd2lsaGVpbS9PSWNvZGVzL2Jsb2IvbWFzdGVyL0x1b2d1L3AzMDAwLXAzOTk5L3AzMzcyL3AzMzcyLmNwcA==">Luogu P3372<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDMzNzM=">Luogu P3373 【模板】线段树 2<i class="fa fa-external-link-alt"></i></span></p>
+<p>参考代码：<span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20va2Fpc2Vyd2lsaGVpbS9PSWNvZGVzL2Jsb2IvbWFzdGVyL0x1b2d1L3AzMDAwLXAzOTk5L3AzMzczL3AzMzczLmNwcA==">Luogu P3373<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h1><h2 id="标记永久化"><a href="#标记永久化" class="headerlink" title="标记永久化"></a>标记永久化</h2><p>我们可以尝试一个思路：不下传标记。</p>
+<p>我们重新思考一下懒标记的意义。</p>
+<p>懒标记代表的是，这个点的所有子区间都需要被这个标记更新他们的值。</p>
+<p>于是我们就可以将标记放进函数里面，随着函数下传，到时候也可以起到更新值的作用。</p>
+<p>这样的方法适用于不能<code>pushdown</code>的时候。</p>
+<p>具体情况我也没有遇见过，据说是需要配合可持久化权值线段树（aka主席树）使用。</p>
+<p>示例代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">segsum</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r, <span class="type">int</span> tag)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(tr[p].l &gt;= l &amp;&amp; tr[p].r &lt;= r)<span class="keyword">return</span> tr[p].sum + tag * (tr[p].r - tr[p].l + <span class="number">1</span>);</span><br><span class="line">	ll res = <span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(l &lt;= mid)res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span>, l, r, tag + tr[p].tag);</span><br><span class="line">	<span class="keyword">if</span>(r &gt; mid)res += <span class="built_in">segsum</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r, tag + tr[p].tag);</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="线段树上二分"><a href="#线段树上二分" class="headerlink" title="线段树上二分"></a>线段树上二分</h2><p>想不到吧，线段树还能优化二分！</p>
+<p>我们考虑这样一个问题：我们需要找到一个位置 $pos$，使得 $[1,pos]$ 这个区间内数字的和不小于 $val$。保证所有权值非负。</p>
+<p>那么我们可以直接进行二分，这样每做一次的复杂度是 $O(\log^2 n)$ 的。</p>
+<p>我们可以用线段树来优化这样的过程。</p>
+<p>我们带着 $val$ 在线段树上搜索。<br>如果当前节点的左儿子的权值 $\geq val$，就带着 $val$ 继续跳到左儿子搜索；<br>如果当前节点的左儿子的权值 $&lt; val$，就带着 $val-tr[tr[p].ls].val$ 继续跳到右儿子搜索。</p>
+<h2 id="动态开点线段树"><a href="#动态开点线段树" class="headerlink" title="动态开点线段树"></a>动态开点线段树</h2><p>有时候我们需要维护的下标区域非常广（比如说 $10^9$），但是真正有值的地方其实很少。</p>
+<p>我们当然不可能为这个序列直接创建一棵完整的线段树，这样子会耗费我们大量的空间维护许多无用的数据。</p>
+<p>比如说维护一个序列里面有多少个数字大于某个数，但是这个数列的值域是 $10^9$，但是数列长度最多只有 $10^5$。</p>
+<p>我们当然不可能直接创建一个覆盖整个值域的线段树，这样子会需要我们创建 $2^31$ 个节点，即使我们不考虑区间修改，只维护一个区间和的话也需要高达24GiB的空间，十分的浪费。</p>
+<p>于是我们可以动态开点，只建立用到的区间，其他的就不会被声明，大大减少了我们需要用的空间。<br>或者说，我们什么时候需要用到某个节点了，我们就建立它。</p>
+<p>但是这样做的代价就是我们无法再使用简单的 <code>p&lt;&lt;1</code> 和 <code>p&lt;&lt;1|1</code> 来访问当前节点的左右子节点了。<br>我们需要记录下当前节点的左右节点的编号。</p>
+<p>我们以维护一个序列里面有多少个数字大于某个数为例。</p>
+<p>那么我们的结构体就会变成这个样子：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">SegTree</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> l, r;</span><br><span class="line">	<span class="type">int</span> ls, rs;</span><br><span class="line">	<span class="type">int</span> sum;</span><br><span class="line">&#125;tr;</span><br></pre></td></tr></table></figure>
+
+<p>其中 <code>ls</code> 和 <code>rs</code> 分别代表了当前节点的左儿子和右儿子的编号。</p>
+<p>那么我们就不需要<code>build</code>了，只需要一开始将第一个节点初始化为根节点即可。</p>
+<p>然后我们的区间修改函数就是这个样子的。<br>我们可以有两种风格：</p>
+<div class="tabs" id="dongtaikaidianxiugai"><ul class="nav-tabs"><li class="tab active"><a href="#dongtaikaidianxiugai-1">提前开点</a></li><li class="tab"><a href="#dongtaikaidianxiugai-2">用到再开</a></li></ul><div class="tab-content"><div class="tab-pane active" id="dongtaikaidianxiugai-1"><p>我们在访问子节点之前，首先看一下我们将要访问的这个子节点到底是否存在，如果不存在的话就新开一个。</p>
+<p>这样子的话支持把当前区间的左右端点放在结构体里面存着，也支持将区间左右端点当做参数放到函数里面传。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">segadd</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r, <span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(tr[p].l &gt;= l &amp;&amp; tr[p].r &lt;= r)</span><br><span class="line">	&#123;</span><br><span class="line">		tr[p].sum += k * (tr[p].r - tr[p].l + <span class="number">1</span>);</span><br><span class="line">		tr[p].add += k;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(l &lt;= mid)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!tr[p].ls)</span><br><span class="line">		&#123;</span><br><span class="line">			tr[p].ls = ++idx;</span><br><span class="line">			tr[tr[p].ls].l = tr[p].l;</span><br><span class="line">			tr[tr[p].ls].r = mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">segadd</span>(tr[p].ls, l, r, k);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(r &gt; mid)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!tr[p].rs)</span><br><span class="line">		&#123;</span><br><span class="line">			tr[p].rs = ++idx;</span><br><span class="line">			tr[tr[p].rs].l = mid + <span class="number">1</span>;</span><br><span class="line">			tr[tr[p].rs].r = tr[p].r;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">segadd</span>(tr[p].rs, l, r, k);</span><br><span class="line">	&#125;</span><br><span class="line">	tr[p].sum = tr[tr[p].ls].sum + tr[tr[p].rs].sum;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="dongtaikaidianxiugai-2"><p>我们在访问子节点的时候才看一下，我们的这个子节点是否存在。如果不存在的话就创建一个。</p>
+<p>这样的话我们就在函数里面传节点编号的引用，并且同时把当前区间的左右端点放进函数里面当参数传。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">segadd</span><span class="params">(<span class="type">int</span> &amp;p, <span class="type">int</span> l, <span class="type">int</span> r, <span class="type">int</span> al, <span class="type">int</span> ar, <span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(!p)p = ++idx;</span><br><span class="line">	<span class="keyword">if</span>(al &gt;= l &amp;&amp; ar &lt;= r)</span><br><span class="line">	&#123;</span><br><span class="line">		tr[p].sum += k * (ar - al + <span class="number">1</span>);</span><br><span class="line">		tr[p].add += k;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> mid = (al + ar) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(l &lt;= mid)<span class="built_in">segadd</span>(tr[p].ls, l, r, al, mid, k);</span><br><span class="line">	<span class="keyword">if</span>(r &gt; mid)<span class="built_in">segadd</span>(tr[p].rs, l, r, mid + <span class="number">1</span>, ar, k);</span><br><span class="line">	tr[p].sum = tr[tr[p].ls].sum + tr[tr[p].rs].sum;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+
+<p>而查询函数不需要做太大的变动，只需要看一下当前访问的节点是否存在就可以了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">segsum</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(!p)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(tr[p].l &gt;= l &amp;&amp; tr[p].r &lt;= r)<span class="keyword">return</span> tr[p].sum;</span><br><span class="line">	<span class="type">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span>(l &lt;= mid)res += <span class="built_in">segsum</span>(tr[p].ls, l, r);</span><br><span class="line">	<span class="keyword">if</span>(r &gt; mid)res += <span class="built_in">segsum</span>(tr[p].rs, l, r);</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="可持久化权值线段树"><a href="#可持久化权值线段树" class="headerlink" title="可持久化权值线段树"></a>可持久化权值线段树</h2><p>面对眼前的区间第 $k$ 小问题，我们应该怎么办？</p>
+<p>我们的一个思路就是使用主席树。</p>
+<p>主席树，全称为可持久化权值线段树，通过保存每次插入操作时的历史版本，以便查询区间第 $k$ 小。</p>
+<p>怎么保存呢？</p>
+<p>一种暴力的方法就是可以每一次插入的时候都开一棵线段树。<br>但是这样对空间的使用不是很友好。</p>
+<p>那么我们分析一下，每一次修改的时候涉及的都只有一条从根节点到我们想要修改的节点的路径。<br>那么我们每一次只需要新建从根节点一直到我们想要修改的节点的一整条路径就可以了。</p>
+<p>我们每一次就只新建了 $O(\log n)$ 个节点，大大节省了我们需要用的空间。</p>
+<p>这种情况下，我们就不能采用堆式存储法（就是那个把左儿子和右儿子分别设为 $p &lt;&lt; 1$ 和 $p &lt;&lt; 1 | 1$ 的）了，必须使用动态开点。</p>
+<p>对于预计需要的节点个数，我们可以采用这种办法：</p>
+<p>我们每一次操作最多需要新开 $2^{\lceil \log n \rceil +1}$ 个节点，我们只需要根据 $n$ 和 $m$ 的大小来声明就可以了。</p>
+<p>怎么维护区间第 $k$ 小？</p>
+<p>一般情况下，我们可以用对区间建立一棵权值线段树的方法来维护当前区间的区间第 $k$ 小。<br>原理就是，权值线段树维护的是区间内每一个数有多少个。<br>我们只需要用类似线段树上二分的思想在线段树上搜索即可。</p>
+<p>但是我们不能每一次都根据当前区间建立一棵线段树，这样又麻烦又浪费空间。</p>
+<p>所以我们就像利用前缀和减去另一个前缀和得到区间和一样，将给当前区间建立一棵线段树的问题转化成了给分别建立在 $[1,l-1]$ 和 $[1,r]$ 上的两棵线段树做差。<br>而这样的两棵线段树可以通过每一次向线段树维护的区间最后追加一个数字来得到。</p>
+<p>而这也就是主席树维护区间第 $k$ 小的主要思想。</p>
+<h3 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h3><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM4MzQ=">Luogu P3834 【模板】可持久化线段树 2<i class="fa fa-external-link-alt"></i></span></p>
+<p>参考代码：<a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p3000-p3999/p3834/p3834.cpp"><code>Luogu P3834</code></a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM5MTk=">Luogu P3919 【模板】可持久化线段树 1（可持久化数组）<i class="fa fa-external-link-alt"></i></span></p>
+<p>参考代码：<a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p3000-p3999/p3919/p3919.cpp"><code>Luogu P3919</code></a></p>
+<h2 id="区间最大子段和"><a href="#区间最大子段和" class="headerlink" title="区间最大子段和"></a>区间最大子段和</h2><p>区间最大子段和也可以使用线段树来维护。</p>
+<p>我们考虑记录一下每一个区间内的最大前缀和、最大后缀和、最大子段和与区间和。</p>
+<p>区间合并的时候这样合并：</p>
+<ul>
+<li>最大前缀和：左儿子的最大前缀和与（右儿子的最大前缀和与左儿子的区间和之和）取最大值；</li>
+<li>最大后缀和：右儿子的最大后缀和与（左儿子的最大前缀和与右儿子的区间和之和）取最大值；</li>
+<li>最大子段和：左儿子的最大子段和、右儿子的最大子段和与（左儿子的最大后缀和与右儿子的最大前缀和之和）取最大值；</li>
+<li>区间和：直接加。</li>
+</ul>
+<p>写了个重载加号：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">SegTree</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> l, r;</span><br><span class="line">	<span class="type">int</span> lms, rms;</span><br><span class="line">	<span class="type">int</span> ms, sum;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">friend</span> SegTree <span class="keyword">operator</span> + (<span class="type">const</span> SegTree &amp;lhs, <span class="type">const</span> SegTree &amp;rhs)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> </span><br><span class="line">		&#123;</span><br><span class="line">			lhs.l, </span><br><span class="line">			rhs.r,</span><br><span class="line">			<span class="built_in">max</span>(lhs.lms, rhs.lms + lhs.sum),</span><br><span class="line">			<span class="built_in">max</span>(rhs.rms, lhs.rms + rhs.sum),</span><br><span class="line">			<span class="built_in">max</span>(lhs.rms + rhs.lms, <span class="built_in">max</span>(lhs.ms, rhs.ms)),</span><br><span class="line">			lhs.sum + rhs.sum</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;tr[N &lt;&lt; <span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+
+<p>然后查询函数就是这个样子的：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">SegTree <span class="title">query</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(tr[p].l &gt;= l &amp;&amp; tr[p].r &lt;= r)<span class="keyword">return</span> tr[p].ms;</span><br><span class="line">	<span class="type">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(r &lt;= mid)<span class="keyword">return</span> <span class="built_in">query</span>(p &lt;&lt; <span class="number">1</span>, l, r);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(l &gt; mid)<span class="keyword">return</span> <span class="built_in">query</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> <span class="built_in">query</span>(p &lt;&lt; <span class="number">1</span>, l, r) + <span class="built_in">query</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, l, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果用线段树维护区间最大子段和的话还可以支持单点修改。</p>
+<p>思路跟正常的单点修改一样。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">modify</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> pos, <span class="type">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(tr[p].l == tr[p].r)</span><br><span class="line">	&#123;</span><br><span class="line">		tr[p] = &#123; tr[p].l,tr[p].r,<span class="built_in">max</span>(k,<span class="number">0</span>),<span class="built_in">max</span>(k,<span class="number">0</span>),<span class="built_in">max</span>(k,<span class="number">0</span>),k &#125;;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> mid = (tr[p].l + tr[p].r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(pos &lt;= mid)<span class="built_in">modify</span>(p &lt;&lt; <span class="number">1</span>, pos, k);</span><br><span class="line">	<span class="keyword">if</span>(pos &gt; mid)<span class="built_in">modify</span>(p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, pos, k);</span><br><span class="line">	tr[p] = tr[p &lt;&lt; <span class="number">1</span>] + tr[p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<details class="note info"><summary><p>[SNOI2020] 区间和</p>
+</summary>
+<p>暴力修改，不是正解。<br>能过官方数据，但是不能过Hack数据。</p>
+<p>提交记录：</p>
+<p>洛谷：<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDY3OTI=">题面<i class="fa fa-external-link-alt"></i></span>；<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3JlY29yZC83NDA2MDYwOA==">记录<i class="fa fa-external-link-alt"></i></span>。<br>LibreOJ：<span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcC8zMzI1">题面<i class="fa fa-external-link-alt"></i></span>；<span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcy8xNDcwODU2">记录<i class="fa fa-external-link-alt"></i></span>。</p>
+
+</details>
+
+<h2 id="线段树优化建图"><a href="#线段树优化建图" class="headerlink" title="线段树优化建图"></a>线段树优化建图</h2><p>线段树优化建图，又称线段树优化连边，是一种处理区间连边的方法。</p>
+<p>有时候题目会让我们从一个点 $w$ 向一段区间 $[l,r]$ 内的所有点连上一条边权相等的边。</p>
+<p>连边数量少的时候我们尚且还可以通过枚举来暴力建边，而当连边数量多起来的时候时间复杂度就不符合我们的要求了。</p>
+<p>我们可以利用线段树来辅助我们建图。</p>
+<p>线段树上的每一个节点都是一个虚拟的节点，其分别向其左儿子和右儿子连接一条没有影响的边。<br>这里的“没有影响”不仅指边权为0，还可以指流量为 $+\infty$、费用为0等等。</p>
+<p>网络流相关的题目中利用这种方式优化建图的很多。</p>
+<p>建图的时候，我们首先建立线段树，建立 $2^{\lfloor \log{n} \rfloor +1}$ 个节点和 $2^{\lfloor \log{n} \rfloor +2}$ 条双向边。</p>
+<p>然后就是处理区间连边问题。<br>我们就像正常的线段树区间加一样，函数递归时，如果遇到了被完全包含在询问区间内的第一个区间，就从我们指定的点向代表该区间的点连一条边并返回即可。</p>
+<h3 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h3><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDgwMjE=">洛谷 P8021<i class="fa fa-external-link-alt"></i></span> [ONTAK2015] Bajtman i Okrągły Robin</p>
+<p>如果我们使用暴力建图的话，可以想到的是把每一个 Robin 向他能抢劫的时间点连一条容量为1、费用为 $c_i$ 的边。同时，源点向每一个 Robin 连一条容量为1费用为0的边，每一个时间点向汇点连一条容量为1费用为0的边，然后跑最大费用最大流就可以了。</p>
+<p>我们如果使用线段树建图的话，就仿照上面的方法，到线段树上连边就可以了。因为我们是在这一段区间内选一个时间点抢劫，所以我们连边的时候仍然保持上面的方式，容量为1、费用为 $c_i$。</p>
+<p>题解：<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL2Jsb2cvS2Fpc2VyLVdpbGhlaW0vc29sdXRpb24tcDgwMjE=">洛谷题解<i class="fa fa-external-link-alt"></i></span></p>
+<p>参考代码：<span class="exturl" data-url="aHR0cHM6Ly9naXRlZS5jb20va2Fpc2Vyd2lsaGVpbS9PSWNvZGVzL2Jsb2IvbWFzdGVyL0x1b2d1L3A2MDAwKy9wODAyMS9wODAyMS5jcHA=">Luogu P8021<i class="fa fa-external-link-alt"></i></span></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>南陽劉子驥 aka KaiserWilheim
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/OI/segment-tree/" title="线段树">http://example.com/OI/segment-tree/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/solutions/solution-p3586/" rel="prev" title="P3586 [POI2015] Logistyka 题解">
+                  <i class="fa fa-chevron-left"></i> P3586 [POI2015] Logistyka 题解
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/solutions/solution-sy549/" rel="next" title="#549. 农夫奶牛的约翰们 题解">
+                  #549. 农夫奶牛的约翰们 题解 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">南陽劉子驥 aka KaiserWilheim</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">221k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">3:21</span>
+  </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"ab4f266b80261b22bc282858782223bc"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
