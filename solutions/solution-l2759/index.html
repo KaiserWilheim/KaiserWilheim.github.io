@@ -22,15 +22,13 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="LibreOJ #2759 JOI 2014 Final T4">
-<meta property="og:type" content="article">
+    <meta property="og:type" content="article">
 <meta property="og:title" content="L2759 蜜袋鼯（フクロモモンガ） 题解">
 <meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-l2759/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="LibreOJ #2759 JOI 2014 Final T4">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-20T07:55:24.546Z">
+<meta property="article:modified_time" content="2022-06-17T13:49:06.343Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="最短路">
@@ -135,7 +133,7 @@
     <span class="toggle-line"></span>
   </div>
 
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
 
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
@@ -200,25 +198,6 @@
   </div>
 
 
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      Friends
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmJhb3NodW8ucmVuLw==" title="https:&#x2F;&#x2F;blog.baoshuo.ren&#x2F;">宝硕博客</span>
-        </li>
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly9jbG91ZHlza3lldC5naXRodWIuaW8v" title="https:&#x2F;&#x2F;cloudyskyet.github.io&#x2F;">Blog of Cloudysky</span>
-        </li>
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly95b3V3aWtlLmdpdGh1Yi5pby8=" title="https:&#x2F;&#x2F;youwike.github.io&#x2F;">Blog of Youwike</span>
-        </li>
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly9zanplenN5eHguZ2l0aHViLmlvLw==" title="https:&#x2F;&#x2F;sjzezsyxx.github.io&#x2F;">二南信竞团队</span>
-        </li>
-    </ul>
-  </div>
 
         </div>
       </div>
@@ -229,6 +208,45 @@
     </div>
   </aside>
   <div class="sidebar-dimmer"></div>
+
+  <aside class="problem-card animated fadeInUp" style="top: 500px" id="problem-card">
+    
+    <div class="problem-card-inner" style="visibility: hidden" id="problem-card-inner">
+      <table class="problem-card-table">
+        <caption>题目信息卡</caption>
+        <tbody>
+          <tr>
+            <td>题目名称</td>
+            <td id="problem-name">野兽先辈</td>
+          </tr>
+          <tr>
+            <td>题目来源</td>
+            <td id="problem-from">yajuusenpai</td>
+          </tr>
+          <tr>
+            <td>题目难度</td>
+            <td>
+              <b style="color:#114514" id="problem-difficulty">114514</b>
+            </td>
+          </tr>
+          <tr>
+            <td>提交地址</td>
+            <td id="problem-submit">1919810</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </aside>
+
+  <script>
+  setInterval("getHeight()", 20)
+  function getHeight(){
+    var res = "";
+    res += (document.getElementById("sidebar").offsetHeight + 36) + "px";
+    document.getElementById("problem-card").style.top = res;
+  }
+  </script>
+
 
 
     </header>
@@ -290,7 +308,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-04-20 15:55:24" itemprop="dateModified" datetime="2022-04-20T15:55:24+08:00">2022-04-20</time>
+      <time title="修改时间：2022-06-17 21:49:06" itemprop="dateModified" datetime="2022-06-17T21:49:06+08:00">2022-06-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -327,9 +345,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>LibreOJ #2759</p>
-<p>JOI 2014 Final T4</p>
+        <br>
 <span id="more"></span>
+<div id="problem-card-vis">true</div>
+<div id="problem-info-name"><ruby>蜜袋鼯<rt>フクロモモンガ</rt></ruby></div>
+<div id="problem-info-from">JOI 2014 Final T4</div>
+<div id="problem-info-difficulty">none</div>
+<div id="problem-info-color">#0e1d69</div>
+<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcC8yNzU5">LibreOJ L2759<i class="fa fa-external-link-alt"></i></span></li></ul></div>
+
 <hr>
 <h1 id="题面"><a href="#题面" class="headerlink" title="题面"></a>题面</h1><details class="note info"><summary><p>题面原文</p>
 </summary>
@@ -366,7 +390,7 @@
 </summary>
 <p>对于前半句，我们这样分析：</p>
 <p>我们假设可以突破高度只能大于等于0的限制。</p>
-<p>那我们就可以持续进行飞行操作，知道到达终点再向上爬到树顶。</p>
+<p>那我们就可以持续进行飞行操作，直到到达终点再向上爬到树顶。</p>
 <p>也就是说，我们将我们的操作从一系列的“飞跃-爬升”操作变成了一串连续的飞跃操作和一个爬升操作。</p>
 <p>显然，只要我们选择的路径一定，我们最后爬升的路程一定是一定的。<br>我们不妨设其为 $h$ 。</p>
 <p>如果我们在这种情况下，选择在中间进行一次爬升操作，假设我们爬升的高度为 $h’$ 。<br>那么，我们到达最后的高度就是$H_N - h + h’$。</p>
@@ -472,11 +496,66 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:22</span>
+    <span title="站点阅读时长">3:23</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
   </div>
+
+<script>
+var elem = document.getElementById("problem-card-vis");
+var tar = document.getElementById("problem-card-inner");
+var txt = elem.innerHTML;
+if(txt === "false"){
+    elem.innerHTML = "";
+    throw new Error("Problem card is hidden");
+}
+tar.style.visibility = "visible";
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-name");
+tar = document.getElementById("problem-name");
+txt = elem.innerHTML;
+tar.innerHTML = txt;
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-from");
+tar = document.getElementById("problem-from");
+txt = elem.innerHTML;
+if(txt === "none"){
+    var fa = tar.parentNode;
+    fa.innerHTML="";
+    elem.innerHTML = "";
+}else{
+    tar.innerHTML = txt;
+    elem.innerHTML = "";
+}
+
+elem = document.getElementById("problem-info-submit");
+tar = document.getElementById("problem-submit");
+txt = elem.innerHTML;
+tar.innerHTML = txt;
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-difficulty");
+tar = document.getElementById("problem-difficulty");
+txt = elem.innerHTML;
+if(txt === "none"){
+    var fa = tar.parentNode;
+    fa = fa.parentNode;
+    fa.innerHTML="";
+    elem.innerHTML = "";
+    throw new Error("Problem difficulty cannot find");
+}else{
+    tar.innerHTML = txt;
+    elem.innerHTML = "";
+}
+
+elem = document.getElementById("problem-info-color");
+txt = elem.innerHTML;
+tar.style.color = txt;
+elem.innerHTML = "";
+</script>
 
     </div>
   </footer>

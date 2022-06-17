@@ -22,17 +22,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Luogu P2906 USACO08OPEN">
-<meta property="og:type" content="article">
+    <meta property="og:type" content="article">
 <meta property="og:title" content="P2906 [USACO08OPEN] Cow Neighborhoods G 题解">
 <meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-p2906/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="Luogu P2906 USACO08OPEN">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/06/07/VQ4sIFJ5MnOmfdW.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/06/07/pM4XwIRPrUaeiSW.jpg">
 <meta property="article:published_time" content="2022-06-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-08T04:29:14.965Z">
+<meta property="article:modified_time" content="2022-06-17T13:49:32.182Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="并查集">
@@ -139,7 +137,7 @@
     <span class="toggle-line"></span>
   </div>
 
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
 
     <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
@@ -203,25 +201,6 @@
   </div>
 
 
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      Friends
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmJhb3NodW8ucmVuLw==" title="https:&#x2F;&#x2F;blog.baoshuo.ren&#x2F;">宝硕博客</span>
-        </li>
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly9jbG91ZHlza3lldC5naXRodWIuaW8v" title="https:&#x2F;&#x2F;cloudyskyet.github.io&#x2F;">Blog of Cloudysky</span>
-        </li>
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly95b3V3aWtlLmdpdGh1Yi5pby8=" title="https:&#x2F;&#x2F;youwike.github.io&#x2F;">Blog of Youwike</span>
-        </li>
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly9zanplenN5eHguZ2l0aHViLmlvLw==" title="https:&#x2F;&#x2F;sjzezsyxx.github.io&#x2F;">二南信竞团队</span>
-        </li>
-    </ul>
-  </div>
 
         </div>
       </div>
@@ -232,6 +211,45 @@
     </div>
   </aside>
   <div class="sidebar-dimmer"></div>
+
+  <aside class="problem-card animated fadeInUp" style="top: 500px" id="problem-card">
+    
+    <div class="problem-card-inner" style="visibility: hidden" id="problem-card-inner">
+      <table class="problem-card-table">
+        <caption>题目信息卡</caption>
+        <tbody>
+          <tr>
+            <td>题目名称</td>
+            <td id="problem-name">野兽先辈</td>
+          </tr>
+          <tr>
+            <td>题目来源</td>
+            <td id="problem-from">yajuusenpai</td>
+          </tr>
+          <tr>
+            <td>题目难度</td>
+            <td>
+              <b style="color:#114514" id="problem-difficulty">114514</b>
+            </td>
+          </tr>
+          <tr>
+            <td>提交地址</td>
+            <td id="problem-submit">1919810</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </aside>
+
+  <script>
+  setInterval("getHeight()", 20)
+  function getHeight(){
+    var res = "";
+    res += (document.getElementById("sidebar").offsetHeight + 36) + "px";
+    document.getElementById("problem-card").style.top = res;
+  }
+  </script>
+
 
 
     </header>
@@ -293,7 +311,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-08 12:29:14" itemprop="dateModified" datetime="2022-06-08T12:29:14+08:00">2022-06-08</time>
+      <time title="修改时间：2022-06-17 21:49:32" itemprop="dateModified" datetime="2022-06-17T21:49:32+08:00">2022-06-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -330,9 +348,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>Luogu P2906</p>
-<p>USACO08OPEN</p>
+        <br>
 <span id="more"></span>
+<div id="problem-card-vis">true</div>
+<div id="problem-info-name">Cow Neighborhoods G</div>
+<div id="problem-info-from">USACO08OPEN</div>
+<div id="problem-info-difficulty">省选/NOI-</div>
+<div id="problem-info-color">#9d3dcf</div>
+<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDI5MDY=">Luogu P2906<i class="fa fa-external-link-alt"></i></span></li></ul></div>
+
 <hr>
 <p>看到这一题的时候我感觉非常熟悉。<br>这不就是<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDQwNDc=">[JSOI2010]部落划分<i class="fa fa-external-link-alt"></i></span>吗！<br>只不过这道题给定了奶牛之间的距离，并且是让求连通块的个数以及最大连通块的大小。</p>
 <p>（可能只有我一个人觉得很类似罢）</p>
@@ -407,7 +431,7 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/virtual-tree/" rel="prev" title="虚树">
+                <a href="/OI/virtual-tree/" rel="prev" title="虚树">
                   <i class="fa fa-chevron-left"></i> 虚树
                 </a>
             </div>
@@ -455,11 +479,66 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:22</span>
+    <span title="站点阅读时长">3:23</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
   </div>
+
+<script>
+var elem = document.getElementById("problem-card-vis");
+var tar = document.getElementById("problem-card-inner");
+var txt = elem.innerHTML;
+if(txt === "false"){
+    elem.innerHTML = "";
+    throw new Error("Problem card is hidden");
+}
+tar.style.visibility = "visible";
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-name");
+tar = document.getElementById("problem-name");
+txt = elem.innerHTML;
+tar.innerHTML = txt;
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-from");
+tar = document.getElementById("problem-from");
+txt = elem.innerHTML;
+if(txt === "none"){
+    var fa = tar.parentNode;
+    fa.innerHTML="";
+    elem.innerHTML = "";
+}else{
+    tar.innerHTML = txt;
+    elem.innerHTML = "";
+}
+
+elem = document.getElementById("problem-info-submit");
+tar = document.getElementById("problem-submit");
+txt = elem.innerHTML;
+tar.innerHTML = txt;
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-difficulty");
+tar = document.getElementById("problem-difficulty");
+txt = elem.innerHTML;
+if(txt === "none"){
+    var fa = tar.parentNode;
+    fa = fa.parentNode;
+    fa.innerHTML="";
+    elem.innerHTML = "";
+    throw new Error("Problem difficulty cannot find");
+}else{
+    tar.innerHTML = txt;
+    elem.innerHTML = "";
+}
+
+elem = document.getElementById("problem-info-color");
+txt = elem.innerHTML;
+tar.style.color = txt;
+elem.innerHTML = "";
+</script>
 
     </div>
   </footer>

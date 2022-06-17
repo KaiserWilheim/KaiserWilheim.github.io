@@ -30,7 +30,7 @@
 <meta property="og:description" content="一种使用亚兰字母来拼写英语的方案。（测试博客显示情况用）𗼇𗟲">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-08T13:07:56.081Z">
+<meta property="article:modified_time" content="2022-06-17T13:43:01.319Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -134,7 +134,7 @@
     <span class="toggle-line"></span>
   </div>
 
-  <aside class="sidebar">
+  <aside class="sidebar" id="sidebar">
 
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
@@ -199,25 +199,6 @@
   </div>
 
 
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      Friends
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmJhb3NodW8ucmVuLw==" title="https:&#x2F;&#x2F;blog.baoshuo.ren&#x2F;">宝硕博客</span>
-        </li>
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly9jbG91ZHlza3lldC5naXRodWIuaW8v" title="https:&#x2F;&#x2F;cloudyskyet.github.io&#x2F;">Blog of Cloudysky</span>
-        </li>
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly95b3V3aWtlLmdpdGh1Yi5pby8=" title="https:&#x2F;&#x2F;youwike.github.io&#x2F;">Blog of Youwike</span>
-        </li>
-        <li class="links-of-blogroll-item">
-          <span class="exturl" data-url="aHR0cHM6Ly9zanplenN5eHguZ2l0aHViLmlvLw==" title="https:&#x2F;&#x2F;sjzezsyxx.github.io&#x2F;">二南信竞团队</span>
-        </li>
-    </ul>
-  </div>
 
         </div>
       </div>
@@ -228,6 +209,45 @@
     </div>
   </aside>
   <div class="sidebar-dimmer"></div>
+
+  <aside class="problem-card animated fadeInUp" style="top: 500px" id="problem-card">
+    
+    <div class="problem-card-inner" style="visibility: hidden" id="problem-card-inner">
+      <table class="problem-card-table">
+        <caption>题目信息卡</caption>
+        <tbody>
+          <tr>
+            <td>题目名称</td>
+            <td id="problem-name">野兽先辈</td>
+          </tr>
+          <tr>
+            <td>题目来源</td>
+            <td id="problem-from">yajuusenpai</td>
+          </tr>
+          <tr>
+            <td>题目难度</td>
+            <td>
+              <b style="color:#114514" id="problem-difficulty">114514</b>
+            </td>
+          </tr>
+          <tr>
+            <td>提交地址</td>
+            <td id="problem-submit">1919810</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </aside>
+
+  <script>
+  setInterval("getHeight()", 20)
+  function getHeight(){
+    var res = "";
+    res += (document.getElementById("sidebar").offsetHeight + 36) + "px";
+    document.getElementById("problem-card").style.top = res;
+  }
+  </script>
+
 
 
     </header>
@@ -289,7 +309,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-08 21:07:56" itemprop="dateModified" datetime="2022-05-08T21:07:56+08:00">2022-05-08</time>
+      <time title="修改时间：2022-06-17 21:43:01" itemprop="dateModified" datetime="2022-06-17T21:43:01+08:00">2022-06-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -328,6 +348,8 @@
     <div class="post-body" itemprop="articleBody">
         <p>一种使用亚兰字母来拼写英语的方案。<br>（测试博客显示情况用）<br>𗼇𗟲</p>
 <span id="more"></span>
+
+<div id="problem-card-vis">false</div>
 
 <p>首先展示 Note 框，以便使用：</p>
 <details class="note "><summary><p>Without Class</p>
@@ -518,11 +540,66 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:22</span>
+    <span title="站点阅读时长">3:23</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
   </div>
+
+<script>
+var elem = document.getElementById("problem-card-vis");
+var tar = document.getElementById("problem-card-inner");
+var txt = elem.innerHTML;
+if(txt === "false"){
+    elem.innerHTML = "";
+    throw new Error("Problem card is hidden");
+}
+tar.style.visibility = "visible";
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-name");
+tar = document.getElementById("problem-name");
+txt = elem.innerHTML;
+tar.innerHTML = txt;
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-from");
+tar = document.getElementById("problem-from");
+txt = elem.innerHTML;
+if(txt === "none"){
+    var fa = tar.parentNode;
+    fa.innerHTML="";
+    elem.innerHTML = "";
+}else{
+    tar.innerHTML = txt;
+    elem.innerHTML = "";
+}
+
+elem = document.getElementById("problem-info-submit");
+tar = document.getElementById("problem-submit");
+txt = elem.innerHTML;
+tar.innerHTML = txt;
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-difficulty");
+tar = document.getElementById("problem-difficulty");
+txt = elem.innerHTML;
+if(txt === "none"){
+    var fa = tar.parentNode;
+    fa = fa.parentNode;
+    fa.innerHTML="";
+    elem.innerHTML = "";
+    throw new Error("Problem difficulty cannot find");
+}else{
+    tar.innerHTML = txt;
+    elem.innerHTML = "";
+}
+
+elem = document.getElementById("problem-info-color");
+txt = elem.innerHTML;
+tar.style.color = txt;
+elem.innerHTML = "";
+</script>
 
     </div>
   </footer>

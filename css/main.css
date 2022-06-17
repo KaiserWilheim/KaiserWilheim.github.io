@@ -1246,6 +1246,38 @@ pre code {
 .cc-license img {
   display: inline-block;
 }
+.problem-card {
+  margin-top: 16px;
+  position: sticky;
+  top: 500px;
+  width: 240px;
+}
+.problem-card-inner {
+  color: #000;
+  visibility: visible;
+  background: #fff;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
+}
+.problem-card-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.problem-card-table caption {
+  font-size: 1.4em;
+  color: #000;
+}
+.problem-card-table tr>:first-child {
+  font-size: 1em;
+  color: #999;
+}
+.problem-card-table tr td ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .site-author-image {
   border: 1px solid #eee;
   max-width: 120px;
