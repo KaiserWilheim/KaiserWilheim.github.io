@@ -23,26 +23,36 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="article">
-<meta property="og:title" content="P4551 最长异或路径 题解">
-<meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-p4551/index.html">
+<meta property="og:title" content="P2860 [USACO06JAN] Redundant Paths 题解">
+<meta property="og:url" content="https://kaiserwilheim.github.io/solution-p2860/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-17T13:49:43.655Z">
+<meta property="og:image" content="https://s2.loli.net/2022/06/21/8zeqAH9PdpEoUvC.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/21/QtFkemasBWDjPMO.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/21/8mlIyAtafpFT5dr.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/21/NPgAT2fhJlLb41H.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/21/DJs9KV6TMCf41wG.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/21/NXe28OcVAY4JDqU.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/21/bsOS24dDWPXuGBa.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/21/pEJU3FSLcOCKkuG.png">
+<meta property="article:published_time" content="2022-06-19T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-21T09:15:39.559Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="图论">
 <meta property="article:tag" content="题解">
-<meta property="article:tag" content="字典树">
+<meta property="article:tag" content="图的连通性">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.loli.net/2022/06/21/8zeqAH9PdpEoUvC.png">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/solutions/solution-p4551/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/solution-p2860/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solutions/solution-p4551/","path":"solutions/solution-p4551/","title":"P4551 最长异或路径 题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solution-p2860/","path":"solution-p2860/","title":"P2860 [USACO06JAN] Redundant Paths 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>P4551 最长异或路径 题解 | 南陽劉子驥的博客</title>
+<title>P2860 [USACO06JAN] Redundant Paths 题解 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -91,7 +101,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">10</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">48</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">47</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -162,18 +172,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">47</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -238,7 +248,7 @@
   </aside>
 
   <script>
-  setInterval("getHeight()", 20)
+  setInterval("getHeight()", 25)
   function getHeight(){
     var res = "";
     res += (document.getElementById("sidebar").offsetHeight + 36) + "px";
@@ -271,7 +281,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solutions/solution-p4551/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solution-p2860/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
@@ -284,12 +294,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="P4551 最长异或路径 题解 | 南陽劉子驥的博客">
+      <meta itemprop="name" content="P2860 [USACO06JAN] Redundant Paths 题解 | 南陽劉子驥的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          P4551 最长异或路径 题解
+          P2860 [USACO06JAN] Redundant Paths 题解
         </h1>
 
         <div class="post-meta-container">
@@ -300,14 +310,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-04-24 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-24T00:00:00+08:00">2022-04-24</time>
+      <time title="创建时间：2022-06-20 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-20T00:00:00+08:00">2022-06-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-17 21:49:43" itemprop="dateModified" datetime="2022-06-17T21:49:43+08:00">2022-06-17</time>
+      <time title="修改时间：2022-06-21 17:15:39" itemprop="dateModified" datetime="2022-06-21T17:15:39+08:00">2022-06-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -326,7 +336,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.9k</span>
+      <span>2.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -346,23 +356,56 @@
     <div class="post-body" itemprop="articleBody">
         <br>
 <span id="more"></span>
+
 <div id="problem-card-vis">true</div>
-<div id="problem-info-name">最长异或路径</div>
-<div id="problem-info-from">none</div>
-<div id="problem-info-difficulty">省选/NOI-</div>
-<div id="problem-info-color">#9d3dcf</div>
-<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDQ1NTE=">Luogu P4551<i class="fa fa-external-link-alt"></i></span></li></ul></div>
+<div id="problem-info-name">Redundant Paths</div>
+<div id="problem-info-from">USACO 2006 January Gold</div>
+<div id="problem-info-difficulty">提高+ /省选-</div>
+<div id="problem-info-color">#3498db</div>
+<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDI4NjA=">Luogu P2860<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYWN3aW5nLmNvbS9wcm9ibGVtL2NvbnRlbnQvMzk3Lw==">AcWing 395<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9kYXJrYnpvai5jYy9wcm9ibGVtLzE3MTg=">BZOJ #1718<i class="fa fa-external-link-alt"></i></span></li></ul></div>
 
 <hr>
-<p>做这道题需要一个有关异或的性质，就是：</p>
-<p>假设我们有两个数 $x$ 和 $y$，不论 $x$ 和 $y$ 是多少，我们都有 $x \oplus y \oplus y &#x3D; x$，即一个数异或另一个数两次仍为自身。</p>
-<p>那我们需要找的最长异或路径，可以转化为两个点到根的路径的异或值的最大值。</p>
-<p>因为对于两个点 $x$ 和 $y$，我们需要求的就是 $\operatorname{dis}(x,\operatorname{lca}(x,y)) \oplus \operatorname{dis}(y,\operatorname{lca}(x,y))$。我们可以将 $\operatorname{dis}(1,x) \oplus \operatorname{dis}(1,y)$ 分解为 $\operatorname{dis}(1,\operatorname{lca}(x,y)) \oplus \operatorname{dis}(\operatorname{lca}(x,y),x) \oplus \operatorname{dis}(1,\operatorname{lca}(x,y)) \oplus \operatorname{dis}(1,\operatorname{lca}(x,y))$，然后利用性质转化为 $\operatorname{dis}(x,\operatorname{lca}(x,y)) \oplus \operatorname{dis}(y,\operatorname{lca}(x,y))$。</p>
-<p>而所有的 $\operatorname{dis}(1,x)$ 只需要使用一次DFS即可求出。</p>
-<p>然后就是找异或最大值。</p>
-<p>我们将所有的 $\operatorname{dis}(1,x)$ 放进一棵Trie树里面，然后就可以寻找异或最大值了。</p>
-<p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">100010</span>, M = N &lt;&lt; <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">TrieTree</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> s[<span class="number">2</span>];</span><br><span class="line">    <span class="type">int</span> occ;</span><br><span class="line">&#125;tr[N * <span class="number">32</span>];</span><br><span class="line"><span class="type">int</span> tot = <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> w[M], h[N], e[M], ne[M], idx;</span><br><span class="line"><span class="type">int</span> dis[N];</span><br><span class="line"><span class="type">int</span> ans;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[idx] = b;</span><br><span class="line">    w[idx] = v;</span><br><span class="line">    ne[idx] = h[a];</span><br><span class="line">    h[a] = idx++;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">30</span>, p = <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> c = ((x &gt;&gt; i) &amp; <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(!tr[p].s[c])tr[p].s[c] = ++tot;</span><br><span class="line">        p = tr[p].s[c];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">get</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">30</span>, p = <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> c = ((x &gt;&gt; i) &amp; <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span>(tr[p].s[c ^ <span class="number">1</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            p = tr[p].s[c ^ <span class="number">1</span>];</span><br><span class="line">            res |= (<span class="number">1</span> &lt;&lt; i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            p = tr[p].s[c];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans = <span class="built_in">max</span>(ans, res);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> fa)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">insert</span>(dis[p]);</span><br><span class="line">    <span class="built_in">get</span>(dis[p]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> v = e[i];</span><br><span class="line">        <span class="keyword">if</span>(v == fa)<span class="keyword">continue</span>;</span><br><span class="line">        dis[v] = dis[p] ^ w[i];</span><br><span class="line">        <span class="built_in">dfs</span>(v, p);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="built_in">sizeof</span>(h));</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> a, b, v;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>, &amp;a, &amp;b, &amp;v);</span><br><span class="line">        <span class="built_in">add</span>(a, b, v);</span><br><span class="line">        <span class="built_in">add</span>(b, a, v);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>题目要求我们给一个无向联通图上加几条边，使得整个图变成一个双联通分量。</p>
+<p>我们可以想到的一个思路就是，首先跑一遍 Tarjan 算法，将所有的双连通分量缩成点，这样就可以将整张图缩成一棵树。</p>
+<p>这样的话，我们可以瞎搞出来一个结论，如下：</p>
+<p>我们统计出来所有的叶子结点，记其数目为 $cnt$，我们最终要加的边数最少就是 $\lceil \dfrac{cnt}{2} \rceil$。</p>
+<p>首先我们可以随便连接两个叶子结点，将其变为一个基环树。</p>
+<p>我们可以证明，一定有一种连接方法，使得得到的基环树是有偶数条支链的。</p>
+<p>如果我们得到的基环树有奇数条支链的话，我们可以进行一些转化：</p>
+<p>假设当前有这样一个基环树：<br><del>（不如叫他<ruby>1-乙基-3-(1-甲基)乙基环己烷<rt>1-ethyl-3-(1-methyl)ethylcyclohexane</rt></ruby>）</del></p>
+<img src="https://s2.loli.net/2022/06/21/8zeqAH9PdpEoUvC.png" alt="p2860-8.png" width="60%" />
+
+<p>我们可以找到一条边，连接两个端点，而其中一个端点有支链。不妨设这个有支链的点为 $y$，另一个点为 $x$。</p>
+<p>我们断开连接 $x$ 与 $y$ 的边，然后找到 $y$ 的一条支链最底端的叶子结点 $z$，最后连接 $x$ 与 $z$，减少了一条支链。</p>
+<img src="https://s2.loli.net/2022/06/21/QtFkemasBWDjPMO.png" alt="p2860-1.png" width="60%" />
+
+<p><del>（不如叫他<ruby>1,4-二乙基环辛烷<rt>1,4-diethylcyclohexane</rt></ruby>）</del></p>
+<p>这样就可以变成只有偶数条支链了。</p>
+<p>对于每一条支链的叶子结点，我们找到一个另外的叶子结点，使得他们的LCA在环上。这样就满足了我们“双联通分量”的要求。不懂的可以自己手画一下。</p>
+<p>但是有些时候随机连接的方案不一定能让所有的LCA都在环上，比如这个：</p>
+<img src="https://s2.loli.net/2022/06/21/8mlIyAtafpFT5dr.png" alt="p2860-2.png" width="60%" />
+
+<p>这样连接就不可以：</p>
+<img src="https://s2.loli.net/2022/06/21/NPgAT2fhJlLb41H.png" alt="p2860-3.png" width="60%" />
+
+<p>这样连接就可以：</p>
+<img src="https://s2.loli.net/2022/06/21/DJs9KV6TMCf41wG.png" alt="p2860-4.png" width="60%" />
+
+<p>但是很不幸，上面的那种情况就是出现了。<br>现在我们考虑由其转移到一个可行的方案上面。</p>
+<p>因为我们总共有偶数个叶子结点，所以我们最终还是会剩偶数个叶子结点没有配对。</p>
+<p>我们可以通过不断对部分节点重新配对来缩小问题规模，直至解决问题。</p>
+<p>我们先把不对劲的边断开：</p>
+<img src="https://s2.loli.net/2022/06/21/NXe28OcVAY4JDqU.png" alt="p2860-5.png" width="60%" />
+
+<p>然后找到已经配好对了的两个子节点，这里选取8和13；<br>断掉其间的边，然后分别找一个子树上的任意一个点连边；</p>
+<img src="https://s2.loli.net/2022/06/21/bsOS24dDWPXuGBa.png" alt="p2860-6.png" width="60%" />
+
+<p>然后我们的问题规模就缩小了2，剩下的点如法炮制即可。<br>如果最终只剩两个点，而且不在同一支链上的话就直接连边即可。</p>
+<img src="https://s2.loli.net/2022/06/21/pEJU3FSLcOCKkuG.png" alt="p2860-7.png" width="60%" />
+
+<p>最终我们可以得出，我们最少需要连接的边数是 $\lceil \dfrac{cnt}{2} \rceil$ 条。</p>
+<p>然后就可以上代码了：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10010</span>, M = <span class="number">200010</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> h[N], e[M], ne[M], idx;</span><br><span class="line"><span class="type">int</span> isBridge[M];</span><br><span class="line"><span class="type">int</span> dfn[N], low[N], cnt;</span><br><span class="line"><span class="type">int</span> sta[N], tt;</span><br><span class="line"><span class="type">int</span> scc[N], sc, sz[N];</span><br><span class="line"><span class="type">int</span> deg[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[idx] = b, ne[idx] = h[a], h[a] = idx++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">tarjan</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> from)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    low[p] = dfn[p] = ++cnt;</span><br><span class="line">    sta[++tt] = p;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> j = e[i];</span><br><span class="line">        <span class="keyword">if</span>(!dfn[j])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">tarjan</span>(j, i);</span><br><span class="line">            low[p] = <span class="built_in">min</span>(low[p], low[j]);</span><br><span class="line">            <span class="keyword">if</span>(dfn[p] &lt; low[j])</span><br><span class="line">                isBridge[i] = isBridge[i ^ <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(i != (from ^ <span class="number">1</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            low[p] = <span class="built_in">min</span>(low[p], dfn[j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dfn[p] == low[p])</span><br><span class="line">    &#123;</span><br><span class="line">        ++sc;</span><br><span class="line">        <span class="keyword">while</span>(sta[tt] != p)</span><br><span class="line">        &#123;</span><br><span class="line">            scc[sta[tt]] = sc;</span><br><span class="line">            sz[sc]++;</span><br><span class="line">            tt--;</span><br><span class="line">        &#125;</span><br><span class="line">        scc[sta[tt]] = sc;</span><br><span class="line">        sz[sc]++;</span><br><span class="line">        tt--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="built_in">sizeof</span>(h));</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> a, b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">        <span class="built_in">add</span>(a, b), <span class="built_in">add</span>(b, a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">tarjan</span>(<span class="number">1</span>, <span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; idx; i++)</span><br><span class="line">        <span class="keyword">if</span>(isBridge[i])</span><br><span class="line">            deg[scc[e[i]]]++;</span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= sc; i++)</span><br><span class="line">        <span class="keyword">if</span>(deg[i] == <span class="number">1</span>)cnt++;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, (cnt + <span class="number">1</span>) / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -380,7 +423,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://kaiserwilheim.github.io/solutions/solution-p4551/" title="P4551 最长异或路径 题解">https://kaiserwilheim.github.io/solutions/solution-p4551/</a>
+      <a href="https://kaiserwilheim.github.io/solution-p2860/" title="P2860 [USACO06JAN] Redundant Paths 题解">https://kaiserwilheim.github.io/solution-p2860/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC96aC1DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</span> 许可协议。转载请注明出处！
@@ -389,21 +432,22 @@
 </div>
 
           <div class="post-tags">
+              <a href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag"># 图论</a>
               <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
-              <a href="/tags/%E5%AD%97%E5%85%B8%E6%A0%91/" rel="tag"># 字典树</a>
+              <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7/" rel="tag"># 图的连通性</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/solutions/solution-p4643/" rel="prev" title="P4643 [国家集训队] 阿狸和桃子的游戏 题解">
-                  <i class="fa fa-chevron-left"></i> P4643 [国家集训队] 阿狸和桃子的游戏 题解
+                <a href="/OI/fast-popcnt-sum/" rel="prev" title="快速求popcount和">
+                  <i class="fa fa-chevron-left"></i> 快速求popcount和
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/maths/matrix/" rel="next" title="矩阵">
-                  矩阵 <i class="fa fa-chevron-right"></i>
+                <a href="/suoyin/" rel="next" title="博客索引">
+                  博客索引 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -438,14 +482,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">223k</span>
+    <span title="站点总字数">214k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:23</span>
+    <span title="站点阅读时长">3:15</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
@@ -473,7 +517,8 @@ tar = document.getElementById("problem-from");
 txt = elem.innerHTML;
 if(txt === "none"){
     var fa = tar.parentNode;
-    fa.innerHTML="";
+    var gfa = fa.parentNode;
+    gfa.removeChild(fa);
     elem.innerHTML = "";
 }else{
     tar.innerHTML = txt;
@@ -492,7 +537,10 @@ txt = elem.innerHTML;
 if(txt === "none"){
     var fa = tar.parentNode;
     fa = fa.parentNode;
-    fa.innerHTML="";
+    var gfa = fa.parentNode;
+    gfa.removeChild(fa);
+    var color = document.getElementById("problem-info-color");
+    color.innerHTML = "";
     elem.innerHTML = "";
     throw new Error("Problem difficulty cannot find");
 }else{
@@ -502,6 +550,10 @@ if(txt === "none"){
 
 elem = document.getElementById("problem-info-color");
 txt = elem.innerHTML;
+var std = /#[0-9a-fA-F]{6}/;
+if(!std.test(txt)){
+    txt = "#000000";
+}
 tar.style.color = txt;
 elem.innerHTML = "";
 </script>
@@ -537,7 +589,7 @@ elem.innerHTML = "";
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"ae52916f6e8b794b3ed737074c65d236"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"ecb7aec93f219a9e554dde094e1e53a8"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

@@ -1269,7 +1269,7 @@ pre code {
   color: #000;
 }
 .problem-card-table tr>:first-child {
-  font-size: 1em;
+  font-size: 0.8em;
   color: #999;
 }
 .problem-card-table tr td ul {
