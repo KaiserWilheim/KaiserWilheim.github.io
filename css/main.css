@@ -160,6 +160,12 @@ textarea {
   font: inherit; /* 2 */
   -webkit-appearance: button; /* 1 */
 }
+details[open] summary~* {
+  animation: open 0.5s;
+}
+details.closing summary~* {
+  animation: close 0.5s;
+}
 details {
   display: block;
 }
@@ -171,6 +177,70 @@ template {
 }
 [hidden] {
   display: none;
+}
+@-moz-keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes close {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes close {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes close {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes close {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 ::selection {
   background: #262a30;
@@ -1270,6 +1340,7 @@ pre code {
 }
 .problem-card-table tr>:first-child {
   font-size: 0.8em;
+  min-width: 48px;
   color: #999;
 }
 .problem-card-table tr td ul {

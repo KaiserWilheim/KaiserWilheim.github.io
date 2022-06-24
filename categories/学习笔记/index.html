@@ -189,7 +189,7 @@
       </span>
   </div>
   <div class="cc-license site-overview-item animated" itemprop="license">
-    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC96aC1DTg=="><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_nd.svg" alt="Creative Commons"></span>
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC9kZWVkLnpo"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_nd.svg" alt="Creative Commons"></span>
   </div>
 
 
@@ -385,14 +385,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">214k</span>
+    <span title="站点总字数">118k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:15</span>
+    <span title="站点阅读时长">1:47</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
@@ -459,6 +459,19 @@ if(!std.test(txt)){
 }
 tar.style.color = txt;
 elem.innerHTML = "";
+</script>
+<script>
+const details = document.querySelector("details");
+details.addEventListener("click", function(e) {
+  if (details.hasAttribute("open")) { // since it's not closed yet, it's open!
+    e.preventDefault(); // stop the default behavior, meaning - the hiding
+    details.classList.add("closing"); // add a class which apply the animation in CSS
+    setTimeout(() => { // only after the animation finishes, continue
+      details.removeAttribute("open"); // close the element
+      details.classList.remove("closing");
+    }, 400);
+  }
+});
 </script>
 
     </div>
