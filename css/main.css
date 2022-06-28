@@ -18,10 +18,10 @@
   --btn-default-hover-bg: #222;
   --btn-default-hover-color: #fff;
   --btn-default-hover-border-color: #222;
-  --highlight-background: #474949;
-  --highlight-foreground: #d1d9e1;
-  --highlight-gutter-background: #545758;
-  --highlight-gutter-foreground: #c3cad1;
+  --highlight-background: #fff;
+  --highlight-foreground: #434f54;
+  --highlight-gutter-background: #eceded;
+  --highlight-gutter-foreground: #556065;
   color-scheme: light;
 }
 html {
@@ -345,7 +345,6 @@ table {
   border-spacing: 0;
   font-size: 0.875em;
   margin: 0 0 20px;
-  width: 100%;
 }
 tbody tr:nth-of-type(odd) {
   background: var(--table-row-odd-bg-color);
@@ -353,19 +352,17 @@ tbody tr:nth-of-type(odd) {
 tbody tr:hover {
   background: var(--table-row-hover-bg-color);
 }
-caption,
-th,
-td {
+caption {
   padding: 8px;
 }
 th,
 td {
   border: 1px solid #ddd;
   border-bottom: 3px solid #ddd;
+  padding: 6px 12px;
 }
 th {
   font-weight: 700;
-  padding-bottom: 10px;
 }
 td {
   border-bottom-width: 1px;
@@ -432,7 +429,7 @@ td {
   top: -5px;
   transform: rotate(-45deg);
 }
-pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#474949;color:#d1d9e1}.hljs-comment,.hljs-quote{color:#969896;font-style:italic}.hljs-addition,.hljs-keyword,.hljs-literal,.hljs-selector-tag,.hljs-type{color:#c9c}.hljs-number,.hljs-selector-attr,.hljs-selector-pseudo{color:#f99157}.hljs-doctag,.hljs-regexp,.hljs-string{color:#8abeb7}.hljs-built_in,.hljs-name,.hljs-section,.hljs-title{color:#b5bd68}.hljs-class .hljs-title,.hljs-selector-id,.hljs-template-variable,.hljs-title.class_,.hljs-variable{color:#fc6}.hljs-name,.hljs-section,.hljs-strong{font-weight:700}.hljs-bullet,.hljs-link,.hljs-meta,.hljs-subst,.hljs-symbol{color:#f99157}.hljs-deletion{color:#dc322f}.hljs-formula{background:#eee8d5}.hljs-attr,.hljs-attribute{color:#81a2be}.hljs-emphasis{font-style:italic}
+pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#fff;color:#434f54}.hljs-subst{color:#434f54}.hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-name,.hljs-selector-tag{color:#00979d}.hljs-addition,.hljs-built_in,.hljs-bullet,.hljs-code,.hljs-literal{color:#d35400}.hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#00979d}.hljs-deletion,.hljs-quote,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type{color:#005c5f}.hljs-comment{color:rgba(149,165,166,.8)}.hljs-meta .hljs-keyword{color:#728e00}.hljs-meta{color:#434f54}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.hljs-function{color:#728e00}.hljs-section,.hljs-title{color:#800;font-weight:700}.hljs-number{color:#8a7b52}
 .highlight:hover .copy-btn,
 pre:hover .copy-btn {
   opacity: 1;
@@ -1333,6 +1330,7 @@ pre code {
 .problem-card-table {
   border-collapse: collapse;
   border-spacing: 0;
+  width: 100%;
 }
 .problem-card-table caption {
   font-size: 1.4em;

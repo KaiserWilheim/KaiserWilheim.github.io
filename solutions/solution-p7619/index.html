@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/pics/apple-touch-icon-kw.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/pics/128kw.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/pics/64kw.png">
+  <link rel="mask-icon" href="/pics/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.cn/css?family=Noto+Sans:300,300italic,400,400italic,700,700italic%7CNoto+Serif+Tangut:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="P7619 [COCI2011-2012#2] RASPORED 题解">
+<meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-p7619/index.html">
+<meta property="og:site_name" content="南陽劉子驥的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-28T13:49:35.702Z">
+<meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="贪心">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kaiserwilheim.github.io/solutions/solution-p7619/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solutions/solution-p7619/","path":"solutions/solution-p7619/","title":"P7619 [COCI2011-2012#2] RASPORED 题解"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>P7619 [COCI2011-2012#2] RASPORED 题解 | 南陽劉子驥的博客</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">南陽劉子驥的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">逻辑搭建基础，变幻点燃世界</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">23</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">49</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="南陽劉子驥 aka KaiserWilheim"
+      src="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
+  <p class="site-author-name" itemprop="name">南陽劉子驥 aka KaiserWilheim</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0thaXNlcldpbGhlaW0=" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;KaiserWilheim"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMzQ2MzA0MjM1" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;346304235"><i class="fa fa-tv fa-fw"></i>Bilibili</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9AbmFueWFuZ2xpdXppamk=" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;@nanyangliuziji"><i class="fab fa-twitter fa-fw"></i>Twitter</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly90Lm1lL0thaXNlcldpbGhlaW0=" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;KaiserWilheim"><i class="fab fa-telegram fa-fw"></i>Telegram</span>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC9kZWVkLnpo"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_nd.svg" alt="Creative Commons"></span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+  <aside class="problem-card animated fadeInUp" style="top: 500px" id="problem-card">
+    
+    <div class="problem-card-inner" style="visibility: hidden" id="problem-card-inner">
+      <table class="problem-card-table">
+        <caption>题目信息卡</caption>
+        <tbody>
+          <tr>
+            <td>题目名称</td>
+            <td id="problem-name">野兽先辈</td>
+          </tr>
+          <tr>
+            <td>题目来源</td>
+            <td id="problem-from">yajuusenpai</td>
+          </tr>
+          <tr>
+            <td>题目难度</td>
+            <td>
+              <b style="color:#114514" id="problem-difficulty">114514</b>
+            </td>
+          </tr>
+          <tr>
+            <td>提交地址</td>
+            <td id="problem-submit">1919810</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </aside>
+
+  <script>
+  setInterval("getHeight()", 25)
+  function getHeight(){
+    var res = "";
+    res += (document.getElementById("sidebar").offsetHeight + 36) + "px";
+    document.getElementById("problem-card").style.top = res;
+  }
+  </script>
+
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL0thaXNlcldpbGhlaW0=" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solutions/solution-p7619/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
+      <meta itemprop="name" content="南陽劉子驥 aka KaiserWilheim">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南陽劉子驥的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="P7619 [COCI2011-2012#2] RASPORED 题解 | 南陽劉子驥的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          P7619 [COCI2011-2012#2] RASPORED 题解
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-23 00:00:00" itemprop="dateCreated datePublished" datetime="2022-05-23T00:00:00+08:00">2022-05-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-06-28 21:49:35" itemprop="dateModified" datetime="2022-06-28T21:49:35+08:00">2022-06-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2018</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <br>
+<span id="more"></span>
+<div id="problem-card-vis">true</div>
+<div id="problem-info-name">RASPORED</div>
+<div id="problem-info-from">COCI 2011-2012 #2</div>
+<div id="problem-info-difficulty">提高+ /省选-</div>
+<div id="problem-info-color">#3498db</div>
+<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDQ2NDM=">Luogu P4643<i class="fa fa-external-link-alt"></i></span></li><li><span class="exturl" data-url="aHR0cHM6Ly9kYXJrYnpvai5jYy9wcm9ibGVtLzMxNzk=">BZOJ #3179<i class="fa fa-external-link-alt"></i></span></li></ul></div>
+
+<hr>
+<p>我们首先考虑没有修改的情况。</p>
+<p>首先，我们假设已经给所有的居民分配好了一个烘焙披萨的方案，并用 $pos_i$ 代表第 $i$ 位居民的披萨是第 $pos_i$ 个烘焙的。</p>
+<p>这样的话，我们设 $C_i$ 为从第 $i$ 名居民身上获取的小费数额（如果为负数则表示需要向该位居民支付的数额的相反数），那么就会有如下的式子：</p>
+<p>$$<br>C_i &#x3D; L_i - \sum_{j&#x3D;1}^{pos_i} T_j<br>$$</p>
+<p>那么对于 Mirko 收获小费的总和 $\sum_{i&#x3D;1}^n C_i$，我们可以推一下式子：</p>
+<p>$$<br>\begin{aligned}<br>\sum_{i&#x3D;1}^n C_i &amp;&#x3D; \sum_{i&#x3D;1}^n (L_i - \sum_{j&#x3D;1}^{pos_i} T_j) \\<br>&amp;&#x3D; \sum_{i&#x3D;1}^n L_i - \sum_{i&#x3D;1}^n \sum_{j&#x3D;1}^{pos_i} T_j \\<br>&amp;&#x3D; \sum_{i&#x3D;1}^n L_i - \sum_{i&#x3D;1}^n T_i \times (n- pos_i + 1)<br>\end{aligned}<br>$$</p>
+<p>最后一步是这样推出来的：</p>
+<p>对于 $T_i$ 来说，它会在计算所有 $pos_j \geq pos_i$ 的 $j$ 的时候被计算到，所以总共就是 $\sum_{j&#x3D;pos_i}^n T_i$，即 $T_i \times (n-pos_i + 1)$。</p>
+<hr>
+<p>然后看带修改的。</p>
+<p>我们看刚才推出来的式子，可以看出我们能够对于 $L$ 与 $T$ 分开考虑，而事实上我们也就是这样做的。</p>
+<p>我们对于一开始没有被修改时的数据计算出一个 $suml &#x3D; \sum_{i&#x3D;1}^n L_i$，然后再计算出一个 $sumt &#x3D; \sum_{i&#x3D;1}^n T_i \times (n- pos_i + 1)$。<br>我们最终输出的数值就是 $suml-sumt$。</p>
+<p>假设我们有了一个新的修改，将 $(L_x,T_x)$ 修改为 $(L_y,T_y)$。</p>
+<p>对于 $suml$，其只需要变为 $suml-L_x+L_y$ 即可。</p>
+<p>对于 $sumt$，我们可以看成首先从数列里面删除了一个 $T_x$，然后再插入了一个 $T_y$；其中 $T_x$ 删除前的位置是 $pos_x$，$T_y$ 删除后的位置是 $pos_y$。</p>
+<p>我们可以将删除和插入分开讨论，也可以只讨论改变位置的元素。</p>
+<p>如果分开讨论删除和插入的话，我们的分析过程是这个样子的：</p>
+<ol>
+<li>对于 $\forall T_i &lt; T_x$，我们的 $pos_i$ 不会变，但是 $n$ 会因删除而减小 $1$；而对于 $\forall T_i \geq T_x$，我们的 $pos_i$ 和 $n$ 都会减小 $1$ 而最终抵消；对于 $T_x$，我们需要减去它的贡献。</li>
+</ol>
+<p>所以我们的 $sumt$ 在删除 $T_x$ 之后会变成这个样子：<br>$$<br>sumt \to sumt - T_x \times (n - pos_x + 1) - \sum_{T_i &lt; T_x} T_i<br>$$</p>
+<ol start="2">
+<li>对于 $\forall T_i &lt; T_x$，我们的 $pos_i$ 不会变，但是 $n$ 会因插入而增大 $1$；而对于 $\forall T_i \geq T_x$，我们的 $pos_i$ 和 $n$ 都会增大 $1$ 而最终抵消；对于 $T_y$，我们需要加上它的贡献。</li>
+</ol>
+<p>所以我们的 $sumt$ 在插入 $T_y$ 之后会变成这个样子：<br>$$<br>sumt \to sumt + T_x \times (n - pos_y + 1) + \sum_{T_i &lt; T_x} T_i<br>$$</p>
+<p>如果只讨论改变位置的元素的话，我们的分析过程是这个样子的：</p>
+<ol>
+<li><p>如果 $T_x &lt; T_y$，那么对于 ${T_i | pos_i \in (pos_x,pos_y)}$，其 $pos_i$ 会减少 $1$，从而导致 $sumt$ 减少 $\sum_{pos_i \in (pos_x,pos_y)} T_i$。</p>
+</li>
+<li><p>如果 $T_x &gt; T_y$，那么对于 ${T_i | pos_i \in (pos_y,pos_x)}$，其 $pos_i$ 会增加 $1$，从而导致 $sumt$ 增加 $\sum_{pos_i \in (pos_x,pos_y)} T_i$。</p>
+</li>
+</ol>
+<p>总的来看，我们的变化量可以看做 $\sum_{T_i &lt; T_x} T_i - \sum_{T_i &lt; T_x} T_i$。</p>
+<p>再加上 $T_y$ 的贡献，减去$T_x$ 的贡献，我们推出的式子跟上面的是一样的。</p>
+<hr>
+<p>于是我们就需要一种数据结构，支持</p>
+<ol>
+<li>插入和删除元素</li>
+<li>查询小于一个元素的数字个数</li>
+<li>查询小于一个元素的数字之和</li>
+</ol>
+<p>树状数组、权值线段树和平衡树均可。</p>
+<p>我这里使用的是替罪羊树。</p>
+<p>对于不知道替罪羊树的人，我在这里安利一下<a href="/OI/scapegoat-tree">我的博客</a>，同时也给出<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9kcy9zZ3Qv">OI-Wiki<i class="fa fa-external-link-alt"></i></span>关于替罪羊树的讲解。</p>
+<p>替罪羊树虽然比较慢，但是所有的操作时间复杂度均摊之后都是 $O(\log n<br>)$ 级别的。</p>
+<p>这里粘一下代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">200010</span>;</span><br><span class="line">ll n, m;</span><br><span class="line"><span class="type">double</span> alpha = <span class="number">0.75</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Scapegoat</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> ls, rs;</span><br><span class="line">    ll w, wn;</span><br><span class="line">    <span class="type">int</span> s, sz, sd;</span><br><span class="line">    ll sum;</span><br><span class="line">&#125;tr[N];</span><br><span class="line"><span class="type">int</span> cnt, rt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">calc</span><span class="params">(<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    tr[p].s = tr[tr[p].ls].s + tr[tr[p].rs].s + <span class="number">1</span>;</span><br><span class="line">    tr[p].sz = tr[tr[p].ls].sz + tr[tr[p].rs].sz + tr[p].wn;</span><br><span class="line">    tr[p].sd = tr[tr[p].ls].sd + tr[tr[p].rs].sd + (tr[p].wn != <span class="number">0</span>);</span><br><span class="line">    tr[p].sum = tr[tr[p].ls].sum + tr[tr[p].rs].sum + tr[p].wn * tr[p].w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">canrbu</span><span class="params">(<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> tr[p].wn &amp;&amp; (alpha * tr[p].s &lt;= ( <span class="type">double</span> )<span class="built_in">max</span>(tr[tr[p].ls].s, tr[tr[p].rs].s) || ( <span class="type">double</span> )tr[p].sd &lt;= alpha * tr[p].s);</span><br><span class="line">&#125;<span class="comment">//can rebuild</span></span><br><span class="line"><span class="type">int</span> ldr[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rbuunf</span><span class="params">(<span class="type">int</span> &amp;ldc, <span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!p)<span class="keyword">return</span>;</span><br><span class="line">    <span class="built_in">rbuunf</span>(ldc, tr[p].ls);</span><br><span class="line">    <span class="keyword">if</span>(tr[p].wn)ldr[ldc++] = p;</span><br><span class="line">    <span class="built_in">rbuunf</span>(ldc, tr[p].rs);</span><br><span class="line">&#125;<span class="comment">//rebuild-unfold</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">rbubld</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l &gt;= r)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    tr[ldr[mid]].ls = <span class="built_in">rbubld</span>(l, mid);</span><br><span class="line">    tr[ldr[mid]].rs = <span class="built_in">rbubld</span>(mid + <span class="number">1</span>, r);</span><br><span class="line">    <span class="built_in">calc</span>(ldr[mid]);</span><br><span class="line">    <span class="keyword">return</span> ldr[mid];</span><br><span class="line">&#125;<span class="comment">//rebuild-build</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">rbuild</span><span class="params">(<span class="type">int</span> &amp;p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> ldc = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">rbuunf</span>(ldc, p);</span><br><span class="line">    p = <span class="built_in">rbubld</span>(<span class="number">0</span>, ldc);</span><br><span class="line">&#125;<span class="comment">//rebuild</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">insert</span><span class="params">(<span class="type">int</span> &amp;p, ll k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!p)</span><br><span class="line">    &#123;</span><br><span class="line">        p = ++cnt;</span><br><span class="line">        <span class="keyword">if</span>(!rt)rt = <span class="number">1</span>;</span><br><span class="line">        tr[p].w = k;</span><br><span class="line">        tr[p].ls = tr[p].rs = <span class="number">0</span>;</span><br><span class="line">        tr[p].wn = tr[p].s = tr[p].sz = tr[p].sd = <span class="number">1</span>;</span><br><span class="line">        tr[p].sum = k;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(tr[p].w == k)tr[p].wn++;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(tr[p].w &lt; k)<span class="built_in">insert</span>(tr[p].rs, k);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">insert</span>(tr[p].ls, k);</span><br><span class="line">        <span class="built_in">calc</span>(p);</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">canrbu</span>(p))<span class="built_in">rbuild</span>(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">loschn</span><span class="params">(<span class="type">int</span> &amp;p, ll k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!p)<span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(tr[p].w == k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(tr[p].wn)tr[p].wn--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(tr[p].w &lt; k)<span class="built_in">loschn</span>(tr[p].rs, k);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">loschn</span>(tr[p].ls, k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">calc</span>(p);</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">canrbu</span>(p))<span class="built_in">rbuild</span>(p);</span><br><span class="line">&#125;<span class="comment">//löschen，delete是关键字就不用了</span></span><br><span class="line"><span class="function">ll <span class="title">uprgtr</span><span class="params">(<span class="type">int</span> p, ll k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(tr[p].w == k &amp;&amp; tr[p].wn)</span><br><span class="line">        <span class="keyword">return</span> tr[tr[p].ls].sz;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(tr[p].w &lt; k)</span><br><span class="line">        <span class="keyword">return</span> tr[tr[p].ls].sz + tr[p].wn + <span class="built_in">uprgtr</span>(tr[p].rs, k);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">uprgtr</span>(tr[p].ls, k);</span><br><span class="line">&#125;<span class="comment">//相当于是使用greater&lt;&gt;函数排序之后的upper_bound</span></span><br><span class="line"><span class="comment">//输出的结果是小于某个元素的数的个数</span></span><br><span class="line"><span class="function">ll <span class="title">uprsum</span><span class="params">(<span class="type">int</span> p, ll k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!p)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(tr[p].w == k &amp;&amp; tr[p].wn)</span><br><span class="line">        <span class="keyword">return</span> tr[tr[p].ls].sum;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(tr[p].w &lt; k)</span><br><span class="line">        <span class="keyword">return</span> tr[tr[p].ls].sum + tr[p].wn * tr[p].w + <span class="built_in">uprsum</span>(tr[p].rs, k);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">uprsum</span>(tr[p].ls, k);</span><br><span class="line">&#125;<span class="comment">//跟上面差不多，输出的是小于某个元素的数之和</span></span><br><span class="line">ll suml, sumt;</span><br><span class="line">ll l[N], t[N];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="type">int</span> temp[N];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>, &amp;l[i], &amp;t[i]);</span><br><span class="line">        suml += l[i];</span><br><span class="line">        <span class="built_in">insert</span>(rt, t[i]);</span><br><span class="line">        temp[i] = t[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(temp + <span class="number">1</span>, temp + <span class="number">1</span> + n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        sumt += (n - i + <span class="number">1</span>) * temp[i];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, suml - sumt);</span><br><span class="line">    <span class="keyword">while</span>(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> a;</span><br><span class="line">        ll b, c;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%lld%lld&quot;</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line">        suml -= l[a] - b;</span><br><span class="line">        l[a] = b;</span><br><span class="line">        ll sum1 = <span class="built_in">uprsum</span>(rt, t[a]), cnt1 = <span class="built_in">uprgtr</span>(rt, t[a]);</span><br><span class="line">        <span class="built_in">loschn</span>(rt, t[a]);</span><br><span class="line">        <span class="built_in">insert</span>(rt, c);</span><br><span class="line">        ll sum2 = <span class="built_in">uprsum</span>(rt, c), cnt2 = <span class="built_in">uprgtr</span>(rt, c);</span><br><span class="line">        sumt += c * (n - cnt2) + sum2 - t[a] * (n - cnt1) - sum1;</span><br><span class="line">        t[a] = c;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, suml - sumt);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>南陽劉子驥 aka KaiserWilheim
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://kaiserwilheim.github.io/solutions/solution-p7619/" title="P7619 [COCI2011-2012#2] RASPORED 题解">https://kaiserwilheim.github.io/solutions/solution-p7619/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
+              <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"># 贪心</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/OI/scapegoat-tree/" rel="prev" title="替罪羊树">
+                  <i class="fa fa-chevron-left"></i> 替罪羊树
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/OI/splay/" rel="next" title="Splay">
+                  Splay <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">南陽劉子驥 aka KaiserWilheim</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">12万</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">1:51</span>
+  </span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+
+<script>
+var elem = document.getElementById("problem-card-vis");
+var tar = document.getElementById("problem-card-inner");
+var txt = elem.innerHTML;
+if(txt === "false"){
+    elem.innerHTML = "";
+    throw new Error("Problem card is hidden");
+}
+tar.style.visibility = "visible";
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-name");
+tar = document.getElementById("problem-name");
+txt = elem.innerHTML;
+tar.innerHTML = txt;
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-from");
+tar = document.getElementById("problem-from");
+txt = elem.innerHTML;
+if(txt === "none"){
+    var fa = tar.parentNode;
+    var gfa = fa.parentNode;
+    gfa.removeChild(fa);
+    elem.innerHTML = "";
+}else{
+    tar.innerHTML = txt;
+    elem.innerHTML = "";
+}
+
+elem = document.getElementById("problem-info-submit");
+tar = document.getElementById("problem-submit");
+txt = elem.innerHTML;
+tar.innerHTML = txt;
+elem.innerHTML = "";
+
+elem = document.getElementById("problem-info-difficulty");
+tar = document.getElementById("problem-difficulty");
+txt = elem.innerHTML;
+if(txt === "none"){
+    var fa = tar.parentNode;
+    fa = fa.parentNode;
+    var gfa = fa.parentNode;
+    gfa.removeChild(fa);
+    var color = document.getElementById("problem-info-color");
+    color.innerHTML = "";
+    elem.innerHTML = "";
+    throw new Error("Problem difficulty cannot find");
+}else{
+    tar.innerHTML = txt;
+    elem.innerHTML = "";
+}
+
+elem = document.getElementById("problem-info-color");
+txt = elem.innerHTML;
+var std = /#[0-9a-fA-F]{6}/;
+if(!std.test(txt)){
+    txt = "#000000";
+}
+tar.style.color = txt;
+elem.innerHTML = "";
+</script>
+<script>
+const details = document.querySelector("details");
+details.addEventListener("click", function(e) {
+  if (details.hasAttribute("open")) { // since it's not closed yet, it's open!
+    e.preventDefault(); // stop the default behavior, meaning - the hiding
+    details.classList.add("closing"); // add a class which apply the animation in CSS
+    setTimeout(() => { // only after the animation finishes, continue
+      details.removeAttribute("open"); // close the element
+      details.classList.remove("closing");
+    }, 400);
+  }
+});
+</script>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.6/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.0/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d77954e91bc9eae79648aff4133db9d0"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
