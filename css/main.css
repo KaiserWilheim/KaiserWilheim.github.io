@@ -1320,9 +1320,9 @@ pre code {
   width: 240px;
 }
 .problem-card-inner {
-  color: #000;
+  color: var(--text-color);
   visibility: visible;
-  background: #fff;
+  background: var(--content-bg-color);
   padding: 18px;
   text-align: center;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
@@ -1334,7 +1334,7 @@ pre code {
 }
 .problem-card-table caption {
   font-size: 1.4em;
-  color: #000;
+  color: var(--text-color);
 }
 .problem-card-table tr>:first-child {
   font-size: 0.8em;
