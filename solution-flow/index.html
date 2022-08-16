@@ -30,8 +30,8 @@
 <meta property="og:description" content="网络流相关做题记录。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/04/21/5IUqMYC4FfsnXSD.png">
-<meta property="article:published_time" content="2022-04-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-21T09:27:04.247Z">
+<meta property="article:published_time" content="2022-08-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-16T03:57:25.050Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="网络流">
@@ -95,7 +95,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">63</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li><li class="menu-item menu-item-np"><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMUdKNDExeDdoNw=="><i class="fa fa-compass fa-fw"></i>NP</span></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -152,7 +152,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%B5%8124%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">网络流24题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E6%B5%81"><span class="nav-number">1.2.</span> <span class="nav-text">最大流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E5%9B%BE"><span class="nav-number">1.3.</span> <span class="nav-text">二分图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%89%B2"><span class="nav-number">1.4.</span> <span class="nav-text">最小割</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%B9%E7%94%A8%E6%B5%81"><span class="nav-number">1.5.</span> <span class="nav-text">费用流</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%B5%8124%E9%A2%98-1"><span class="nav-number">2.</span> <span class="nav-text">网络流24题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%9E%E8%A1%8C%E5%91%98%E9%85%8D%E5%AF%B9%E6%96%B9%E6%A1%88%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">飞行员配对方案问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%86%E6%A1%8C%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">圆桌问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%A0%BC%E5%8F%96%E6%95%B0%E9%97%AE%E9%A2%98"><span class="nav-number">2.3.</span> <span class="nav-text">方格取数问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A4%90%E5%B7%BE%E8%AE%A1%E5%88%92%E9%97%AE%E9%A2%98"><span class="nav-number">2.4.</span> <span class="nav-text">餐巾计划问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%BE%93%E9%97%AE%E9%A2%98"><span class="nav-number">2.5.</span> <span class="nav-text">运输问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%85%8D%E9%97%AE%E9%A2%98"><span class="nav-number">2.6.</span> <span class="nav-text">分配问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9F%E8%BD%BD%E5%B9%B3%E8%A1%A1%E9%97%AE%E9%A2%98"><span class="nav-number">2.7.</span> <span class="nav-text">负载平衡问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CTSC1999-%E5%AE%B6%E5%9B%AD"><span class="nav-number">2.8.</span> <span class="nav-text">[CTSC1999]家园</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%88%AA%E7%A9%BA%E8%B7%AF%E7%BA%BF%E9%97%AE%E9%A2%98"><span class="nav-number">2.9.</span> <span class="nav-text">航空路线问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E6%B5%B7%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%97%AE%E9%A2%98"><span class="nav-number">2.10.</span> <span class="nav-text">深海机器人问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E6%B5%81-1"><span class="nav-number">3.</span> <span class="nav-text">最大流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%B0%E9%9C%87%E9%80%83%E7%94%9F"><span class="nav-number">3.1.</span> <span class="nav-text">地震逃生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SCOI2007-%E8%9C%A5%E8%9C%B4"><span class="nav-number">3.2.</span> <span class="nav-text">[SCOI2007] 蜥蜴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#USACO07OPEN-Dining-G"><span class="nav-number">3.3.</span> <span class="nav-text">[USACO07OPEN] Dining G</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E4%B8%BB%E6%A0%91"><span class="nav-number">3.4.</span> <span class="nav-text">主主树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CQOI2014-%E5%8D%B1%E6%A1%A5"><span class="nav-number">3.5.</span> <span class="nav-text">[CQOI2014] 危桥</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E5%9B%BE-1"><span class="nav-number">4.</span> <span class="nav-text">二分图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#USACO05NOV-Asteroids-G"><span class="nav-number">4.1.</span> <span class="nav-text">[USACO05NOV] Asteroids G</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%89%B2-1"><span class="nav-number">5.</span> <span class="nav-text">最小割</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SAC-E-1-%E4%B8%80%E9%81%93%E9%9A%BE%E9%A2%98-Tree"><span class="nav-number">5.1.</span> <span class="nav-text">SAC E#1 - 一道难题 Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#USACO5-4-%E5%A5%B6%E7%89%9B%E7%9A%84%E7%94%B5%E4%BF%A1-Telecowmunication"><span class="nav-number">5.2.</span> <span class="nav-text">[USACO5.4] 奶牛的电信 Telecowmunication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SHOI2007-%E5%96%84%E6%84%8F%E7%9A%84%E6%8A%95%E7%A5%A8-x2F-JLOI2010-%E5%86%A0%E5%86%9B%E8%B0%83%E6%9F%A5"><span class="nav-number">5.3.</span> <span class="nav-text">[SHOI2007] 善意的投票 &#x2F; [JLOI2010] 冠军调查</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%B9%E7%94%A8%E6%B5%81-1"><span class="nav-number">6.</span> <span class="nav-text">费用流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NOIP2000-%E6%8F%90%E9%AB%98%E7%BB%84-%E6%96%B9%E6%A0%BC%E5%8F%96%E6%95%B0"><span class="nav-number">6.1.</span> <span class="nav-text">[NOIP2000 提高组] 方格取数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NOIP2008-%E6%8F%90%E9%AB%98%E7%BB%84-%E4%BC%A0%E7%BA%B8%E6%9D%A1"><span class="nav-number">6.2.</span> <span class="nav-text">[NOIP2008 提高组] 传纸条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDOI2006-%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86%E5%91%98%E7%9A%84%E7%83%A6%E6%81%BC"><span class="nav-number">6.3.</span> <span class="nav-text">[SDOI2006] 仓库管理员的烦恼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HAOI2010-%E8%AE%A2%E8%B4%A7"><span class="nav-number">6.4.</span> <span class="nav-text">[HAOI2010] 订货</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDOI2009-%E6%99%A8%E8%B7%91"><span class="nav-number">6.5.</span> <span class="nav-text">[SDOI2009] 晨跑</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%B5%8124%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">网络流24题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E6%B5%81"><span class="nav-number">1.2.</span> <span class="nav-text">最大流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E5%9B%BE"><span class="nav-number">1.3.</span> <span class="nav-text">二分图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%89%B2"><span class="nav-number">1.4.</span> <span class="nav-text">最小割</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%B9%E7%94%A8%E6%B5%81"><span class="nav-number">1.5.</span> <span class="nav-text">费用流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E7%95%8C%E7%BD%91%E7%BB%9C%E6%B5%81"><span class="nav-number">1.6.</span> <span class="nav-text">上下界网络流</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E6%B5%8124%E9%A2%98-1"><span class="nav-number">2.</span> <span class="nav-text">网络流24题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A3%9E%E8%A1%8C%E5%91%98%E9%85%8D%E5%AF%B9%E6%96%B9%E6%A1%88%E9%97%AE%E9%A2%98"><span class="nav-number">2.1.</span> <span class="nav-text">飞行员配对方案问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%AA%E7%A9%BA%E9%A3%9E%E8%A1%8C%E8%AE%A1%E5%88%92%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">太空飞行计划问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%86%E6%A1%8C%E9%97%AE%E9%A2%98"><span class="nav-number">2.3.</span> <span class="nav-text">圆桌问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%A0%BC%E5%8F%96%E6%95%B0%E9%97%AE%E9%A2%98"><span class="nav-number">2.4.</span> <span class="nav-text">方格取数问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A4%90%E5%B7%BE%E8%AE%A1%E5%88%92%E9%97%AE%E9%A2%98"><span class="nav-number">2.5.</span> <span class="nav-text">餐巾计划问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%BE%93%E9%97%AE%E9%A2%98"><span class="nav-number">2.6.</span> <span class="nav-text">运输问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%85%8D%E9%97%AE%E9%A2%98"><span class="nav-number">2.7.</span> <span class="nav-text">分配问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9F%E8%BD%BD%E5%B9%B3%E8%A1%A1%E9%97%AE%E9%A2%98"><span class="nav-number">2.8.</span> <span class="nav-text">负载平衡问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CTSC1999-%E5%AE%B6%E5%9B%AD"><span class="nav-number">2.9.</span> <span class="nav-text">[CTSC1999]家园</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%88%AA%E7%A9%BA%E8%B7%AF%E7%BA%BF%E9%97%AE%E9%A2%98"><span class="nav-number">2.10.</span> <span class="nav-text">航空路线问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E6%B5%B7%E6%9C%BA%E5%99%A8%E4%BA%BA%E9%97%AE%E9%A2%98"><span class="nav-number">2.11.</span> <span class="nav-text">深海机器人问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E6%B5%81-1"><span class="nav-number">3.</span> <span class="nav-text">最大流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%B0%E9%9C%87%E9%80%83%E7%94%9F"><span class="nav-number">3.1.</span> <span class="nav-text">地震逃生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SCOI2007-%E8%9C%A5%E8%9C%B4"><span class="nav-number">3.2.</span> <span class="nav-text">[SCOI2007] 蜥蜴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#USACO07OPEN-Dining-G"><span class="nav-number">3.3.</span> <span class="nav-text">[USACO07OPEN] Dining G</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E4%B8%BB%E6%A0%91"><span class="nav-number">3.4.</span> <span class="nav-text">主主树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CQOI2014-%E5%8D%B1%E6%A1%A5"><span class="nav-number">3.5.</span> <span class="nav-text">[CQOI2014] 危桥</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E5%88%86%E5%9B%BE-1"><span class="nav-number">4.</span> <span class="nav-text">二分图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#USACO05NOV-Asteroids-G"><span class="nav-number">4.1.</span> <span class="nav-text">[USACO05NOV] Asteroids G</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E5%89%B2-1"><span class="nav-number">5.</span> <span class="nav-text">最小割</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SAC-E-1-%E4%B8%80%E9%81%93%E9%9A%BE%E9%A2%98-Tree"><span class="nav-number">5.1.</span> <span class="nav-text">SAC E#1 - 一道难题 Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#USACO5-4-%E5%A5%B6%E7%89%9B%E7%9A%84%E7%94%B5%E4%BF%A1-Telecowmunication"><span class="nav-number">5.2.</span> <span class="nav-text">[USACO5.4] 奶牛的电信 Telecowmunication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SHOI2007-%E5%96%84%E6%84%8F%E7%9A%84%E6%8A%95%E7%A5%A8-x2F-JLOI2010-%E5%86%A0%E5%86%9B%E8%B0%83%E6%9F%A5"><span class="nav-number">5.3.</span> <span class="nav-text">[SHOI2007] 善意的投票 &#x2F; [JLOI2010] 冠军调查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CEOI2008-order"><span class="nav-number">5.4.</span> <span class="nav-text">[CEOI2008] order</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8FM%E7%9A%84%E4%BD%9C%E7%89%A9"><span class="nav-number">5.5.</span> <span class="nav-text">小M的作物</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%B9%E7%94%A8%E6%B5%81-1"><span class="nav-number">6.</span> <span class="nav-text">费用流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NOIP2000-%E6%8F%90%E9%AB%98%E7%BB%84-%E6%96%B9%E6%A0%BC%E5%8F%96%E6%95%B0"><span class="nav-number">6.1.</span> <span class="nav-text">[NOIP2000 提高组] 方格取数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NOIP2008-%E6%8F%90%E9%AB%98%E7%BB%84-%E4%BC%A0%E7%BA%B8%E6%9D%A1"><span class="nav-number">6.2.</span> <span class="nav-text">[NOIP2008 提高组] 传纸条</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDOI2006-%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86%E5%91%98%E7%9A%84%E7%83%A6%E6%81%BC"><span class="nav-number">6.3.</span> <span class="nav-text">[SDOI2006] 仓库管理员的烦恼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HAOI2010-%E8%AE%A2%E8%B4%A7"><span class="nav-number">6.4.</span> <span class="nav-text">[HAOI2010] 订货</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDOI2009-%E6%99%A8%E8%B7%91"><span class="nav-number">6.5.</span> <span class="nav-text">[SDOI2009] 晨跑</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E7%95%8C%E7%BD%91%E7%BB%9C%E6%B5%81-1"><span class="nav-number">7.</span> <span class="nav-text">上下界网络流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSOI2013-%E6%97%85%E8%A1%8C%E6%97%B6%E7%9A%84%E5%9B%B0%E6%83%91"><span class="nav-number">7.1.</span> <span class="nav-text">[JSOI2013] 旅行时的困惑</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -167,7 +167,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -178,7 +178,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -305,14 +305,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-04-21 00:00:00" itemprop="dateCreated datePublished" datetime="2022-04-21T00:00:00+08:00">2022-04-21</time>
+      <time title="创建时间：2022-08-14 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-14T00:00:00+08:00">2022-08-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-21 17:27:04" itemprop="dateModified" datetime="2022-06-21T17:27:04+08:00">2022-06-21</time>
+      <time title="修改时间：2022-08-16 11:57:25" itemprop="dateModified" datetime="2022-08-16T11:57:25+08:00">2022-08-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -331,14 +331,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5446</span>
+      <span>6160</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>10 分钟</span>
     </span>
 </div>
 
@@ -357,6 +357,7 @@
 <p>（我为什么要造孽放代码上来……）</p>
 <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="网络流24题"><a href="#网络流24题" class="headerlink" title="网络流24题"></a>网络流24题</h2><ul>
 <li>LibreOJ #6000 &#x2F; Luogu P2756 飞行员配对方案问题 <a href="/solution-flow/#%E9%A3%9E%E8%A1%8C%E5%91%98%E9%85%8D%E5%AF%B9%E6%96%B9%E6%A1%88%E9%97%AE%E9%A2%98">&gt;</a></li>
+<li>LibreOJ #6001 &#x2F; Luogu P2762 太空飞行计划问题 <a href="/solution-flow/#%E5%A4%AA%E7%A9%BA%E9%A3%9E%E8%A1%8C%E8%AE%A1%E5%88%92%E9%97%AE%E9%A2%98">&gt;</a></li>
 <li>LibreOJ #6004 &#x2F; Luogu P3254 圆桌问题 <a href="/solution-flow/#%E5%9C%86%E6%A1%8C%E9%97%AE%E9%A2%98">&gt;</a></li>
 <li>LibreOJ #6007 &#x2F; Luogu P2774 方格取数问题 <a href="/solution-flow/#%E6%96%B9%E6%A0%BC%E5%8F%96%E6%95%B0%E9%97%AE%E9%A2%98">&gt;</a></li>
 <li>LibreOJ #6008 &#x2F; Luogu P1251 餐巾计划问题 <a href="/solution-flow/#%E9%A4%90%E5%B7%BE%E8%AE%A1%E5%88%92%E9%97%AE%E9%A2%98">&gt;</a></li>
@@ -381,6 +382,8 @@
 <li>Luogu P3931 SAC E#1 - 一道难题 Tree <a href="/solution-flow/#SAC-E-1-%E4%B8%80%E9%81%93%E9%9A%BE%E9%A2%98-Tree">&gt;</a></li>
 <li>Luogu P1345 [USACO5.4] 奶牛的电信Telecowmunication <a href="/solution-flow/#USACO5-4-%E5%A5%B6%E7%89%9B%E7%9A%84%E7%94%B5%E4%BF%A1Telecowmunication">&gt;</a></li>
 <li>Luogu P2057 [SHOI2007] 善意的投票 &#x2F; [JLOI2010] 冠军调查 <a href="/solution-flow/#SHOI2007-%E5%96%84%E6%84%8F%E7%9A%84%E6%8A%95%E7%A5%A8-x2F-JLOI2010-%E5%86%A0%E5%86%9B%E8%B0%83%E6%9F%A5">&gt;</a></li>
+<li>Luogu P4177 [CEOI2008] order <a href="/solution-flow/#CEOI2008-order">&gt;</a></li>
+<li>Luogu P1361 小M的作物 <a href="/solution-flow/#%E5%B0%8FM%E7%9A%84%E4%BD%9C%E7%89%A9">&gt;</a></li>
 </ul>
 <h2 id="费用流"><a href="#费用流" class="headerlink" title="费用流"></a>费用流</h2><ul>
 <li>Luogu P1004 [NOIP2000 提高组] 方格取数 <a href="/solution-flow/#NOIP2000-%E6%8F%90%E9%AB%98%E7%BB%84-%E6%96%B9%E6%A0%BC%E5%8F%96%E6%95%B0">&gt;</a></li>
@@ -389,9 +392,17 @@
 <li>Luogu P2517 [HAOI2010] 订货 <a href="/solution-flow/#HAOI2010-%E8%AE%A2%E8%B4%A7">&gt;</a></li>
 <li>Luogu P2153 [SDOI2009] 晨跑 <a href="/solution-flow/#SDOI2009-%E6%99%A8%E8%B7%91">&gt;</a></li>
 </ul>
+<h2 id="上下界网络流"><a href="#上下界网络流" class="headerlink" title="上下界网络流"></a>上下界网络流</h2><ul>
+<li>Luogu P5258 [JSOI2013] 旅行时的困惑 <a href="/solution-flow/#JSOI2013-%E6%97%85%E8%A1%8C%E6%97%B6%E7%9A%84%E5%9B%B0%E6%83%91">&gt;</a></li>
+</ul>
 <h1 id="网络流24题-1"><a href="#网络流24题-1" class="headerlink" title="网络流24题"></a>网络流24题</h1><h2 id="飞行员配对方案问题"><a href="#飞行员配对方案问题" class="headerlink" title="飞行员配对方案问题"></a>飞行员配对方案问题</h2><p>英国飞行员连向源点，外籍飞行员连向汇点，可以搭配的英国飞行员连向外籍飞行员。边权均为 $1$。<br>跑一遍最大流即可。</p>
 <p>最后枚举所有边，如果当前边连接一个外籍飞行员和一个英国飞行员，且其容量为空，那么这条边就被流经过，说明这条边代表的一堆飞行员可以配对，输出两端点即可。</p>
 <div class="note success"><p><a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p2000-p2999/p2756/p2756.cpp"><code>Luogu</code></a><br><a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Libre%20OJ/6000/l6000.cpp"><code>Libre OJ</code></a></p>
+</div>
+
+<h2 id="太空飞行计划问题"><a href="#太空飞行计划问题" class="headerlink" title="太空飞行计划问题"></a>太空飞行计划问题</h2><p>这是一个最大权闭合子图问题。我们可以将这个转化为一个最小割问题。<br>讲解可以见我博客的<a href="/OI/flow/#%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE%E9%97%AE%E9%A2%98">另外一篇文章</a>。</p>
+<p>其中，实验就是正权点，仪器就是负权点，建图连边即可。</p>
+<div class="note success"><p><a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p2000-p2999/p2762/p2762.cpp"><code>Luogu</code></a></p>
 </div>
 
 <h2 id="圆桌问题"><a href="#圆桌问题" class="headerlink" title="圆桌问题"></a>圆桌问题</h2><p>因为我们想要让坐在一个桌子旁的人两两不属于同一个代表团，那就可以转化为让一个代表团的人分散在不同的桌子上。</p>
@@ -538,6 +549,12 @@
 <div class="note success"><p><a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p2000-p2999/p2057/p2057.cpp"><code>Luogu</code></a></p>
 </div>
 
+<h2 id="CEOI2008-order"><a href="#CEOI2008-order" class="headerlink" title="[CEOI2008] order"></a>[CEOI2008] order</h2><p>如果不考虑租的情况的话就是最大权闭合子图问题了。</p>
+<p>因为工作和租用的机器是一一对应的，所以我们也可以用一条边来代表这个关系，而这种边也得可以是被割掉的才可以。<br>那么我们可以把工作和对应的机器连起来，边权是租用的费用。<br>这种边割断了之后也可以使源点和汇点不连通，割掉了代表我们对于这个工作是租用机器的。<br>其余的还是正常的最大权闭合子图问题，只不过原图中的边已经建好了，我们就不需要再建了。</p>
+<div class="note success"><p><a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p4000-p4999/p4177/p4177.cpp"><code>Luogu</code></a></p>
+</div>
+
+<h2 id="小M的作物"><a href="#小M的作物" class="headerlink" title="小M的作物"></a>小M的作物</h2><p>如果我们不考虑组合之间的关系，只考虑每一个作物种在哪里，我们可以把每一个作物抽象成点，然后从源点连向该点，容量为 $a_i$，该点连向汇点，容量为 $b_i$。<br>以这张图跑最小割的话，我们可以知道</p>
 <h1 id="费用流-1"><a href="#费用流-1" class="headerlink" title="费用流"></a>费用流</h1><h2 id="NOIP2000-提高组-方格取数"><a href="#NOIP2000-提高组-方格取数" class="headerlink" title="[NOIP2000 提高组] 方格取数"></a>[NOIP2000 提高组] 方格取数</h2><p>每一个点向其右侧和下侧的两个点分别连边，同时每个点拆点，容量为2，边权为方格中的数。<br>$(0,0)$ 连向源点，$(n,n)$ 连向汇点。</p>
 <p>然后跑最大费用最大流即可。</p>
 <div class="note success"><p><a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p1000-p1999/p1004/p1004.cpp"><code>Luogu</code></a></p>
@@ -565,6 +582,13 @@
 <p>一个周期就相当于是从源点到汇点的一个流，路程就相当于是其代价。</p>
 <p>于是就建边，跑最小费用最大流。</p>
 <div class="note success"><p><a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p2000-p2999/p2153/p2153.cpp"><code>Luogu</code></a></p>
+</div>
+
+<h1 id="上下界网络流-1"><a href="#上下界网络流-1" class="headerlink" title="上下界网络流"></a>上下界网络流</h1><h2 id="JSOI2013-旅行时的困惑"><a href="#JSOI2013-旅行时的困惑" class="headerlink" title="[JSOI2013] 旅行时的困惑"></a>[JSOI2013] 旅行时的困惑</h2><p>如果我们想让任意两个岛屿都可以互相到达，那么我们需要在原有的树的基础上面建立一棵有双向边的树。</p>
+<p>这样我们就可以建立一个上下界网络流的模型。<br>建立原树边的反向边，容量范围为 $[1,\infty]$。</p>
+<p>因为一条交通线路从任意一个点开始或结束都可以，所以每一个点都从源点连边，向汇点连边，容量均为 $\infty$。</p>
+<p>然后就跑有源汇有上下界最小流即可。</p>
+<div class="note success"><p><a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p5000-p5999/p5258/p5258.cpp"><code>Luogu</code></a></p>
 </div>
 
 <!-- <div class="note success"></div> -->
@@ -602,13 +626,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/solutions/solution-p3644/" rel="prev" title="P3644 [APIO2015] 巴邻旁之桥 题解">
-                  <i class="fa fa-chevron-left"></i> P3644 [APIO2015] 巴邻旁之桥 题解
+                <a href="/solutions/solution-p2469/" rel="prev" title="P2469 [SDOI2010] 星际竞速 题解">
+                  <i class="fa fa-chevron-left"></i> P2469 [SDOI2010] 星际竞速 题解
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/solutions/solution-p4643/" rel="next" title="P4643 [国家集训队] 阿狸和桃子的游戏 题解">
-                  P4643 [国家集训队] 阿狸和桃子的游戏 题解 <i class="fa fa-chevron-right"></i>
+                <a href="/solutions/solution-p3050/" rel="next" title="P3050 [USACO12MAR]Large Banner 题解">
+                  P3050 [USACO12MAR]Large Banner 题解 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -643,14 +667,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">13万</span>
+    <span title="站点总字数">12.7 万</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:55</span>
+    <span title="站点阅读时长">3:32</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动

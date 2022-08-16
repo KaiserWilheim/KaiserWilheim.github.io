@@ -97,7 +97,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">63</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li><li class="menu-item menu-item-np"><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMUdKNDExeDdoNw=="><i class="fa fa-compass fa-fw"></i>NP</span></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -169,7 +169,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -180,7 +180,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -340,7 +340,7 @@
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>3 分钟</span>
     </span>
 </div>
 
@@ -360,7 +360,7 @@
 <p>有时候题目给的树太大了，同时每一次处理询问的时候总会有大量的不可避免的冗余信息需要处理，这时候就需要我们对当前的树建立一棵虚树来选择性地忽略掉一些不重要的信息，进而减小了时间复杂度。</p>
 <p>一般需要建立虚树的题目会在树上选择出几个关键点进行询问，而不关心其它的信息。同时我们还可以注意到，关键点的个数一般是与树的大小是同阶的（即在同一个数量级内）。这指的是，假如我们每一次询问的关键点个数是 $k_i$ 个，一共有 $m$ 次询问，那么 $\log_{10} (\sum k_i) &#x3D; \log_{10} n$。</p>
 <h1 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h1><p>比如说这道题：</p>
-<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDI0OTU=">Luogu P2495<i class="fa fa-external-link-alt"></i></span> [SDOI2011] 消耗战</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDI0OTU=">Luogu P2495</span> [SDOI2011] 消耗战</p>
 <p>这一道题需要我们找到使所有关键点都不与根节点连接的割边方案，并且需要使这个割边方案中边的权值和最小。</p>
 <p>对于这个问题，我们有一套经典的DP方案：</p>
 <p>设 $dp[u]$ 表示使编号为 $u$ 的点不与其子树中任意一个关键点联通的最小代价。</p>
@@ -376,7 +376,7 @@
 <p>对于 $100\%$ 的数据，$2\leq n \leq 2.5\times 10^5, 1\leq m\leq 5\times 10^5, \sum k_i \leq 5\times 10^5$。</p>
 </blockquote>
 <p>我们一眼就可以看出来以 $O(nm)$ 的复杂度是绝对过不去的。</p>
-<p>经试验验证(LibreOJ)，以下面的代码可以跑出来50分的好成绩：<span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcy8xNDc2ODM0">提交寄录<i class="fa fa-external-link-alt"></i></span></p>
+<p>经试验验证(LibreOJ)，以下面的代码可以跑出来50分的好成绩：<span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcy8xNDc2ODM0">提交寄录</span></p>
 <h1 id="虚树"><a href="#虚树" class="headerlink" title="虚树"></a>虚树</h1><p>我们重新来看一遍DP的过程。</p>
 <p>我们在枚举某一个节点的所有儿子的时候，假设这个节点 $u$ 下面的子树内没有一个关键点，那么这个DP的过程就是冗余的。</p>
 <p>既然我们不需要 $u$ 及其子树的信息了，那么它也就没有了继续存在于图内的必要了。</p>
@@ -412,7 +412,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">build</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    v.<span class="built_in">init</span>();<span class="comment">//清空链式前向星</span></span><br><span class="line">    <span class="built_in">sort</span>(a + <span class="number">1</span>, a + <span class="number">1</span> + k, cmp);<span class="comment">//将关键点按照DFS序排序</span></span><br><span class="line">    sta[tt = <span class="number">1</span>] = <span class="number">1</span>;<span class="comment">//1号节点入栈</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= k; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> g = <span class="built_in">lca</span>(a[i], sta[tt]);</span><br><span class="line">        <span class="comment">//拎出来当前节点与栈顶节点在原树上的LCA</span></span><br><span class="line">        <span class="keyword">if</span>(g != sta[tt])</span><br><span class="line">        &#123;<span class="comment">//如果LCA不是栈顶的节点，就意味着当前节点不在当前节点所维护的链上</span></span><br><span class="line">            <span class="keyword">while</span>(id[g] &lt; id[sta[tt - <span class="number">1</span>]])</span><br><span class="line">            &#123;<span class="comment">//当次大节点的DFS序大于LCA的DFS序</span></span><br><span class="line">                <span class="type">int</span> p = sta[tt - <span class="number">1</span>], q = sta[tt--];</span><br><span class="line">                ll d = <span class="built_in">minpath</span>(p, q);</span><br><span class="line">                v.<span class="built_in">add</span>(p, q, d);</span><br><span class="line">                v.<span class="built_in">add</span>(q, p, d);</span><br><span class="line">                <span class="comment">//那就说明栈顶节点不需要再维护了</span></span><br><span class="line">                <span class="comment">//连边，弹栈</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(id[g] &gt; id[sta[tt - <span class="number">1</span>]])</span><br><span class="line">            &#123;<span class="comment">//如果LCA不是次大节点</span></span><br><span class="line">                ll d = <span class="built_in">minpath</span>(g, sta[tt]);</span><br><span class="line">                v.<span class="built_in">add</span>(g, sta[tt], d);</span><br><span class="line">                v.<span class="built_in">add</span>(sta[tt], g, d);</span><br><span class="line">                tt--;</span><br><span class="line">                sta[++tt] = g;</span><br><span class="line">                <span class="comment">//那就说明LCA从来没有在栈内出现过</span></span><br><span class="line">                <span class="comment">//与栈顶元素连边并弹出之</span></span><br><span class="line">                <span class="comment">//然后就入栈</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;<span class="comment">//否则LCA就是次大节点</span></span><br><span class="line">                <span class="type">int</span> p = sta[tt - <span class="number">1</span>], q = sta[tt--];</span><br><span class="line">                ll d = <span class="built_in">minpath</span>(p, q);</span><br><span class="line">                v.<span class="built_in">add</span>(p, q, d);</span><br><span class="line">                v.<span class="built_in">add</span>(q, p, d);</span><br><span class="line">                <span class="comment">//直接连边弹栈即可，不用入栈了</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sta[++tt] = a[i];<span class="comment">//当前节点入栈</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(tt &gt; <span class="number">1</span>)</span><br><span class="line">    &#123;<span class="comment">//将剩下的最后一条极右链连接起来</span></span><br><span class="line">        <span class="type">int</span> p = sta[tt - <span class="number">1</span>], q = sta[tt];</span><br><span class="line">        ll d = <span class="built_in">minpath</span>(p, q);</span><br><span class="line">        v.<span class="built_in">add</span>(p, q, d);</span><br><span class="line">        v.<span class="built_in">add</span>(q, p, d);</span><br><span class="line">        tt--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>然后就可以愉快地在虚树上进行dp了，方法与之前一样。</p>
-<p>现在我们的复杂度大大减小，就可以拿到——80分的好成绩！<span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcy8xNDc2NjAy">提交寄录<i class="fa fa-external-link-alt"></i></span></p>
+<p>现在我们的复杂度大大减小，就可以拿到——80分的好成绩！<span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcy8xNDc2NjAy">提交寄录</span></p>
 <p>然后我们就不理解了。</p>
 <p>我的理论复杂度也是对的，应该没有什么问题。</p>
 <p>我们回忆一下我们代码的实现：</p>
@@ -421,7 +421,7 @@
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">void build()</span><br><span class="line">&#123;</span><br><span class="line"><span class="deletion">-   v.init();</span></span><br><span class="line"><span class="addition">+   v.idx = 0;</span></span><br><span class="line">    sort(a + 1, a + 1 + k, cmp);</span><br><span class="line">    sta[tt = 1] = 1;</span><br><span class="line"><span class="addition">+   v.h[1] = -1;</span></span><br><span class="line">    for(int i = 1; i &lt;= k; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int g = lca(a[i], sta[tt]);</span><br><span class="line">        if(g != sta[tt])</span><br><span class="line">        &#123;</span><br><span class="line">            while(id[g] &lt; id[sta[tt - 1]])</span><br><span class="line">            &#123;</span><br><span class="line">                int p = sta[tt - 1], q = sta[tt--];</span><br><span class="line">                ll d = minpath(p, q);</span><br><span class="line">                v.add(p, q, d);</span><br><span class="line">                v.add(q, p, d);</span><br><span class="line">            &#125;</span><br><span class="line">            if(id[g] &gt; id[sta[tt - 1]])</span><br><span class="line">            &#123;</span><br><span class="line">                ll d = minpath(g, sta[tt]);</span><br><span class="line"><span class="addition">+               v.h[g] = -1;</span></span><br><span class="line">                v.add(g, sta[tt], d);</span><br><span class="line">                v.add(sta[tt], g, d);</span><br><span class="line">                tt--;</span><br><span class="line">                sta[++tt] = g;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                int p = sta[tt - 1], q = sta[tt--];</span><br><span class="line">                ll d = minpath(p, q);</span><br><span class="line">                v.add(p, q, d);</span><br><span class="line">                v.add(q, p, d);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="addition">+       v.h[a[i]] = -1;</span></span><br><span class="line">        sta[++tt] = a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    while(tt &gt; 1)</span><br><span class="line">    &#123;</span><br><span class="line">        int p = sta[tt - 1], q = sta[tt--];</span><br><span class="line">        ll d = minpath(p, q);</span><br><span class="line">        v.add(p, q, d);</span><br><span class="line">        v.add(q, p, d);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>剩下的节点我们就不需要管了，因为我们甚至没有访问他们的机会。</p>
-<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><h2 id="Luogu-P2495-SDOI2011-消耗战"><a href="#Luogu-P2495-SDOI2011-消耗战" class="headerlink" title="Luogu P2495 [SDOI2011] 消耗战"></a>Luogu P2495 [SDOI2011] 消耗战</h2><p>题面在这里：<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDI0OTU=">https://www.luogu.com.cn/problem/P2495<i class="fa fa-external-link-alt"></i></span></p>
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><h2 id="Luogu-P2495-SDOI2011-消耗战"><a href="#Luogu-P2495-SDOI2011-消耗战" class="headerlink" title="Luogu P2495 [SDOI2011] 消耗战"></a>Luogu P2495 [SDOI2011] 消耗战</h2><p>题面在这里：<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDI0OTU=">https://www.luogu.com.cn/problem/P2495</span></p>
 <p>上面已经讲了做法了，就是一个树形DP。</p>
 <p>代码见这里：<a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p2000-p2999/p2495/p2495.cpp"><code>Luogu P2495</code></a></p>
 
@@ -498,14 +498,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">13万</span>
+    <span title="站点总字数">12.7 万</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:55</span>
+    <span title="站点阅读时长">3:32</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动

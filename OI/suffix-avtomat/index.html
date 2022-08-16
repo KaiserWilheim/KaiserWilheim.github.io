@@ -33,9 +33,9 @@
 <meta property="article:published_time" content="2022-01-20T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-06-17T13:44:05.783Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="字符串">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="自动机">
-<meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://kaiserwilheim.github.io/pics/SAM.svg">
 
@@ -96,7 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">53</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">63</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li><li class="menu-item menu-item-np"><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMUdKNDExeDdoNw=="><i class="fa fa-compass fa-fw"></i>NP</span></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -168,7 +168,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -179,7 +179,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -339,7 +339,7 @@
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>4 分钟</span>
+      <span>7 分钟</span>
     </span>
 </div>
 
@@ -406,8 +406,8 @@
 <p>最后，我们将<code>last</code>的值更新为<code>cur</code>。</p>
 <h3 id="寻找终止状态"><a href="#寻找终止状态" class="headerlink" title="寻找终止状态"></a>寻找终止状态</h3><p>如果我们还想要知道哪些状态是终止状态而那些不是，我们可以在构建完 $s$ 对应的后缀自动机之后再进行寻找。</p>
 <p>我们从刚才最后一步得到的<code>last</code>处开始遍历后缀链接，直到最终到达初始节点。<br>我们将沿途的所有状态都标记为终止状态，因为他们存储着原字符串 $s$ 的至少一个后缀。</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>这里就不证明了，可以看<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfNg==">OI-Wiki<i class="fa fa-external-link-alt"></i></span>上的证明。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM4MDQ=">洛谷板子题<i class="fa fa-external-link-alt"></i></span>代码：<a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p3000-p3999/p3804/p3804.cpp"><code>Luogu P3804</code></a></p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>这里就不证明了，可以看<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfNg==">OI-Wiki</span>上的证明。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM4MDQ=">洛谷板子题</span>代码：<a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p3000-p3999/p3804/p3804.cpp"><code>Luogu P3804</code></a></p>
 <h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="检查字符串是否出现"><a href="#检查字符串是否出现" class="headerlink" title="检查字符串是否出现"></a>检查字符串是否出现</h2><blockquote>
 <p>给定一个字符串 $S$ 和多个模式串 $P$ ，我们需要检查模式串 $P$ 是否作为 $S$ 的一个子串出现过。</p>
 </blockquote>
@@ -421,7 +421,7 @@
 <p>令 $d_v$ 为从状态 $v$ 开始的路径数量（包括长度为零的路径），则我们有如下递推方程：<br>$$<br>d_v &#x3D; 1 + \sum_{w:(v,w,c)\in DAWG} d_w<br>$$<br>即， $d_v$ 可以表示为所有 $v$ 的转移的末端的和。<br>所以不同字串的个数为 $d_{t_0}-1$ （因为需要去掉空字串）</p>
 </blockquote>
 <p>我个人更喜欢另一种方法：<br>利用后缀自动机的树形结构，每个节点对应的子串数量就是<code>len[i] - len[link[i]]</code>，对自动机所有节点求和即可。<br>这个在洛谷给的板子题内有应用。</p>
-<p>其他的应用可以见<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfMTM=">OIwiki<i class="fa fa-external-link-alt"></i></span>。</p>
+<p>其他的应用可以见<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfMTM=">OIwiki</span>。</p>
 
     </div>
 
@@ -448,9 +448,9 @@
 </div>
 
           <div class="post-tags">
+              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"># 字符串</a>
               <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
               <a href="/tags/%E8%87%AA%E5%8A%A8%E6%9C%BA/" rel="tag"># 自动机</a>
-              <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag"># 字符串</a>
           </div>
 
         
@@ -498,14 +498,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">13万</span>
+    <span title="站点总字数">12.7 万</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:55</span>
+    <span title="站点阅读时长">3:32</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
