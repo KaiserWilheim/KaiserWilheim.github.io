@@ -23,26 +23,25 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="article">
-<meta property="og:title" content="P3589 [POI2015] Kurs szybkiego czytania 题解">
-<meta property="og:url" content="https://kaiserwilheim.github.io/solution-p3589/index.html">
+<meta property="og:title" content="P3462 [POI2007] 砝码 ODW 题解">
+<meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-p3462/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-17T13:09:15.047Z">
+<meta property="article:published_time" content="2022-07-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-18T01:42:05.960Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="题解">
-<meta property="article:tag" content="数学">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/solution-p3589/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/solutions/solution-p3462/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solution-p3589/","path":"solution-p3589/","title":"P3589 [POI2015] Kurs szybkiego czytania 题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solutions/solution-p3462/","path":"solutions/solution-p3462/","title":"P3462 [POI2007] 砝码 ODW 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>P3589 [POI2015] Kurs szybkiego czytania 题解 | 南陽劉子驥的博客</title>
+<title>P3462 [POI2007] 砝码 ODW 题解 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -91,7 +90,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">64</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li><li class="menu-item menu-item-np"><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMUdKNDExeDdoNw=="><i class="fa fa-compass fa-fw"></i>NP</span></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">32</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">71</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li><li class="menu-item menu-item-np"><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMXVUNHkxUDdDWA=="><i class="fa fa-compass fa-fw"></i>NP</span></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -162,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-count">71</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -173,7 +172,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -271,7 +270,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solution-p3589/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solutions/solution-p3462/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
@@ -284,12 +283,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="P3589 [POI2015] Kurs szybkiego czytania 题解 | 南陽劉子驥的博客">
+      <meta itemprop="name" content="P3462 [POI2007] 砝码 ODW 题解 | 南陽劉子驥的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          P3589 [POI2015] Kurs szybkiego czytania 题解
+          P3462 [POI2007] 砝码 ODW 题解
         </h1>
 
         <div class="post-meta-container">
@@ -299,9 +298,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-08-17 00:00:00 / 修改时间：21:09:15" itemprop="dateCreated datePublished" datetime="2022-08-17T00:00:00+08:00">2022-08-17</time>
+      <time title="创建时间：2022-07-14 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-14T00:00:00+08:00">2022-07-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-08-18 09:42:05" itemprop="dateModified" datetime="2022-08-18T09:42:05+08:00">2022-08-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -320,14 +325,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>943</span>
+      <span>834</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -341,29 +346,26 @@
         <br>
 <span id="more"></span>
 <div id="problem-card-vis">true</div>
-<div id="problem-info-name">Kurs szybkiego czytania</div>
-<div id="problem-info-from">POI 2015</div>
+<div id="problem-info-name">砝码ODW</div>
+<div id="problem-info-from">POI 2007</div>
 <div id="problem-info-difficulty">省选/NOI-</div>
 <div id="problem-info-color">#9d3dcf</div>
-<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM1ODk=">Luogu P3589</span></li><li><span class="exturl" data-url="aHR0cHM6Ly9kYXJrYnpvai5jYy9wcm9ibGVtLzQzNzc=">BZOJ #4377</span></li></ul></div>
+<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM0NjI=">Luogu P3462</span></li><li><span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcC8yNjYw">LibreOJ L2660</span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYWN3aW5nLmNvbS9wcm9ibGVtL2NvbnRlbnQvMzY5My8=">AcWing 3690</span></li><li><span class="exturl" data-url="aHR0cHM6Ly9kYXJrYnpvai5jYy9wcm9ibGVtLzExMTA=">BZOJ #1110</span></li></ul></div>
 
 <hr>
-<p>假设小串在大串中的某一个位置匹配上了，这时小串的开头是 $x$，那么小串的每一位都对应一个不等关系：</p>
-<p>$$<br>\begin{cases}<br>a(i+x)+b \bmod{n} \in [0,p-1] &amp; s_i &#x3D; 0 \\<br>a(i+x)+b \bmod{n} \in [p,n-1] &amp; s_i &#x3D; 1<br>\end{cases}<br>$$</p>
-<p>我们可以观察到，其中 $ai+b$ 这一部分对于每一个位置是固定的，我们将其提出来，并定义 $B &#x3D; ai+b$。<br>化简后的式子如下：</p>
-<p>$$<br>\begin{cases}<br>ax+B \bmod{n} \in [0,p-1] &amp; s_i &#x3D; 0 \\<br>ax+B \bmod{n} \in [p,n-1] &amp; s_i &#x3D; 1<br>\end{cases}<br>$$</p>
-<p>将 $x$ 在模意义下拆成 $a’x’$，其中 $a’$ 为 $a’$ 在模意义下的乘法逆元。<br>化简后的式子如下：</p>
-<p>$$<br>\begin{cases}<br>x’+B \bmod{n} \in [0,p-1] &amp; s_i &#x3D; 0 \\<br>x’+B \bmod{n} \in [p,n-1] &amp; s_i &#x3D; 1<br>\end{cases}<br>$$</p>
-<p>我们还可以知道，因为 $a$ 与 $n$ 互质，所以每一个 $x’$ 都与 $x$ 一一对应，形成了一组双射关系，所以我们只需要求出 $x’$ 的所有可能取值的个数即可。<br>而 $x’$ 的取值范围也一目了然。</p>
-<p>对于一个式子，我们有两种可能取值：<br>（这里用 $s_i &#x3D; 1$ 来示范）</p>
-<p>$$<br>\begin{cases}<br>x’ \in [p-B,n-1-B] \\<br>x’ \in [n-i-B,n-1] \cup [0,p-B+n]<br>\end{cases}<br>$$</p>
-<p>这样的取值就像是数轴上的一些线段，而我们需要取的就是这些线段的交。<br>快速取线段交我们不会，但是我们可以将其转化成为其补集的并集的补集来计算。</p>
-<p>同时还需要注意照顾到不合理的取值（$x \in [n-m+1,n-1]$），计算的时候需要将其剔除。</p>
-<p>示例代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1000010</span>, M = N &lt;&lt; <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> a, b, p;</span><br><span class="line"><span class="type">int</span> l[N], r[N];</span><br><span class="line"><span class="type">int</span> pr[N];</span><br><span class="line"><span class="type">int</span> d[M], cnt;</span><br><span class="line"><span class="type">int</span> c[M];</span><br><span class="line"><span class="type">int</span> ans;</span><br><span class="line">map&lt;<span class="type">int</span>, <span class="type">int</span>&gt;dic;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d%d&quot;</span>, &amp;n, &amp;a, &amp;b, &amp;p, &amp;m);</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; s;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> B = (<span class="number">1ll</span> * i * a + b) % n;</span><br><span class="line">        <span class="keyword">if</span>(s[i - <span class="number">1</span>] == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            l[i] = p - B - <span class="number">1</span>;</span><br><span class="line">            r[i] = n - B - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(l[i] &lt; <span class="number">0</span>)l[i] += n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            l[i] = n - B - <span class="number">1</span>;</span><br><span class="line">            r[i] = p - B - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(r[i] &lt; <span class="number">0</span>)r[i] += n;</span><br><span class="line">        &#125;</span><br><span class="line">        d[++cnt] = l[i], d[++cnt] = r[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = n - m + <span class="number">1</span>; i &lt;= n - <span class="number">1</span>; i++)pr[n - i] = (<span class="number">1ll</span> * a * i) % n;</span><br><span class="line">    <span class="built_in">sort</span>(d + <span class="number">1</span>, d + <span class="number">1</span> + cnt);</span><br><span class="line">    <span class="built_in">sort</span>(pr + <span class="number">1</span>, pr + m);</span><br><span class="line">    cnt = <span class="built_in">unique</span>(d + <span class="number">1</span>, d + <span class="number">1</span> + cnt) - d - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span>(d[cnt] != n - <span class="number">1</span>)d[++cnt] = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++)</span><br><span class="line">        dic.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(d[i], i));</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        c[dic[l[i]]]--;</span><br><span class="line">        c[dic[r[i]]]++;</span><br><span class="line">        <span class="keyword">if</span>(l[i] &gt; r[i])c[cnt]++;</span><br><span class="line">    &#125;</span><br><span class="line">    d[<span class="number">0</span>] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = cnt, r = m - <span class="number">1</span>; i; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        c[i] += c[i + <span class="number">1</span>];</span><br><span class="line">        <span class="type">int</span> l = r;</span><br><span class="line">        <span class="keyword">while</span>(l &amp;&amp; pr[l] &gt; d[i - <span class="number">1</span>])l--;</span><br><span class="line">        <span class="keyword">if</span>(c[i] == m)ans += d[i] - d[i - <span class="number">1</span>] - r + l;</span><br><span class="line">        r = l;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>代码需要 $O(2)$。</p>
-<p>思路是听 <span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3VzZXIvMjYxNzcz">$\text{Y}{\color{Red}\text{ouwike}}$</span> 大佬的讲解才弄懂的，大家快去模%%%</p>
+<p>这道题要求我们将一堆砝码放进一堆容器里面，要求每个容器里面砝码的总重量不超过容器的容量。题目要求我们求出并最大化能装进容器内砝码数量。</p>
+<p>首先我们可以确定一点，我们从最小的砝码开始装，一定是较优的。</p>
+<p>但是题目给出的砝码总数和容器总数都是 $10^5$ 级别的，我们不能每一个砝码都搜一遍，不仅复杂度不对，还保证不了正确性。</p>
+<p>但是，题目保证任何两个砝码，其中一个的重量必须是另一个的整数倍。<br>所以说，对于每一个砝码，剩余的砝码中一部分是它的整数倍，而剩余的能整除它。</p>
+<p>这样我们就可以把这个转化为类似进制的东西，只不过不是严格的每两位之比相同的那种情况。</p>
+<p>我们只需要找到最小的那个砝码，这就是我们进制的基数，我们设这个数为 $k_1$。<br>然后我们找到每一种不同的砝码重量，我们将其化为一个进制位。我们设这样的从小到大分别是 $k_2,k_3,k_4,\cdots$。</p>
+<p>根据这一堆基数 $k$，我们将所有的容器拆成 $(a_0,a_1k_1,a_2k_2,a_3k_3,\cdots)$ 这样的形式。<br>因为我们所有的砝码都是 $k$ 的整数倍，所以这个 $a_0$ 就直接舍弃不要。剩下的同意一下所有容器中 $a_i$ 的和就可以了。</p>
+<p>我们拆成这样的类 $k$ 进制了之后就不需要考虑装不下或者砝码跨容器的情况了。原因如下：</p>
+<p>我们首先将所有的砝码从小到大排序。</p>
+<p>然后我们从小到大放进DFS里面搜一下。<br>如果当前位还有剩余，就可以直接减掉。<br>如果没有剩余了，那就往上面搜，从前面的位借。若果借到最高位都借不到的话就输出当前砝码数量就可以了。<br>因为我们每一个砝码的重量一定对应一个进制位，我们就一定只需要在当前进制位为空的时候才会向上面借位，且我们不会向上进位，这样保证了我们不会让一个砝码利用两个不同容器的空间的情况。</p>
+<p>这样我们就能在 $O(n\log{m})$ 的时间复杂度内解决这道题了。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">200010</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> a[N], b[N], num[N];</span><br><span class="line"><span class="type">int</span> c[<span class="number">40</span>], cnt[<span class="number">40</span>], tot;</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p &gt; tot)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(cnt[p])</span><br><span class="line">    &#123;</span><br><span class="line">        cnt[p]--;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">dfs</span>(p + <span class="number">1</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        cnt[p] += c[p + <span class="number">1</span>] / c[p];</span><br><span class="line">        cnt[p]--;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b[i]);</span><br><span class="line">    <span class="built_in">sort</span>(b + <span class="number">1</span>, b + <span class="number">1</span> + m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(b[i] != b[i - <span class="number">1</span>])c[++tot] = b[i];</span><br><span class="line">        num[i] = tot;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = tot; j; j--)</span><br><span class="line">        &#123;</span><br><span class="line">            cnt[j] += a[i] / c[j];</span><br><span class="line">            a[i] %= c[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">dfs</span>(num[i]))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, i - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i == m)<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, m);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -381,7 +383,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://kaiserwilheim.github.io/solution-p3589/" title="P3589 [POI2015] Kurs szybkiego czytania 题解">https://kaiserwilheim.github.io/solution-p3589/</a>
+      <a href="https://kaiserwilheim.github.io/solutions/solution-p3462/" title="P3462 [POI2007] 砝码 ODW 题解">https://kaiserwilheim.github.io/solutions/solution-p3462/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</span> 许可协议。转载请注明出处！
@@ -391,20 +393,19 @@
 
           <div class="post-tags">
               <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
-              <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/solutions/solution-p3050/" rel="prev" title="P3050 [USACO12MAR]Large Banner 题解">
-                  <i class="fa fa-chevron-left"></i> P3050 [USACO12MAR]Large Banner 题解
+                <a href="/solutions/solution-p8161/" rel="prev" title="P8161 [JOI 2022 Final] 自学（自習） 题解">
+                  <i class="fa fa-chevron-left"></i> P8161 [JOI 2022 Final] 自学（自習） 题解
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/OI/flow/" rel="next" title="网络流">
-                  网络流 <i class="fa fa-chevron-right"></i>
+                <a href="/solutions/solution-p8162/" rel="next" title="P8162 [JOI 2022 Final] 选举 题解">
+                  P8162 [JOI 2022 Final] 选举 题解 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -439,14 +440,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">12.8 万</span>
+    <span title="站点总字数">13.3 万</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:33</span>
+    <span title="站点阅读时长">3:42</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
@@ -579,7 +580,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"753c028c3b55482d3b66310491398cb7"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"9a167410d28eca3821a14f94cc7869ac"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
