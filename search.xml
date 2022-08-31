@@ -257,6 +257,7 @@
 <li><a href="/solutions/solution-l3277">LibreOJ #3277</a> 「JOISC 2020 Day3」 星座 3</li>
 </ul>
 <ul>
+<li><a href="/solutions/solution-se993">S2OJ #993</a> Merge</li>
 <li><a href="/solutions/solution-se1497">S2OJ #1497</a> 树</li>
 <li><a href="/solutions/solution-se1498">S2OJ #1498</a> 换乘</li>
 <li><a href="/solutions/solution-se1506">S2OJ #1506</a> Antifloyd</li>
@@ -1136,32 +1137,25 @@
 
 <div id="problem-card-vis">false</div>
 
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>后缀自动机，是一个能够解决许多字符串相关问题的，十分强力的数据结构。<br>不要被博客的链接迷惑了，后缀自动机是 <strong>S</strong>uffix <strong>A</strong>uto<strong>m</strong>aton 。<br>（博客标题来自俄语 Суффиксный автомат -&gt; Suffiksneyy avtomat）</p>
-<p>后缀自动机可以存储下一个字符串的所有子串，并且做到线性时空复杂度。<br>准确来说，对于一个长度为 $n$ 的字符串构造后缀自动机，其中至多有 $2n-1$ 个节点与 $3n-4$ 条转移边。</p>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>后缀自动机是一个DFA（确定性有限自动机或确定性有限状态自动机）。它接受且只接受 $s$ 的所有子串。</p>
-<p>展开来说的话，可以概括成这么几点：</p>
-<ol>
-<li>后缀自动机是一个有向无环图。其中的节点叫做<strong>状态</strong>，边叫做<strong>转移</strong>。</li>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>后缀自动机，是一个能够解决许多字符串相关问题的，十分强力的数据结构。<br>其存储的是一个字符串的所有子串。<br>不要被博客的链接迷惑了，后缀自动机是 <strong>S</strong>uffix <strong>A</strong>uto<strong>m</strong>aton 。<br>（博客标题来自俄语 Суффиксный автомат -&gt; Suffiksneyy avtomat）</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ol>
+<li>后缀自动机是一个DAG。其中的节点叫做<strong>状态</strong>，边叫做<strong>转移</strong>。</li>
 <li>图中包含一个初始节点 $t_0$ ，任何节点都可以由之经过一系列的转移到达。</li>
 <li>每一个转移都标有一个字母，且从某一个节点出发的每一个转移都是不同的。</li>
 <li>自动机存在多个终止状态。如果我们从初始状态 $t_0$ 出发，最终转移到了一个终止状态，则路径上的所有转移连接起来一定是字符串 $s$ 的一个后缀。 $s$ 的每个后缀均可用一条从 $t_0$ 到某个终止状态的路径构成。</li>
 <li>在所有满足上述条件的自动机中，后缀自动机的结点数是最少的。</li>
 </ol>
 <h1 id="子串"><a href="#子串" class="headerlink" title="子串"></a>子串</h1><p>一个字符串的后缀自动机包含关于这个字符串子串的所有信息。<br>更准确地来说，对于任意从初始节点 $t_0$ 开始的路径，我们将其转移边上的字符拿下来按顺序排列，都可以得到原字符串的一个子串。<br>这里需要注意：一条路径对应一个子串，但是一个子串不一定只对应一条路径。</p>
-<h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><h2 id="结束位置-endpos"><a href="#结束位置-endpos" class="headerlink" title="结束位置 endpos"></a>结束位置 <code>endpos</code></h2><p>对于字符串 $s$ 的一个子串 $t$ ，我们记其在字符串 $s$ 中的所有结束位置为 $\operatorname{endpos}(t)$ 。例如对于字符串 $aabbabd$ ，我们有 $\operatorname{endpos}(ab)&#x3D;\{ 2,4 \} $。<br>两个子串 $t_1$ 与 $t_2$ 的endpos集合可能相等。这样，所有字符串 $s$<br>的非空子串都可以根据其endpos集合分为若干<strong>等价类</strong>。<br>而我们知道，后缀自动机中的每个状态对应一个或多个endpos相同的子串，即一个等价类。<br>这就很好地解释了上面所说的除了最小性之外的所有性质。</p>
+<h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><h2 id="结束位置-endpos-及其等价类"><a href="#结束位置-endpos-及其等价类" class="headerlink" title="结束位置 endpos 及其等价类"></a>结束位置 <code>endpos</code> 及其等价类</h2><p>对于字符串 $s$ 的一个子串 $t$ ，我们记其在字符串 $s$ 中的所有结束位置为 $\operatorname{endpos}(t)$ 。例如对于字符串 $aabbabd$ ，我们有 $\operatorname{endpos}(ab)&#x3D;\{ 2,4 \} $。<br>两个子串 $t_1$ 与 $t_2$ 的endpos集合可能相等。这样，所有字符串 $s$ 的非空子串都可以根据其endpos集合分为若干<strong>等价类</strong>。<br>后缀自动机中的每个状态都会对应一个等价类。</p>
 <p>基于endpos，我们可以得到一系列重要结论：</p>
 <blockquote>
-<p><strong>引理1</strong>： 字符串 $s$ 的两个非空子串 $u$ 和 $v$ （假设 $|u| \leq |v|$ ）的endpos相同，当且仅当字符串 $u$ 在 $s$ 中的每次出现，都是以 $v$ 后缀的形式存在的。</p>
-</blockquote>
-<p>证明：自己画图看看。既然 $u$ 与 $v$ 的endpos已经相同了，那么说明两者拥有相同的后缀（不理解就画图！）。而当 $|u| \leq |v|$ 时， $u$ 显然为 $v$ 的一个后缀。</p>
-<blockquote>
-<p><strong>引理2</strong>： 考虑两个非空子串 $u$ 与 $v$ （仍然假设 $|u| \leq |v|$ ）。两者的endpos满足这样的一个关系：<br>$$<br>\begin{cases}<br>\operatorname{endpos}(v) \subseteq \operatorname{endpos}(u) &amp; \text{if } u \text{ is a suffix of } v\\<br>\operatorname{endpos}(v) \cap \operatorname{endpos}(u) &#x3D; \varnothing &amp; \text{otherwise}<br>\end{cases}<br>$$</p>
+<p><strong>引理1</strong>： 考虑两个非空子串 $u$ 与 $v$ （仍然假设 $|u| \leq |v|$ ）。两者的endpos满足这样的一个关系：<br>$$<br>\begin{cases}<br>\operatorname{endpos}(v) \subseteq \operatorname{endpos}(u) &amp; \text{if } u \text{ is a suffix of } v\\<br>\operatorname{endpos}(v) \cap \operatorname{endpos}(u) &#x3D; \varnothing &amp; \text{otherwise}<br>\end{cases}<br>$$</p>
 </blockquote>
 <p>证明：如果 $\operatorname{endpos}(u) \cap \operatorname{endpos}(v) \neq \varnothing$ ，那么结合我们刚刚证明完的引理1，我们可以知道 $u$ 是 $v$ 的一个后缀。既然 $u$ 是 $v$ 的一个后缀了，那么对于所有 $v$ 出现的地方， $u$ 也会出现，即 $\operatorname{endpos}(u) \subseteq \operatorname{endpos}(v)$ 。而如果 $u$ 的长度小于 $v$ 且 $u$ 还不是 $v$ 的后缀，那么 $v$ 出现的地方 $u$ 一定不会出现，即 $\operatorname{endpos}(u) \cap \operatorname{endpos}(v) &#x3D; \varnothing$ 。</p>
 <blockquote>
-<p><strong>引理3</strong>: 对于任意一个endpos等价类（或者一个状态），其包含的所有子串都是最长子串的连续后缀。</p>
+<p><strong>引理2</strong>: 对于任意一个endpos等价类（或者一个状态），其包含的子串集合是最长子串的连续后缀。</p>
 </blockquote>
-<p>证明：我们考虑等价类中两个子串：最长的，记为 $u$ ；最短的，记为 $v$ 。如果 $u&#x3D;v$ 那么显然不用证明。如果不是，那么对于长度在区间 $[ |u| , |v| ]$ 内的子串。根据引理1，在这个等价类中，必定存在子串有 $v$ 为后缀且同时为 $u$ 的后缀。</p>
+<p>证明：我们考虑等价类中两个子串：最长的，记为 $u$ ；最短的，记为 $v$ 。如果 $u&#x3D;v$ 那么显然不用证明。如果不是，那么对于长度在区间 $[|u|,|v|]$ 内的子串，必定存在子串有 $v$ 为后缀且同时为 $u$ 的后缀。</p>
 <h2 id="后缀链接-link"><a href="#后缀链接-link" class="headerlink" title="后缀链接 link"></a>后缀链接 <code>link</code></h2><p>根据引理3，我们可以知道对于任意状态，其中包含的字串都是其中最长子串的一段连续后缀。这段连续后缀不一定可以覆盖 $[ 1,|\text{最长子串}| ]$ 这一整个区间，但一定是连续的。<br>我们可以将其看做是不断将最长子串的首个字符删去得到子串的一个过程。</p>
 <p>而当我们不断删去，直到删去最短子串的首个字符的时候，我们会发现我们已经离开了这个状态。<br>我们可以根据这样一个走向创建一系列的新边。<br>这些新边就被称为link边，也叫做后缀链接。<br>有些地方也叫fa&#x2F;father边。 </p>
 <blockquote>
@@ -1187,22 +1181,9 @@
 <p>最后，我们将<code>last</code>的值更新为<code>cur</code>。</p>
 <h3 id="寻找终止状态"><a href="#寻找终止状态" class="headerlink" title="寻找终止状态"></a>寻找终止状态</h3><p>如果我们还想要知道哪些状态是终止状态而那些不是，我们可以在构建完 $s$ 对应的后缀自动机之后再进行寻找。</p>
 <p>我们从刚才最后一步得到的<code>last</code>处开始遍历后缀链接，直到最终到达初始节点。<br>我们将沿途的所有状态都标记为终止状态，因为他们存储着原字符串 $s$ 的至少一个后缀。</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>这里就不证明了，可以看<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfNg==">OI-Wiki</span>上的证明。</p>
+<h3 id="类比"><a href="#类比" class="headerlink" title="类比"></a>类比</h3><p>在课上听到了一个将后缀Trie和SAM进行类比的点子。<br>其核心思想就是通过压缩后缀Trie，使得其变成SAM的样子。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM4MDQ=">洛谷板子题</span>代码：<a href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p3000-p3999/p3804/p3804.cpp"><code>Luogu P3804</code></a></p>
-<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="检查字符串是否出现"><a href="#检查字符串是否出现" class="headerlink" title="检查字符串是否出现"></a>检查字符串是否出现</h2><blockquote>
-<p>给定一个字符串 $S$ 和多个模式串 $P$ ，我们需要检查模式串 $P$ 是否作为 $S$ 的一个子串出现过。</p>
-</blockquote>
-<p>我们首先给字符串 $S$ 构建后缀自动机。构建完了之后，我们从初始节点 $t_0$ 开始，不断向遍历trie树一样遍历后缀自动机。由于字符串 $S$ 内的每个字串都是其某个后缀的前缀，所以我们仅从初始节点开始遍历即可。<br>如果遍历完整个自动机都没有完全匹配，那么就说明模式串没有在原字符串里面出现过，反之亦然。</p>
-<p>如果我们在这样历的同时记录下最大匹配长度，那么还可以得到模式串在字符串内匹配的最大前缀长度。</p>
-<h2 id="求不同子串个数"><a href="#求不同子串个数" class="headerlink" title="求不同子串个数"></a>求不同子串个数</h2><blockquote>
-<p>给定一个字符串 $S$ ，计算其不同子串的个数。</p>
-</blockquote>
-<p>对其构造后缀自动机。<br>字符串 $S$ 中的每一个子串都相当于是自动机中的一些路径。因此不同字串的个数就等于自动几种以 $t_0$ 为起点的不同路径的条数。<br>考虑到后缀自动机是一个有向无环图，不同路径的条数可以通过动态规划来计算。<br>OI-wiki上给的方法是这样的：</p>
-<blockquote>
-<p>令 $d_v$ 为从状态 $v$ 开始的路径数量（包括长度为零的路径），则我们有如下递推方程：<br>$$<br>d_v &#x3D; 1 + \sum_{w:(v,w,c)\in DAWG} d_w<br>$$<br>即， $d_v$ 可以表示为所有 $v$ 的转移的末端的和。<br>所以不同字串的个数为 $d_{t_0}-1$ （因为需要去掉空字串）</p>
-</blockquote>
-<p>我个人更喜欢另一种方法：<br>利用后缀自动机的树形结构，每个节点对应的子串数量就是<code>len[i] - len[link[i]]</code>，对自动机所有节点求和即可。<br>这个在洛谷给的板子题内有应用。</p>
-<p>其他的应用可以见<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfMTM=">OIwiki</span>。</p>
+<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><p>见<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfMTM=">OIwiki</span>。</p>
 ]]></content>
       <categories>
         <category>字符串</category>
@@ -5399,6 +5380,38 @@
       </categories>
       <tags>
         <tag>题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>S2OJ #993. Merge 题解</title>
+    <url>/solutions/solution-se993/</url>
+    <content><![CDATA[<br>
+<span id="more"></span>
+<div id="problem-card-vis">true</div>
+<div id="problem-info-name">Merge</div>
+<div id="problem-info-from">none</div>
+<div id="problem-info-difficulty">none</div>
+<div id="problem-info-color"></div>
+<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly9zanplem9qLmNvbS9wcm9ibGVtLzk5Ng==">S2OJ #996</span></li></ul></div>
+
+<hr>
+<p>题目要求我们把整张图按照某种给定的规则缩成一条链，并最大化其长度。<br>而这个规则是，每次找到两个不直接连边的点，我们新建一个点，然后将其与所有与前面两个点直接连边的点直接连边，然后删掉上面的两个点。</p>
+<p>首先我们可以知道一个结论，就是图中如果出现了奇环就肯定无解。</p>
+<p>因为对于一个奇环，我们不管怎么缩点，最终都会获得一个基于三元环的基环树。<br>而三元环中我们找不到任何两个点可以缩点，所以这个三元环只能随着缩点的进行留到最后，导致无解。</p>
+<p>所以说我们可以判定，没有奇环就肯定有解。<br>而没有奇环可以转化为该图是一个二分图。<br>那么我们黑白染色一次就可以进行判定。</p>
+<p>然后我们的策略就是，找到每一个连通块的直径，然后把所有的连通块的直径加起来就可以了。</p>
+<p>直径的话，我们对连通块中的每一个点为起点进行一次BFS，取深度最大的点作为可能的直径，然后对连通块中每一个可能的直径取一个最大值就可以了。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">1000010</span>, M = N &lt;&lt; <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> h[N], e[M], ne[M], idx;</span><br><span class="line"><span class="type">int</span> color[N];</span><br><span class="line"><span class="type">bool</span> flag = <span class="literal">true</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[idx] = b, ne[idx] = h[a], h[a] = idx++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> cc[N], sc;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">paint</span><span class="params">(<span class="type">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt;q;</span><br><span class="line">    color[s] = <span class="number">2</span>;</span><br><span class="line">    q.<span class="built_in">push</span>(s);</span><br><span class="line">    cc[s] = ++sc;</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> p = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(color[e[i]] == color[p])</span><br><span class="line">            &#123;</span><br><span class="line">                flag = <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(color[e[i]])<span class="keyword">continue</span>;</span><br><span class="line">            color[e[i]] = color[p] ^ <span class="number">1</span>;</span><br><span class="line">            cc[e[i]] = sc;</span><br><span class="line">            q.<span class="built_in">push</span>(e[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> dis[N];</span><br><span class="line"><span class="type">int</span> dep[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">run</span><span class="params">(<span class="type">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0</span>, <span class="built_in">sizeof</span>(dis));</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt;q;</span><br><span class="line">    dis[s] = <span class="number">1</span>;</span><br><span class="line">    q.<span class="built_in">push</span>(s);</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> p = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(dis[e[i]] &amp;&amp; dis[e[i]] &lt;= dis[p] + <span class="number">1</span>)<span class="keyword">continue</span>;</span><br><span class="line">            dis[e[i]] = dis[p] + <span class="number">1</span>;</span><br><span class="line">            dep[cc[p]] = <span class="built_in">max</span>(dep[cc[p]], dis[p]);</span><br><span class="line">            q.<span class="built_in">push</span>(e[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="built_in">sizeof</span>(h));</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> a, b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">        <span class="built_in">add</span>(a, b), <span class="built_in">add</span>(b, a);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!color[i])<span class="built_in">paint</span>(i);</span><br><span class="line">        <span class="keyword">if</span>(!flag)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">&quot;-1&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">run</span>(i);</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= sc; i++)</span><br><span class="line">        sum += dep[i];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, sum);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>题解</tag>
+        <tag>贪心</tag>
+        <tag>BFS</tag>
       </tags>
   </entry>
 </search>

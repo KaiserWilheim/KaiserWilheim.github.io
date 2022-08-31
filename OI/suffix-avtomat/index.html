@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://kaiserwilheim.github.io/pics/SAM.svg">
 <meta property="article:published_time" content="2022-01-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-17T13:44:05.783Z">
+<meta property="article:modified_time" content="2022-08-28T10:54:26.060Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="字符串">
@@ -96,7 +96,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">35</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">80</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li><li class="menu-item menu-item-np"><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMXVUNHkxUDdDWA=="><i class="fa fa-compass fa-fw"></i>NP</span></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">36</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">81</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li><li class="menu-item menu-item-np"><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMXVUNHkxUDdDWA=="><i class="fa fa-compass fa-fw"></i>NP</span></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -153,7 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%90%E4%B8%B2"><span class="nav-number">3.</span> <span class="nav-text">子串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">4.</span> <span class="nav-text">性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9D%9F%E4%BD%8D%E7%BD%AE-endpos"><span class="nav-number">4.1.</span> <span class="nav-text">结束位置 endpos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BC%80%E9%93%BE%E6%8E%A5-link"><span class="nav-number">4.2.</span> <span class="nav-text">后缀链接 link</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA"><span class="nav-number">5.</span> <span class="nav-text">构建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E7%BB%88%E6%AD%A2%E7%8A%B6%E6%80%81"><span class="nav-number">5.1.1.</span> <span class="nav-text">寻找终止状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%98%8E"><span class="nav-number">5.1.2.</span> <span class="nav-text">证明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">5.2.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A3%80%E6%9F%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E5%87%BA%E7%8E%B0"><span class="nav-number">6.1.</span> <span class="nav-text">检查字符串是否出现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E4%B8%8D%E5%90%8C%E5%AD%90%E4%B8%B2%E4%B8%AA%E6%95%B0"><span class="nav-number">6.2.</span> <span class="nav-text">求不同子串个数</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%90%E4%B8%B2"><span class="nav-number">3.</span> <span class="nav-text">子串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">4.</span> <span class="nav-text">性质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9D%9F%E4%BD%8D%E7%BD%AE-endpos-%E5%8F%8A%E5%85%B6%E7%AD%89%E4%BB%B7%E7%B1%BB"><span class="nav-number">4.1.</span> <span class="nav-text">结束位置 endpos 及其等价类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E7%BC%80%E9%93%BE%E6%8E%A5-link"><span class="nav-number">4.2.</span> <span class="nav-text">后缀链接 link</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA"><span class="nav-number">5.</span> <span class="nav-text">构建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BB%E6%89%BE%E7%BB%88%E6%AD%A2%E7%8A%B6%E6%80%81"><span class="nav-number">5.1.1.</span> <span class="nav-text">寻找终止状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E6%AF%94"><span class="nav-number">5.1.2.</span> <span class="nav-text">类比</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">5.2.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">应用</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -168,7 +168,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">80</span>
+          <span class="site-state-item-count">81</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -179,7 +179,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">35</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -313,7 +313,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-17 21:44:05" itemprop="dateModified" datetime="2022-06-17T21:44:05+08:00">2022-06-17</time>
+      <time title="修改时间：2022-08-28 18:54:26" itemprop="dateModified" datetime="2022-08-28T18:54:26+08:00">2022-08-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -332,14 +332,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>4272</span>
+      <span>3299</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>7 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -355,32 +355,25 @@
 
 <div id="problem-card-vis">false</div>
 
-<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>后缀自动机，是一个能够解决许多字符串相关问题的，十分强力的数据结构。<br>不要被博客的链接迷惑了，后缀自动机是 <strong>S</strong>uffix <strong>A</strong>uto<strong>m</strong>aton 。<br>（博客标题来自俄语 Суффиксный автомат -&gt; Suffiksneyy avtomat）</p>
-<p>后缀自动机可以存储下一个字符串的所有子串，并且做到线性时空复杂度。<br>准确来说，对于一个长度为 $n$ 的字符串构造后缀自动机，其中至多有 $2n-1$ 个节点与 $3n-4$ 条转移边。</p>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>后缀自动机是一个DFA（确定性有限自动机或确定性有限状态自动机）。它接受且只接受 $s$ 的所有子串。</p>
-<p>展开来说的话，可以概括成这么几点：</p>
-<ol>
-<li>后缀自动机是一个有向无环图。其中的节点叫做<strong>状态</strong>，边叫做<strong>转移</strong>。</li>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>后缀自动机，是一个能够解决许多字符串相关问题的，十分强力的数据结构。<br>其存储的是一个字符串的所有子串。<br>不要被博客的链接迷惑了，后缀自动机是 <strong>S</strong>uffix <strong>A</strong>uto<strong>m</strong>aton 。<br>（博客标题来自俄语 Суффиксный автомат -&gt; Suffiksneyy avtomat）</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ol>
+<li>后缀自动机是一个DAG。其中的节点叫做<strong>状态</strong>，边叫做<strong>转移</strong>。</li>
 <li>图中包含一个初始节点 $t_0$ ，任何节点都可以由之经过一系列的转移到达。</li>
 <li>每一个转移都标有一个字母，且从某一个节点出发的每一个转移都是不同的。</li>
 <li>自动机存在多个终止状态。如果我们从初始状态 $t_0$ 出发，最终转移到了一个终止状态，则路径上的所有转移连接起来一定是字符串 $s$ 的一个后缀。 $s$ 的每个后缀均可用一条从 $t_0$ 到某个终止状态的路径构成。</li>
 <li>在所有满足上述条件的自动机中，后缀自动机的结点数是最少的。</li>
 </ol>
 <h1 id="子串"><a href="#子串" class="headerlink" title="子串"></a>子串</h1><p>一个字符串的后缀自动机包含关于这个字符串子串的所有信息。<br>更准确地来说，对于任意从初始节点 $t_0$ 开始的路径，我们将其转移边上的字符拿下来按顺序排列，都可以得到原字符串的一个子串。<br>这里需要注意：一条路径对应一个子串，但是一个子串不一定只对应一条路径。</p>
-<h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><h2 id="结束位置-endpos"><a href="#结束位置-endpos" class="headerlink" title="结束位置 endpos"></a>结束位置 <code>endpos</code></h2><p>对于字符串 $s$ 的一个子串 $t$ ，我们记其在字符串 $s$ 中的所有结束位置为 $\operatorname{endpos}(t)$ 。例如对于字符串 $aabbabd$ ，我们有 $\operatorname{endpos}(ab)&#x3D;\{ 2,4 \} $。<br>两个子串 $t_1$ 与 $t_2$ 的endpos集合可能相等。这样，所有字符串 $s$<br>的非空子串都可以根据其endpos集合分为若干<strong>等价类</strong>。<br>而我们知道，后缀自动机中的每个状态对应一个或多个endpos相同的子串，即一个等价类。<br>这就很好地解释了上面所说的除了最小性之外的所有性质。</p>
+<h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><h2 id="结束位置-endpos-及其等价类"><a href="#结束位置-endpos-及其等价类" class="headerlink" title="结束位置 endpos 及其等价类"></a>结束位置 <code>endpos</code> 及其等价类</h2><p>对于字符串 $s$ 的一个子串 $t$ ，我们记其在字符串 $s$ 中的所有结束位置为 $\operatorname{endpos}(t)$ 。例如对于字符串 $aabbabd$ ，我们有 $\operatorname{endpos}(ab)&#x3D;\{ 2,4 \} $。<br>两个子串 $t_1$ 与 $t_2$ 的endpos集合可能相等。这样，所有字符串 $s$ 的非空子串都可以根据其endpos集合分为若干<strong>等价类</strong>。<br>后缀自动机中的每个状态都会对应一个等价类。</p>
 <p>基于endpos，我们可以得到一系列重要结论：</p>
 <blockquote>
-<p><strong>引理1</strong>： 字符串 $s$ 的两个非空子串 $u$ 和 $v$ （假设 $|u| \leq |v|$ ）的endpos相同，当且仅当字符串 $u$ 在 $s$ 中的每次出现，都是以 $v$ 后缀的形式存在的。</p>
-</blockquote>
-<p>证明：自己画图看看。既然 $u$ 与 $v$ 的endpos已经相同了，那么说明两者拥有相同的后缀（不理解就画图！）。而当 $|u| \leq |v|$ 时， $u$ 显然为 $v$ 的一个后缀。</p>
-<blockquote>
-<p><strong>引理2</strong>： 考虑两个非空子串 $u$ 与 $v$ （仍然假设 $|u| \leq |v|$ ）。两者的endpos满足这样的一个关系：<br>$$<br>\begin{cases}<br>\operatorname{endpos}(v) \subseteq \operatorname{endpos}(u) &amp; \text{if } u \text{ is a suffix of } v\\<br>\operatorname{endpos}(v) \cap \operatorname{endpos}(u) &#x3D; \varnothing &amp; \text{otherwise}<br>\end{cases}<br>$$</p>
+<p><strong>引理1</strong>： 考虑两个非空子串 $u$ 与 $v$ （仍然假设 $|u| \leq |v|$ ）。两者的endpos满足这样的一个关系：<br>$$<br>\begin{cases}<br>\operatorname{endpos}(v) \subseteq \operatorname{endpos}(u) &amp; \text{if } u \text{ is a suffix of } v\\<br>\operatorname{endpos}(v) \cap \operatorname{endpos}(u) &#x3D; \varnothing &amp; \text{otherwise}<br>\end{cases}<br>$$</p>
 </blockquote>
 <p>证明：如果 $\operatorname{endpos}(u) \cap \operatorname{endpos}(v) \neq \varnothing$ ，那么结合我们刚刚证明完的引理1，我们可以知道 $u$ 是 $v$ 的一个后缀。既然 $u$ 是 $v$ 的一个后缀了，那么对于所有 $v$ 出现的地方， $u$ 也会出现，即 $\operatorname{endpos}(u) \subseteq \operatorname{endpos}(v)$ 。而如果 $u$ 的长度小于 $v$ 且 $u$ 还不是 $v$ 的后缀，那么 $v$ 出现的地方 $u$ 一定不会出现，即 $\operatorname{endpos}(u) \cap \operatorname{endpos}(v) &#x3D; \varnothing$ 。</p>
 <blockquote>
-<p><strong>引理3</strong>: 对于任意一个endpos等价类（或者一个状态），其包含的所有子串都是最长子串的连续后缀。</p>
+<p><strong>引理2</strong>: 对于任意一个endpos等价类（或者一个状态），其包含的子串集合是最长子串的连续后缀。</p>
 </blockquote>
-<p>证明：我们考虑等价类中两个子串：最长的，记为 $u$ ；最短的，记为 $v$ 。如果 $u&#x3D;v$ 那么显然不用证明。如果不是，那么对于长度在区间 $[ |u| , |v| ]$ 内的子串。根据引理1，在这个等价类中，必定存在子串有 $v$ 为后缀且同时为 $u$ 的后缀。</p>
+<p>证明：我们考虑等价类中两个子串：最长的，记为 $u$ ；最短的，记为 $v$ 。如果 $u&#x3D;v$ 那么显然不用证明。如果不是，那么对于长度在区间 $[|u|,|v|]$ 内的子串，必定存在子串有 $v$ 为后缀且同时为 $u$ 的后缀。</p>
 <h2 id="后缀链接-link"><a href="#后缀链接-link" class="headerlink" title="后缀链接 link"></a>后缀链接 <code>link</code></h2><p>根据引理3，我们可以知道对于任意状态，其中包含的字串都是其中最长子串的一段连续后缀。这段连续后缀不一定可以覆盖 $[ 1,|\text{最长子串}| ]$ 这一整个区间，但一定是连续的。<br>我们可以将其看做是不断将最长子串的首个字符删去得到子串的一个过程。</p>
 <p>而当我们不断删去，直到删去最短子串的首个字符的时候，我们会发现我们已经离开了这个状态。<br>我们可以根据这样一个走向创建一系列的新边。<br>这些新边就被称为link边，也叫做后缀链接。<br>有些地方也叫fa&#x2F;father边。 </p>
 <blockquote>
@@ -406,22 +399,9 @@
 <p>最后，我们将<code>last</code>的值更新为<code>cur</code>。</p>
 <h3 id="寻找终止状态"><a href="#寻找终止状态" class="headerlink" title="寻找终止状态"></a>寻找终止状态</h3><p>如果我们还想要知道哪些状态是终止状态而那些不是，我们可以在构建完 $s$ 对应的后缀自动机之后再进行寻找。</p>
 <p>我们从刚才最后一步得到的<code>last</code>处开始遍历后缀链接，直到最终到达初始节点。<br>我们将沿途的所有状态都标记为终止状态，因为他们存储着原字符串 $s$ 的至少一个后缀。</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>这里就不证明了，可以看<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfNg==">OI-Wiki</span>上的证明。</p>
+<h3 id="类比"><a href="#类比" class="headerlink" title="类比"></a>类比</h3><p>在课上听到了一个将后缀Trie和SAM进行类比的点子。<br>其核心思想就是通过压缩后缀Trie，使得其变成SAM的样子。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDM4MDQ=">洛谷板子题</span>代码：<a target="_blank" rel="noopener" href="https://gitee.com/kaiserwilheim/OIcodes/blob/master/Luogu/p3000-p3999/p3804/p3804.cpp"><code>Luogu P3804</code></a></p>
-<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><h2 id="检查字符串是否出现"><a href="#检查字符串是否出现" class="headerlink" title="检查字符串是否出现"></a>检查字符串是否出现</h2><blockquote>
-<p>给定一个字符串 $S$ 和多个模式串 $P$ ，我们需要检查模式串 $P$ 是否作为 $S$ 的一个子串出现过。</p>
-</blockquote>
-<p>我们首先给字符串 $S$ 构建后缀自动机。构建完了之后，我们从初始节点 $t_0$ 开始，不断向遍历trie树一样遍历后缀自动机。由于字符串 $S$ 内的每个字串都是其某个后缀的前缀，所以我们仅从初始节点开始遍历即可。<br>如果遍历完整个自动机都没有完全匹配，那么就说明模式串没有在原字符串里面出现过，反之亦然。</p>
-<p>如果我们在这样历的同时记录下最大匹配长度，那么还可以得到模式串在字符串内匹配的最大前缀长度。</p>
-<h2 id="求不同子串个数"><a href="#求不同子串个数" class="headerlink" title="求不同子串个数"></a>求不同子串个数</h2><blockquote>
-<p>给定一个字符串 $S$ ，计算其不同子串的个数。</p>
-</blockquote>
-<p>对其构造后缀自动机。<br>字符串 $S$ 中的每一个子串都相当于是自动机中的一些路径。因此不同字串的个数就等于自动几种以 $t_0$ 为起点的不同路径的条数。<br>考虑到后缀自动机是一个有向无环图，不同路径的条数可以通过动态规划来计算。<br>OI-wiki上给的方法是这样的：</p>
-<blockquote>
-<p>令 $d_v$ 为从状态 $v$ 开始的路径数量（包括长度为零的路径），则我们有如下递推方程：<br>$$<br>d_v &#x3D; 1 + \sum_{w:(v,w,c)\in DAWG} d_w<br>$$<br>即， $d_v$ 可以表示为所有 $v$ 的转移的末端的和。<br>所以不同字串的个数为 $d_{t_0}-1$ （因为需要去掉空字串）</p>
-</blockquote>
-<p>我个人更喜欢另一种方法：<br>利用后缀自动机的树形结构，每个节点对应的子串数量就是<code>len[i] - len[link[i]]</code>，对自动机所有节点求和即可。<br>这个在洛谷给的板子题内有应用。</p>
-<p>其他的应用可以见<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfMTM=">OIwiki</span>。</p>
+<h1 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h1><p>见<span class="exturl" data-url="aHR0cHM6Ly9vaS13aWtpLm9yZy9zdHJpbmcvc2FtLyNfMTM=">OIwiki</span>。</p>
 
     </div>
 
@@ -498,14 +478,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">13.9 万</span>
+    <span title="站点总字数">13.8 万</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:52</span>
+    <span title="站点阅读时长">3:51</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
