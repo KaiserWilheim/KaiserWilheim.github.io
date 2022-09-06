@@ -23,36 +23,27 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="article">
-<meta property="og:title" content="P2860 [USACO06JAN] Redundant Paths 题解">
-<meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-p2860/index.html">
+<meta property="og:title" content="P3243 [HNOI2015] 菜肴制作 题解">
+<meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-p3243/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2022/06/21/8zeqAH9PdpEoUvC.png">
-<meta property="og:image" content="https://s2.loli.net/2022/06/21/QtFkemasBWDjPMO.png">
-<meta property="og:image" content="https://s2.loli.net/2022/06/21/8mlIyAtafpFT5dr.png">
-<meta property="og:image" content="https://s2.loli.net/2022/06/21/NPgAT2fhJlLb41H.png">
-<meta property="og:image" content="https://s2.loli.net/2022/06/21/DJs9KV6TMCf41wG.png">
-<meta property="og:image" content="https://s2.loli.net/2022/06/21/NXe28OcVAY4JDqU.png">
-<meta property="og:image" content="https://s2.loli.net/2022/06/21/bsOS24dDWPXuGBa.png">
-<meta property="og:image" content="https://s2.loli.net/2022/06/21/pEJU3FSLcOCKkuG.png">
-<meta property="article:published_time" content="2022-06-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-21T09:15:39.559Z">
+<meta property="article:published_time" content="2022-09-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-06T14:09:07.867Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
-<meta property="article:tag" content="图论">
 <meta property="article:tag" content="题解">
-<meta property="article:tag" content="图的连通性">
+<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="拓扑排序">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/06/21/8zeqAH9PdpEoUvC.png">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/solutions/solution-p2860/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/solutions/solution-p3243/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solutions/solution-p2860/","path":"solutions/solution-p2860/","title":"P2860 [USACO06JAN] Redundant Paths 题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solutions/solution-p3243/","path":"solutions/solution-p3243/","title":"P3243 [HNOI2015] 菜肴制作 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>P2860 [USACO06JAN] Redundant Paths 题解 | 南陽劉子驥的博客</title>
+<title>P3243 [HNOI2015] 菜肴制作 题解 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -281,7 +272,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solutions/solution-p2860/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solutions/solution-p3243/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
@@ -294,12 +285,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="P2860 [USACO06JAN] Redundant Paths 题解 | 南陽劉子驥的博客">
+      <meta itemprop="name" content="P3243 [HNOI2015] 菜肴制作 题解 | 南陽劉子驥的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          P2860 [USACO06JAN] Redundant Paths 题解
+          P3243 [HNOI2015] 菜肴制作 题解
         </h1>
 
         <div class="post-meta-container">
@@ -310,14 +301,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-06-20 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-20T00:00:00+08:00">2022-06-20</time>
+      <time title="创建时间：2022-09-05 00:00:00" itemprop="dateCreated datePublished" datetime="2022-09-05T00:00:00+08:00">2022-09-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-21 17:15:39" itemprop="dateModified" datetime="2022-06-21T17:15:39+08:00">2022-06-21</time>
+      <time title="修改时间：2022-09-06 22:09:07" itemprop="dateModified" datetime="2022-09-06T22:09:07+08:00">2022-09-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -336,14 +327,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>999</span>
+      <span>485</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -356,56 +347,29 @@
     <div class="post-body" itemprop="articleBody">
         <br>
 <span id="more"></span>
-
 <div id="problem-card-vis">true</div>
-<div id="problem-info-name">Redundant Paths</div>
-<div id="problem-info-from">USACO 2006 January Gold</div>
-<div id="problem-info-difficulty">提高+ /省选-</div>
-<div id="problem-info-color">#3498db</div>
-<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDI4NjA=">Luogu P2860</span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYWN3aW5nLmNvbS9wcm9ibGVtL2NvbnRlbnQvMzk3Lw==">AcWing 395</span></li><li><span class="exturl" data-url="aHR0cHM6Ly9kYXJrYnpvai5jYy9wcm9ibGVtLzE3MTg=">BZOJ #1718</span></li></ul></div>
+<div id="problem-info-name">菜肴制作</div>
+<div id="problem-info-from">HNOI2015</div>
+<div id="problem-info-difficulty">普及+ /提高</div>
+<div id="problem-info-color">#52c413</div>
+<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDMyNDM=">Luogu P3243</span></li><li><span class="exturl" data-url="aHR0cHM6Ly9sb2ouYWMvcC8yMTE0">LibreOJ L2114</span></li><li><span class="exturl" data-url="aHR0cHM6Ly93d3cuYWN3aW5nLmNvbS9wcm9ibGVtL2NvbnRlbnQvMjIyNi8=">AcWing 2224</span></li><li><span class="exturl" data-url="aHR0cHM6Ly9kYXJrYnpvai5jYy9wcm9ibGVtLzQwMTA=">BZOJ #4010</span></li></ul></div>
 
 <hr>
-<p>题目要求我们给一个无向联通图上加几条边，使得整个图变成一个双联通分量。</p>
-<p>我们可以想到的一个思路就是，首先跑一遍 Tarjan 算法，将所有的双连通分量缩成点，这样就可以将整张图缩成一棵树。</p>
-<p>这样的话，我们可以瞎搞出来一个结论，如下：</p>
-<p>我们统计出来所有的叶子结点，记其数目为 $cnt$，我们最终要加的边数最少就是 $\lceil \dfrac{cnt}{2} \rceil$。</p>
-<p>首先我们可以随便连接两个叶子结点，将其变为一个基环树。</p>
-<p>我们可以证明，一定有一种连接方法，使得得到的基环树是有偶数条支链的。</p>
-<p>如果我们得到的基环树有奇数条支链的话，我们可以进行一些转化：</p>
-<p>假设当前有这样一个基环树：<br><del>（不如叫他<ruby>1-乙基-3-(1-甲基)乙基环己烷<rt>1-ethyl-3-(1-methyl)ethylcyclohexane</rt></ruby>）</del></p>
-<img src="https://s2.loli.net/2022/06/21/8zeqAH9PdpEoUvC.png" alt="p2860-8.png" width="60%" />
+<p>这里我们需要注意一下题目的要求。<br>我们不能直接求出来字典序最小的序列，因为题目要求的是：</p>
+<blockquote>
+<ol>
+<li>在满足所有限制条件下，1号菜肴优先制作。</li>
+<li>在满足上述条件下，2号菜肴优先制作。</li>
+<li>在满足上述条件下，3号菜肴优先制作。</li>
+<li>以此类推……</li>
+</ol>
+</blockquote>
+<p>我们可以想到，对于这种比较方式，我们可以通过贪心地让最后的数最大来达到要求。<br>假设这个数为 $x$，其可以让所有小于 $x$ 的数尽量靠前，同时因为 $x$ 的位置固定了，那些大于 $x$ 的数也就没有比较的需求了。<br>因此我们可以将其转化为其反串的字典序最大。</p>
+<p>对于这一些关系，我们可以将时间的流向反过来，同时将关系的内容变成“菜肴 $i$ 必须后于菜肴 $j$ 制作”的形式。<br>之后我们可以将这种关系看做一些单向边，然后建立其反图，跑一遍拓扑排序就可以了。<br>因为我们还需要字典序最大，所以我们采用堆而不是队列来存储数据，每一次贪心地从堆顶拿出元素放到答案序列的尾部即可。</p>
+<p>然后就是关于特判无解的情况。<br>无解只有一种情况：图中出现了环。自环也算。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">300010</span>, M = <span class="number">1000010</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> h[N], e[M], ne[M], idx;</span><br><span class="line"><span class="type">int</span> deg[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[idx] = b, ne[idx] = h[a], h[a] = idx++;</span><br><span class="line">&#125;</span><br><span class="line">priority_queue&lt;<span class="type">int</span>&gt;q;</span><br><span class="line"><span class="type">int</span> ans[N], tot;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="built_in">sizeof</span>(h));</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="type">bool</span> isValid = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u, v;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;u, &amp;v);</span><br><span class="line">        <span class="keyword">if</span>(u == v)isValid = <span class="literal">true</span>;</span><br><span class="line">        deg[u]++;</span><br><span class="line">        <span class="built_in">add</span>(v, u);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(isValid)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;Impossible!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">if</span>(!deg[i])q.<span class="built_in">push</span>(i);</span><br><span class="line">    <span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> u = q.<span class="built_in">top</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        ans[++tot] = u;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = h[u]; ~i; i = ne[i])</span><br><span class="line">            <span class="keyword">if</span>(!(--deg[e[i]]))q.<span class="built_in">push</span>(e[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(tot &lt; n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">&quot;Impossible!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = n; i; i--)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, ans[i]);</span><br><span class="line">    <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(deg, <span class="number">0</span>, <span class="built_in">sizeof</span>(deg));</span><br><span class="line">        idx = <span class="number">0</span>;</span><br><span class="line">        tot = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>我们可以找到一条边，连接两个端点，而其中一个端点有支链。不妨设这个有支链的点为 $y$，另一个点为 $x$。</p>
-<p>我们断开连接 $x$ 与 $y$ 的边，然后找到 $y$ 的一条支链最底端的叶子结点 $z$，最后连接 $x$ 与 $z$，减少了一条支链。</p>
-<img src="https://s2.loli.net/2022/06/21/QtFkemasBWDjPMO.png" alt="p2860-1.png" width="60%" />
-
-<p><del>（不如叫他<ruby>1,4-二乙基环辛烷<rt>1,4-diethylcyclohexane</rt></ruby>）</del></p>
-<p>这样就可以变成只有偶数条支链了。</p>
-<p>对于每一条支链的叶子结点，我们找到一个另外的叶子结点，使得他们的LCA在环上。这样就满足了我们“双联通分量”的要求。不懂的可以自己手画一下。</p>
-<p>但是有些时候随机连接的方案不一定能让所有的LCA都在环上，比如这个：</p>
-<img src="https://s2.loli.net/2022/06/21/8mlIyAtafpFT5dr.png" alt="p2860-2.png" width="60%" />
-
-<p>这样连接就不可以：</p>
-<img src="https://s2.loli.net/2022/06/21/NPgAT2fhJlLb41H.png" alt="p2860-3.png" width="60%" />
-
-<p>这样连接就可以：</p>
-<img src="https://s2.loli.net/2022/06/21/DJs9KV6TMCf41wG.png" alt="p2860-4.png" width="60%" />
-
-<p>但是很不幸，上面的那种情况就是出现了。<br>现在我们考虑由其转移到一个可行的方案上面。</p>
-<p>因为我们总共有偶数个叶子结点，所以我们最终还是会剩偶数个叶子结点没有配对。</p>
-<p>我们可以通过不断对部分节点重新配对来缩小问题规模，直至解决问题。</p>
-<p>我们先把不对劲的边断开：</p>
-<img src="https://s2.loli.net/2022/06/21/NXe28OcVAY4JDqU.png" alt="p2860-5.png" width="60%" />
-
-<p>然后找到已经配好对了的两个子节点，这里选取8和13；<br>断掉其间的边，然后分别找一个子树上的任意一个点连边；</p>
-<img src="https://s2.loli.net/2022/06/21/bsOS24dDWPXuGBa.png" alt="p2860-6.png" width="60%" />
-
-<p>然后我们的问题规模就缩小了2，剩下的点如法炮制即可。<br>如果最终只剩两个点，而且不在同一支链上的话就直接连边即可。</p>
-<img src="https://s2.loli.net/2022/06/21/pEJU3FSLcOCKkuG.png" alt="p2860-7.png" width="60%" />
-
-<p>最终我们可以得出，我们最少需要连接的边数是 $\lceil \dfrac{cnt}{2} \rceil$ 条。</p>
-<p>然后就可以上代码了：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">10010</span>, M = <span class="number">200010</span>;</span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> h[N], e[M], ne[M], idx;</span><br><span class="line"><span class="type">int</span> isBridge[M];</span><br><span class="line"><span class="type">int</span> dfn[N], low[N], cnt;</span><br><span class="line"><span class="type">int</span> sta[N], tt;</span><br><span class="line"><span class="type">int</span> scc[N], sc, sz[N];</span><br><span class="line"><span class="type">int</span> deg[N];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[idx] = b, ne[idx] = h[a], h[a] = idx++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">tarjan</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> from)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    low[p] = dfn[p] = ++cnt;</span><br><span class="line">    sta[++tt] = p;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = h[p]; ~i; i = ne[i])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> j = e[i];</span><br><span class="line">        <span class="keyword">if</span>(!dfn[j])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">tarjan</span>(j, i);</span><br><span class="line">            low[p] = <span class="built_in">min</span>(low[p], low[j]);</span><br><span class="line">            <span class="keyword">if</span>(dfn[p] &lt; low[j])</span><br><span class="line">                isBridge[i] = isBridge[i ^ <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(i != (from ^ <span class="number">1</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            low[p] = <span class="built_in">min</span>(low[p], dfn[j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(dfn[p] == low[p])</span><br><span class="line">    &#123;</span><br><span class="line">        ++sc;</span><br><span class="line">        <span class="keyword">while</span>(sta[tt] != p)</span><br><span class="line">        &#123;</span><br><span class="line">            scc[sta[tt]] = sc;</span><br><span class="line">            sz[sc]++;</span><br><span class="line">            tt--;</span><br><span class="line">        &#125;</span><br><span class="line">        scc[sta[tt]] = sc;</span><br><span class="line">        sz[sc]++;</span><br><span class="line">        tt--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(h, <span class="number">-1</span>, <span class="built_in">sizeof</span>(h));</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> a, b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">        <span class="built_in">add</span>(a, b), <span class="built_in">add</span>(b, a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">tarjan</span>(<span class="number">1</span>, <span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; idx; i++)</span><br><span class="line">        <span class="keyword">if</span>(isBridge[i])</span><br><span class="line">            deg[scc[e[i]]]++;</span><br><span class="line">    <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= sc; i++)</span><br><span class="line">        <span class="keyword">if</span>(deg[i] == <span class="number">1</span>)cnt++;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, (cnt + <span class="number">1</span>) / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -423,7 +387,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://kaiserwilheim.github.io/solutions/solution-p2860/" title="P2860 [USACO06JAN] Redundant Paths 题解">https://kaiserwilheim.github.io/solutions/solution-p2860/</a>
+      <a href="https://kaiserwilheim.github.io/solutions/solution-p3243/" title="P3243 [HNOI2015] 菜肴制作 题解">https://kaiserwilheim.github.io/solutions/solution-p3243/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</span> 许可协议。转载请注明出处！
@@ -432,22 +396,22 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag"># 图论</a>
               <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
-              <a href="/tags/%E5%9B%BE%E7%9A%84%E8%BF%9E%E9%80%9A%E6%80%A7/" rel="tag"># 图的连通性</a>
+              <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"># 贪心</a>
+              <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" rel="tag"># 拓扑排序</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/OI/fast-popcnt-sum/" rel="prev" title="快速求popcount和">
-                  <i class="fa fa-chevron-left"></i> 快速求popcount和
+                <a href="/solutions/solution-cf1041c/" rel="prev" title="CF1041C Coffee Break 题解">
+                  <i class="fa fa-chevron-left"></i> CF1041C Coffee Break 题解
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/OI/2-sat/" rel="next" title="2-SAT 问题">
-                  2-SAT 问题 <i class="fa fa-chevron-right"></i>
+                <a href="/solutions/solution-p1954/" rel="next" title="P1954 [NOI2010] 航空管制 题解">
+                  P1954 [NOI2010] 航空管制 题解 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -622,7 +586,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"21ce56ee1cc4f2af4a9a04839c7f046c"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"8df5eff4f6832a35677d3a5ff6057987"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
