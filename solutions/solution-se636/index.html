@@ -22,16 +22,19 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="article">
+    <meta name="description" content="这是一篇被加密了的文章，请输入密码以查看全文。（扩充字符：āēīōūȳñ）">
+<meta property="og:type" content="article">
 <meta property="og:title" content="S2OJ #636. 购物 题解">
 <meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-se636/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
+<meta property="og:description" content="这是一篇被加密了的文章，请输入密码以查看全文。（扩充字符：āēīōūȳñ）">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-09-03T13:07:37.235Z">
+<meta property="article:modified_time" content="2022-09-12T11:24:16.459Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
 <meta property="article:tag" content="题解">
 <meta property="article:tag" content="贪心">
+<meta property="article:tag" content="S2OJ">
 <meta property="article:tag" content="BFS">
 <meta name="twitter:card" content="summary">
 
@@ -92,7 +95,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">37</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">86</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li><li class="menu-item menu-item-np"><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMXVUNHkxUDdDWA=="><i class="fa fa-compass fa-fw"></i>NP</span></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">38</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">88</span></a></li><li class="menu-item menu-item-friends"><a href="/friends/" rel="section"><i class="fa fa-address-card fa-fw"></i>友链</a></li><li class="menu-item menu-item-np"><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMXVUNHkxUDdDWA=="><i class="fa fa-compass fa-fw"></i>NP</span></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -163,7 +166,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">86</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
@@ -174,7 +177,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -300,9 +303,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2022-09-03 00:00:00 / 修改时间：21:07:37" itemprop="dateCreated datePublished" datetime="2022-09-03T00:00:00+08:00">2022-09-03</time>
+      <time title="创建时间：2022-09-03 00:00:00" itemprop="dateCreated datePublished" datetime="2022-09-03T00:00:00+08:00">2022-09-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-09-12 19:24:16" itemprop="dateModified" datetime="2022-09-12T19:24:16+08:00">2022-09-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -321,7 +330,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>256</span>
+      <span>277</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -339,24 +348,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <br>
-<span id="more"></span>
-<div id="problem-card-vis">true</div>
-<div id="problem-info-name">购物</div>
-<div id="problem-info-from">none</div>
-<div id="problem-info-difficulty">none</div>
-<div id="problem-info-color"></div>
-<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly9zanplem9qLmNvbS9wcm9ibGVtLzYzNg==">S2OJ #636</span></li></ul></div>
-
-<hr>
-<p>我们可以将这个问题转化为一个反悔贪心问题。</p>
-<p>我们可以将优惠券当做我们已经选了的一些物品，这些物品的 $p_i$ 与 $q_i$ 相等，也就是说可以不需要考虑其反悔造成的代价，从而产生了“当前物品使用了优惠券抵消了差价”的效果。而如果将优惠券转让给比热物品使用的话，我们就相当于是把之前的这个物品的差价再加回到答案上去，从而产生了转让优惠券的效果。</p>
-<p>为此，我们在一般的反悔贪心的基础上，增加一步向堆中加入 $k$ 个0的操作，相当于是插入了这些优惠券。</p>
-<p>然后直接做反悔贪心即可。</p>
-<p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> dvsng scanf</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">50010</span>;</span><br><span class="line"><span class="type">int</span> n, m, k;</span><br><span class="line"><span class="type">int</span> a[N], b[N];</span><br><span class="line"><span class="type">bool</span> vis[N];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> v, id;</span><br><span class="line">    <span class="type">bool</span> <span class="keyword">operator</span> &lt; (<span class="type">const</span> Node &amp;rhs)<span class="type">const</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> v &gt; rhs.v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">priority_queue&lt;Node&gt;q1, q2;</span><br><span class="line">priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;<span class="type">int</span>&gt; &gt;q;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld&quot;</span>, &amp;n, &amp;k, &amp;m);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld&quot;</span>, &amp;a[i], &amp;b[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= k; i++)q.<span class="built_in">push</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        q1.<span class="built_in">push</span>(&#123; a[i],i &#125;);</span><br><span class="line">        q2.<span class="built_in">push</span>(&#123; b[i],i &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(m &gt; <span class="number">0</span> &amp;&amp; ans &lt; n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(q1.<span class="built_in">size</span>() &amp;&amp; vis[q1.<span class="built_in">top</span>().id])q1.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">while</span>(q2.<span class="built_in">size</span>() &amp;&amp; vis[q2.<span class="built_in">top</span>().id])q2.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">if</span>(q.<span class="built_in">top</span>() + q2.<span class="built_in">top</span>().v &lt; q1.<span class="built_in">top</span>().v)</span><br><span class="line">        &#123;</span><br><span class="line">            m -= q2.<span class="built_in">top</span>().v + q.<span class="built_in">top</span>();</span><br><span class="line">            <span class="keyword">if</span>(m &lt; <span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">            <span class="type">int</span> id = q2.<span class="built_in">top</span>().id;</span><br><span class="line">            q.<span class="built_in">pop</span>();</span><br><span class="line">            q.<span class="built_in">push</span>(a[id] - b[id]);</span><br><span class="line">            vis[id] = <span class="literal">true</span>;</span><br><span class="line">            q2.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            m -= q1.<span class="built_in">top</span>().v;</span><br><span class="line">            <span class="keyword">if</span>(m &lt; <span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">            vis[q1.<span class="built_in">top</span>().id] = <span class="literal">true</span>;</span><br><span class="line">            q1.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        ans++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="这个密码好像不太正确呢……" data-whm="这篇文章的哈希貌似出现了一点问题，但是您仍然可以看到解密之后的内容。">
+  <script id="hbeData" type="hbeData" data-hmacdigest="8434c09819020b56ce6ba95530e6b36c626924990434ff30c65e04d8298694e7">dfee31cc98606e570b6a243cfb69c484d0094c388d5c5130dc4a9b5f224f8dc0a95fa38793058ac1fbe0ec669e9a2c1e9269de44a1db9845700873d6f7eead08900edccb3f414c00b942e513aed58780a97cfdf01117ae1f4f532797219a8f6f0de30331ed7ccabe040976f4ade7bd6db388b9043103b782a53cef3581aca8d0f6428c946bb070b3b2f239237eaf4d174c65a767619bc7ac160e653099875c431ce9f4cfc96511cf18331fe769a0adf27d8ac38e208d431193ac8b63c1838b4b1f8fca6f5741451e6a0ef5c87089e606ac2d12d9d9849649b01e6586d54d75ce953e0fb3a5e34412a92bb88c85d1fe8abfacb5f10750ae972a7784f6ed7bf0f2f2dd289c456da0ff8c7273e928642e924a43dd0db29c64df4443a2ceb204881276a8f1eb74e0aff0d8489f74087820a4965ffeaa221342602116a7be46c31b4f15642210b1a24abee7b28780eb75afee34dc9c35a2ae97b36b336e76232d0b93e4ce8927590735ba474147eae9c97903fd736605226c1653b609914e6b9f03e08171532113cfa989fe450c73c8490f37b3f092b7b0ef2d05c709f43787241c31443fcf3e50e5fa36ca98c9c0f54eb44763dd124713488573bab9962db9bec3e1898fd497a2b762f745b5a3fbaad3707539d500348b5ffea39e3c94ed40c067e527d06076c4434ff6f969f38358d8356f860d209a7b8c37dde99ab0a967cf2a6786a81231ce7ac04ecb1ed25067a26a20cdd32f077b6fc09bea596b887ccfbfefe0777b08dbfd1690ed49f097775e0c8b88278d51be1eac9c594b221663cbcac7e86bc449d33ab427e38ffb291739fac2855f7ac810912c448260571297febfc74ecb9f49fae7da036a17304bb90f5d5259517f5d4226d1f315d07ccb9514490899884e5abde9367f2092baa479b2b024def6aa6c2b442aa84d522b8254f1b6b7a8ddca6b230c8fbb316c400a46f23639d813841ed50f6297f9fe726c55be06e79b3d3f6d9d7c4c55050e4213e3c4d87edd21e41a46e9fb8c6944f1f71b8daae8d6e5d5f8345a8fad1354840a109c445e6d46f4c1ea76ec1e8e97ef07d4a1b2323224ff9df0e32f5a944b7e2f43fd86343c26f7a10af2fcacc327f93553279033478bcfbeed99efa159f25537435f575c7c0fab4d5cc1f501767e3d3e25d3d3f04e2821804e9130c8ff94b7558bf40af467395c97e694fbf8ed2bf9657472e1878fb9920e55a2434f12b5af6331f1455b2b5dff1a4796173db2d9b7552a0432113d5d401b8f5a88d25d5e5b56364491eabfb024952bef4aacad0344b047015a5105bc03a05a580271f347803373860c9b497df10b3e95d2e1cdc27dd10d441e3ac975707905b002a8b6387fc9ff3cf9c24d9ac33307e020f15dcc8979691f840382ad8a24d73a969a8e4db6abae7ce3f1f7c4d436b93864548357465f5ba78aa9dc92de2b1d6876fb346bdffb9d763ffc845eadc827727794614bfdb9f97d9ce6e91ad55b7aec1841d820bf1d3e301ec2260e60a8df7e2b7fcac3b910c94a02c35d948bca8b0a33ffdcdc64cb23821c914e600b8fe4b94d6ac58bedfc23ad97162f5ff2c8514fa1d00fe6b6d4dc7adeb0799ccc28c389dd1904979eda63a065980f415ba34b39c00914c23961db01551a159e36ecbf649bc4008370a589b00bf8237a37b7669068c7a3b08b4df79f6d1822015e28a462a28c9f93c85a9095c840c1125b3f5fb0ccbc42a2fc9b9c7b14627e57cbbb33851e7be027da362f1cbf4e67896fe831da3ab3bf929c1e335bc255f046e442755665fac91b357461bf0227d965f761f8975c1286c7d5da31391d2aafb34dbb0b8f8edb48f66d44f503cd02901ae94e70a4fb2ece2c6976a673db216ce8d4952d949974885a0817485cde9bbc7fb1060a93d4d4da741bce8db9a1584388b11ec892b6ac9066e4b953e88c41f39b8a309aa505bd4349ef63e51426b92eecc399e31403926ab16027809d1c1a0d2902d5158a01b976439f9439aa36c23a52d939236fb117ac14c165975ae7701c22386e278356deb5cfd83f95821f125c8a97aaab1d41626fe50480dbe71b5d19da3dd85a596535a662b3a98f9e8d7883a72b7193360b92b9c58499137db6790e9475b12fe70ba60215521f756f3ecd29ba9d00ea9ed4e4955592b5a0f6d3952b734e5605eda969e8db99471beda9c8c6f8c653450e9749b05d4986e135d977dce817635762b91f0763c7da0f575c34c7aa758649aead1145ef700bf1bc31f25e04f62203206815d275e0d72c26df2de295d2f9234a33d4832d83d8c298122826f718d096ab065b4ac3b6888215d19083b97552ff1090afc267a109b94a3ca5ee754a361b61429723554c5e5ec63dc7551a08a70c9d190408db2c65a79f8cabcb7c45484e5c013698d9fb4fc758e84979afc82f656106b539ebd1822eb4a84e173baf82e7613b7494daea14c010d5c0fd0bebde0aeec75e3d3064cc33ec79f0956606e32caea7e1f786b4e6bd0d357b6f0c186c8f14650e0a5ccedea4649106ed82192afa0659918b2585b0ea183256d20ef0d717f807d6c4ebdbfd28fa939d5fa01f78feb231ab777399a717e0bbf21f6777389c61bfb1bdabb931babdfbbfb99c055288303a67d84fcb97329b24e6ac1db048a6798849690b16ffca4f432385a13be508859dd205ca9cce1dfeed40a212e734ebe582a44468d11aa4e7a234f72db4a6f8b95113b92655bfd4fc02cb2f456c9112df34a99b6cf37109e20ee6584ebc9c2ec0a6548ac2545493295ac49939952973989bc5848001f4c0fe778f5146ef8e9b020a8f33cf8747c9ee57b12fb20201a12b8d6c7001bd7c4752865b948e9bb4c9bdcea4c063fcda222dcb949399c5212905f6ea12a09c0f77d11d1e5d80cb5f8d495573d4131beecf32969a92ab276b538005fe1f0562ce02e9909063a485c403ed4440f7315947b4317f5862bf4f824124cc0f3e57b31591ab3e013c9fd7fdc91fd4296e73ae543992a206cb36f0f21b691069c503fcf2b2e210408cc4b45ecda6f896c68c5a3484e437e7b76bee2d29ad1ce72bb077949052a68d3a5e48267522dda47788ed64ed7bb742f4cbedc4d5b7e6f24d5448784dd698f108061d5bd1b53599f1667ac028260d77e7979d104d42b5792f5bcd8460215662a4b2f8d9712ddbc35add11fd67945609cf91a14ba7f319cf4d5700bd0ceca29be66e30ed78bd7820ba4cd885b0f5da9537a95469f843b21d296d8ffb9147ce3d58d3a60bae7f4f345925a93936ae367959f7920612e7816bb9ab2cf907dabfdf3bbf819b0e42aea02aee286100621533ef45ca4a02bbbc25796ec9e8d9e46d1c0c8f46ec1d8a77a6be1f4af3fd87c8bdce749a3083ce0c8ff9bc8ac5705e78e29c1329e487acde92410a94ca9a74766c3ddba140477544740f3fc54eaf076f959c8333e4dea44e2f6913825054ce5e60baaa00bd64060bdc681279abee068fc26cd3554161e319842501a93400f819fc737f257d94220128b623d3cef963649f84c89f7f91339ef2f6abf69d299a4f297456cd80eda25ac58d338c311730267fe50c195496589c846d56c6b05e84f1d7a21347974872f63b4b1ed763e8658fb5b250794ec3876c237f81477c5785eb970f0d78b3606e90ebbec3666f840b55b83ff22dcffe584ca4e5583439bc289a2d113f2bd07012663fd8f79e5b5a2e4a293775244d812dcac32caec1ed4ba289af88faa2e05ab00360128c153283a2ce8bf42951671490de4564cfbd1c0f70ba9a4026dea0676817a2b9e279e34830f1762c3e02134e2dd60e472ace5b3948dee74b5f5253b1d1668ab1ce99d0f6b96cd449ea2614d42f1ee607f5f7fc5cdabd9ac0b7b34fa0f4f5e4a415879d099766be37ca9c8a0839ae53e3f6b12e66c7fbe89410663d29b58f44ec4629bce06a2ee7bcf5e2e5a57b6b35455716a449936e7c6caf1b22e6e1ed07c483a35adcd70a9a53a8c58e480f511872fd3a0b13ac9f211661cc202e98c67ccfed555c3233351ebaa63fa7931811f27b99399d29578f4ebabff78a3f7c74dfd286a71281ee8448fc754fdf594fe248b17d8296417332b811415f8c3635b8a90a8f0a58f3cc3f97c08d6705bba01bb1261d214941dca0ce8189dee478428776e1e0e33ddfa6e7f56cc6863798d20e74a9f2b956e67b1d44494cbe94dc471834dc24528231b54801dfb96121bbaf818dd72a4caab119583fa7719eafd3cdf47901b88cca794e9f79be1d53c9c8860a399975208888f8df0c89e63272a8c3dd33e98d9b275f352312d32adf619aa88c01fc4a2aada8eae23eac68c1c8ece4c7a337c9411c3b96467b0e5f7548e4307d08781d3624703609b0cdc01ab0f56f3d6e861aa7de04a75a102a7b6420345f6d2320f7edfe8d92b99a701d7a3d7be01ba441bb4680682b3ee119b74e3b930b52ebaafd6a9ebf9c252079aeac775540a79cfc9b633c70f4d856480795ebfae915577be8d006df4f81ecf67a94ee740421c86b2eed9022b4233b1ee5c2750cc82cf98cffabbb0eb2eb283f3348a3f6390374a4216bbe2d336db61ba22376ffa346f7c43df2ae8a9902089069b77131cd0b81785076730e70587db6b54e9510d17b86b319ba6dd25eb1cb793d4418fa273268b89749ef281665d4ec1ab76013dae814579e5cf827d16939815ce8077eb14bdd9241cc0de7409950d78ea911fcd3bf46b8a9cefa9e92e165af6f2ebe3e3cfa3e64b7c071e90430679ffe7cde33915d597ab98f3312714444ddc8108d1abd847f0a08b09d787937a06019649ed787a97707e41550a83cfbd5ddd94eedde9d418d0431d2d847f594af91e0d8297b500fbbe44b0b720ec13e4e13276cacec6f1a88afd2e3ba5f175e3bc56c9ca611ad929f08e824dbad09f225e043270c1734032894547afb5a5863b3d1b305d79efc27fb28b14d31e507dab3f825b3962206e51c14fceb7e3dce7dc5bf9c4b9b40950346d874a152f7765635022ede19cad12adc141052503467815afc73e9c9db32666a58cd9d3d793c4d928350fdb6027f5418048d4c9a8d4a7a6a42f66916706538fcfe6b862dcdc74ebd434e08af468b1cb52b9a3c5facfade284037d978b43bd0eaecaf27a7f0ae85d6586aa4c00e889818ee905944edf82cd0b55f64ede6554a75d1ca0f292fab4421f10ec9135517e8f1364326f3e61dddc5904a64ac4dea08254822638c900cb57d6366f3f3f6d51661d5c55d05aae9783a799c7b6cfea986faa98630329437a948958dd099f6ee4aa671b5870f06c2a4df4deec424aeb5cad7d2181c4fd2d517d21a10097bdc5fd5b702aab96364c63941980856ebb377607366a12ec12d6b85c3c25135b2a93d2c3f5955c91eece853a977acb5f9b320229765f1128faf537ce4552a0096a959540de216c405be6323db18d38d4421d62476538eea7777ef33ba72846d96d2bf729a29299e12833da833c591d2a15e58d1520772f72333b6907a105f53c37f56622b346ea9dad471d457feada4a182cacc77b72eadbf11ff2263428576c1aff62e32c055b0ce711faaaae7ead1a0c41f1b4a067f058ca50e989b6ce00b1d5704533b0940b1f1cbc4b3898d0d028dfc971067aef077109bde6d48911ebad5d2cf3da28b084c57ee54dc5c5caa18997ee2fe3e714c8090c0358a5b10bb6ffc7f3c4feadcac22374edbd2532c5c2b555577dd7c54d2784772e4c997a35302e2016b3ff281432d80ad29cf4848d4d4017bfb9769c0855eba0a89f856cb9aa549aa4a65b1977c5529467a7ba4ce1e76c5776ed5599697e752726fe4689687643c31e98b5239ab9ab798f238d0092b4c10b3d412ebf5bb36d374ad7ed81527d6b317fe64ae0dfa94f4f8a7d505b51eafa4b996cd8f7363defd1bd270ca8abad4744d93dd5fe2190f7a04a5f1fd461dd4b786441a088f10f18f249fe8bbe00fa9e05b48b64f4580ad71ac25c623039f1b451804443fea391ae5309e105230473a84c8ceb46199bccd902bb1996c5285abe7591b617e000787e7796f1cf761a669131ff6c0d67f3c86f716ce11d4fb26f0cfe7b1212170089251b2f7cc013288ba3fbcd240865170f0f3877ab555442b6a0f8bd8e533bfbefb1fd8e05a0171cc3318139dc46c9168b447b864abd10a1e4e423a14d35015e0d7950707ce695316125ef3c38585066e2c1e99b8e315710b7e82fc2a9ce08acd20cdf6b1212a90b38fd4f41fe71ba07c6bcf836ac5f11441d44bf36e90da311493326513405ef7329c4e86d327396fd8bc8aa904578ccd0272f57ad0880a64a49a552c2a35b263ad82ac4c334da724e9904d38f9085206ead8be7a042a5e5ea55aa27792232239af6c59885099e525577ca242e4946b305ee8b5a5344f85b0e32b691eb34bdf0830d55d95476c42bf0a85b8a893c915e511c02fa80f0474eca9eb1e145518822c757b3fe3384793cca12649cee74887aca39d31273db4388e915313907480b9375fcef458d52585bae8e28b7d72b61bbb8263f2771c9f447323376e18a9c660c53b751d66c7b5a7d84fec31cf106e99035fdddcc44c34a3ff3c1f115a5b31b4af32aef6437ce83992514ea1983d4f95ac3106bb6a2e826cad555d62f6bf1a52cf6b658e329cbfb09b0d71d567055d8460769c77ceaf141695e4bfe5e329a217cfa6cab41f7579238f457ec9c54f6c06511885e312b92c480e838c083f46a07affa8980d7fcd0b0e445ab68900ca16411daf63effbf9b3c6d66839b8375946453e2682f3967bc759db84ccf077233a0716205eb875014ca61eece3a01bb84d8ba33d61fb01604ab5739215e5e0db554ace1bf7a143930773b276c9d1c0aa79ee1445d54384e9bbe00a6c92988f9693d79bfe8076a600d082b7f7546e8e67c2d5d98c8cb401a3228f0115e4414af11cd31d85e5a427ce388662558cdd0300f3f12dfa801aa59f192257f31935bb286e429a9bad713bfb97bd5388f7fc9611e2c865e1c97d59847bb48b8c727daab4fd33491845aceade6c475e9c7b8bf3a76f3802e2ffcd31e1b63739d25d5bf92e9aeca2fde79b5afc0b50aa30dcf39df6049dcb8ce904134482f384d243e1e49ba00eda204efeb93d8e33006444206be7ac2efb1e37fb70c9f7d8c16cb40c29f19a0b88586aac6e6cd571cedadc59190ea067baf3b908c210ad9e86463314e5a94c488b9c20b02acca69ef5ba9f7397f973faee775f6e5d62cb22ec4a1bb8d54727e323475c3c09d72af93a8a7486610b40a46ad3e7951352f769a488bed14ffc74d2e9b430020ccaf28788ce6f94bc9624d4131cf251aad1150107c004224e2cb9e8c78ca5c56e0b996e74be71adfbc76b11f2bba4ad7d4c9df1b83f0618eccb56693a525dcc838670c1f5be6e0f37809c527375a34fd145b960ef31659bffdf2036474d4345a1a7a83e9a8e5ce2885a0db6ff87dfd85fba096254b468882e7af839ba6c0b9486d8e1734bb1609de7c171cc6a543393edbfe7162cc72a0eda8d0a5c1e7fea3613dcae08101041e9ec16af3418b5641b5131b2229eb72b14f6b1e0d0fc1511038e16b0d895b056419bd184902aca275960d23985b79af708497b540eceb6fcc783ea065c085c4288407eb0157faf4f2d3c948de4b9aa1c00c010df755fec19efcc21dd01553befa50dc5a3298ed5d9fd19c5d8cd8668087517b3ae459687d2e536e916711acb4fb9f295bda37e76bd6a7bae16d02a6cebc23e30a8464797986ebd757aa0265159cc720c33c5c0b1a9ce4cd93ddaec3e9353589d94d4e2ccf69a9eb9a2442df6b21adec3aeb8931525ef337d5f584179dac5253b0f986418f1414b9e5d0cb8baefef79df26d18cba164cec3d0185ee2523f24f531edf39285e52e6326be24e578850c73eafeaf6d56a55c9d06aa904a5a4f43bfc2f3b81b4bd353b920d924c5deb746475fe1a68394a3c46db36640e06fa43b82895fc49af8c8b425fb9fdd4d013d81973c5747cb02b1330ba89b81843d9b3884003e6dbce3723d5cac877d4780b0015b61d4c31daebeb286414746a346e9dd6b537a51d8fa2e0b8cfbf1d06e1bf82da1f0ba6054be6a7626626f1011294fc8caa88ef273704523054f8a9f55246b1a71bbd8ee5ea0dbc942ebe35d7c757dc5a770027d296d49710f8e43fba0dbac66c734feabe8fb88045f063e64b4666998256f644d7fd00b3183bb459a737e47794902589e6d31e6ea31b0b3868cecd28a7e512cbefe612ff445730292d35834df37f971dc7c610bc6cf16c5ec320df9a8635afa6ddca449465ea95e2ba8f71ba8d6a8ebaec5a785a8a89fb7d8802c193c786e8b61320759f7a2728c02846676e686863429149807743eca7b4348927fde14598cb83ea1131c9f7b29ed2906454bce8047c2395ba5b6f95bcc0938333b8b02ba29305e8b0bc92aee778dedd168fdd437a8e639c79748eebfd51621eec5a5708f7ff07d2281785a53ac1822e69387b0e1de55592dfb511b1eb58ae6f8f74b37f17af2c93fbcf1a29051e54caa11f0031ad084d2990a57c232973a2737d5a17d61a304c34c84b04828b6e96a9bdab468606bce07633d7e935b9e426ad5ff0bdeabad5d370d1f7e57de335c61aea5b11b51ea4398c74721caebbc267fd24791915a926e3e4aa277b8bfd1b2fd625c22e3155fb424564006061ecdd738606054f466e3568cf0394a0b80b0aac8b000f92c9c3af89c30f29aaea04b29b2b4d30aae332e098b40ef2c660f13ee749831018427cb2cb1cba6a27614cf4b2ecf589afdf39f145d415b2cc566eebaea353289cd9cef4b16ad7405c9ba7ad27e7786794cd3d9219618993b15de797b991d950cc73ce008e26b4429c97f928c60a1ce163bd788fb5d5f831bf21a1afc400427a0fb2a589396846be7b1d84e220506f9a88840e8b88f2fb634cdcd88eb5fbbcaeb7b3e74ff9856e4a6aa7344e7264a4dbfa7631674982bf71ca7030a3e14be1e9bdee9abb3e5d1c6f87904e0e6ce04da1b9a703db72e03b8d5724eb87d4be06d869172cdd5c7a0c172f6832a25b3bf8bd02efb51d7ff4acf4a743dda0b0199043ffcfd1352bdb4ef23416759869e9512ffbab4688b30500201e5bf4638206663a605a74b367a74d4618ca70a2877a3b4f86755d62ae984367d635f6c8f64a320f80069cebd5e583d3d8b34887a67b72237af1554a4314f756e501577d262d3e1339e01ee53fb8c975835bd717e5b1482786dc2fd1c48a734f36818fe139a72afec0394c97450a722840284f3d9e2e4e8ebc40eff7bca69bf0b47abc853f875c2eb363f04aa26cea0c2c6c5c063a36abe4bbbdad420816c1bd94cb6c70919be7cc05c399659155fcc31536bae94e77e788de4021c8c2a3b90e6f424f50e32d5e24f6983d69434d6da06ff16f870cd170210c9288ebc95effe250ff8f5b784572b667898b75e79393fb01b9d3bc1bfc982e417dac51436e1aa97ab29b93bb056648f72d263411f9aed961bd8206948160425c1f99988fadb12855e90c5c252121f317b1c848de45cca637249fc44acbc9cdd246f98ecbe5cda042af2cb915cb986d4a0bb9f9b3d49b89793ebeab58498ab16cb166dfb95e1fbbec113f6eff7752f47435c3db04a551db1c1e8870f7c65f7d6e653a362069cc79589e1b20e868c5d5746a6cc040f1bfe943c95f9c6efa6962f4426d69b3cc1fe835635e2c69212c293c1a9855623b99bcac0c1ce245e45f304e53d28cac1650e712949e699f92ab802a523269332116a25918b581de84f2cd34dd5ee3f1661a62251d8f9dc45866213356adbd9fdb115c46b36a9db590dc30f9844b9b681a4cb21ed8a9ec0ea38f56b733641179b28185770afd3ac07d6d820ba377809741d4a854a03d8cd2e0bcbc51345bcf5744ad09a91b50ea07d3ff332c70a74cda743a5423dc25c4d8bf3aa41efc9af87a420d236402763c801e066ca7b75d761dceaf9339a404acb580b1d5287db08f9ee7288ced12308bb5e463f40923e9618d1ea797989ac3e517bd3f2d9f25d2c4c96ce76f6df2c0b45f20f0c287e922a557c380212cf0efc06dcc0c2017c35e054b26657fecd61a29715a6af52c3bd59abf50c9f006ef1216343a6d040c6a54db7b90db746d7e1c106fceab5122549814554aa83aff783f3fb29141ff1a223062ad574cae96c47d7df1eeaf47205d18892f52431eb8b4598f741cbb5a923b2ae34c371bf0934e3b32aac6848883c3c7fb270df65b6ed3721e3b4cb8b0a480552643e1b2dd2ac8879f925166fbea95b4af31ffc48f1232518d166772e8c7c126ad6ff7b27fa3c5bb7510713d086a46d5ee6eb9bb63094e363f1be6ecc073c642ee5959e33803dcf5f2ebc3ccae991d7bdc89801cb2942b4808862da4c45177b98a55d6e516133ae2831797f3649912661058f0ee40213fbadc26e928a2232fb793e81bca63cd382797a25496eaa92ae241018c251f661cce8856fbbd09f3787b6ecbbf4e9205c17533f20d52d95a6d5dd3cd01aad698252724437991e5853d3cf969516cd3b8686fcc1b84c60cd99767d41af3f6d99ef7477b4430baea1bb1eb7cc8be4754e3a15756be877c458e4ba5b30d4529e4d9e858e6395aa7661847659d4d9a793078541c21e2ee2f8027fb0deafb1b0f469b1a16f109f632a406f6b27c8928b11c1767385b9f022d52442a3b78cad3ff5a9c7e472363275a3738115e6ed44ff810f8e672f216bf87f7b2992c4eff895b0315ea62e4104e218d0813750dfd48039888214d4d18d6d381af0c4c976177429fd096f301e7de2c789b334174d41d03281efa0ac05fcf944669a16bc07b9614392eb691fae0231a6a83eeaa117bfd6d2b98d595d8e637d5b8ef33c85fd767c3a6b4e8b9b2a09d63b25ac3de11f04465a13d36033ae6dc0ac9bdd62d90708e67a0bbaf21a2f827d54653e40bbc470092e7cb3281d179d0f9f02b7c1b35c050ab419477aef0914dbe45b02c349261d84f7209dbfe0947f1ce151c5aa653fdaf21a7b728568d4a4dd587c504581625450c1550e031644281fca83ac8044035566ed092b35ba431a7618aeba55e7be48adc9508c84b6322e1e29316baa6b1384730ab567f5d0755ca38dec8710064b2efd814522ff1bba111998d0a9aaa5a317b57b815618cfe260cdba2bada769d6f36f91fce8510dac62bd859eaf447c08b6f215f768b312b51f11ef55276fe20c54b417cc567e95bdc42d043733f1e12728c9fa4de7ead6951a548c87cf80fb69e95b3002573e4e1fd6986c1007f5cef4e79fb55648adcd60112c57bb7be36d331dba1019c2978482bafc682f0258701fa12d319941623c5e69a7270652d0b5d9e7102957a486232535ffa538965352c37270c1c0c24aa2cb566ab0b9b34c660c0f0c7cbd56072ebfb92881374fcddcee229511ccadda72aea0ec8b3d54e1db9b5b6dcf82dd74d04deca2310e28a6171771fb24264861ffd1ed586ebe0f648428a6d65752eda87fcf835e4b1696aa27aa936367c13f3653a6aa77096781937294323b22f04384a8ec7a55b2e59d59d093d168b4a982b4188904bc299d93be4f76df418f9203dccf671f6c67c627c352617ac41a2aeb31391eb5ec8db009b18ed271c237386e4414ba5cc8bea875de088e608b58a349c6e651a3703c4a4a4c641c2375f03b50d5b6e7b6ae041a99461991746b2f6723a64bcdf4948ba9fb19d0435e08e55005f61f5696ca1b53df02109579ff9871f4ab5f6cf436dd39e570d5b3f3b2a4e207650c54cac25e402ecda04c2d3cb9a0779b1b6c4d42700f7e41be86c56281293ec7744a8ccd6e6b3fc93557d716772f59addb2a7755e914a0c9346c976abed786b4948879e18034d3992c6aea1542f83ce579af2b414631b09e9f76cccda4e30a75bc86fbb1e268a7734e99591f0a668d71a5e8e378e77f18747aee25747ce0cc762d37751381af5f3ec27189337eaa56ebdd830c35c8fac2abb2bc9157b66b992e7a68fafcf15af96f2c91fb8d6e25f7e3c359260ca049820327552a98fd525e07bbd35d2a19b3336ce9f344a783f2759d0056d0d2f88d9eafb828074bd5dbd326da5e1bae702f4c0f51fbc27f2f97786dbbf1b406c883df11cb40c0ee44cb4e5bdef7d67467a2bb090da745c130904963f6c49a560fbc6e6c089f2d54edf7021cece6e44b6b9cdacab12a0a59535f2138260570837374bdc84988b5bef6323f430192d7f4ffa91ac59070f6b02dd86bbd77c00b71c2976b3e35727939e9eed92d74773b6dca0fc60f007</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-flip">
+      <input class="hbe hbe-input-field hbe-input-field-flip" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-flip" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-flip" data-content="请输入密码……">请输入密码……</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
     </div>
 
     
@@ -384,6 +387,7 @@
           <div class="post-tags">
               <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
               <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"># 贪心</a>
+              <a href="/tags/S2OJ/" rel="tag"># S2OJ</a>
               <a href="/tags/BFS/" rel="tag"># BFS</a>
           </div>
 
@@ -432,80 +436,83 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>站点总字数：</span>
-    <span title="站点总字数">14.1 万</span>
+    <span title="站点总字数">14.2 万</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">3:55</span>
+    <span title="站点阅读时长">3:57</span>
   </span>
 </div>
   <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
   </div>
 
 <script>
-var elem = document.getElementById("problem-card-vis");
-var tar = document.getElementById("problem-card-inner");
-var txt = elem.innerHTML;
-if(txt === "false"){
+function getProblemCardInfo(){
+    var elem = document.getElementById("problem-card-vis");
+    var tar = document.getElementById("problem-card-inner");
+    var txt = elem.innerHTML;
+    if(txt === "false"){
+        elem.innerHTML = "";
+        throw new Error("Problem card is hidden");
+    }
+    tar.style.visibility = "visible";
     elem.innerHTML = "";
-    throw new Error("Problem card is hidden");
-}
-tar.style.visibility = "visible";
-elem.innerHTML = "";
 
-elem = document.getElementById("problem-info-name");
-tar = document.getElementById("problem-name");
-txt = elem.innerHTML;
-tar.innerHTML = txt;
-elem.innerHTML = "";
-
-elem = document.getElementById("problem-info-from");
-tar = document.getElementById("problem-from");
-txt = elem.innerHTML;
-if(txt === "none"){
-    var fa = tar.parentNode;
-    var gfa = fa.parentNode;
-    gfa.removeChild(fa);
-    elem.innerHTML = "";
-}else{
+    elem = document.getElementById("problem-info-name");
+    tar = document.getElementById("problem-name");
+    txt = elem.innerHTML;
     tar.innerHTML = txt;
     elem.innerHTML = "";
-}
 
-elem = document.getElementById("problem-info-submit");
-tar = document.getElementById("problem-submit");
-txt = elem.innerHTML;
-tar.innerHTML = txt;
-elem.innerHTML = "";
-
-elem = document.getElementById("problem-info-difficulty");
-tar = document.getElementById("problem-difficulty");
-txt = elem.innerHTML;
-if(txt === "none"){
-    var fa = tar.parentNode;
-    fa = fa.parentNode;
-    var gfa = fa.parentNode;
-    gfa.removeChild(fa);
-    var color = document.getElementById("problem-info-color");
-    color.innerHTML = "";
-    elem.innerHTML = "";
-    throw new Error("Problem difficulty cannot find");
-}else{
+    elem = document.getElementById("problem-info-from");
+    tar = document.getElementById("problem-from");
+    txt = elem.innerHTML;
+    if(txt === "none"){
+        var fa = tar.parentNode;
+        var gfa = fa.parentNode;
+        gfa.removeChild(fa);
+        elem.innerHTML = "";
+    }else{
+        tar.innerHTML = txt;
+        elem.innerHTML = "";
+    }
+    
+    elem = document.getElementById("problem-info-submit");
+    tar = document.getElementById("problem-submit");
+    txt = elem.innerHTML;
     tar.innerHTML = txt;
     elem.innerHTML = "";
-}
 
-elem = document.getElementById("problem-info-color");
-txt = elem.innerHTML;
-var std = /#[0-9a-fA-F]{6}/;
-if(!std.test(txt)){
-    txt = "#000000";
+    elem = document.getElementById("problem-info-difficulty");
+    tar = document.getElementById("problem-difficulty");
+    txt = elem.innerHTML;
+    if(txt === "none"){
+        var fa = tar.parentNode;
+        fa = fa.parentNode;
+        var gfa = fa.parentNode;
+        gfa.removeChild(fa);
+        var color = document.getElementById("problem-info-color");
+        color.innerHTML = "";
+        elem.innerHTML = "";
+        throw new Error("Problem difficulty cannot find");
+    }else{
+        tar.innerHTML = txt;
+        elem.innerHTML = "";
+    }
+
+    elem = document.getElementById("problem-info-color");
+    txt = elem.innerHTML;
+    var std = /#[0-9a-fA-F]{6}/;
+    if(!std.test(txt)){
+        txt = "#000000";
+    }
+    tar.style.color = txt;
+    elem.innerHTML = "";
 }
-tar.style.color = txt;
-elem.innerHTML = "";
+getProblemCardInfo();
 </script>
 <script>
 const details = document.querySelector("details");
