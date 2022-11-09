@@ -22,29 +22,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kaiserwilheim.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.11.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":true,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":-1,"unescape":true,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="false  感谢 CloudySky 和 宝硕 的大力支持。 没有他们就没有这个博客。 十分感谢。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="感谢">
-<meta property="og:url" content="https://kaiserwilheim.github.io/thanks/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="CF1530E Minimax 题解">
+<meta property="og:url" content="https://kaiserwilheim.github.io/solutions/solution-cf1530e/index.html">
 <meta property="og:site_name" content="南陽劉子驥的博客">
-<meta property="og:description" content="false  感谢 CloudySky 和 宝硕 的大力支持。 没有他们就没有这个博客。 十分感谢。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img.shields.io/github/repo-size/kaiserwilheim/kaiserwilheim.github.io?style=for-the-badge">
-<meta property="article:published_time" content="2999-12-31T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-06-29T07:12:57.474Z">
+<meta property="article:published_time" content="2022-11-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-09T02:59:06.548Z">
 <meta property="article:author" content="南陽劉子驥 aka KaiserWilheim">
+<meta property="article:tag" content="题解">
+<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="分类讨论">
+<meta property="article:tag" content="构造">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.shields.io/github/repo-size/kaiserwilheim/kaiserwilheim.github.io?style=for-the-badge">
 
 
-<link rel="canonical" href="https://kaiserwilheim.github.io/thanks/">
+<link rel="canonical" href="https://kaiserwilheim.github.io/solutions/solution-cf1530e/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/thanks/","path":"thanks/","title":"感谢"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://kaiserwilheim.github.io/solutions/solution-cf1530e/","path":"solutions/solution-cf1530e/","title":"CF1530E Minimax 题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>感谢 | 南陽劉子驥的博客</title>
+<title>CF1530E Minimax 题解 | 南陽劉子驥的博客</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y88Y81XL7"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-8Y88Y81XL7","only_pageview":false}</script>
@@ -273,7 +273,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/thanks/">
+    <link itemprop="mainEntityOfPage" href="https://kaiserwilheim.github.io/solutions/solution-cf1530e/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s2.loli.net/2022/03/22/7wOGBae2UblHjMI.png">
@@ -286,12 +286,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="感谢 | 南陽劉子驥的博客">
+      <meta itemprop="name" content="CF1530E Minimax 题解 | 南陽劉子驥的博客">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          感谢
+          CF1530E Minimax 题解
         </h1>
 
         <div class="post-meta-container">
@@ -301,15 +301,18 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：3000-01-01 00:00:00" itemprop="dateCreated datePublished" datetime="3000-01-01T00:00:00+08:00">3000-01-01</time>
+      <time title="创建时间：2022-11-09 00:00:00 / 修改时间：10:59:06" itemprop="dateCreated datePublished" datetime="2022-11-09T00:00:00+08:00">2022-11-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
+        <i class="far fa-folder"></i>
       </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-29 15:12:57" itemprop="dateModified" datetime="2022-06-29T15:12:57+08:00">2022-06-29</time>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
+        </span>
     </span>
 
   
@@ -319,14 +322,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>42</span>
+      <span>1018</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -337,16 +340,36 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <div id="problem-card-vis">false</div>
+        <br>
+<span id="more"></span>
+<div id="problem-card-vis">true</div>
+<div id="problem-info-name">Minimax</div>
+<div id="problem-info-from">Codeforces Round #733 (Div. 1 + Div. 2)</div>
+<div id="problem-info-difficulty">提高+ /省选-</div>
+<div id="problem-info-color">#3498db</div>
+<div id="problem-info-submit"><ul><li><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vQ0YxNTMwRQ==">Luogu CF1530E</span></li><li><span class="exturl" data-url="aHR0cHM6Ly9jb2RlZm9yY2VzLmNvbS9wcm9ibGVtc2V0L3Byb2JsZW0vMTUzMC9F">CF 1530 E</span></li></ul></div>
 
-<p>感谢 <strong>CloudySky</strong> 和 <strong>宝硕</strong> 的大力支持。</p>
-<p>没有他们就没有这个博客。</p>
-<p>十分感谢。</p>
-<p><img src="https://img.shields.io/github/repo-size/kaiserwilheim/kaiserwilheim.github.io?style=for-the-badge" alt="GitHub repo size"></p>
-<!--
-祭 陈靖元的爱情
-2022.3-2022.6.29
--->
+<hr>
+<p>题目大意是，给定我们一个字符串，我们需要对其进行重排，使得对重排后的字符串跑一遍KMP得到的next数组的最大值最小。如果有多种答案可以使得这个最大值最小，我们需要给出字典序最小的那一个。</p>
+<p>大分类讨论中构造题。</p>
+<p>首先我们考虑，如何才能让我们得到的next数组最小？<br>换句话说，我们如何才能让前缀和后缀尽量不匹配？</p>
+<p>首先，如果全局只有一种字符，那么我们肯定是无能为力的。<br>否则我们可以把这个最大值限定在 $1$ 以内。</p>
+<p>首先，如果有至少一种字符只出现了一次，我们可以将其中最小的那一个放到开头，剩下的部分排序之后接到后面即可，因为没有任何其他的子串可以和开头的这一个前缀匹配，next数组最大就是 $0$，同时我们做到了字典序最小。</p>
+<p>剩下就是所有的字符都出现了两次及以上的情况了。</p>
+<p>我们将这些字符按照从小到大的顺序分别重编号为 $a$、$b$、$c$ 等。<br>后面再说的时候就是按照新的编号了。</p>
+<p>为了使得字典序最小，我们肯定是要把 $a$ 拿到串的开头的，然后让其他的后缀与 $a$ 匹配。</p>
+<p>观察给的样例的第二个字符串，这给了我们一个关于做法的提示。</p>
+<p>如果不是 $a$ 的字符数量足够，我们可以在开头再放一个 $a$，然后在后面交替填充一个非 $a$ 的字符和一个 $a$，直到 $a$ 用完，最后把剩下的部分都填充上非 $a$ 字符就可以了。<br>同时为了字典序最小，我们在填充非 $a$ 字符的时候需要先排序再填充。<br>这个方案阻止了连续的 $a$ 匹配上开头的两个 $a$，同时也阻止了后面的 $a$ 与一个非 $a$ 字符组合起来匹配上开头的两个字符，可以把最大值压缩到 $1$ 以内。</p>
+<p>如果非 $a$ 字符数量不够呢？<br>我们这时候肯定不能再在前面放两个 $a$ 了。</p>
+<p>我们可以想到把前面的 $aa$ 替换成 $ab$，以防止多余的 $a$ 与 $aa$ 匹配。<br>然后为了字典序最小，我们把剩下的 $a$ 都追加在后面。</p>
+<p>我们这样做的同时还需要防止 $ab$ 被匹配。<br>一个简单的方法就是在一串 $a$ 后面放一个 $c$，阻止可能的 $ab$ 的出现。</p>
+<p>如果找不到 $c$ 呢？</p>
+<p>我们就换种思路，把字符串构造成 $abbb \dots bbaa \dots aa$ 的形式。</p>
+<p>否则，我们就按照上面的思路，构造形如 $abaa \dots aacbb \dots$ 的字符串。</p>
+<p>此时回顾我们的分类讨论，可以发现我们分的这几类已经可以覆盖所有的情况了。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> N = <span class="number">300010</span>;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">char</span> s[N];</span><br><span class="line"><span class="type">int</span> cnt[<span class="number">26</span>], tot;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, s + <span class="number">1</span>);</span><br><span class="line">    n = <span class="built_in">strlen</span>(s + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        cnt[s[i] - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">        <span class="keyword">if</span>(cnt[i])tot++;</span><br><span class="line">    <span class="type">int</span> flag = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(cnt[i] == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            flag = i;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(flag != <span class="number">-1</span>)</span><br><span class="line">    &#123;<span class="comment">//有只出现过一次的字符</span></span><br><span class="line">        string res;</span><br><span class="line">        res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + flag);</span><br><span class="line">        cnt[flag]--;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">            <span class="keyword">while</span>(cnt[i]--)</span><br><span class="line">                res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + i);</span><br><span class="line">        cout &lt;&lt; res &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(tot == <span class="number">1</span>)</span><br><span class="line">    &#123;<span class="comment">//只有一种字符</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, s + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        string res;</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt;v;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">            <span class="keyword">if</span>(cnt[i])</span><br><span class="line">                v.<span class="built_in">push_back</span>(i);</span><br><span class="line">        <span class="keyword">if</span>(n - cnt[v[<span class="number">0</span>]] &gt;= cnt[v[<span class="number">0</span>]] - <span class="number">2</span>)</span><br><span class="line">        &#123;<span class="comment">//非a字符数量足够</span></span><br><span class="line">            res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + v[<span class="number">0</span>]);</span><br><span class="line">            res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + v[<span class="number">0</span>]);</span><br><span class="line">            cnt[v[<span class="number">0</span>]] -= <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = v[<span class="number">1</span>]; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">while</span>(cnt[i]--)</span><br><span class="line">                &#123;</span><br><span class="line">                    res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + i);</span><br><span class="line">                    <span class="keyword">if</span>(cnt[v[<span class="number">0</span>]])</span><br><span class="line">                    &#123;</span><br><span class="line">                        res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + v[<span class="number">0</span>]);</span><br><span class="line">                        cnt[v[<span class="number">0</span>]]--;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(tot == <span class="number">2</span>)</span><br><span class="line">        &#123;<span class="comment">//只有两种字符</span></span><br><span class="line">            res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + v[<span class="number">0</span>]);</span><br><span class="line">            cnt[v[<span class="number">0</span>]]--;</span><br><span class="line">            <span class="keyword">while</span>(cnt[v[<span class="number">1</span>]]--)</span><br><span class="line">                res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + v[<span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">while</span>(cnt[v[<span class="number">0</span>]]--)</span><br><span class="line">                res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + v[<span class="number">0</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;<span class="comment">//可以找到c的情况</span></span><br><span class="line">            res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + v[<span class="number">0</span>]);</span><br><span class="line">            cnt[v[<span class="number">0</span>]]--;</span><br><span class="line">            res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + v[<span class="number">1</span>]);</span><br><span class="line">            cnt[v[<span class="number">1</span>]]--;</span><br><span class="line">            <span class="keyword">while</span>(cnt[v[<span class="number">0</span>]]--)</span><br><span class="line">                res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + v[<span class="number">0</span>]);</span><br><span class="line">            res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + v[<span class="number">2</span>]);</span><br><span class="line">            cnt[v[<span class="number">2</span>]]--;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i = v[<span class="number">1</span>]; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">                <span class="keyword">while</span>(cnt[i]--)</span><br><span class="line">                    res.<span class="built_in">push_back</span>(<span class="string">&#x27;a&#x27;</span> + i);</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; res &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> T;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--)</span><br><span class="line">    &#123;</span><br><span class="line">        tot = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)</span><br><span class="line">            cnt[i] = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -364,7 +387,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://kaiserwilheim.github.io/thanks/" title="感谢">https://kaiserwilheim.github.io/thanks/</a>
+      <a href="https://kaiserwilheim.github.io/solutions/solution-cf1530e/" title="CF1530E Minimax 题解">https://kaiserwilheim.github.io/solutions/solution-cf1530e/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLW5kLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</span> 许可协议。转载请注明出处！
@@ -372,16 +395,25 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
+              <a href="/tags/%E8%B4%AA%E5%BF%83/" rel="tag"># 贪心</a>
+              <a href="/tags/%E5%88%86%E7%B1%BB%E8%AE%A8%E8%AE%BA/" rel="tag"># 分类讨论</a>
+              <a href="/tags/%E6%9E%84%E9%80%A0/" rel="tag"># 构造</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/suoyin/" rel="prev" title="博客索引">
-                  <i class="fa fa-chevron-left"></i> 博客索引
+                <a href="/solutions/solution-p4127/" rel="prev" title="P4127 [AHOI2009] 同类分布 题解">
+                  <i class="fa fa-chevron-left"></i> P4127 [AHOI2009] 同类分布 题解
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/suoyin/" rel="next" title="博客索引">
+                  博客索引 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -558,7 +590,7 @@ darkmode.showWidget();
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"e0e1bdfa6ff0cd3db6d4f3b6955d0e14"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"KaiserWilheim","repo":"Blog-Gitalk","client_id":"3e37bb1d7df7fd5db91f","client_secret":"c23d4e5da80a5bc983c11ce4de5161b218b394c8","admin_user":"KaiserWilheim","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.7.2/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"312a88b3bb8299bff6e70c21d80df4c8"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
