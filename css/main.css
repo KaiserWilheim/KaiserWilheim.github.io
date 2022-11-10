@@ -1318,10 +1318,10 @@ pre code {
   position: sticky;
   top: 500px;
   width: 240px;
+  display: inherit;
 }
 .problem-card-inner {
   color: var(--text-color);
-  visibility: visible;
   background: var(--content-bg-color);
   padding: 18px;
   text-align: center;
@@ -1337,9 +1337,12 @@ pre code {
   color: var(--text-color);
 }
 .problem-card-table tr>:first-child {
-  font-size: 0.8em;
+  font-size: 0.5em;
   min-width: 48px;
   color: #999;
+}
+.problem-card-table td {
+  font-size: 0.9em;
 }
 .problem-card-table tr td ul {
   list-style: none;
